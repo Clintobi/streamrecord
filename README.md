@@ -9,6 +9,7 @@
 - Built for the OneAquaHealth IEEE Global Hackathon 2026. Work on this repository started on 2026-10-04, within the submission window the organisers extended to 4 October (Devpost update "Deadline Extended to October 4"); the commit history is intact.
 
 **Judges, 90 seconds:**
+0. Open a [printable stream sign](https://streamrecord.vercel.app/#/sign/C6): the Stream Facts label and a QR code a city could post by the water.
 1. Open the [story](https://streamrecord.vercel.app/#/story): OneAquaHealth's findings, verbatim and page-cited, in six languages.
 2. Open any [site reading](https://streamrecord.vercel.app/#/site/C5): the lab record, what it means for people, animals and the stream, and measures from the Catalogue of Measures.
 3. Open [Review](https://streamrecord.vercel.app/#/review), add the sample check and confirm it.
@@ -36,6 +37,25 @@ flowchart LR
 - **No server, no account, no cold start.** The app is static files on a CDN. Citizen checks are stored on the phone and turned into FHIR R4 in the browser.
 - **Frozen, fingerprinted data.** Every snapshot is hashed, and the app makes no live calls. Swapping in the live ENORA API means changing two fetches in `scripts/`; the join and the bands are already code.
 - **Scaling to more cities** needs only new ENORA sites and a translation file. The site pages, story, FHIR and data package are generated.
+
+## What's borrowed from other fields
+
+Ordinary people already read these three formats at a glance, so StreamRecord gives a stream's lab record the same shape:
+
+- **The food nutrition label → Stream Facts.** One fixed, comparable panel per stream:
+  - the score and its parts;
+  - its rank in the city;
+  - when it was tested;
+  - the resident checks on file.
+- **The pharmacy expiry date → "Age of result".** The age of the lab test is stamped on the label, in plain years, so nobody mistakes a 2023 result for today's water.
+- **The vehicle history report → the stream's record.** Every event on file, newest first:
+  - the lab sample;
+  - each resident check;
+  - each review decision, with its reason;
+  - the day the record was retrieved.
+
+  A stream gets a history the way a patient gets a chart.
+- **Together, a sign a city can post at the stream.** An A4 print of the Stream Facts label with a QR code to that stream's full reading, in six languages. It connects the physical place to the record: scan by the water, read what scientists found there, report what you see.
 
 ## 1. Track alignment
 

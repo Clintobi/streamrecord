@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { Layout } from './ui'
 import MapScreen from './screens/MapScreen'
 import SiteReading from './screens/SiteReading'
@@ -7,6 +7,8 @@ import ClinicianReading from './screens/ClinicianReading'
 import Sources from './screens/Sources'
 import ReviewQueue from './screens/ReviewQueue'
 import Story from './screens/Story'
+// the printable sign pulls in the QR encoder, so it loads only when opened
+const StreamSign = lazy(() => import('./screens/StreamSign'))
 
 function useHash() {
   const [h, setH] = useState(location.hash || '#/')
@@ -28,6 +30,7 @@ export default function App() {
   else if (route === 'sources') screen = <Sources />
   else if (route === 'review') screen = <ReviewQueue />
   else if (route === 'story') screen = <Story />
+  else if (route === 'sign' && id) screen = <Suspense fallback={null}><StreamSign id={decodeURIComponent(id)} /></Suspense>
   else screen = <MapScreen city={route === 'city' ? id : undefined} />
   return <Layout route={route || ''}>{screen}</Layout>
 }

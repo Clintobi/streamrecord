@@ -418,3 +418,55 @@ nav.main .count, .rq-group h2 .count { display: inline-block; min-width: 1.5em; 
 .youcard ul { margin: 0 0 var(--s2); padding-left: 1.2em; }
 .youcard li + li { margin-top: 6px; }
 .foryou fieldset legend { font-family: var(--sans); font-size: 0.95rem; font-weight: 400; color: var(--ink-2); line-height: 1.4; }
+
+/* Stream Facts: a nutrition-label format for a stream's lab record */
+.facts { background: #fff; border: 2px solid var(--ink); padding: 10px 12px 12px; color: var(--ink); font-family: var(--sans); max-width: 380px; }
+.facts-title { font-family: var(--sans); font-weight: 700; font-size: 2rem; letter-spacing: -0.02em; line-height: 1; margin: 0 0 4px; }
+.facts-site { font-size: 0.85rem; margin: 0 0 6px; }
+.facts-rule { height: 1px; background: var(--ink); margin: 4px 0; }
+.facts-rule.mid { height: 4px; }
+.facts-rule.thick { height: 9px; }
+.facts-row { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; padding: 3px 0; border-bottom: 1px solid var(--hair-strong); font-size: 0.92rem; }
+.facts-row:has(+ .facts-rule) { border-bottom: 0; }
+.facts-row > span:first-child { font-weight: 700; }
+.facts-row.ind > span:first-child { font-weight: 400; padding-left: 14px; }
+.facts-row.big { font-size: 1.15rem; }
+.facts-row.big .num { font-size: 1.5rem; font-weight: 400; }
+.facts-row.big small { font-size: 0.8rem; }
+.facts-row.wrap > span:last-child { text-align: right; max-width: 60%; }
+.facts-row .expiry { font-weight: 700; color: #fff; background: var(--concern); padding: 0 8px; border-radius: 2px; }
+.facts-foot { font-size: 0.75rem; line-height: 1.35; margin: 6px 0 0; color: var(--ink); }
+.recordgrid { display: grid; grid-template-columns: 1fr; gap: var(--s4); align-items: start; }
+@media (min-width: 760px) { .recordgrid { grid-template-columns: minmax(280px, 380px) 1fr; } }
+.history { list-style: none; margin: var(--s1) 0 var(--s3); padding: 0; position: relative; }
+.history::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: var(--hair); }
+.ev { position: relative; padding: 0 0 var(--s2) 28px; }
+.ev::before { content: ''; position: absolute; left: 0; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--surface); border: 2px solid var(--ink-2); }
+.ev-lab::before { background: var(--ink); border-color: var(--ink); }
+.ev-confirmed::before { background: var(--ok); border-color: var(--ok); }
+.ev-rejected::before { border-style: dashed; }
+.ev-check::before { border-color: var(--look); background: #FBF5E8; }
+.ev time { display: block; font-size: 0.82rem; color: var(--ink-2); font-family: var(--mono); }
+.signlink { gap: 8px; }
+
+/* printable sign */
+.signpage .crumbs { margin-bottom: var(--s1); }
+.sign { background: #fff; border: 1px solid var(--hair); padding: var(--s4); margin-top: var(--s2); }
+.sign-head { display: flex; gap: 14px; align-items: center; }
+.sign-head h1 { font-size: 2rem; margin: 0; }
+.sign-site { margin: 4px 0 0; font-weight: 700; font-size: 1.1rem; }
+.sign-lede { font-family: var(--serif); font-size: 1.2rem; margin: var(--s3) 0; max-width: 60ch; }
+.sign-body { display: grid; grid-template-columns: 1fr; gap: var(--s4); align-items: start; }
+@media (min-width: 720px) { .sign-body { grid-template-columns: 1fr auto; } }
+.sign-qr { text-align: center; max-width: 260px; justify-self: center; }
+.sign-qr p { margin: 8px 0 0; }
+.sign-url { font-size: 0.8rem; word-break: break-all; }
+.sign-langs { font-size: 0.8rem; color: var(--ink-2); }
+.sign-by { margin: var(--s4) 0 0; font-size: 0.8rem; color: var(--ink-2); }
+@media print {
+  .signpage { padding: 0; }
+  .sign { border: 0; padding: 0; margin: 0; }
+  .sign-head h1 { font-size: 26pt; }
+  .sign-body { grid-template-columns: 1fr auto; }
+  .facts { max-width: none; }
+}

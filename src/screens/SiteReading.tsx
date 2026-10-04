@@ -3,6 +3,7 @@ import { Bands, findSite, Library, loadBands, loadLibrary } from '../data'
 import { LANGS, useI18n } from '../i18n'
 import { CityIndex, confirmedFindings, daysSince, lowerNearby, findingsFromChecks, labStatus, longDate, secondLook, Site } from '../model'
 import { checksFor } from '../store'
+import { History, StreamFacts } from '../facts'
 import { ReadAloud, Shape, Skeleton, StatusLine } from '../ui'
 
 const r2 = (v?: number | null) => (typeof v === 'number' ? v.toFixed(2) : 'n/a')
@@ -201,6 +202,23 @@ export default function SiteReading({ id }: { id: string }) {
       </div>
 
       <div className="wide sections">
+        <section className="sec" aria-labelledby="hist">
+          <h2 id="hist">{t('histTitle')}</h2>
+          <div className="body">
+            <div className="recordgrid">
+              <StreamFacts site={site} sites={sites} checks={checks} cityName={city.name} />
+              <div>
+                <p className="meta">{t('histIntro')}</p>
+                <History site={site} checks={checks} />
+                <a className="btn secondary small signlink noprint" href={`#/sign/${encodeURIComponent(site.id)}`}>
+                  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M1 1h6v6H1zM11 1h6v6h-6zM1 11h6v6H1zM3 3h2v2H3zM13 3h2v2h-2zM3 13h2v2H3zM11 11h2v2h-2zM15 11h2v2h-2zM13 13h2v2h-2zM11 15h2v2h-2zM15 15h2v2h-2z" fill="currentColor" /></svg>
+                  {t('printSign')}
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="sec" aria-labelledby="b2">
           <h2 id="b2" data-read>{t('b2')}</h2>
           <div className="body" data-read>

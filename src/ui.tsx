@@ -29,7 +29,7 @@ export function Mark({ size = 26 }: { size?: number }) {
 export function Layout({ children, route }: { children: ReactNode; route: string }) {
   const { t, lang, setLang, d } = useI18n()
   const pending = allChecks().filter((c) => c.status === 'preliminary').length
-  const onStreams = route === '' || route === 'city' || route === 'site' || route === 'check' || route === 'clinician'
+  const onStreams = route === '' || route === 'city' || route === 'site' || route === 'check' || route === 'clinician' || route === 'sign'
   return (
     <>
       <header className="site">

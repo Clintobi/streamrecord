@@ -23,6 +23,9 @@ function Pic({ k }: { k: string }) {
   return <svg className="pic" viewBox="0 0 36 36" aria-hidden="true">{inner}</svg>
 }
 
+const PICS = ['present', 'absent', 'scum', 'deadFish', 'standingWater', 'none']
+const hasPic = (k: string) => PICS.includes(k) || /^\d+-\d+-percent$/.test(k)
+
 export default function FieldCheck({ id }: { id: string }) {
   const { t, d } = useI18n()
   const [site, setSite] = useState<Site | null | undefined>(undefined)
@@ -123,8 +126,10 @@ export default function FieldCheck({ id }: { id: string }) {
                 return (
                   <label key={o} className={`choice${o === 'unsure' ? ' unsure' : ''}`}>
                     <input id={i === 0 ? `field-${q.key}` : undefined} type={multi ? 'checkbox' : 'radio'} name={q.key} checked={checked} onChange={onChange} />
-                    {o !== 'unsure' && <Pic k={o} />}
-                    <span>{label}</span>
+                    {o !== 'unsure' && hasPic(o) && q.key !== 'feelings' && <Pic k={o} />}
+                    {typeof label === 'string' && label.includes(': ')
+                      ? <span><strong>{label.split(': ')[0]}</strong><span className="rest">: {label.split(': ').slice(1).join(': ')}</span></span>
+                      : <span>{label}</span>}
                   </label>
                 )
               })}

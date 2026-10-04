@@ -142,3 +142,13 @@ describe('lower-scoring sites nearby', () => {
     expect(lowerNearby(near, [hi, far, near])).toEqual([])
   })
 })
+
+describe('OneAquaHealth app questions', () => {
+  it('codes the overall view with the app’s own ENORA codes and feelings with local codes', () => {
+    const b = buildBundle(site, { ...check, answers: { ...check.answers, overallAssessment: 'MODERATE', feelings: ['serenity', 'joy'] } })
+    const obs = (code: string) => b.entry.find((e: any) => e.resource.code?.coding?.[0].code === code).resource
+    expect(obs('overallAssessment').valueCodeableConcept.coding[0]).toEqual({ system: 'https://api.enora-oah.eu/api/citizens/stream_assessments', code: 'MODERATE' })
+    expect(obs('feelings').valueCodeableConcept.coding.map((c: any) => c.code)).toEqual(['serenity', 'joy'])
+    expect(obs('feelings').valueCodeableConcept.coding[0].system).toBe('https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local')
+  })
+})

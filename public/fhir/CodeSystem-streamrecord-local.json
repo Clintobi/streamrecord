@@ -48,7 +48,37 @@
     {
       "code": "none",
       "display": "None of these",
-      "definition": "None of the other signs were seen."
+      "definition": "None of the other signs, or none of the feelings, apply."
+    },
+    {
+      "code": "overallAssessment",
+      "display": "Overall assessment of the stream",
+      "definition": "Question code for the resident's overall view, answered with the OneAquaHealth Citizen Science App's own codes (GOOD, MODERATE, POOR) from the ENORA API."
+    },
+    {
+      "code": "feelings",
+      "display": "How the resident feels at the stream",
+      "definition": "Question code for the feelings the OneAquaHealth app asks about, to relate ecosystem quality to wellbeing."
+    },
+    {
+      "code": "joy",
+      "display": "Joy",
+      "definition": "The resident feels joy at the stream."
+    },
+    {
+      "code": "serenity",
+      "display": "Calm",
+      "definition": "The resident feels calm (serenity) at the stream."
+    },
+    {
+      "code": "anger",
+      "display": "Anger",
+      "definition": "The resident feels angry at the state of the stream."
+    },
+    {
+      "code": "fear",
+      "display": "Fear or unease",
+      "definition": "The resident feels afraid or uneasy at the stream."
     }
   ]
 }

@@ -36,11 +36,11 @@ export function valueFor(qKey: string, ans: unknown): R {
   const q = QUESTIONS.find((x) => x.key === qKey)!
   if (q.kind === 'temperature') return { valueQuantity: { value: ans as number, unit: '°C', system: 'http://unitsofmeasure.org', code: 'Cel' } }
   if (q.kind === 'multi') {
-    const codes = (ans as string[]).map((c) => ({ system: LOCAL_CS, code: c }))
+    const codes = (ans as string[]).map((c) => ({ system: q.answerSystem || LOCAL_CS, code: c }))
     return { valueCodeableConcept: { coding: codes, text: (ans as string[]).join(', ') } }
   }
-  // presence and band answers use OAH codes (present/absent, NN-NN-percent)
-  return { valueCodeableConcept: { coding: [{ system: OAH_CS, code: ans as string }] } }
+  // presence and band answers: OAH codes (present/absent, NN-NN-percent) or the app's assessment codes
+  return { valueCodeableConcept: { coding: [{ system: q.answerSystem || OAH_CS, code: ans as string }] } }
 }
 
 export function buildBundle(site: Site, check: Check): R {
@@ -79,8 +79,8 @@ export function buildBundle(site: Site, check: Check): R {
       const item: R = { linkId: q.key }
       if (a === 'unsure') return item // no answer recorded; the Observation carries dataAbsentReason
       if (q.kind === 'temperature') item.answer = [{ valueQuantity: { value: a, unit: '°C', system: 'http://unitsofmeasure.org', code: 'Cel' } }]
-      else if (q.kind === 'multi') item.answer = (a as string[]).map((c) => ({ valueCoding: { system: LOCAL_CS, code: c } }))
-      else item.answer = [{ valueCoding: { system: OAH_CS, code: a } }]
+      else if (q.kind === 'multi') item.answer = (a as string[]).map((c) => ({ valueCoding: { system: q.answerSystem || LOCAL_CS, code: c } }))
+      else item.answer = [{ valueCoding: { system: q.answerSystem || OAH_CS, code: a } }]
       return item
     }),
   }

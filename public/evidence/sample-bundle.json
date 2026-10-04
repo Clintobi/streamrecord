@@ -113,6 +113,28 @@
             ]
           },
           {
+            "linkId": "overallAssessment",
+            "answer": [
+              {
+                "valueCoding": {
+                  "system": "https://api.enora-oah.eu/api/citizens/stream_assessments",
+                  "code": "MODERATE"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "feelings",
+            "answer": [
+              {
+                "valueCoding": {
+                  "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+                  "code": "serenity"
+                }
+              }
+            ]
+          },
+          {
             "linkId": "waterTemperature",
             "answer": [
               {
@@ -471,6 +493,119 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:9af83ff4-d76a-4e06-ad92-31f28f2f8d4e",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">overallAssessment: MODERATE (citizen check, preliminary)</div>"
+        },
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+                "code": "citizen-science",
+                "display": "Citizen science"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+              "code": "overallAssessment"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:d4f88c11-0802-48d3-acfa-94c22cb98d9c"
+        },
+        "effectiveDateTime": "2026-10-04T12:00:00Z",
+        "performer": [
+          {
+            "display": "Anonymous citizen observer (StreamRecord, no account)"
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "urn:uuid:21d92b78-7905-4b52-a8dc-b02a8674e596"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://api.enora-oah.eu/api/citizens/stream_assessments",
+              "code": "MODERATE"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0aba263c-d75a-4a7a-ade0-2c46195d62fa",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">feelings: serenity (citizen check, preliminary)</div>"
+        },
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+                "code": "citizen-science",
+                "display": "Citizen science"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+              "code": "feelings"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:d4f88c11-0802-48d3-acfa-94c22cb98d9c"
+        },
+        "effectiveDateTime": "2026-10-04T12:00:00Z",
+        "performer": [
+          {
+            "display": "Anonymous citizen observer (StreamRecord, no account)"
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "urn:uuid:21d92b78-7905-4b52-a8dc-b02a8674e596"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+              "code": "serenity"
+            }
+          ],
+          "text": "serenity"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
       "fullUrl": "urn:uuid:7ad8f386-1d34-4958-a7ec-6adef386622e",
       "resource": {
         "resourceType": "Observation",
@@ -579,6 +714,12 @@
           },
           {
             "reference": "urn:uuid:f9e235d1-ee2b-4c73-a7c9-59a22ea0143c"
+          },
+          {
+            "reference": "urn:uuid:9af83ff4-d76a-4e06-ad92-31f28f2f8d4e"
+          },
+          {
+            "reference": "urn:uuid:0aba263c-d75a-4a7a-ade0-2c46195d62fa"
           },
           {
             "reference": "urn:uuid:7ad8f386-1d34-4958-a7ec-6adef386622e"

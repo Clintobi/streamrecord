@@ -44,7 +44,7 @@
     "stripNote": "Elke stip is een locatie. Deze locatie is de grote stip. Download de gegevens als CSV.",
     "downloadCsv": "CSV downloaden",
     "checkTitle": "Beekcontrole van 90 seconden",
-    "checkIntro": "Zeven korte vragen. Weet ik niet is een nuttig antwoord. Er gaat niets van je telefoon af, tenzij je ervoor kiest het te versturen.",
+    "checkIntro": "Negen korte vragen. Weet ik niet is een nuttig antwoord. Er gaat niets van je telefoon af, tenzij je ervoor kiest het te versturen.",
     "start": "Beginnen",
     "next": "Verder",
     "back": "Terug",
@@ -183,7 +183,9 @@
     "readAloud": "Lees het voor",
     "stopReading": "Stop met voorlezen",
     "nearbyTitle": "Beken in de buurt met een lagere labscore",
-    "nearbyNote": "Afstand in rechte lijn. Deze scores komen uit hetzelfde onderzoek van 2023 en zeggen niet dat water vandaag veilig is."
+    "nearbyNote": "Afstand in rechte lijn. Deze scores komen uit hetzelfde onderzoek van 2023 en zeggen niet dat water vandaag veilig is.",
+    "residentsView": "Totaaloordeel van bewoners",
+    "residentsFeel": "Hoe bewoners zich hier voelden"
   },
   "questions": {
     "foam": {
@@ -246,6 +248,26 @@
       "q": "Watertemperatuur, als je een thermometer hebt",
       "hint": "Optioneel. In graden Celsius. Sla over als je er geen hebt.",
       "a": {}
+    },
+    "overallAssessment": {
+      "q": "Hoe is deze beek over het geheel?",
+      "hint": "Uw eigen oordeel, nu u goed hebt gekeken. Dit zijn de drie antwoorden van de OneAquaHealth-app.",
+      "a": {
+        "GOOD": "Goed: de onderdelen van een gezonde beek zijn er: oeverplanten, een natuurlijke bedding, goed water, dieren",
+        "MODERATE": "Matig: enkele veranderingen, maar nog vol leven, met planten op de oevers en water dat er goed uitziet",
+        "POOR": "Slecht: sterk aangepast of betonnen, oeverplanten en leefgebied verdwenen, vervuild"
+      }
+    },
+    "feelings": {
+      "q": "Hoe voelt u zich hier?",
+      "hint": "Kies wat past. OneAquaHealth vraagt dit om de gezondheid van een beek te koppelen aan hoe mensen zich erbij voelen.",
+      "a": {
+        "joy": "Blij",
+        "serenity": "Rustig",
+        "anger": "Boos",
+        "fear": "Ongemakkelijk of bang",
+        "none": "Geen van deze"
+      }
     }
   },
   "findings": {

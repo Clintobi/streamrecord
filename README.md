@@ -46,14 +46,16 @@ flowchart LR
   - **Official translations:** in Portuguese, Italian, Dutch, Norwegian and French the quotes are OneAquaHealth's own translations from the multilingual edition (Zenodo 10.5281/zenodo.22025388). A script checked all 60 against their cited pages.
   - **Readings:** every reading is built on OneAquaHealth's own outputs: the lab health-risk scores from the ENORA API, the Policy Brief, the Catalogue of Measures and the indicator factsheets. Each finding is explained for people, for animals and for the stream itself, with a printable version for a GP or public-health officer.
 - **Track 7.** Each citizen check becomes a FHIR R4 transaction Bundle. The OneAquaHealth IG is pinned to commit `b907cf0`, the Bundle is validated on two public servers with 0 errors, and every local code is listed with the reason it exists.
-- **Track 1.** A 90-second field check with one question per screen and "Not sure" on every coded question. It works offline and needs no account.
+- **Track 1.** A 90-second field check with one question per screen and "Not sure" on every coded question. It works offline and needs no account. It ends with the OneAquaHealth Citizen Science App's own last two questions:
+  - the resident's **overall view**, coded with the app's GOOD / MODERATE / POOR codes exactly as the ENORA API publishes them;
+  - **how they feel at the stream** (the app's joy, calm, anger and fear), which OneAquaHealth uses to link ecosystem quality to wellbeing.
 
 ## 2. Try it in 60 seconds
 
 1. Open https://streamrecord.vercel.app on a phone.
 2. Pick **Coimbra**, then any site in the list. You get the lab health-risk score, where it sits among the city's sites, and the date the scientists last sampled it.
 3. Tap **Ler em português** to read the page in the city's language. The translations are marked as machine-assisted.
-4. Tap **Do a 90-second check here** and answer the seven questions. Choose **Not sure** at least once.
+4. Tap **Do a 90-second check here** and answer the nine questions. Choose **Not sure** at least once.
 5. After saving, tap **Show the FHIR record** to see the Bundle the check produced. The site page now shows what you saw, and what it can mean for people, animals and the stream.
 6. Open **Clinician reading (printable)** and print it (A4 print layout).
 7. Open **Review**, press **Add a sample check to try the review**, and confirm or reject it with a reason. The site page then shows the finding as confirmed, or stops counting it.

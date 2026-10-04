@@ -44,7 +44,7 @@
     "stripNote": "Each dot is a site. This site is the large dot. Download the data as CSV.",
     "downloadCsv": "Download CSV",
     "checkTitle": "90-second stream check",
-    "checkIntro": "Seven short questions. Not sure is a useful answer. Nothing leaves your phone unless you choose to send it.",
+    "checkIntro": "Nine short questions. Not sure is a useful answer. Nothing leaves your phone unless you choose to send it.",
     "start": "Start",
     "next": "Continue",
     "back": "Back",
@@ -185,7 +185,9 @@
     "readAloud": "Read it to me",
     "stopReading": "Stop reading",
     "nearbyTitle": "Nearby streams with a lower lab score",
-    "nearbyNote": "Straight-line distance. These scores are from the same 2023 survey and are not a statement that any water is safe today."
+    "nearbyNote": "Straight-line distance. These scores are from the same 2023 survey and are not a statement that any water is safe today.",
+    "residentsView": "Residents’ overall view",
+    "residentsFeel": "How residents felt here"
   },
   "questions": {
     "foam": {
@@ -248,6 +250,26 @@
       "q": "Water temperature, if you have a thermometer",
       "hint": "Optional. In degrees Celsius. Skip if you don't have one.",
       "a": {}
+    },
+    "overallAssessment": {
+      "q": "Overall, how is this stream?",
+      "hint": "Your own view, now that you have looked closely. These are the OneAquaHealth app’s three answers.",
+      "a": {
+        "GOOD": "Good: the parts of a healthy stream are there: bankside plants, a natural channel, good water, wildlife",
+        "MODERATE": "Moderate: some changes, but still full of life, with plants on the banks and water that looks good",
+        "POOR": "Poor: heavily modified or concreted, bankside plants and habitats lost, polluted"
+      }
+    },
+    "feelings": {
+      "q": "How do you feel here?",
+      "hint": "Choose any. OneAquaHealth asks this to link the health of a stream to how people feel near it.",
+      "a": {
+        "joy": "Happy",
+        "serenity": "Calm",
+        "anger": "Angry",
+        "fear": "Uneasy or afraid",
+        "none": "None of these"
+      }
     }
   },
   "findings": {

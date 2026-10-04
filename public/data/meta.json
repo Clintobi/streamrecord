@@ -327,7 +327,7 @@
     "profile": "base R4; location-oah rules checked by unit test (IG not on server)",
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "QuestionnaireResponse",
@@ -335,7 +335,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 1,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Observation:foam",
@@ -343,7 +343,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 3,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Observation:colourSmell",
@@ -351,7 +351,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 2,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Observation:riparianVegetation",
@@ -359,7 +359,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 3,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Observation:macrophytes",
@@ -367,7 +367,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 3,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Observation:invasiveOrganisms",
@@ -375,7 +375,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 3,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Observation:otherSigns",
@@ -383,7 +383,23 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 3,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
+   },
+   {
+    "resource": "Observation:overallAssessment",
+    "server": "hapi.fhir.org/baseR4",
+    "profile": "base R4",
+    "errors": 0,
+    "warnings": 3,
+    "at": "2026-10-04 21:02Z"
+   },
+   {
+    "resource": "Observation:feelings",
+    "server": "hapi.fhir.org/baseR4",
+    "profile": "base R4",
+    "errors": 0,
+    "warnings": 3,
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Observation:waterTemperature",
@@ -391,7 +407,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 2,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Device",
@@ -399,7 +415,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Provenance",
@@ -407,7 +423,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Location",
@@ -415,7 +431,7 @@
     "profile": "base R4; location-oah rules checked by unit test (IG not on server)",
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "QuestionnaireResponse",
@@ -423,7 +439,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 1,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Observation:foam",
@@ -431,7 +447,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Observation:colourSmell",
@@ -439,7 +455,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Observation:riparianVegetation",
@@ -447,7 +463,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Observation:macrophytes",
@@ -455,7 +471,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Observation:invasiveOrganisms",
@@ -463,7 +479,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Observation:otherSigns",
@@ -471,7 +487,23 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
+   },
+   {
+    "resource": "Observation:overallAssessment",
+    "server": "sandbox.hl7europe.eu/oneaquahealth/fhir",
+    "profile": "base R4",
+    "errors": 0,
+    "warnings": 0,
+    "at": "2026-10-04 21:02Z"
+   },
+   {
+    "resource": "Observation:feelings",
+    "server": "sandbox.hl7europe.eu/oneaquahealth/fhir",
+    "profile": "base R4",
+    "errors": 0,
+    "warnings": 0,
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Observation:waterTemperature",
@@ -479,7 +511,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Device",
@@ -487,7 +519,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Provenance",
@@ -495,31 +527,31 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Bundle (check as recorded, preliminary)",
     "server": "hapi.fhir.org/baseR4",
     "profile": "base R4",
     "errors": 0,
-    "warnings": 20,
-    "at": "2026-10-04 18:14Z"
+    "warnings": 26,
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Bundle (confirmed by a reviewer, final)",
     "server": "hapi.fhir.org/baseR4",
     "profile": "base R4",
     "errors": 0,
-    "warnings": 20,
-    "at": "2026-10-04 18:14Z"
+    "warnings": 26,
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Bundle (rejected by a reviewer, entered-in-error)",
     "server": "hapi.fhir.org/baseR4",
     "profile": "base R4",
     "errors": 0,
-    "warnings": 20,
-    "at": "2026-10-04 18:14Z"
+    "warnings": 26,
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Bundle (check as recorded, preliminary)",
@@ -527,7 +559,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 2,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Bundle (confirmed by a reviewer, final)",
@@ -535,7 +567,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 2,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    },
    {
     "resource": "Bundle (rejected by a reviewer, entered-in-error)",
@@ -543,7 +575,7 @@
     "profile": "base R4",
     "errors": 0,
     "warnings": 2,
-    "at": "2026-10-04 18:14Z"
+    "at": "2026-10-04 21:02Z"
    }
   ],
   "tests": "18 passing (vitest): bundle structure, narratives, references, Not sure → dataAbsentReason, OAH codes, UCUM, status, conditional create, determinism, finding rules, location-oah rules, second-look rules, review statuses and verifier Provenance, unnamed sites",

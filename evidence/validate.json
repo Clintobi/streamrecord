@@ -6,7 +6,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04T18:14:29.683Z",
+    "at": "2026-10-04T21:02:00.352Z",
     "errorText": [],
     "warningText": []
   },
@@ -17,7 +17,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 1,
-    "at": "2026-10-04T18:14:29.981Z",
+    "at": "2026-10-04T21:02:00.702Z",
     "errorText": [],
     "warningText": [
       "The questionnaire 'https://streamrecord.vercel.app/fhir/Questionnaire/streamrecord-check|0.1.0' could not be resolved, so no validation can be performed against the base questionnaire"
@@ -30,7 +30,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 3,
-    "at": "2026-10-04T18:14:30.320Z",
+    "at": "2026-10-04T21:02:01.018Z",
     "errorText": [],
     "warningText": [
       "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
@@ -45,7 +45,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 2,
-    "at": "2026-10-04T18:14:30.665Z",
+    "at": "2026-10-04T21:02:01.321Z",
     "errorText": [],
     "warningText": [
       "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
@@ -59,7 +59,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 3,
-    "at": "2026-10-04T18:14:31.039Z",
+    "at": "2026-10-04T21:02:01.634Z",
     "errorText": [],
     "warningText": [
       "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
@@ -74,7 +74,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 3,
-    "at": "2026-10-04T18:14:31.291Z",
+    "at": "2026-10-04T21:02:02.026Z",
     "errorText": [],
     "warningText": [
       "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
@@ -89,7 +89,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 3,
-    "at": "2026-10-04T18:14:31.586Z",
+    "at": "2026-10-04T21:02:02.333Z",
     "errorText": [],
     "warningText": [
       "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
@@ -104,12 +104,42 @@
     "http": 200,
     "errors": 0,
     "warnings": 3,
-    "at": "2026-10-04T18:14:31.950Z",
+    "at": "2026-10-04T21:02:02.676Z",
     "errorText": [],
     "warningText": [
       "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
       "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#otherSigns'",
       "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#scum'"
+    ]
+  },
+  {
+    "resource": "Observation:overallAssessment",
+    "server": "https://hapi.fhir.org/baseR4",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 3,
+    "at": "2026-10-04T21:02:03.015Z",
+    "errorText": [],
+    "warningText": [
+      "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
+      "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#overallAssessment'",
+      "CodeSystem is unknown and can't be validated: https://api.enora-oah.eu/api/citizens/stream_assessments for 'https://api.enora-oah.eu/api/citizens/stream_assessments#MODERATE'"
+    ]
+  },
+  {
+    "resource": "Observation:feelings",
+    "server": "https://hapi.fhir.org/baseR4",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 3,
+    "at": "2026-10-04T21:02:03.346Z",
+    "errorText": [],
+    "warningText": [
+      "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
+      "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#feelings'",
+      "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#serenity'"
     ]
   },
   {
@@ -119,7 +149,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 2,
-    "at": "2026-10-04T18:14:32.345Z",
+    "at": "2026-10-04T21:02:04.167Z",
     "errorText": [],
     "warningText": [
       "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
@@ -133,7 +163,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04T18:14:33.020Z",
+    "at": "2026-10-04T21:02:04.486Z",
     "errorText": [],
     "warningText": []
   },
@@ -144,7 +174,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04T18:14:33.645Z",
+    "at": "2026-10-04T21:02:04.797Z",
     "errorText": [],
     "warningText": []
   },
@@ -155,7 +185,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04T18:14:34.844Z",
+    "at": "2026-10-04T21:02:09.089Z",
     "errorText": [],
     "warningText": []
   },
@@ -166,7 +196,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 1,
-    "at": "2026-10-04T18:14:35.321Z",
+    "at": "2026-10-04T21:02:09.411Z",
     "errorText": [],
     "warningText": [
       "The questionnaire 'https://streamrecord.vercel.app/fhir/Questionnaire/streamrecord-check|0.1.0' could not be resolved, so no validation can be performed against the base questionnaire"
@@ -179,7 +209,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04T18:14:35.559Z",
+    "at": "2026-10-04T21:02:09.717Z",
     "errorText": [],
     "warningText": []
   },
@@ -190,7 +220,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04T18:14:35.893Z",
+    "at": "2026-10-04T21:02:10.076Z",
     "errorText": [],
     "warningText": []
   },
@@ -201,7 +231,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04T18:14:36.167Z",
+    "at": "2026-10-04T21:02:10.384Z",
     "errorText": [],
     "warningText": []
   },
@@ -212,7 +242,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04T18:14:36.538Z",
+    "at": "2026-10-04T21:02:10.696Z",
     "errorText": [],
     "warningText": []
   },
@@ -223,7 +253,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04T18:14:36.777Z",
+    "at": "2026-10-04T21:02:11.030Z",
     "errorText": [],
     "warningText": []
   },
@@ -234,7 +264,29 @@
     "http": 200,
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04T18:14:37.111Z",
+    "at": "2026-10-04T21:02:11.353Z",
+    "errorText": [],
+    "warningText": []
+  },
+  {
+    "resource": "Observation:overallAssessment",
+    "server": "https://sandbox.hl7europe.eu/oneaquahealth/fhir",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 0,
+    "at": "2026-10-04T21:02:12.244Z",
+    "errorText": [],
+    "warningText": []
+  },
+  {
+    "resource": "Observation:feelings",
+    "server": "https://sandbox.hl7europe.eu/oneaquahealth/fhir",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 0,
+    "at": "2026-10-04T21:02:12.598Z",
     "errorText": [],
     "warningText": []
   },
@@ -245,7 +297,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04T18:14:37.551Z",
+    "at": "2026-10-04T21:02:12.918Z",
     "errorText": [],
     "warningText": []
   },
@@ -256,7 +308,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04T18:14:38.211Z",
+    "at": "2026-10-04T21:02:13.781Z",
     "errorText": [],
     "warningText": []
   },
@@ -267,7 +319,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 0,
-    "at": "2026-10-04T18:14:38.656Z",
+    "at": "2026-10-04T21:02:16.665Z",
     "errorText": [],
     "warningText": []
   },
@@ -277,13 +329,14 @@
     "note": "base R4",
     "http": 200,
     "errors": 0,
-    "warnings": 20,
-    "at": "2026-10-04T18:14:39.905Z",
+    "warnings": 26,
+    "at": "2026-10-04T21:02:22.027Z",
     "errorText": [],
     "warningText": [
       "The questionnaire 'https://streamrecord.vercel.app/fhir/Questionnaire/streamreco",
       "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fh",
-      "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSyst"
+      "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSyst",
+      "CodeSystem is unknown and can't be validated: https://api.enora-oah.eu/api/citiz"
     ]
   },
   {
@@ -292,13 +345,14 @@
     "note": "base R4",
     "http": 200,
     "errors": 0,
-    "warnings": 20,
-    "at": "2026-10-04T18:14:40.283Z",
+    "warnings": 26,
+    "at": "2026-10-04T21:02:23.241Z",
     "errorText": [],
     "warningText": [
       "The questionnaire 'https://streamrecord.vercel.app/fhir/Questionnaire/streamreco",
       "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fh",
-      "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSyst"
+      "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSyst",
+      "CodeSystem is unknown and can't be validated: https://api.enora-oah.eu/api/citiz"
     ]
   },
   {
@@ -307,13 +361,14 @@
     "note": "base R4",
     "http": 200,
     "errors": 0,
-    "warnings": 20,
-    "at": "2026-10-04T18:14:40.564Z",
+    "warnings": 26,
+    "at": "2026-10-04T21:02:23.607Z",
     "errorText": [],
     "warningText": [
       "The questionnaire 'https://streamrecord.vercel.app/fhir/Questionnaire/streamreco",
       "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fh",
-      "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSyst"
+      "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSyst",
+      "CodeSystem is unknown and can't be validated: https://api.enora-oah.eu/api/citiz"
     ]
   },
   {
@@ -323,7 +378,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 2,
-    "at": "2026-10-04T18:14:41.081Z",
+    "at": "2026-10-04T21:02:25.374Z",
     "errorText": [],
     "warningText": [
       "The questionnaire 'https://streamrecord.vercel.app/fhir/Questionnaire/streamreco"
@@ -336,7 +391,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 2,
-    "at": "2026-10-04T18:14:41.794Z",
+    "at": "2026-10-04T21:02:25.725Z",
     "errorText": [],
     "warningText": [
       "The questionnaire 'https://streamrecord.vercel.app/fhir/Questionnaire/streamreco"
@@ -349,7 +404,7 @@
     "http": 200,
     "errors": 0,
     "warnings": 2,
-    "at": "2026-10-04T18:14:42.062Z",
+    "at": "2026-10-04T21:02:27.761Z",
     "errorText": [],
     "warningText": [
       "The questionnaire 'https://streamrecord.vercel.app/fhir/Questionnaire/streamreco"

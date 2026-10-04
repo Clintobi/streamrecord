@@ -44,7 +44,7 @@
     "stripNote": "Ogni punto è un sito. Questo sito è il punto grande. Scarica i dati in formato CSV.",
     "downloadCsv": "Scarica CSV",
     "checkTitle": "Controllo del torrente in 90 secondi",
-    "checkIntro": "Sette domande brevi. Non so è una risposta utile. Nulla lascia il tuo telefono, a meno che tu non scelga di inviarlo.",
+    "checkIntro": "Nove domande brevi. Non so è una risposta utile. Nulla lascia il tuo telefono, a meno che tu non scelga di inviarlo.",
     "start": "Inizia",
     "next": "Continua",
     "back": "Indietro",
@@ -183,7 +183,9 @@
     "readAloud": "Leggimelo",
     "stopReading": "Ferma la lettura",
     "nearbyTitle": "Torrenti vicini con un punteggio di laboratorio più basso",
-    "nearbyNote": "Distanza in linea d’aria. Questi punteggi provengono dalla stessa indagine del 2023 e non dicono che un’acqua sia sicura oggi."
+    "nearbyNote": "Distanza in linea d’aria. Questi punteggi provengono dalla stessa indagine del 2023 e non dicono che un’acqua sia sicura oggi.",
+    "residentsView": "Parere complessivo dei residenti",
+    "residentsFeel": "Come si sono sentiti qui i residenti"
   },
   "questions": {
     "foam": {
@@ -246,6 +248,26 @@
       "q": "Temperatura dell'acqua, se hai un termometro",
       "hint": "Facoltativo. In gradi Celsius. Salta se non ne hai uno.",
       "a": {}
+    },
+    "overallAssessment": {
+      "q": "Nel complesso, come sta questo torrente?",
+      "hint": "La tua opinione, ora che hai osservato da vicino. Sono le tre risposte dell’app di OneAquaHealth.",
+      "a": {
+        "GOOD": "Buono: ci sono gli elementi di un torrente sano: piante sulle sponde, alveo naturale, acqua buona, fauna",
+        "MODERATE": "Moderato: qualche alterazione, ma ancora pieno di vita, con piante sulle sponde e acqua dall’aspetto buono",
+        "POOR": "Scarso: molto modificato o cementato, piante e habitat delle sponde persi, inquinato"
+      }
+    },
+    "feelings": {
+      "q": "Come ti senti qui?",
+      "hint": "Scegli quelle che vuoi. OneAquaHealth lo chiede per collegare la salute del torrente al benessere delle persone.",
+      "a": {
+        "joy": "Felice",
+        "serenity": "Calmo",
+        "anger": "Arrabbiato",
+        "fear": "A disagio o impaurito",
+        "none": "Nessuna di queste"
+      }
     }
   },
   "findings": {

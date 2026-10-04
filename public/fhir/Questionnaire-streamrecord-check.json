@@ -282,6 +282,105 @@
       ]
     },
     {
+      "linkId": "overallAssessment",
+      "text": "Overall, how is this stream?",
+      "required": true,
+      "code": [
+        {
+          "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+          "code": "overallAssessment"
+        }
+      ],
+      "type": "choice",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "system": "https://api.enora-oah.eu/api/citizens/stream_assessments",
+            "code": "GOOD",
+            "display": "Good: the parts of a healthy stream are there: bankside plants, a natural channel, good water, wildlife"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "https://api.enora-oah.eu/api/citizens/stream_assessments",
+            "code": "MODERATE",
+            "display": "Moderate: some changes, but still full of life, with plants on the banks and water that looks good"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "https://api.enora-oah.eu/api/citizens/stream_assessments",
+            "code": "POOR",
+            "display": "Poor: heavily modified or concreted, bankside plants and habitats lost, polluted"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+            "code": "asked-unknown",
+            "display": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "feelings",
+      "text": "How do you feel here?",
+      "required": true,
+      "code": [
+        {
+          "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+          "code": "feelings"
+        }
+      ],
+      "type": "choice",
+      "repeats": true,
+      "answerOption": [
+        {
+          "valueCoding": {
+            "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+            "code": "joy",
+            "display": "Happy"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+            "code": "serenity",
+            "display": "Calm"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+            "code": "anger",
+            "display": "Angry"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+            "code": "fear",
+            "display": "Uneasy or afraid"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+            "code": "none",
+            "display": "None of these"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+            "code": "asked-unknown",
+            "display": "Not sure"
+          }
+        }
+      ]
+    },
+    {
       "linkId": "waterTemperature",
       "text": "Water temperature, if you have a thermometer",
       "required": false,

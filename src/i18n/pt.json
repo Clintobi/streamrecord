@@ -44,7 +44,7 @@
     "stripNote": "Cada ponto é um local. Este local é o ponto maior. Descarregue os dados em CSV.",
     "downloadCsv": "Descarregar CSV",
     "checkTitle": "Verificação da ribeira em 90 segundos",
-    "checkIntro": "Sete perguntas curtas. Não sei é uma resposta útil. Nada sai do seu telemóvel, a não ser que decida enviar.",
+    "checkIntro": "Nove perguntas curtas. Não sei é uma resposta útil. Nada sai do seu telemóvel, a não ser que decida enviar.",
     "start": "Começar",
     "next": "Continuar",
     "back": "Voltar",
@@ -183,7 +183,9 @@
     "readAloud": "Ler em voz alta",
     "stopReading": "Parar a leitura",
     "nearbyTitle": "Ribeiras próximas com pontuação de laboratório mais baixa",
-    "nearbyNote": "Distância em linha reta. Estas pontuações são do mesmo estudo de 2023 e não afirmam que alguma água seja segura hoje."
+    "nearbyNote": "Distância em linha reta. Estas pontuações são do mesmo estudo de 2023 e não afirmam que alguma água seja segura hoje.",
+    "residentsView": "Opinião geral dos residentes",
+    "residentsFeel": "Como os residentes se sentiram aqui"
   },
   "questions": {
     "foam": {
@@ -246,6 +248,26 @@
       "q": "Temperatura da água, se tiver um termómetro",
       "hint": "Opcional. Em graus Celsius. Salte se não tiver termómetro.",
       "a": {}
+    },
+    "overallAssessment": {
+      "q": "No geral, como está esta ribeira?",
+      "hint": "A sua opinião, agora que observou com atenção. São as três respostas da app da OneAquaHealth.",
+      "a": {
+        "GOOD": "Boa: estão lá as partes de uma ribeira saudável: vegetação nas margens, leito natural, boa água, vida selvagem",
+        "MODERATE": "Moderada: algumas alterações, mas ainda cheia de vida, com plantas nas margens e água com bom aspeto",
+        "POOR": "Má: muito alterada ou cimentada, sem vegetação nem habitats nas margens, poluída"
+      }
+    },
+    "feelings": {
+      "q": "Como se sente aqui?",
+      "hint": "Escolha as que quiser. A OneAquaHealth pergunta isto para ligar a saúde da ribeira ao bem-estar das pessoas.",
+      "a": {
+        "joy": "Feliz",
+        "serenity": "Calmo",
+        "anger": "Zangado",
+        "fear": "Inquieto ou com medo",
+        "none": "Nenhuma destas"
+      }
     }
   },
   "findings": {

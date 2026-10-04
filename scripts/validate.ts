@@ -7,7 +7,7 @@ const sites = JSON.parse(readFileSync('public/data/sites-coimbra.json', 'utf8'))
 const site = sites.find((s) => s.id === 'C1') || sites[0]
 const check: Check = {
   id: 'C1-evidence', siteId: site.id, createdAt: '2026-10-04T12:00:00Z', status: 'preliminary',
-  answers: { foam: 'present', colourSmell: 'unsure', riparianVegetation: '21-40-percent', macrophytes: '41-60-percent', invasiveOrganisms: 'absent', other: ['scum'], waterTemperature: 18.5 },
+  answers: { foam: 'present', colourSmell: 'unsure', riparianVegetation: '21-40-percent', macrophytes: '41-60-percent', invasiveOrganisms: 'absent', other: ['scum'], overallAssessment: 'MODERATE', feelings: ['serenity'], waterTemperature: 18.5 },
 }
 const bundle = buildBundle(site, check)
 writeFileSync('evidence/sample-bundle.json', JSON.stringify(bundle, null, 2))

@@ -44,7 +44,7 @@
     "stripNote": "Chaque point est un site. Ce site est le grand point. Téléchargez les données au format CSV.",
     "downloadCsv": "Télécharger le CSV",
     "checkTitle": "Relevé du ruisseau en 90 secondes",
-    "checkIntro": "Sept questions courtes. Je ne sais pas est une réponse utile. Rien ne quitte votre téléphone, sauf si vous choisissez de l'envoyer.",
+    "checkIntro": "Neuf questions courtes. Je ne sais pas est une réponse utile. Rien ne quitte votre téléphone, sauf si vous choisissez de l'envoyer.",
     "start": "Commencer",
     "next": "Continuer",
     "back": "Retour",
@@ -183,7 +183,9 @@
     "readAloud": "Lisez-le-moi",
     "stopReading": "Arrêter la lecture",
     "nearbyTitle": "Ruisseaux proches avec un score de laboratoire plus bas",
-    "nearbyNote": "Distance à vol d’oiseau. Ces scores viennent de la même étude de 2023 et ne disent pas qu’une eau est sûre aujourd’hui."
+    "nearbyNote": "Distance à vol d’oiseau. Ces scores viennent de la même étude de 2023 et ne disent pas qu’une eau est sûre aujourd’hui.",
+    "residentsView": "Avis général des habitants",
+    "residentsFeel": "Ce que les habitants ont ressenti ici"
   },
   "questions": {
     "foam": {
@@ -246,6 +248,26 @@
       "q": "Température de l'eau, si vous avez un thermomètre",
       "hint": "Facultatif. En degrés Celsius. Passez si vous n'en avez pas.",
       "a": {}
+    },
+    "overallAssessment": {
+      "q": "Dans l’ensemble, comment va ce ruisseau ?",
+      "hint": "Votre avis, maintenant que vous avez bien regardé. Ce sont les trois réponses de l’application OneAquaHealth.",
+      "a": {
+        "GOOD": "Bon : les éléments d’un ruisseau sain sont là : végétation des berges, lit naturel, eau de qualité, faune",
+        "MODERATE": "Moyen : quelques altérations, mais encore plein de vie, avec des plantes sur les berges et une eau d’aspect correct",
+        "POOR": "Mauvais : très modifié ou bétonné, végétation et habitats des berges perdus, pollué"
+      }
+    },
+    "feelings": {
+      "q": "Comment vous sentez-vous ici ?",
+      "hint": "Choisissez ce qui convient. OneAquaHealth pose cette question pour relier la santé du ruisseau au bien-être des gens.",
+      "a": {
+        "joy": "Joyeux",
+        "serenity": "Calme",
+        "anger": "En colère",
+        "fear": "Mal à l’aise ou inquiet",
+        "none": "Aucune de ces émotions"
+      }
     }
   },
   "findings": {

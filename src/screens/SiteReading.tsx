@@ -168,6 +168,23 @@ export default function SiteReading({ id }: { id: string }) {
                     {findings.map((f) => <li key={f}><Shape status={confirmed.has(f) ? 'concern' : 'look'} /><span>{F[f]?.label}</span><span className={`tag${confirmed.has(f) ? ' strong' : ''}`}>{confirmed.has(f) ? t('confirmedTag') : t('preliminary')}</span></li>)}
                   </ul>
                 )}
+                {(() => {
+                  // residents' own overall view and feelings, from checks that still count
+                  const live = checks.filter((c) => c.status !== 'entered-in-error')
+                  const Q = d.questions as Record<string, any>
+                  const tally = (key: string, multi: boolean) => {
+                    const n: Record<string, number> = {}
+                    for (const c of live) { const a = c.answers[key]; for (const v of multi ? (Array.isArray(a) ? a : []) : [a]) if (typeof v === 'string' && v !== 'unsure' && v !== 'none') n[v] = (n[v] || 0) + 1 }
+                    return Object.entries(n).map(([k, v]) => `${Q[key]?.a[k]?.split(':')[0]} (${v})`).join(' · ')
+                  }
+                  const view = tally('overallAssessment', false), feel = tally('feelings', true)
+                  return (view || feel) ? (
+                    <dl className="views">
+                      {view && <><dt>{t('residentsView')}</dt><dd>{view}</dd></>}
+                      {feel && <><dt>{t('residentsFeel')}</dt><dd>{feel}</dd></>}
+                    </dl>
+                  ) : null
+                })()}
                 {flags.length > 0 && (
                   <div className="secondlook" role="note">
                     <p className="status look"><Shape status="look" />{t('secondLookSite')}</p>

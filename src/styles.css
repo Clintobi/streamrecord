@@ -395,3 +395,8 @@ nav.main .count, .rq-group h2 .count { display: inline-block; min-width: 1.5em; 
 .nearby li a { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; min-height: 32px; }
 .nearby li a:hover .nm { text-decoration: underline; }
 .nearby > .meta { margin: var(--s1) 0 0; font-size: 0.85rem; }
+
+.views { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; margin: var(--s2) 0 0; font-size: 0.95rem; }
+.views dt { color: var(--ink-2); }
+.views dd { margin: 0; }
+.choice .rest { font-weight: 400; }

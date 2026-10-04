@@ -44,7 +44,7 @@
     "stripNote": "Hvert punkt er et målepunkt. Dette målepunktet er det store punktet. Last ned dataene som CSV.",
     "downloadCsv": "Last ned CSV",
     "checkTitle": "Bekkesjekk på 90 sekunder",
-    "checkIntro": "Sju korte spørsmål. Vet ikke er et nyttig svar. Ingenting forlater telefonen din med mindre du velger å sende det.",
+    "checkIntro": "Ni korte spørsmål. Vet ikke er et nyttig svar. Ingenting forlater telefonen din med mindre du velger å sende det.",
     "start": "Start",
     "next": "Fortsett",
     "back": "Tilbake",
@@ -183,7 +183,9 @@
     "readAloud": "Les det for meg",
     "stopReading": "Stopp opplesningen",
     "nearbyTitle": "Bekker i nærheten med lavere labpoengsum",
-    "nearbyNote": "Avstand i luftlinje. Poengsummene er fra den samme undersøkelsen i 2023 og sier ikke at noe vann er trygt i dag."
+    "nearbyNote": "Avstand i luftlinje. Poengsummene er fra den samme undersøkelsen i 2023 og sier ikke at noe vann er trygt i dag.",
+    "residentsView": "Beboernes helhetsinntrykk",
+    "residentsFeel": "Hvordan beboerne hadde det her"
   },
   "questions": {
     "foam": {
@@ -246,6 +248,26 @@
       "q": "Vanntemperatur, hvis du har et termometer",
       "hint": "Valgfritt. I grader celsius. Hopp over hvis du ikke har et.",
       "a": {}
+    },
+    "overallAssessment": {
+      "q": "Alt i alt, hvordan har denne bekken det?",
+      "hint": "Ditt eget syn, nå som du har sett nøye etter. Dette er de tre svarene i OneAquaHealth-appen.",
+      "a": {
+        "GOOD": "God: delene av en sunn bekk er der: kantvegetasjon, naturlig løp, godt vann, dyreliv",
+        "MODERATE": "Moderat: noen endringer, men fortsatt full av liv, med planter langs breddene og vann som ser bra ut",
+        "POOR": "Dårlig: sterkt endret eller støpt, kantvegetasjon og leveområder borte, forurenset"
+      }
+    },
+    "feelings": {
+      "q": "Hvordan har du det her?",
+      "hint": "Velg det som passer. OneAquaHealth spør om dette for å koble bekkens helse til hvordan folk har det ved den.",
+      "a": {
+        "joy": "Glad",
+        "serenity": "Rolig",
+        "anger": "Sint",
+        "fear": "Urolig eller redd",
+        "none": "Ingen av disse"
+      }
     }
   },
   "findings": {

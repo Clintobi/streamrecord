@@ -26,6 +26,8 @@ export interface CityIndex {
 export const OAH_CS = 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu'
 export const LOCAL_CS = 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local'
 export const DAR_CS = 'http://terminology.hl7.org/CodeSystem/data-absent-reason'
+// the OneAquaHealth Citizen Science App's own overall-assessment codes, as the ENORA API publishes them
+export const ENORA_ASSESS_CS = 'https://api.enora-oah.eu/api/citizens/stream_assessments'
 
 export type QKind = 'presence' | 'band' | 'multi' | 'temperature'
 
@@ -34,6 +36,7 @@ export interface QuestionDef {
   kind: QKind
   // the observation code for this question
   code: { system: string; code: string }
+  answerSystem?: string // code system of the answer codes (temperature has none)
   options: string[] // answer keys, "Not sure" is added by the UI
   optional?: boolean
 }
@@ -41,12 +44,15 @@ export interface QuestionDef {
 export const BANDS = ['0-20-percent', '21-40-percent', '41-60-percent', '61-80-percent', '81-100-percent']
 
 export const QUESTIONS: QuestionDef[] = [
-  { key: 'foam', kind: 'presence', code: { system: OAH_CS, code: 'foam' }, options: ['present', 'absent'] },
-  { key: 'colourSmell', kind: 'presence', code: { system: LOCAL_CS, code: 'colourSmell' }, options: ['present', 'absent'] },
-  { key: 'riparianVegetation', kind: 'band', code: { system: OAH_CS, code: 'riparianVegetation' }, options: BANDS },
-  { key: 'macrophytes', kind: 'band', code: { system: OAH_CS, code: 'macrophytes' }, options: BANDS },
-  { key: 'invasiveOrganisms', kind: 'presence', code: { system: OAH_CS, code: 'invasiveOrganisms' }, options: ['present', 'absent'] },
-  { key: 'other', kind: 'multi', code: { system: LOCAL_CS, code: 'otherSigns' }, options: ['scum', 'deadFish', 'standingWater', 'none'] },
+  { key: 'foam', kind: 'presence', code: { system: OAH_CS, code: 'foam' }, answerSystem: OAH_CS, options: ['present', 'absent'] },
+  { key: 'colourSmell', kind: 'presence', code: { system: LOCAL_CS, code: 'colourSmell' }, answerSystem: OAH_CS, options: ['present', 'absent'] },
+  { key: 'riparianVegetation', kind: 'band', code: { system: OAH_CS, code: 'riparianVegetation' }, answerSystem: OAH_CS, options: BANDS },
+  { key: 'macrophytes', kind: 'band', code: { system: OAH_CS, code: 'macrophytes' }, answerSystem: OAH_CS, options: BANDS },
+  { key: 'invasiveOrganisms', kind: 'presence', code: { system: OAH_CS, code: 'invasiveOrganisms' }, answerSystem: OAH_CS, options: ['present', 'absent'] },
+  { key: 'other', kind: 'multi', code: { system: LOCAL_CS, code: 'otherSigns' }, answerSystem: LOCAL_CS, options: ['scum', 'deadFish', 'standingWater', 'none'] },
+  // the OneAquaHealth app ends with the resident's overall view and how they feel at the stream
+  { key: 'overallAssessment', kind: 'band', code: { system: LOCAL_CS, code: 'overallAssessment' }, answerSystem: ENORA_ASSESS_CS, options: ['GOOD', 'MODERATE', 'POOR'] },
+  { key: 'feelings', kind: 'multi', code: { system: LOCAL_CS, code: 'feelings' }, answerSystem: LOCAL_CS, options: ['joy', 'serenity', 'anger', 'fear', 'none'] },
   { key: 'waterTemperature', kind: 'temperature', code: { system: OAH_CS, code: 'waterTemperature' }, options: [], optional: true },
 ]
 

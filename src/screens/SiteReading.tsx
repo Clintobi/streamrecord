@@ -133,7 +133,7 @@ export default function SiteReading({ id }: { id: string }) {
 
       <section className="block" aria-labelledby="b4">
         <h2 id="b4">{t('b4')}</h2>
-        <p className="meta">{t('b4Intro')}</p>
+        {measures.length > 0 && <p className="meta">{t('b4Intro')}</p>}
         {generalMeasures.length === 0 ? <p className="meta">Catalogue of Measures not loaded.</p> : (
           <ul className="reading">
             {generalMeasures.map((m) => (

@@ -79,11 +79,48 @@ Every quote was checked by script against the single PDF page it cites; see [`co
 
 **`$validate`.** Run by [`scripts/validate.ts`](scripts/validate.ts) on a real bundle for site C1 (Coimbra), with synthetic answers chosen to exercise every value type. The bundle is in [`evidence/sample-bundle.json`](evidence/sample-bundle.json) and the raw results are in [`evidence/validate.json`](evidence/validate.json).
 
-<!-- VALIDATE -->
+| Resource | Server | Checked against | Errors | Warnings | Checked (UTC) |
+|---|---|---|---|---|---|
+| Location | `hapi.fhir.org/baseR4` | base R4; location-oah rules checked by unit test (IG not on server) | 0 | 0 | 2026-10-04 13:06 |
+| QuestionnaireResponse | `hapi.fhir.org/baseR4` | base R4 | 0 | 1 | 2026-10-04 13:06 |
+| Observation:foam | `hapi.fhir.org/baseR4` | base R4 | 0 | 3 | 2026-10-04 13:06 |
+| Observation:colourSmell | `hapi.fhir.org/baseR4` | base R4 | 0 | 2 | 2026-10-04 13:06 |
+| Observation:riparianVegetation | `hapi.fhir.org/baseR4` | base R4 | 0 | 3 | 2026-10-04 13:06 |
+| Observation:macrophytes | `hapi.fhir.org/baseR4` | base R4 | 0 | 3 | 2026-10-04 13:06 |
+| Observation:invasiveOrganisms | `hapi.fhir.org/baseR4` | base R4 | 0 | 3 | 2026-10-04 13:06 |
+| Observation:otherSigns | `hapi.fhir.org/baseR4` | base R4 | 0 | 3 | 2026-10-04 13:06 |
+| Observation:waterTemperature | `hapi.fhir.org/baseR4` | base R4 | 0 | 2 | 2026-10-04 13:06 |
+| Device | `hapi.fhir.org/baseR4` | base R4 | 0 | 0 | 2026-10-04 13:06 |
+| Provenance | `hapi.fhir.org/baseR4` | base R4 | 0 | 0 | 2026-10-04 13:06 |
+| Location | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4; location-oah rules checked by unit test (IG not on server) | 0 | 0 | 2026-10-04 13:06 |
+| QuestionnaireResponse | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 1 | 2026-10-04 13:06 |
+| Observation:foam | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
+| Observation:colourSmell | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
+| Observation:riparianVegetation | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
+| Observation:macrophytes | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
+| Observation:invasiveOrganisms | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
+| Observation:otherSigns | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
+| Observation:waterTemperature | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
+| Device | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
+| Provenance | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
+| Bundle (transaction, all entries) | `hapi.fhir.org/baseR4` | base R4 | 0 | 20 | 2026-10-04 13:06 |
+| Questionnaire (ours) | `hapi.fhir.org/baseR4` | base R4 | 0 | 0 | 2026-10-04 |
+| CodeSystem streamrecord-local | `hapi.fhir.org/baseR4` | base R4 | 0 | 0 | 2026-10-04 |
 
 Neither public server holds the OneAquaHealth IG. To make the base-R4 check possible, `meta.profile` is removed before the resource is sent, and the `location-oah` rules are checked by unit tests instead. All remaining warnings are "CodeSystem is unknown" or "questionnaire could not be resolved": the servers don't have that terminology loaded. Our Questionnaire and local CodeSystem each validate on HAPI with 0 errors and 0 warnings.
 
-<!-- METRICS -->
+**Other measurements**
+
+| Measure | Result |
+|---|---|
+| Unit tests | 14 passing (vitest): bundle structure, narratives, reference resolution, Not sure → dataAbsentReason, OAH codes, UCUM, preliminary status, conditional create, determinism, finding rules, location-oah rules |
+| Lighthouse, Site Reading (mobile, production) | Performance 98, Accessibility 100, Best practices 100; LCP 1.9 s, CLS 0 |
+| Lighthouse, Field check | Performance 99, Accessibility 100, Best practices 100; LCP 1.6 s |
+| Lighthouse, Map | Performance 84, Accessibility 97, Best practices 96; LCP 3.7 s (a third-party basemap tile) |
+| JavaScript for the first view | 62 KB gzipped JavaScript for the first view (190.8 KB raw); the map library (44 KB gzipped) and each translation (5 KB) load separately |
+| Time to the first Site Reading | 1.9 s largest contentful paint for a Site Reading (Lighthouse simulated slow 4G, Moto G Power profile) |
+
+The map loses accessibility points for one reason: markers for neighbouring sites overlap, so they fail Lighthouse's target-spacing check. Every site is also a 48 px row in the list beside the map, which is the "equivalent control" exception in WCAG 2.2 SC 2.5.8. Lighthouse cannot detect that. Raw reports: [`evidence/summary.json`](evidence/summary.json).
 
 ## 7. Accessibility statement
 

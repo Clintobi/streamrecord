@@ -1,0 +1,41 @@
+{
+ "tests": "14 passing (vitest): bundle structure, narratives, reference resolution, Not sure → dataAbsentReason, OAH codes, UCUM, preliminary status, conditional create, determinism, finding rules, location-oah rules",
+ "lighthouse": "Site Reading 98 performance / 100 accessibility / 100 best practices; Field check 99/100/100; Map 84/97/96 (Lighthouse 13.5.0, mobile, production URL, 2026-10-04)",
+ "bundleKb": "62 KB gzipped JavaScript for the first view (190.8 KB raw); the map library (44 KB gzipped) and each translation (5 KB) load separately",
+ "firstReading": "1.9 s largest contentful paint for a Site Reading (Lighthouse simulated slow 4G, Moto G Power profile)",
+ "raw": {
+  "map": {
+   "url": "https://streamrecord.vercel.app/",
+   "performance": 84,
+   "accessibility": 97,
+   "bestPractices": 96,
+   "fcp": "1.8 s",
+   "lcp": "3.7 s",
+   "cls": "0",
+   "at": "2026-10-04T13:20:53.585Z",
+   "lighthouse": "13.5.0"
+  },
+  "site": {
+   "url": "https://streamrecord.vercel.app/#/site/C1",
+   "performance": 98,
+   "accessibility": 100,
+   "bestPractices": 100,
+   "fcp": "1.6 s",
+   "lcp": "1.9 s",
+   "cls": "0",
+   "at": "2026-10-04T13:21:16.270Z",
+   "lighthouse": "13.5.0"
+  },
+  "check": {
+   "url": "https://streamrecord.vercel.app/#/check/C1",
+   "performance": 99,
+   "accessibility": 100,
+   "bestPractices": 100,
+   "fcp": "1.3 s",
+   "lcp": "1.6 s",
+   "cls": "0",
+   "at": "2026-10-04T13:21:30.868Z",
+   "lighthouse": "13.5.0"
+  }
+ }
+}

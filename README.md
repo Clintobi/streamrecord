@@ -1,5 +1,7 @@
 # StreamRecord
 
+[![CI](https://github.com/Clintobi/streamrecord/actions/workflows/ci.yml/badge.svg)](https://github.com/Clintobi/streamrecord/actions/workflows/ci.yml)
+
 **What a stream's OneAquaHealth record means for the people, pets and wildlife living next to it, in their own language, and what the city can do about it.**
 
 - Live: https://streamrecord.vercel.app

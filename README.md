@@ -73,7 +73,7 @@ flowchart LR
 | OneAquaHealth quotes in the story and home page, in PT, IT, NL, NO, FR | Official | OneAquaHealth's own translations (Zenodo multilingual edition), each with its page; 60 checked by script |
 | Second-look rules and the review queue | Ours | Four rules we wrote (dead fish; scum in water below 10 °C; water above 30 °C; four or more "Not sure"). Not OneAquaHealth rules. The queue runs on this phone |
 | Sample check in the review queue | Synthetic | Added only when you press the sample button; labelled "sample, synthetic" wherever it appears |
-| Sending checks to the OneAquaHealth sandbox | Not integrated | Bundles are built and validated, but the app does not POST them |
+| Sending checks to the OneAquaHealth sandbox | Demonstrated once, not automatic | One tagged test round trip (see Evidence). The app itself does not POST resident checks, since the sandbox is shared and has no sign-in |
 
 ## 4. Sources and licences
 
@@ -172,6 +172,12 @@ Neither public server holds the OneAquaHealth IG. To make the base-R4 check poss
 
 The map loses accessibility points for one reason: markers for neighbouring sites overlap, so they fail Lighthouse's target-spacing check. Every site is also a 48 px row in the list beside the map, which is the "equivalent control" exception in WCAG 2.2 SC 2.5.8. Lighthouse cannot detect that. Raw reports: [`evidence/summary.json`](evidence/summary.json).
 
+**Live round trip on the OneAquaHealth sandbox.**
+- **What was sent:** one confirmed check, with every resource tagged `https://streamrecord.vercel.app/fhir/tag|hackathon-test`, posted as a transaction to `sandbox.hl7europe.eu/oneaquahealth/fhir` ([`scripts/sandbox_roundtrip.ts`](scripts/sandbox_roundtrip.ts)).
+- **Result:** HTTP 200. 11 resources were created (QuestionnaireResponse, 7 Observations, 2 Provenance, Device) and all 12 read back. The server holds the Observations with `status = final` and the `observation-indicators-oah` profile.
+- **Shared site record:** the site's **Location already existed** on the server. Another team's app (Stream Check-up) created it on 2 Oct with the same ENORA site identifier and `location-oah`. Our conditional create matched it (200 OK) instead of making a duplicate, so the check joined the shared site record without modifying it. Two independent systems converged on one site because both identify sites the OneAquaHealth way.
+- Evidence: [`evidence/sandbox-roundtrip.json`](evidence/sandbox-roundtrip.json).
+
 **Machine-readable data.**
 - [`public/data/datapackage.json`](public/data/datapackage.json) is a [Frictionless Data Package](https://specs.frictionlessdata.io/data-package/). It describes all 9 data files the app serves, each with its sha256, byte size, licence, upstream source and retrieval date.
 - [`public/data/sites.csv`](public/data/sites.csv) holds all 106 sites in one typed table: full-precision scores from the raw ENORA snapshot, a primary key, and value constraints.
@@ -197,7 +203,7 @@ Known gaps: the map markers can be reached with a keyboard but have only their s
 - **The low/moderate/high bands are ours.** They are statistical thirds of the 96 scores, not thresholds set by OneAquaHealth.
 - **Citizen checks are unverified.** They stay `preliminary`. A finding says "someone should look"; it never says the water is unsafe.
 - **The health text is not clinical advice.** It was written by a medical student and has not been reviewed by a clinician or veterinarian.
-- **No upload yet.** Checks stay on the phone and are not sent to the OneAquaHealth sandbox. That step is proposed, not integrated.
+- **No automatic upload.** Resident checks stay on the phone. One tagged test round trip to the OneAquaHealth sandbox is demonstrated (see Evidence). Sending every check would need sign-in on a non-shared server.
 - **The review queue is on the same phone.** It demonstrates the workflow and the FHIR it produces. In a real deployment, the reviewer would be at the municipality or the OneAquaHealth team, with sign-in.
 - **10 of the 106 sites have no health-risk value** (C17, C18, G1, G17–G20, T15, T21, T24). For these the app says so instead of guessing.
 

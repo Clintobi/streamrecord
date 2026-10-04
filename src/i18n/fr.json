@@ -179,7 +179,11 @@
     "quizWrong": "Pas tout à fait.",
     "quizScore": "Vous avez {n} sur {total}.",
     "homeStatLine": "OneAquaHealth l’a constaté dans les ruisseaux de cinq villes européennes. La plupart des riverains n’ont jamais su ce que cela signifie.",
-    "readStory": "Lire ce que 100 ruisseaux ont appris à OneAquaHealth"
+    "readStory": "Lire ce que 100 ruisseaux ont appris à OneAquaHealth",
+    "readAloud": "Lisez-le-moi",
+    "stopReading": "Arrêter la lecture",
+    "nearbyTitle": "Ruisseaux proches avec un score de laboratoire plus bas",
+    "nearbyNote": "Distance à vol d’oiseau. Ces scores viennent de la même étude de 2023 et ne disent pas qu’une eau est sûre aujourd’hui."
   },
   "questions": {
     "foam": {

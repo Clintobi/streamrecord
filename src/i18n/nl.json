@@ -179,7 +179,11 @@
     "quizWrong": "Niet helemaal.",
     "quizScore": "U had er {n} van de {total} goed.",
     "homeStatLine": "OneAquaHealth vond dit in de beken van vijf Europese steden. De meeste mensen die ernaast wonen, hebben nooit gehoord wat dat betekent.",
-    "readStory": "Lees wat 100 beken OneAquaHealth vertelden"
+    "readStory": "Lees wat 100 beken OneAquaHealth vertelden",
+    "readAloud": "Lees het voor",
+    "stopReading": "Stop met voorlezen",
+    "nearbyTitle": "Beken in de buurt met een lagere labscore",
+    "nearbyNote": "Afstand in rechte lijn. Deze scores komen uit hetzelfde onderzoek van 2023 en zeggen niet dat water vandaag veilig is."
   },
   "questions": {
     "foam": {

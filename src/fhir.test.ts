@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { buildBundle, LOCATION_OAH, OBSERVATION_OAH } from './fhir'
-import { Check, confirmedFindings, findingsFromAnswers, findingsFromChecks, secondLook, Site, daysSince, labStatus } from './model'
+import { lowerNearby, Check, confirmedFindings, findingsFromAnswers, findingsFromChecks, secondLook, Site, daysSince, labStatus } from './model'
 
 const site: Site = { id: 'PT01', name: 'Test stream', city: 'Coimbra', country: 'PT', lat: 40.2, lon: -8.4, risk: { level: 'moderate', score: 0.5, date: '2025-06-12' } }
 const check: Check = {
@@ -131,5 +131,14 @@ describe('review queue', () => {
       JSON.stringify(b, (k, v) => { if (k === 'reference') refs.push(v); return v })
       for (const r of refs) expect(urls.has(r)).toBe(true)
     }
+  })
+})
+
+describe('lower-scoring sites nearby', () => {
+  const at = (id: string, lat: number, level: any) => ({ ...site, id, lat, lon: -8.4, risk: { level, score: 0.1 } }) as Site
+  it('lists only same-list low sites, nearest first, and only for a high site', () => {
+    const hi = at('H', 40.2, 'high'), near = at('N', 40.21, 'low'), far = at('F', 40.4, 'low'), mod = at('M', 40.201, 'moderate')
+    expect(lowerNearby(hi, [hi, far, mod, near]).map((x) => x.site.id)).toEqual(['N', 'F'])
+    expect(lowerNearby(near, [hi, far, near])).toEqual([])
   })
 })

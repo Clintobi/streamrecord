@@ -383,3 +383,15 @@ nav.main .count, .rq-group h2 .count { display: inline-block; min-width: 1.5em; 
 .quizfb.wrong strong { color: var(--concern); }
 .quizfb .quote p { font-size: 1.05rem; }
 .quizscore { margin-top: var(--s3); font-weight: 700; font-size: 1.1rem; }
+
+.readaloud { gap: 8px; }
+.readaloud[aria-pressed="true"] { background: var(--stream-tint); }
+.storyhead .readaloud { margin-top: var(--s1); }
+
+.nearby { margin-top: var(--s3); background: var(--surface); border: 1px solid var(--hair); padding: var(--s2) var(--s3); }
+.nearby h2 { font-size: 1.05rem; margin: 0 0 var(--s1); font-family: var(--sans); font-weight: 700; }
+.nearby ul { list-style: none; margin: 0; padding: 0; }
+.nearby li { display: flex; justify-content: space-between; align-items: center; gap: var(--s2); padding: 8px 0; border-top: 1px solid var(--hair); }
+.nearby li a { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; min-height: 32px; }
+.nearby li a:hover .nm { text-decoration: underline; }
+.nearby > .meta { margin: var(--s1) 0 0; font-size: 0.85rem; }

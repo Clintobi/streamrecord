@@ -143,3 +143,19 @@ export function longDate(iso?: string | null, lang = 'en'): string {
   if (Number.isNaN(t)) return iso
   return new Date(t).toLocaleDateString(lang === 'no' ? 'nb' : lang, { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })
 }
+
+// Great-circle distance in km.
+export function distanceKm(a: { lat: number; lon: number }, b: { lat: number; lon: number }): number {
+  const R = 6371, rad = Math.PI / 180
+  const dLat = (b.lat - a.lat) * rad, dLon = (b.lon - a.lon) * rad
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * rad) * Math.cos(b.lat * rad) * Math.sin(dLon / 2) ** 2
+  return 2 * R * Math.asin(Math.sqrt(h))
+}
+
+// For a high-scoring site: the nearest sites in the same city whose lab score is in our low third.
+export function lowerNearby(site: Site, sites: Site[], n = 3): { site: Site; km: number }[] {
+  if (site.risk?.level !== 'high') return []
+  return sites.filter((s) => s.id !== site.id && s.risk?.level === 'low')
+    .map((s) => ({ site: s, km: distanceKm(site, s) }))
+    .sort((a, b) => a.km - b.km).slice(0, n)
+}

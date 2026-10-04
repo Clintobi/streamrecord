@@ -179,7 +179,11 @@
     "quizWrong": "Ikke helt.",
     "quizScore": "Du fikk {n} av {total}.",
     "homeStatLine": "OneAquaHealth fant dette i bekkene i fem europeiske byer. De fleste som bor ved dem, har aldri fått vite hva det betyr.",
-    "readStory": "Les hva 100 bekker fortalte OneAquaHealth"
+    "readStory": "Les hva 100 bekker fortalte OneAquaHealth",
+    "readAloud": "Les det for meg",
+    "stopReading": "Stopp opplesningen",
+    "nearbyTitle": "Bekker i nærheten med lavere labpoengsum",
+    "nearbyNote": "Avstand i luftlinje. Poengsummene er fra den samme undersøkelsen i 2023 og sier ikke at noe vann er trygt i dag."
   },
   "questions": {
     "foam": {

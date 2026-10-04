@@ -179,7 +179,11 @@
     "quizWrong": "Não exatamente.",
     "quizScore": "Acertou {n} de {total}.",
     "homeStatLine": "A OneAquaHealth encontrou isto nas ribeiras de cinco cidades europeias. A maioria de quem vive junto delas nunca ouviu o que isso significa.",
-    "readStory": "Ler o que 100 ribeiras contaram à OneAquaHealth"
+    "readStory": "Ler o que 100 ribeiras contaram à OneAquaHealth",
+    "readAloud": "Ler em voz alta",
+    "stopReading": "Parar a leitura",
+    "nearbyTitle": "Ribeiras próximas com pontuação de laboratório mais baixa",
+    "nearbyNote": "Distância em linha reta. Estas pontuações são do mesmo estudo de 2023 e não afirmam que alguma água seja segura hoje."
   },
   "questions": {
     "foam": {

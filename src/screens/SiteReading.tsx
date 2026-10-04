@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Bands, findSite, Library, loadBands, loadLibrary } from '../data'
 import { LANGS, useI18n } from '../i18n'
-import { CityIndex, confirmedFindings, daysSince, findingsFromChecks, labStatus, longDate, secondLook, Site } from '../model'
+import { CityIndex, confirmedFindings, daysSince, lowerNearby, findingsFromChecks, labStatus, longDate, secondLook, Site } from '../model'
 import { checksFor } from '../store'
-import { Shape, Skeleton, StatusLine } from '../ui'
+import { ReadAloud, Shape, Skeleton, StatusLine } from '../ui'
 
 const r2 = (v?: number | null) => (typeof v === 'number' ? v.toFixed(2) : 'n/a')
 
@@ -65,11 +65,11 @@ function Record({ site, sites, city, bands }: { site: Site; sites: Site[]; city:
     <section className="record" aria-labelledby="b1">
       <h2 id="b1" className="sr-only">{t('b1')}</h2>
       <div className="rhead">
-        <StatusLine status={labStatus(site)} size={18}>{t(`head_${r.level}` as any)}</StatusLine>
+        <div data-read><StatusLine status={labStatus(site)} size={18}>{t(`head_${r.level}` as any)}</StatusLine></div>
         <p className="score" style={{ margin: 0 }}><strong>{r2(r.score)}</strong> {t('scoreOf')}</p>
       </div>
       <div>
-        {age !== null && <p className="when">{t('sampledAgo', { date: longDate(r.date, lang), days: age.toLocaleString(lang === 'no' ? 'nb' : lang) })}</p>}
+        {age !== null && <p className="when" data-read>{t('sampledAgo', { date: longDate(r.date, lang), days: age.toLocaleString(lang === 'no' ? 'nb' : lang) })}</p>}
         <Scale site={site} sites={sites} bands={bands} cityName={city.name} />
       </div>
       <dl className="parts">
@@ -95,6 +95,7 @@ export default function SiteReading({ id }: { id: string }) {
   const [data, setData] = useState<{ site: Site; city: CityIndex; sites: Site[] } | null | undefined>(undefined)
   const [lib, setLib] = useState<Library>({})
   const [bands, setBands] = useState<Bands | null>(null)
+  const page = useRef<HTMLElement>(null)
   useEffect(() => { findSite(id).then(setData); loadLibrary().then(setLib); loadBands().then(setBands) }, [id])
 
   if (data === undefined) return <Skeleton />
@@ -114,7 +115,7 @@ export default function SiteReading({ id }: { id: string }) {
   const cityLang = city.lang !== lang && LANGS.some((l) => l.code === city.lang) ? city.lang : null
 
   return (
-    <article>
+    <article ref={page}>
       <div className="wide site-wide">
         <div className="site-grid">
           <div className="sitehead-col">
@@ -128,11 +129,26 @@ export default function SiteReading({ id }: { id: string }) {
             </nav>
             <header className="sitehead">
               <p className="eyebrow">{t('siteEyebrow', { city: city.name, id: site.id })}</p>
-              <h1>{site.name}</h1>
+              <h1 data-read>{site.name}</h1>
               {site.unnamed && <p className="meta">{t('unnamedNote')}</p>}
             </header>
             <Record site={site} sites={sites} city={city} bands={bands} />
+            {lowerNearby(site, sites).length > 0 && (
+              <section className="nearby" aria-labelledby="nearby-h">
+                <h2 id="nearby-h">{t('nearbyTitle')}</h2>
+                <ul>
+                  {lowerNearby(site, sites).map(({ site: s, km }) => (
+                    <li key={s.id}>
+                      <a href={`#/site/${encodeURIComponent(s.id)}`}><Shape status="ok" /><span className="nm">{s.name}</span></a>
+                      <span className="meta"><span className="num">{(s.risk!.score as number).toFixed(2)}</span> · {km < 1 ? `${Math.round(km * 1000)} m` : `${km.toFixed(1)} km`}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="meta">{t('nearbyNote')}</p>
+              </section>
+            )}
             <div className="actions noprint">
+              <ReadAloud target={() => page.current} />
               <a className="btn" href={`#/check/${encodeURIComponent(site.id)}`}>{t('doCheck')}</a>
               <a className="btn secondary" href={`#/clinician/${encodeURIComponent(site.id)}`}>{t('clinicianLink')}</a>
             </div>
@@ -142,8 +158,8 @@ export default function SiteReading({ id }: { id: string }) {
 
       <div className="wide sections">
         <section className="sec" aria-labelledby="b2">
-          <h2 id="b2">{t('b2')}</h2>
-          <div className="body">
+          <h2 id="b2" data-read>{t('b2')}</h2>
+          <div className="body" data-read>
             {checks.length === 0 ? <p className="reading empty">{t('b2Empty')}</p> : (
               <>
                 <p className="meta">{t('checksN', { n: checks.length })}</p>
@@ -166,8 +182,8 @@ export default function SiteReading({ id }: { id: string }) {
         </section>
 
         <section className="sec" aria-labelledby="b3">
-          <h2 id="b3">{t('b3')}</h2>
-          <div className="body">
+          <h2 id="b3" data-read>{t('b3')}</h2>
+          <div className="body" data-read>
             {findings.length === 0 ? <p className="reading empty">{t('b3Nothing')}</p> : (
               <>
                 <p className="reading">{t('b3Intro')}</p>

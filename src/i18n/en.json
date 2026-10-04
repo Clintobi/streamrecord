@@ -181,7 +181,11 @@
     "homeStat": "Pharmaceuticals were detected in 91% of monitored sites",
     "homeStatCite": "OneAquaHealth Policy Brief, p. 2",
     "homeStatLine": "OneAquaHealth found this in the streams of five European cities. Most people who live next to them have never been told what that means.",
-    "readStory": "Read what 100 streams told OneAquaHealth"
+    "readStory": "Read what 100 streams told OneAquaHealth",
+    "readAloud": "Read it to me",
+    "stopReading": "Stop reading",
+    "nearbyTitle": "Nearby streams with a lower lab score",
+    "nearbyNote": "Straight-line distance. These scores are from the same 2023 survey and are not a statement that any water is safe today."
   },
   "questions": {
     "foam": {

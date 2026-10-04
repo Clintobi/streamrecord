@@ -179,7 +179,11 @@
     "quizWrong": "Non proprio.",
     "quizScore": "Hai risposto bene a {n} su {total}.",
     "homeStatLine": "OneAquaHealth lo ha trovato nei torrenti di cinque città europee. La maggior parte di chi vive accanto a loro non ha mai saputo cosa significa.",
-    "readStory": "Leggi cosa hanno raccontato 100 torrenti a OneAquaHealth"
+    "readStory": "Leggi cosa hanno raccontato 100 torrenti a OneAquaHealth",
+    "readAloud": "Leggimelo",
+    "stopReading": "Ferma la lettura",
+    "nearbyTitle": "Torrenti vicini con un punteggio di laboratorio più basso",
+    "nearbyNote": "Distanza in linea d’aria. Questi punteggi provengono dalla stessa indagine del 2023 e non dicono che un’acqua sia sicura oggi."
   },
   "questions": {
     "foam": {

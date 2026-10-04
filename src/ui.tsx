@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import { LANGS, useI18n } from './i18n'
 import { Status } from './model'
 import { allChecks } from './store'
@@ -62,4 +62,36 @@ export function Layout({ children, route }: { children: ReactNode; route: string
 
 export function Skeleton() {
   return <div className="wrap" aria-busy="true" aria-live="polite"><span className="sr-only">Loading</span><div className="skeleton" style={{ width: '40%' }} /><div className="skeleton" style={{ width: '80%', height: '2em' }} /><div className="skeleton" /><div className="skeleton" /><div className="skeleton" style={{ width: '60%' }} /></div>
+}
+
+// Reads the marked parts of a page aloud with the browser's own speech, in the reading language.
+// Hidden where speech synthesis isn't available. Nothing leaves the device.
+export function ReadAloud({ target }: { target: () => HTMLElement | null }) {
+  const { t, lang } = useI18n()
+  const [on, setOn] = useState(false)
+  useEffect(() => () => { if ('speechSynthesis' in window) speechSynthesis.cancel() }, [])
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return null
+  const bcp = ({ en: 'en-GB', pt: 'pt-PT', it: 'it-IT', nl: 'nl-BE', no: 'nb-NO', fr: 'fr-FR' } as Record<string, string>)[lang] || 'en-GB'
+  const toggle = () => {
+    if (on) { speechSynthesis.cancel(); setOn(false); return }
+    const el = target()
+    if (!el) return
+    const parts = [...el.querySelectorAll<HTMLElement>('[data-read]')].map((n) => n.innerText.replace(/\s+/g, ' ').trim()).filter(Boolean)
+    const voice = speechSynthesis.getVoices().find((v) => v.lang.toLowerCase().startsWith(bcp.slice(0, 2)))
+    parts.forEach((text, i) => {
+      const u = new SpeechSynthesisUtterance(text)
+      u.lang = bcp
+      if (voice) u.voice = voice
+      u.rate = 0.95
+      if (i === parts.length - 1) u.onend = () => setOn(false)
+      speechSynthesis.speak(u)
+    })
+    setOn(true)
+  }
+  return (
+    <button type="button" className="btn secondary small readaloud noprint" aria-pressed={on} onClick={toggle}>
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor" />{on ? <path d="M16 9l5 6M21 9l-5 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /> : <path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />}</svg>
+      {on ? t('stopReading') : t('readAloud')}
+    </button>
+  )
 }

@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { CityIndex, Site } from '../model'
 import { Library, loadCities, loadCity, loadLibrary } from '../data'
 import { useI18n } from '../i18n'
-import { Skeleton } from '../ui'
+import { ReadAloud, Skeleton } from '../ui'
 
 // Seven chapters, each built on verbatim OneAquaHealth Policy Brief findings (page-cited),
 // joined by one short line of our own that points to real sites in the data.
@@ -32,7 +32,7 @@ function Quote({ id, lib }: { id: string; lib: Library }) {
   const url = use.edition === 'zenodo' ? lib.story!.zenodo : pb?.url
   return (
     <figure className="quote">
-      <blockquote style={{ margin: 0 }} lang={local ? (lang === 'no' ? 'nb' : lang) : 'en'}><p>“{use.text}”</p></blockquote>
+      <blockquote style={{ margin: 0 }} data-read lang={local ? (lang === 'no' ? 'nb' : lang) : 'en'}><p>“{use.text}”</p></blockquote>
       <figcaption>
         {t('fromOAH')}, Policy Brief{use.edition === 'zenodo' ? ` (${t('officialTr')})` : pb?.date ? ` (${pb.date})` : ''}, {t('page')}{' '}{use.page}{url ? <>, <a href={url}>source</a></> : null}
         {!local && lang !== 'en' && <> · {t('quoteEnglish')}</>}
@@ -86,6 +86,7 @@ export default function Story() {
   const { t, lang } = useI18n()
   const [lib, setLib] = useState<Library | null>(null)
   const [data, setData] = useState<{ cities: CityIndex[]; sites: Site[] } | null>(null)
+  const page = useRef<HTMLElement>(null)
   useEffect(() => {
     loadLibrary().then(setLib)
     loadCities().then((cities) => Promise.all(cities.map((c) => loadCity(c.slug))).then((all) => setData({ cities, sites: all.flat() })))
@@ -112,18 +113,19 @@ export default function Story() {
   }
 
   return (
-    <article className="story">
+    <article className="story" ref={page}>
       <header className="storyhead wide">
         <p className="eyebrow">{t('storyKicker')}</p>
-        <h1>{t('storyTitle')}</h1>
+        <h1 data-read>{t('storyTitle')}</h1>
         <p className="lede">{t('storyLede')}</p>
+        <ReadAloud target={() => page.current} />
       </header>
       <ol className="chapters wide">
         {CHAPTERS.map((c, i) => (
           <li key={c.key} className="chapter">
             <div className="chnum" aria-hidden="true">{String(i + 1).padStart(2, '0')}</div>
             <div className="chbody">
-              <h2>{t(`${c.key}t` as any)}</h2>
+              <h2 data-read>{t(`${c.key}t` as any)}</h2>
               {c.quotes.map((q) => <Quote key={q} id={q} lib={lib} />)}
               <p className="ours"><span className="ourslabel">{t('ourLine')}</span> {ours[c.key]}</p>
             </div>

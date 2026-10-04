@@ -5,6 +5,7 @@ interface Meta {
   sources: { title: string; publisher: string; url: string; licence: string; retrieved: string; sha256?: string; note?: string }[]
   realVsSynthetic: { item: string; status: string; note: string }[]
   fhir: { igRepo?: string; commit?: string; package?: string; profilesVerified?: string[]; profilesNotUsed?: string[]; localCodes?: { code: string; why: string }[] }
+  sandbox?: { server: string; at: string; postHttp: number; created: { status: string; location: string }[]; readBack: { ref: string; http: number }[]; tagSearchObservationCount: number; note: string }
   datapackage?: { path: string; csv: string; resources: number; validator: string; result: string }
   evidence?: { validate?: { resource: string; server: string; profile?: string; errors: number; warnings: number; at: string }[]; tests?: string; lighthouse?: string; bundleKb?: string; firstReading?: string }
 }
@@ -22,6 +23,14 @@ export default function Sources() {
           <div className="tablewrap" tabIndex={0} role="region" aria-label="Scrollable table"><table><thead><tr><th>Source</th><th>Licence</th><th>Retrieved</th></tr></thead><tbody>
             {m.sources.map((s) => <tr key={s.url}><td><a href={s.url}>{s.title}</a><br /><span className="meta">{s.publisher}{s.note ? `. ${s.note}` : ''}</span>{s.sha256 && <><br /><span className="mono meta">sha256 {s.sha256.slice(0, 16)}…</span></>}</td><td>{s.licence}</td><td className="nw num">{s.retrieved}</td></tr>)}
           </tbody></table></div>
+
+          {m.sandbox && (
+            <>
+              <h2>Round trip on the OneAquaHealth sandbox</h2>
+              <p>On {m.sandbox.at.slice(0, 10)} one confirmed check, with every resource tagged as a StreamRecord hackathon test, was posted as a transaction to <span className="mono">{m.sandbox.server.replace('https://', '')}</span>. The server answered {m.sandbox.postHttp}: {m.sandbox.created.filter((c) => c.status.startsWith('201')).length} resources created, and all {m.sandbox.readBack.filter((r) => r.http === 200).length} read back.</p>
+              <p className="meta">The site's Location already existed on the server, created two days earlier by another team's app (Stream Check-up) with the same ENORA site identifier. StreamRecord's conditional create found it instead of making a duplicate, so the check joined the shared site record: two independent apps, one site, because both identify sites the OneAquaHealth way. <a href="./evidence/sandbox-roundtrip.json">Server responses</a>.</p>
+            </>
+          )}
 
           {m.datapackage && (
             <>

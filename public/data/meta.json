@@ -114,8 +114,8 @@
   },
   {
    "item": "Sending checks to the OneAquaHealth sandbox",
-   "status": "Not integrated",
-   "note": "Bundles are built and validated, but the app does not POST them"
+   "status": "Demonstrated once",
+   "note": "One tagged test round trip (see below). The app does not POST resident checks to the shared sandbox"
   }
  ],
  "fhir": {
@@ -149,6 +149,175 @@
   "resources": 9,
   "validator": "frictionless 5.19.1",
   "result": "all resources valid, including sha256 hashes, byte counts and the sites.csv table schema"
+ },
+ "sandbox": {
+  "server": "https://sandbox.hl7europe.eu/oneaquahealth/fhir",
+  "at": "2026-10-04T20:57:11.528Z",
+  "tag": {
+   "system": "https://streamrecord.vercel.app/fhir/tag",
+   "code": "hackathon-test",
+   "display": "StreamRecord hackathon test record (OneAquaHealth IEEE Hackathon 2026)"
+  },
+  "postHttp": 200,
+  "created": [
+   {
+    "status": "200 OK",
+    "location": "Location/888/_history/1"
+   },
+   {
+    "status": "201 Created",
+    "location": "QuestionnaireResponse/1066/_history/1"
+   },
+   {
+    "status": "201 Created",
+    "location": "Observation/1067/_history/1"
+   },
+   {
+    "status": "201 Created",
+    "location": "Observation/1068/_history/1"
+   },
+   {
+    "status": "201 Created",
+    "location": "Observation/1069/_history/1"
+   },
+   {
+    "status": "201 Created",
+    "location": "Observation/1070/_history/1"
+   },
+   {
+    "status": "201 Created",
+    "location": "Observation/1071/_history/1"
+   },
+   {
+    "status": "201 Created",
+    "location": "Observation/1072/_history/1"
+   },
+   {
+    "status": "201 Created",
+    "location": "Observation/1073/_history/1"
+   },
+   {
+    "status": "201 Created",
+    "location": "Device/1076/_history/1"
+   },
+   {
+    "status": "201 Created",
+    "location": "Provenance/1074/_history/1"
+   },
+   {
+    "status": "201 Created",
+    "location": "Provenance/1075/_history/1"
+   }
+  ],
+  "readBack": [
+   {
+    "ref": "Location/888",
+    "http": 200,
+    "resourceType": "Location",
+    "status": "active",
+    "profile": [
+     "http://hl7.eu/fhir/ig/oah/StructureDefinition/location-oah"
+    ],
+    "tag": "site-link"
+   },
+   {
+    "ref": "QuestionnaireResponse/1066",
+    "http": 200,
+    "resourceType": "QuestionnaireResponse",
+    "status": "completed",
+    "tag": "hackathon-test"
+   },
+   {
+    "ref": "Observation/1067",
+    "http": 200,
+    "resourceType": "Observation",
+    "status": "final",
+    "profile": [
+     "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+    ],
+    "tag": "hackathon-test"
+   },
+   {
+    "ref": "Observation/1068",
+    "http": 200,
+    "resourceType": "Observation",
+    "status": "final",
+    "profile": [
+     "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+    ],
+    "tag": "hackathon-test"
+   },
+   {
+    "ref": "Observation/1069",
+    "http": 200,
+    "resourceType": "Observation",
+    "status": "final",
+    "profile": [
+     "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+    ],
+    "tag": "hackathon-test"
+   },
+   {
+    "ref": "Observation/1070",
+    "http": 200,
+    "resourceType": "Observation",
+    "status": "final",
+    "profile": [
+     "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+    ],
+    "tag": "hackathon-test"
+   },
+   {
+    "ref": "Observation/1071",
+    "http": 200,
+    "resourceType": "Observation",
+    "status": "final",
+    "profile": [
+     "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+    ],
+    "tag": "hackathon-test"
+   },
+   {
+    "ref": "Observation/1072",
+    "http": 200,
+    "resourceType": "Observation",
+    "status": "final",
+    "profile": [
+     "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+    ],
+    "tag": "hackathon-test"
+   },
+   {
+    "ref": "Observation/1073",
+    "http": 200,
+    "resourceType": "Observation",
+    "status": "final",
+    "profile": [
+     "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+    ],
+    "tag": "hackathon-test"
+   },
+   {
+    "ref": "Device/1076",
+    "http": 200,
+    "resourceType": "Device",
+    "tag": "hackathon-test"
+   },
+   {
+    "ref": "Provenance/1074",
+    "http": 200,
+    "resourceType": "Provenance",
+    "tag": "hackathon-test"
+   },
+   {
+    "ref": "Provenance/1075",
+    "http": 200,
+    "resourceType": "Provenance",
+    "tag": "hackathon-test"
+   }
+  ],
+  "tagSearchObservationCount": 7,
+  "note": "Location/888 already existed on the sandbox, created 2026-10-02 by another hackathon team (Stream Check-up, tag urn:stream-checkup:tags|site-link) with the same ENORA site identifier (https://api.enora-oah.eu/api/sites|C1) and the location-oah profile. StreamRecord's conditional create (ifNoneExist on that identifier) matched it (200 OK) instead of creating a duplicate, so the confirmed check attached to the shared site record. The existing Location was read, not modified."
  },
  "evidence": {
   "validate": [

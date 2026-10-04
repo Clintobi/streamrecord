@@ -4,7 +4,7 @@
 
 - Live: https://streamrecord.vercel.app
 - Video: _added at submission_
-- Built for the OneAquaHealth IEEE Global Hackathon 2026. Work on this repository started on 2026-10-04; the commit history is intact.
+- Built for the OneAquaHealth IEEE Global Hackathon 2026. Work on this repository started on 2026-10-04, within the submission window the organisers extended to 4 October (Devpost update "Deadline Extended to October 4"); the commit history is intact.
 
 ## 1. Track alignment
 

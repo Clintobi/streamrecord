@@ -28,7 +28,7 @@ export default function Sources() {
             <>
               <h2>Round trip on the OneAquaHealth sandbox</h2>
               <p>On {m.sandbox.at.slice(0, 10)} one confirmed check, with every resource tagged as a StreamRecord hackathon test, was posted as a transaction to <span className="mono">{m.sandbox.server.replace('https://', '')}</span>. The server answered {m.sandbox.postHttp}: {m.sandbox.created.filter((c) => c.status.startsWith('201')).length} resources created, and all {m.sandbox.readBack.filter((r) => r.http === 200).length} read back.</p>
-              <p className="meta">The site's Location already existed on the server, created two days earlier by another team's app (Stream Check-up) with the same ENORA site identifier. StreamRecord's conditional create found it instead of making a duplicate, so the check joined the shared site record: two independent apps, one site, because both identify sites the OneAquaHealth way. <a href="./evidence/sandbox-roundtrip.json">Server responses</a>.</p>
+              <p className="meta">The site's Location already existed on the shared sandbox with the same ENORA site identifier. StreamRecord's conditional create found it instead of making a duplicate, so the check joined the existing site record. Because sites are identified the OneAquaHealth way, records from different systems land on the same site. <a href="./evidence/sandbox-roundtrip.json">Server responses</a>.</p>
             </>
           )}
 

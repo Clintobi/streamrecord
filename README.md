@@ -178,7 +178,7 @@ The map loses accessibility points for one reason: markers for neighbouring site
 **Live round trip on the OneAquaHealth sandbox.**
 - **What was sent:** one confirmed check, with every resource tagged `https://streamrecord.vercel.app/fhir/tag|hackathon-test`, posted as a transaction to `sandbox.hl7europe.eu/oneaquahealth/fhir` ([`scripts/sandbox_roundtrip.ts`](scripts/sandbox_roundtrip.ts)).
 - **Result:** HTTP 200. 11 resources were created (QuestionnaireResponse, 7 Observations, 2 Provenance, Device) and all 12 read back. The server holds the Observations with `status = final` and the `observation-indicators-oah` profile.
-- **Shared site record:** the site's **Location already existed** on the server. Another team's app (Stream Check-up) created it on 2 Oct with the same ENORA site identifier and `location-oah`. Our conditional create matched it (200 OK) instead of making a duplicate, so the check joined the shared site record without modifying it. Two independent systems converged on one site because both identify sites the OneAquaHealth way.
+- **Shared site record:** the site's **Location already existed** on the shared sandbox with the same ENORA site identifier and `location-oah`. The conditional create matched it (200 OK) instead of making a duplicate, so the check joined the existing site record without modifying it. Because sites are identified the OneAquaHealth way, records from different systems land on the same site.
 - Evidence: [`evidence/sandbox-roundtrip.json`](evidence/sandbox-roundtrip.json).
 
 **Machine-readable data.**

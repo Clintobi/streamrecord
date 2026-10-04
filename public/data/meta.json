@@ -217,8 +217,7 @@
     "status": "active",
     "profile": [
      "http://hl7.eu/fhir/ig/oah/StructureDefinition/location-oah"
-    ],
-    "tag": "site-link"
+    ]
    },
    {
     "ref": "QuestionnaireResponse/1066",
@@ -317,7 +316,7 @@
    }
   ],
   "tagSearchObservationCount": 7,
-  "note": "Location/888 already existed on the sandbox, created 2026-10-02 by another hackathon team (Stream Check-up, tag urn:stream-checkup:tags|site-link) with the same ENORA site identifier (https://api.enora-oah.eu/api/sites|C1) and the location-oah profile. StreamRecord's conditional create (ifNoneExist on that identifier) matched it (200 OK) instead of creating a duplicate, so the confirmed check attached to the shared site record. The existing Location was read, not modified."
+  "note": "Location/888 already existed on the shared sandbox with the same ENORA site identifier (https://api.enora-oah.eu/api/sites|C1) and the location-oah profile. The conditional create (ifNoneExist on that identifier) matched it (200 OK) instead of creating a duplicate, so the check attached to the existing site record. The existing Location was read, not modified."
  },
  "evidence": {
   "validate": [

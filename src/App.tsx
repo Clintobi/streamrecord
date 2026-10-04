@@ -1,0 +1,29 @@
+import { useEffect, useState } from 'react'
+import { Layout } from './ui'
+import MapScreen from './screens/MapScreen'
+import SiteReading from './screens/SiteReading'
+import FieldCheck from './screens/FieldCheck'
+import ClinicianReading from './screens/ClinicianReading'
+import Sources from './screens/Sources'
+
+function useHash() {
+  const [h, setH] = useState(location.hash || '#/')
+  useEffect(() => {
+    const on = () => { setH(location.hash || '#/'); window.scrollTo(0, 0); document.getElementById('main')?.focus() }
+    window.addEventListener('hashchange', on)
+    return () => window.removeEventListener('hashchange', on)
+  }, [])
+  return h
+}
+
+export default function App() {
+  const h = useHash()
+  const [, route, id] = h.replace(/^#/, '').split('/')
+  let screen
+  if (route === 'site' && id) screen = <SiteReading id={decodeURIComponent(id)} />
+  else if (route === 'check' && id) screen = <FieldCheck id={decodeURIComponent(id)} />
+  else if (route === 'clinician' && id) screen = <ClinicianReading id={decodeURIComponent(id)} />
+  else if (route === 'sources') screen = <Sources />
+  else screen = <MapScreen city={route === 'city' ? id : undefined} />
+  return <Layout>{screen}</Layout>
+}

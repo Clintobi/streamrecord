@@ -1,0 +1,964 @@
+{
+ "source": {
+  "sites": {
+   "url": "https://api.enora-oah.eu/api/sites/all",
+   "retrieved_at_utc": "2026-10-04T12:41:58Z",
+   "sha256": "c0272962378fbe64befae344acb410386fbb71b94777d03c9ad4fe795cf0c632",
+   "bytes": 128541,
+   "curl_flags": "-sS (no -k needed)"
+  },
+  "healthRisks": {
+   "url": "https://api.enora-oah.eu/api/resilience-map/health-risks",
+   "retrieved_at_utc": "2026-10-04T12:42:00Z",
+   "sha256": "3aee00272cc6ff02a3a5bcdf6975372875ef4056d37f2ebb0253bc12edbf5aa8",
+   "bytes": 16576,
+   "curl_flags": "-sS (no -k needed)"
+  },
+  "publisher": "ENORA / OneAquaHealth (api.enora-oah.eu)",
+  "join": "sites[].code == healthRisks[].researchSiteCode (1:1, exact string match)"
+ },
+ "city": "Ghent",
+ "city_id": "GH",
+ "country": "BE",
+ "count": 22,
+ "with_health_risk": 17,
+ "sites": [
+  {
+   "id": "G2",
+   "name": "Zottegem1 (Zo1)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.85943,
+   "lon": 3.79794,
+   "altitude_m": 38.71,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.2861,
+    "scaledPathogenRisk": 0.1242,
+    "scaledFecalRisk": 0.2672,
+    "scaledArgRisk": 0.4669,
+    "samplingDate": "2023-05-24",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G2",
+     "name": "Zottegem1 (Zo1)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.85943,
+     "longitude": 3.79794,
+     "altitude": 38.71
+    },
+    "healthRisk": {
+     "id": 39,
+     "researchSiteCode": "G2",
+     "samplingDate": "2023-05-24T00:00:00",
+     "scaledPathogenRisk": 0.1242,
+     "scaledFecalRisk": 0.2672,
+     "scaledArgRisk": 0.4669,
+     "healthRiskScore": 0.2861
+    }
+   }
+  },
+  {
+   "id": "G6",
+   "name": "Zwalm2 (Zw2)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.87579,
+   "lon": 3.75151,
+   "altitude_m": 18.9,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.2201,
+    "scaledPathogenRisk": 0.1738,
+    "scaledFecalRisk": 0.3113,
+    "scaledArgRisk": 0.175,
+    "samplingDate": "2023-05-24",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G6",
+     "name": "Zwalm2 (Zw2)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.87579,
+     "longitude": 3.75151,
+     "altitude": 18.9
+    },
+    "healthRisk": {
+     "id": 43,
+     "researchSiteCode": "G6",
+     "samplingDate": "2023-05-24T00:00:00",
+     "scaledPathogenRisk": 0.1738,
+     "scaledFecalRisk": 0.3113,
+     "scaledArgRisk": 0.175,
+     "healthRiskScore": 0.2201
+    }
+   }
+  },
+  {
+   "id": "G8",
+   "name": "Zwalm4 (Zw4)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.87971,
+   "lon": 3.73771,
+   "altitude_m": 18.29,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.2161,
+    "scaledPathogenRisk": 0.0993,
+    "scaledFecalRisk": 0.2305,
+    "scaledArgRisk": 0.3183,
+    "samplingDate": "2023-05-24",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G8",
+     "name": "Zwalm4 (Zw4)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.87971,
+     "longitude": 3.73771,
+     "altitude": 18.29
+    },
+    "healthRisk": {
+     "id": 45,
+     "researchSiteCode": "G8",
+     "samplingDate": "2023-05-24T00:00:00",
+     "scaledPathogenRisk": 0.0993,
+     "scaledFecalRisk": 0.2305,
+     "scaledArgRisk": 0.3183,
+     "healthRiskScore": 0.2161
+    }
+   }
+  },
+  {
+   "id": "G9",
+   "name": "Zwalm5 (Zw5)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.87366,
+   "lon": 3.73125,
+   "altitude_m": 20.12,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.3553,
+    "scaledPathogenRisk": 0.1492,
+    "scaledFecalRisk": 0.3966,
+    "scaledArgRisk": 0.5202,
+    "samplingDate": "2023-05-24",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G9",
+     "name": "Zwalm5 (Zw5)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.87366,
+     "longitude": 3.73125,
+     "altitude": 20.12
+    },
+    "healthRisk": {
+     "id": 46,
+     "researchSiteCode": "G9",
+     "samplingDate": "2023-05-24T00:00:00",
+     "scaledPathogenRisk": 0.1492,
+     "scaledFecalRisk": 0.3966,
+     "scaledArgRisk": 0.5202,
+     "healthRiskScore": 0.3553
+    }
+   }
+  },
+  {
+   "id": "G10",
+   "name": "Zwalm6 (Zw6)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.88344,
+   "lon": 3.71431,
+   "altitude_m": 14.02,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.1677,
+    "scaledPathogenRisk": 0.0248,
+    "scaledFecalRisk": 0.1193,
+    "scaledArgRisk": 0.3591,
+    "samplingDate": "2023-05-24",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G10",
+     "name": "Zwalm6 (Zw6)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.88344,
+     "longitude": 3.71431,
+     "altitude": 14.02
+    },
+    "healthRisk": {
+     "id": 47,
+     "researchSiteCode": "G10",
+     "samplingDate": "2023-05-24T00:00:00",
+     "scaledPathogenRisk": 0.0248,
+     "scaledFecalRisk": 0.1193,
+     "scaledArgRisk": 0.3591,
+     "healthRiskScore": 0.1677
+    }
+   }
+  },
+  {
+   "id": "G22",
+   "name": "Zwalm7 (Zw7)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.88527,
+   "lon": 3.692821,
+   "altitude_m": 12.19,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.1858,
+    "scaledPathogenRisk": 0.1501,
+    "scaledFecalRisk": 0.2921,
+    "scaledArgRisk": 0.1152,
+    "samplingDate": "2023-05-24",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G22",
+     "name": "Zwalm7 (Zw7)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.88527,
+     "longitude": 3.692821,
+     "altitude": 12.19
+    },
+    "healthRisk": {
+     "id": 55,
+     "researchSiteCode": "G22",
+     "samplingDate": "2023-05-24T00:00:00",
+     "scaledPathogenRisk": 0.1501,
+     "scaledFecalRisk": 0.2921,
+     "scaledArgRisk": 0.1152,
+     "healthRiskScore": 0.1858
+    }
+   }
+  },
+  {
+   "id": "G11",
+   "name": "Zwalm8 (Zw8)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.88437,
+   "lon": 3.68791,
+   "altitude_m": 13.11,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.2251,
+    "scaledPathogenRisk": 0.1253,
+    "scaledFecalRisk": 0.2544,
+    "scaledArgRisk": 0.2956,
+    "samplingDate": "2023-05-24",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G11",
+     "name": "Zwalm8 (Zw8)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.88437,
+     "longitude": 3.68791,
+     "altitude": 13.11
+    },
+    "healthRisk": {
+     "id": 48,
+     "researchSiteCode": "G11",
+     "samplingDate": "2023-05-24T00:00:00",
+     "scaledPathogenRisk": 0.1253,
+     "scaledFecalRisk": 0.2544,
+     "scaledArgRisk": 0.2956,
+     "healthRiskScore": 0.2251
+    }
+   }
+  },
+  {
+   "id": "G12",
+   "name": "Zwalm9 (Zw9)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.88541,
+   "lon": 3.68606,
+   "altitude_m": 11.89,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.225,
+    "scaledPathogenRisk": 0.0995,
+    "scaledFecalRisk": 0.2129,
+    "scaledArgRisk": 0.3624,
+    "samplingDate": "2023-05-24",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G12",
+     "name": "Zwalm9 (Zw9)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.88541,
+     "longitude": 3.68606,
+     "altitude": 11.89
+    },
+    "healthRisk": {
+     "id": 49,
+     "researchSiteCode": "G12",
+     "samplingDate": "2023-05-24T00:00:00",
+     "scaledPathogenRisk": 0.0995,
+     "scaledFecalRisk": 0.2129,
+     "scaledArgRisk": 0.3624,
+     "healthRiskScore": 0.225
+    }
+   }
+  },
+  {
+   "id": "G13",
+   "name": "Merelbeke1 (Mr1)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.97958,
+   "lon": 3.72241,
+   "altitude_m": 4.88,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.2102,
+    "scaledPathogenRisk": 0.0752,
+    "scaledFecalRisk": 0.2104,
+    "scaledArgRisk": 0.345,
+    "samplingDate": "2023-05-25",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G13",
+     "name": "Merelbeke1 (Mr1)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.97958,
+     "longitude": 3.72241,
+     "altitude": 4.88
+    },
+    "healthRisk": {
+     "id": 50,
+     "researchSiteCode": "G13",
+     "samplingDate": "2023-05-25T00:00:00",
+     "scaledPathogenRisk": 0.0752,
+     "scaledFecalRisk": 0.2104,
+     "scaledArgRisk": 0.345,
+     "healthRiskScore": 0.2102
+    }
+   }
+  },
+  {
+   "id": "G14",
+   "name": "Merelbeke2 (Mr2)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.99821,
+   "lon": 3.73925,
+   "altitude_m": 28.04,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.1563,
+    "scaledPathogenRisk": 0.0,
+    "scaledFecalRisk": 0.1323,
+    "scaledArgRisk": 0.3366,
+    "samplingDate": "2023-05-25",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G14",
+     "name": "Merelbeke2 (Mr2)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.99821,
+     "longitude": 3.73925,
+     "altitude": 28.04
+    },
+    "healthRisk": {
+     "id": 51,
+     "researchSiteCode": "G14",
+     "samplingDate": "2023-05-25T00:00:00",
+     "scaledPathogenRisk": 0.0,
+     "scaledFecalRisk": 0.1323,
+     "scaledArgRisk": 0.3366,
+     "healthRiskScore": 0.1563
+    }
+   }
+  },
+  {
+   "id": "G15",
+   "name": "Melle1 (Ml1)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.98975,
+   "lon": 3.80615,
+   "altitude_m": 5.79,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.2244,
+    "scaledPathogenRisk": 0.0513,
+    "scaledFecalRisk": 0.1673,
+    "scaledArgRisk": 0.4544,
+    "samplingDate": "2023-05-25",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G15",
+     "name": "Melle1 (Ml1)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.98975,
+     "longitude": 3.80615,
+     "altitude": 5.79
+    },
+    "healthRisk": {
+     "id": 52,
+     "researchSiteCode": "G15",
+     "samplingDate": "2023-05-25T00:00:00",
+     "scaledPathogenRisk": 0.0513,
+     "scaledFecalRisk": 0.1673,
+     "scaledArgRisk": 0.4544,
+     "healthRiskScore": 0.2244
+    }
+   }
+  },
+  {
+   "id": "G16",
+   "name": "Melle2 (Ml2)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.99491,
+   "lon": 3.80568,
+   "altitude_m": 5.79,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.3117,
+    "scaledPathogenRisk": 0.2484,
+    "scaledFecalRisk": 0.2897,
+    "scaledArgRisk": 0.3971,
+    "samplingDate": "2023-05-25",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G16",
+     "name": "Melle2 (Ml2)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.99491,
+     "longitude": 3.80568,
+     "altitude": 5.79
+    },
+    "healthRisk": {
+     "id": 53,
+     "researchSiteCode": "G16",
+     "samplingDate": "2023-05-25T00:00:00",
+     "scaledPathogenRisk": 0.2484,
+     "scaledFecalRisk": 0.2897,
+     "scaledArgRisk": 0.3971,
+     "healthRiskScore": 0.3117
+    }
+   }
+  },
+  {
+   "id": "G17",
+   "name": "Gent1 (G1)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 51.02678,
+   "lon": 3.77389,
+   "altitude_m": 24.08,
+   "has_polygon": false,
+   "health_risk": null,
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G17",
+     "name": "Gent1 (G1)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 51.02678,
+     "longitude": 3.77389,
+     "altitude": 24.08
+    },
+    "healthRisk": null
+   }
+  },
+  {
+   "id": "G18",
+   "name": "Gent2 (G2)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 51.05458,
+   "lon": 3.68126,
+   "altitude_m": 20.12,
+   "has_polygon": false,
+   "health_risk": null,
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G18",
+     "name": "Gent2 (G2)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 51.05458,
+     "longitude": 3.68126,
+     "altitude": 20.12
+    },
+    "healthRisk": null
+   }
+  },
+  {
+   "id": "G1",
+   "name": "Oosterzele1 (O1)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.94744,
+   "lon": 3.8168,
+   "altitude_m": 54.86,
+   "has_polygon": false,
+   "health_risk": null,
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G1",
+     "name": "Oosterzele1 (O1)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.94744,
+     "longitude": 3.8168,
+     "altitude": 54.86
+    },
+    "healthRisk": null
+   }
+  },
+  {
+   "id": "G4",
+   "name": "Zottegem3 (Zo3)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.87507,
+   "lon": 3.80222,
+   "altitude_m": 39.01,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.2363,
+    "scaledPathogenRisk": 0.0503,
+    "scaledFecalRisk": 0.1824,
+    "scaledArgRisk": 0.4763,
+    "samplingDate": "2023-05-24",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G4",
+     "name": "Zottegem3 (Zo3)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.87507,
+     "longitude": 3.80222,
+     "altitude": 39.01
+    },
+    "healthRisk": {
+     "id": 41,
+     "researchSiteCode": "G4",
+     "samplingDate": "2023-05-24T00:00:00",
+     "scaledPathogenRisk": 0.0503,
+     "scaledFecalRisk": 0.1824,
+     "scaledArgRisk": 0.4763,
+     "healthRiskScore": 0.2363
+    }
+   }
+  },
+  {
+   "id": "G21",
+   "name": "Zottegem4 (Zo4)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.89162,
+   "lon": 3.81558,
+   "altitude_m": 48.46,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.2896,
+    "scaledPathogenRisk": 0.0499,
+    "scaledFecalRisk": 0.3255,
+    "scaledArgRisk": 0.4933,
+    "samplingDate": "2023-05-24",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G21",
+     "name": "Zottegem4 (Zo4)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.89162,
+     "longitude": 3.81558,
+     "altitude": 48.46
+    },
+    "healthRisk": {
+     "id": 54,
+     "researchSiteCode": "G21",
+     "samplingDate": "2023-05-24T00:00:00",
+     "scaledPathogenRisk": 0.0499,
+     "scaledFecalRisk": 0.3255,
+     "scaledArgRisk": 0.4933,
+     "healthRiskScore": 0.2896
+    }
+   }
+  },
+  {
+   "id": "G5",
+   "name": "Zwalm1 (Zw1)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.87539,
+   "lon": 3.74917,
+   "altitude_m": 20.12,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.2392,
+    "scaledPathogenRisk": 0.0496,
+    "scaledFecalRisk": 0.3549,
+    "scaledArgRisk": 0.313,
+    "samplingDate": "2023-05-24",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G5",
+     "name": "Zwalm1 (Zw1)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.87539,
+     "longitude": 3.74917,
+     "altitude": 20.12
+    },
+    "healthRisk": {
+     "id": 42,
+     "researchSiteCode": "G5",
+     "samplingDate": "2023-05-24T00:00:00",
+     "scaledPathogenRisk": 0.0496,
+     "scaledFecalRisk": 0.3549,
+     "scaledArgRisk": 0.313,
+     "healthRiskScore": 0.2392
+    }
+   }
+  },
+  {
+   "id": "G19",
+   "name": "Gent3 (G3)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 51.02843,
+   "lon": 3.786,
+   "altitude_m": 3.05,
+   "has_polygon": false,
+   "health_risk": null,
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G19",
+     "name": "Gent3 (G3)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 51.02843,
+     "longitude": 3.786,
+     "altitude": 3.05
+    },
+    "healthRisk": null
+   }
+  },
+  {
+   "id": "G20",
+   "name": "Gent4 (G4)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 51.0939,
+   "lon": 3.71687,
+   "altitude_m": 2.74,
+   "has_polygon": false,
+   "health_risk": null,
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G20",
+     "name": "Gent4 (G4)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 51.0939,
+     "longitude": 3.71687,
+     "altitude": 2.74
+    },
+    "healthRisk": null
+   }
+  },
+  {
+   "id": "G3",
+   "name": "Zottegem2 (Zo2)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.87604,
+   "lon": 3.75174,
+   "altitude_m": 51.21,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.1971,
+    "scaledPathogenRisk": 0.1004,
+    "scaledFecalRisk": 0.3096,
+    "scaledArgRisk": 0.1812,
+    "samplingDate": "2023-05-24",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G3",
+     "name": "Zottegem2 (Zo2)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.87604,
+     "longitude": 3.75174,
+     "altitude": 51.21
+    },
+    "healthRisk": {
+     "id": 40,
+     "researchSiteCode": "G3",
+     "samplingDate": "2023-05-24T00:00:00",
+     "scaledPathogenRisk": 0.1004,
+     "scaledFecalRisk": 0.3096,
+     "scaledArgRisk": 0.1812,
+     "healthRiskScore": 0.1971
+    }
+   }
+  },
+  {
+   "id": "G7",
+   "name": "Zwalm3 (Zw3)",
+   "city": "Ghent",
+   "city_id": "GH",
+   "country": "BE",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 50.86216,
+   "lon": 3.76577,
+   "altitude_m": 23.77,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.1936,
+    "scaledPathogenRisk": 0.0746,
+    "scaledFecalRisk": 0.2452,
+    "scaledArgRisk": 0.261,
+    "samplingDate": "2023-05-24",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "G7",
+     "name": "Zwalm3 (Zw3)",
+     "city": {
+      "id": "GH",
+      "name": "Ghent",
+      "longitude": 3.7174,
+      "latitude": 51.0543
+     },
+     "polygon": null,
+     "latitude": 50.86216,
+     "longitude": 3.76577,
+     "altitude": 23.77
+    },
+    "healthRisk": {
+     "id": 44,
+     "researchSiteCode": "G7",
+     "samplingDate": "2023-05-24T00:00:00",
+     "scaledPathogenRisk": 0.0746,
+     "scaledFecalRisk": 0.2452,
+     "scaledArgRisk": 0.261,
+     "healthRiskScore": 0.1936
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,950 @@
+{
+ "source": {
+  "sites": {
+   "url": "https://api.enora-oah.eu/api/sites/all",
+   "retrieved_at_utc": "2026-10-04T12:41:58Z",
+   "sha256": "c0272962378fbe64befae344acb410386fbb71b94777d03c9ad4fe795cf0c632",
+   "bytes": 128541,
+   "curl_flags": "-sS (no -k needed)"
+  },
+  "healthRisks": {
+   "url": "https://api.enora-oah.eu/api/resilience-map/health-risks",
+   "retrieved_at_utc": "2026-10-04T12:42:00Z",
+   "sha256": "3aee00272cc6ff02a3a5bcdf6975372875ef4056d37f2ebb0253bc12edbf5aa8",
+   "bytes": 16576,
+   "curl_flags": "-sS (no -k needed)"
+  },
+  "publisher": "ENORA / OneAquaHealth (api.enora-oah.eu)",
+  "join": "sites[].code == healthRisks[].researchSiteCode (1:1, exact string match)"
+ },
+ "city": "Benevento",
+ "city_id": "BE",
+ "country": "IT",
+ "count": 20,
+ "with_health_risk": 20,
+ "sites": [
+  {
+   "id": "BN1",
+   "name": "Capodimonte",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.13231,
+   "lon": 14.80039,
+   "altitude_m": 135.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.3091,
+    "scaledPathogenRisk": 0.2054,
+    "scaledFecalRisk": 0.2427,
+    "scaledArgRisk": 0.4792,
+    "samplingDate": "2023-06-28",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN1",
+     "name": "Capodimonte",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.13231,
+     "longitude": 14.80039,
+     "altitude": 135.0
+    },
+    "healthRisk": {
+     "id": 1,
+     "researchSiteCode": "BN1",
+     "samplingDate": "2023-06-28T00:00:00",
+     "scaledPathogenRisk": 0.2054,
+     "scaledFecalRisk": 0.2427,
+     "scaledArgRisk": 0.4792,
+     "healthRiskScore": 0.3091
+    }
+   }
+  },
+  {
+   "id": "BN2",
+   "name": "Cretarossa",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.12679,
+   "lon": 14.80333,
+   "altitude_m": 146.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.7266,
+    "scaledPathogenRisk": 0.6456,
+    "scaledFecalRisk": 0.5343,
+    "scaledArgRisk": 1.0,
+    "samplingDate": "2023-06-28",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN2",
+     "name": "Cretarossa",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.12679,
+     "longitude": 14.80333,
+     "altitude": 146.0
+    },
+    "healthRisk": {
+     "id": 2,
+     "researchSiteCode": "BN2",
+     "samplingDate": "2023-06-28T00:00:00",
+     "scaledPathogenRisk": 0.6456,
+     "scaledFecalRisk": 0.5343,
+     "scaledArgRisk": 1.0,
+     "healthRiskScore": 0.7266
+    }
+   }
+  },
+  {
+   "id": "BN3",
+   "name": "Ponticelli",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.13348,
+   "lon": 14.78614,
+   "altitude_m": 550.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.3553,
+    "scaledPathogenRisk": 0.3554,
+    "scaledFecalRisk": 0.7104,
+    "scaledArgRisk": 0.0,
+    "samplingDate": "2023-06-06",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN3",
+     "name": "Ponticelli",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.13348,
+     "longitude": 14.78614,
+     "altitude": 550.0
+    },
+    "healthRisk": {
+     "id": 3,
+     "researchSiteCode": "BN3",
+     "samplingDate": "2023-06-06T00:00:00",
+     "scaledPathogenRisk": 0.3554,
+     "scaledFecalRisk": 0.7104,
+     "scaledArgRisk": 0.0,
+     "healthRiskScore": 0.3553
+    }
+   }
+  },
+  {
+   "id": "BN4",
+   "name": "Serretelle 4",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.12414,
+   "lon": 14.74864,
+   "altitude_m": 130.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.3817,
+    "scaledPathogenRisk": 0.3065,
+    "scaledFecalRisk": 0.4667,
+    "scaledArgRisk": 0.3717,
+    "samplingDate": "2023-07-03",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN4",
+     "name": "Serretelle 4",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.12414,
+     "longitude": 14.74864,
+     "altitude": 130.0
+    },
+    "healthRisk": {
+     "id": 4,
+     "researchSiteCode": "BN4",
+     "samplingDate": "2023-07-03T00:00:00",
+     "scaledPathogenRisk": 0.3065,
+     "scaledFecalRisk": 0.4667,
+     "scaledArgRisk": 0.3717,
+     "healthRiskScore": 0.3817
+    }
+   }
+  },
+  {
+   "id": "BN5",
+   "name": "Serretelle 5",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.10429,
+   "lon": 14.74295,
+   "altitude_m": 182.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.2269,
+    "scaledPathogenRisk": 0.0758,
+    "scaledFecalRisk": 0.2193,
+    "scaledArgRisk": 0.3856,
+    "samplingDate": "2023-07-03",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN5",
+     "name": "Serretelle 5",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.10429,
+     "longitude": 14.74295,
+     "altitude": 182.0
+    },
+    "healthRisk": {
+     "id": 5,
+     "researchSiteCode": "BN5",
+     "samplingDate": "2023-07-03T00:00:00",
+     "scaledPathogenRisk": 0.0758,
+     "scaledFecalRisk": 0.2193,
+     "scaledArgRisk": 0.3856,
+     "healthRiskScore": 0.2269
+    }
+   }
+  },
+  {
+   "id": "BN6",
+   "name": "Pezzapiano",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.14775,
+   "lon": 14.78437,
+   "altitude_m": 127.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.342,
+    "scaledPathogenRisk": 0.2056,
+    "scaledFecalRisk": 0.4619,
+    "scaledArgRisk": 0.3583,
+    "samplingDate": "2023-06-28",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN6",
+     "name": "Pezzapiano",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.14775,
+     "longitude": 14.78437,
+     "altitude": 127.0
+    },
+    "healthRisk": {
+     "id": 6,
+     "researchSiteCode": "BN6",
+     "samplingDate": "2023-06-28T00:00:00",
+     "scaledPathogenRisk": 0.2056,
+     "scaledFecalRisk": 0.4619,
+     "scaledArgRisk": 0.3583,
+     "healthRiskScore": 0.342
+    }
+   }
+  },
+  {
+   "id": "BN7",
+   "name": "Margiacca",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.14905,
+   "lon": 14.81407,
+   "altitude_m": 135.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.4343,
+    "scaledPathogenRisk": 0.4126,
+    "scaledFecalRisk": 0.5393,
+    "scaledArgRisk": 0.3509,
+    "samplingDate": "2023-06-28",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN7",
+     "name": "Margiacca",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.14905,
+     "longitude": 14.81407,
+     "altitude": 135.0
+    },
+    "healthRisk": {
+     "id": 7,
+     "researchSiteCode": "BN7",
+     "samplingDate": "2023-06-28T00:00:00",
+     "scaledPathogenRisk": 0.4126,
+     "scaledFecalRisk": 0.5393,
+     "scaledArgRisk": 0.3509,
+     "healthRiskScore": 0.4343
+    }
+   }
+  },
+  {
+   "id": "BN8",
+   "name": "Paduli",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.15405,
+   "lon": 14.8345,
+   "altitude_m": 204.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.4056,
+    "scaledPathogenRisk": 0.3383,
+    "scaledFecalRisk": 0.477,
+    "scaledArgRisk": 0.4015,
+    "samplingDate": "2023-07-07",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN8",
+     "name": "Paduli",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.15405,
+     "longitude": 14.8345,
+     "altitude": 204.0
+    },
+    "healthRisk": {
+     "id": 8,
+     "researchSiteCode": "BN8",
+     "samplingDate": "2023-07-07T00:00:00",
+     "scaledPathogenRisk": 0.3383,
+     "scaledFecalRisk": 0.477,
+     "scaledArgRisk": 0.4015,
+     "healthRiskScore": 0.4056
+    }
+   }
+  },
+  {
+   "id": "BN9",
+   "name": "Vallone Cornacchie",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.11089,
+   "lon": 14.8325,
+   "altitude_m": 126.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.3491,
+    "scaledPathogenRisk": 0.2515,
+    "scaledFecalRisk": 0.4117,
+    "scaledArgRisk": 0.384,
+    "samplingDate": "2023-06-06",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN9",
+     "name": "Vallone Cornacchie",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.11089,
+     "longitude": 14.8325,
+     "altitude": 126.0
+    },
+    "healthRisk": {
+     "id": 9,
+     "researchSiteCode": "BN9",
+     "samplingDate": "2023-06-06T00:00:00",
+     "scaledPathogenRisk": 0.2515,
+     "scaledFecalRisk": 0.4117,
+     "scaledArgRisk": 0.384,
+     "healthRiskScore": 0.3491
+    }
+   }
+  },
+  {
+   "id": "BN10",
+   "name": "Malacagna",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.14607,
+   "lon": 14.76353,
+   "altitude_m": 120.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.6243,
+    "scaledPathogenRisk": 0.762,
+    "scaledFecalRisk": 0.8423,
+    "scaledArgRisk": 0.2686,
+    "samplingDate": "2023-06-07",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN10",
+     "name": "Malacagna",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.14607,
+     "longitude": 14.76353,
+     "altitude": 120.0
+    },
+    "healthRisk": {
+     "id": 10,
+     "researchSiteCode": "BN10",
+     "samplingDate": "2023-06-07T00:00:00",
+     "scaledPathogenRisk": 0.762,
+     "scaledFecalRisk": 0.8423,
+     "scaledArgRisk": 0.2686,
+     "healthRiskScore": 0.6243
+    }
+   }
+  },
+  {
+   "id": "BN11",
+   "name": "Masseria Roseto",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.16124,
+   "lon": 14.75972,
+   "altitude_m": 153.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.108,
+    "scaledPathogenRisk": 0.0754,
+    "scaledFecalRisk": 0.2158,
+    "scaledArgRisk": 0.0329,
+    "samplingDate": "2023-06-06",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN11",
+     "name": "Masseria Roseto",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.16124,
+     "longitude": 14.75972,
+     "altitude": 153.0
+    },
+    "healthRisk": {
+     "id": 11,
+     "researchSiteCode": "BN11",
+     "samplingDate": "2023-06-06T00:00:00",
+     "scaledPathogenRisk": 0.0754,
+     "scaledFecalRisk": 0.2158,
+     "scaledArgRisk": 0.0329,
+     "healthRiskScore": 0.108
+    }
+   }
+  },
+  {
+   "id": "BN12",
+   "name": "Vallone S. Vitale",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.13628,
+   "lon": 14.73193,
+   "altitude_m": 130.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.0895,
+    "scaledPathogenRisk": 0.0748,
+    "scaledFecalRisk": 0.1445,
+    "scaledArgRisk": 0.0491,
+    "samplingDate": "2023-06-06",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN12",
+     "name": "Vallone S. Vitale",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.13628,
+     "longitude": 14.73193,
+     "altitude": 130.0
+    },
+    "healthRisk": {
+     "id": 12,
+     "researchSiteCode": "BN12",
+     "samplingDate": "2023-06-06T00:00:00",
+     "scaledPathogenRisk": 0.0748,
+     "scaledFecalRisk": 0.1445,
+     "scaledArgRisk": 0.0491,
+     "healthRiskScore": 0.0895
+    }
+   }
+  },
+  {
+   "id": "BN13",
+   "name": "Vallone la Ripa",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.11727,
+   "lon": 14.73683,
+   "altitude_m": 245.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.234,
+    "scaledPathogenRisk": 0.1003,
+    "scaledFecalRisk": 0.3295,
+    "scaledArgRisk": 0.2723,
+    "samplingDate": "2023-07-03",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN13",
+     "name": "Vallone la Ripa",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.11727,
+     "longitude": 14.73683,
+     "altitude": 245.0
+    },
+    "healthRisk": {
+     "id": 13,
+     "researchSiteCode": "BN13",
+     "samplingDate": "2023-07-03T00:00:00",
+     "scaledPathogenRisk": 0.1003,
+     "scaledFecalRisk": 0.3295,
+     "scaledArgRisk": 0.2723,
+     "healthRiskScore": 0.234
+    }
+   }
+  },
+  {
+   "id": "BN14",
+   "name": "Rocca - Tufara",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.06014,
+   "lon": 14.70843,
+   "altitude_m": null,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.1676,
+    "scaledPathogenRisk": 0.1101,
+    "scaledFecalRisk": 0.2119,
+    "scaledArgRisk": 0.181,
+    "samplingDate": "2024-08-05",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [
+    "altitude_null",
+    "sampling_date_outlier_2024_vs_2023_campaign"
+   ],
+   "raw": {
+    "site": {
+     "code": "BN14",
+     "name": "Rocca - Tufara",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.06014,
+     "longitude": 14.70843,
+     "altitude": null
+    },
+    "healthRisk": {
+     "id": 14,
+     "researchSiteCode": "BN14",
+     "samplingDate": "2024-08-05T00:00:00",
+     "scaledPathogenRisk": 0.1101,
+     "scaledFecalRisk": 0.2119,
+     "scaledArgRisk": 0.181,
+     "healthRiskScore": 0.1676
+    }
+   }
+  },
+  {
+   "id": "BN15",
+   "name": "Corvo Tressanti",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.06921,
+   "lon": 14.70959,
+   "altitude_m": 148.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.3715,
+    "scaledPathogenRisk": 0.3487,
+    "scaledFecalRisk": 0.3778,
+    "scaledArgRisk": 0.3881,
+    "samplingDate": "2023-06-07",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN15",
+     "name": "Corvo Tressanti",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.06921,
+     "longitude": 14.70959,
+     "altitude": 148.0
+    },
+    "healthRisk": {
+     "id": 15,
+     "researchSiteCode": "BN15",
+     "samplingDate": "2023-06-07T00:00:00",
+     "scaledPathogenRisk": 0.3487,
+     "scaledFecalRisk": 0.3778,
+     "scaledArgRisk": 0.3881,
+     "healthRiskScore": 0.3715
+    }
+   }
+  },
+  {
+   "id": "BN16",
+   "name": "Ranno",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.06923,
+   "lon": 14.70876,
+   "altitude_m": 146.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.2203,
+    "scaledPathogenRisk": 0.1258,
+    "scaledFecalRisk": 0.4229,
+    "scaledArgRisk": 0.1122,
+    "samplingDate": "2023-06-07",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN16",
+     "name": "Ranno",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.06923,
+     "longitude": 14.70876,
+     "altitude": 146.0
+    },
+    "healthRisk": {
+     "id": 16,
+     "researchSiteCode": "BN16",
+     "samplingDate": "2023-06-07T00:00:00",
+     "scaledPathogenRisk": 0.1258,
+     "scaledFecalRisk": 0.4229,
+     "scaledArgRisk": 0.1122,
+     "healthRiskScore": 0.2203
+    }
+   }
+  },
+  {
+   "id": "BN17",
+   "name": "Lossauro",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.13221,
+   "lon": 14.7127,
+   "altitude_m": 284.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.3801,
+    "scaledPathogenRisk": 0.4909,
+    "scaledFecalRisk": 0.6187,
+    "scaledArgRisk": 0.0307,
+    "samplingDate": "2023-07-03",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN17",
+     "name": "Lossauro",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.13221,
+     "longitude": 14.7127,
+     "altitude": 284.0
+    },
+    "healthRisk": {
+     "id": 17,
+     "researchSiteCode": "BN17",
+     "samplingDate": "2023-07-03T00:00:00",
+     "scaledPathogenRisk": 0.4909,
+     "scaledFecalRisk": 0.6187,
+     "scaledArgRisk": 0.0307,
+     "healthRiskScore": 0.3801
+    }
+   }
+  },
+  {
+   "id": "BN18",
+   "name": "Jenga",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.15126,
+   "lon": 14.70936,
+   "altitude_m": 100.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.4021,
+    "scaledPathogenRisk": 0.3149,
+    "scaledFecalRisk": 0.4429,
+    "scaledArgRisk": 0.4485,
+    "samplingDate": "2023-06-06",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN18",
+     "name": "Jenga",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.15126,
+     "longitude": 14.70936,
+     "altitude": 100.0
+    },
+    "healthRisk": {
+     "id": 18,
+     "researchSiteCode": "BN18",
+     "samplingDate": "2023-06-06T00:00:00",
+     "scaledPathogenRisk": 0.3149,
+     "scaledFecalRisk": 0.4429,
+     "scaledArgRisk": 0.4485,
+     "healthRiskScore": 0.4021
+    }
+   }
+  },
+  {
+   "id": "BN19",
+   "name": "Foeniculum",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.185791,
+   "lon": 14.719005,
+   "altitude_m": 267.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.2408,
+    "scaledPathogenRisk": 0.2572,
+    "scaledFecalRisk": 0.3391,
+    "scaledArgRisk": 0.1262,
+    "samplingDate": "2023-07-07",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN19",
+     "name": "Foeniculum",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.185791,
+     "longitude": 14.719005,
+     "altitude": 267.0
+    },
+    "healthRisk": {
+     "id": 19,
+     "researchSiteCode": "BN19",
+     "samplingDate": "2023-07-07T00:00:00",
+     "scaledPathogenRisk": 0.2572,
+     "scaledFecalRisk": 0.3391,
+     "scaledArgRisk": 0.1262,
+     "healthRiskScore": 0.2408
+    }
+   }
+  },
+  {
+   "id": "BN20",
+   "name": "Lenta",
+   "city": "Benevento",
+   "city_id": "BE",
+   "country": "IT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 41.213825,
+   "lon": 14.68999,
+   "altitude_m": 147.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.4207,
+    "scaledPathogenRisk": 0.3881,
+    "scaledFecalRisk": 0.5078,
+    "scaledArgRisk": 0.3661,
+    "samplingDate": "2023-07-07",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "BN20",
+     "name": "Lenta",
+     "city": {
+      "id": "BE",
+      "name": "Benevento",
+      "longitude": 14.7868,
+      "latitude": 41.1291
+     },
+     "polygon": null,
+     "latitude": 41.213825,
+     "longitude": 14.68999,
+     "altitude": 147.0
+    },
+    "healthRisk": {
+     "id": 20,
+     "researchSiteCode": "BN20",
+     "samplingDate": "2023-07-07T00:00:00",
+     "scaledPathogenRisk": 0.3881,
+     "scaledFecalRisk": 0.5078,
+     "scaledArgRisk": 0.3661,
+     "healthRiskScore": 0.4207
+    }
+   }
+  }
+ ]
+}

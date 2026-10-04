@@ -1,0 +1,917 @@
+{
+ "source": {
+  "sites": {
+   "url": "https://api.enora-oah.eu/api/sites/all",
+   "retrieved_at_utc": "2026-10-04T12:41:58Z",
+   "sha256": "c0272962378fbe64befae344acb410386fbb71b94777d03c9ad4fe795cf0c632",
+   "bytes": 128541,
+   "curl_flags": "-sS (no -k needed)"
+  },
+  "healthRisks": {
+   "url": "https://api.enora-oah.eu/api/resilience-map/health-risks",
+   "retrieved_at_utc": "2026-10-04T12:42:00Z",
+   "sha256": "3aee00272cc6ff02a3a5bcdf6975372875ef4056d37f2ebb0253bc12edbf5aa8",
+   "bytes": 16576,
+   "curl_flags": "-sS (no -k needed)"
+  },
+  "publisher": "ENORA / OneAquaHealth (api.enora-oah.eu)",
+  "join": "sites[].code == healthRisks[].researchSiteCode (1:1, exact string match)"
+ },
+ "city": "Coimbra",
+ "city_id": "CO",
+ "country": "PT",
+ "count": 20,
+ "with_health_risk": 18,
+ "sites": [
+  {
+   "id": "C1",
+   "name": "Exploratório",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.19787,
+   "lon": -8.42865,
+   "altitude_m": 20.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.2199,
+    "scaledPathogenRisk": 0.0746,
+    "scaledFecalRisk": 0.2477,
+    "scaledArgRisk": 0.3374,
+    "samplingDate": "2023-06-28",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C1",
+     "name": "Exploratório",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.19787,
+     "longitude": -8.42865,
+     "altitude": 20.0
+    },
+    "healthRisk": {
+     "id": 21,
+     "researchSiteCode": "C1",
+     "samplingDate": "2023-06-28T00:00:00",
+     "scaledPathogenRisk": 0.0746,
+     "scaledFecalRisk": 0.2477,
+     "scaledArgRisk": 0.3374,
+     "healthRiskScore": 0.2199
+    }
+   }
+  },
+  {
+   "id": "C2",
+   "name": "Estação Cbr-B",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.22483,
+   "lon": -8.44135,
+   "altitude_m": 14.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.4221,
+    "scaledPathogenRisk": 0.507,
+    "scaledFecalRisk": 0.5072,
+    "scaledArgRisk": 0.2522,
+    "samplingDate": "2023-06-27",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C2",
+     "name": "Estação Cbr-B",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.22483,
+     "longitude": -8.44135,
+     "altitude": 14.0
+    },
+    "healthRisk": {
+     "id": 22,
+     "researchSiteCode": "C2",
+     "samplingDate": "2023-06-27T00:00:00",
+     "scaledPathogenRisk": 0.507,
+     "scaledFecalRisk": 0.5072,
+     "scaledArgRisk": 0.2522,
+     "healthRiskScore": 0.4221
+    }
+   }
+  },
+  {
+   "id": "C3",
+   "name": "Vale das Flores",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.19307,
+   "lon": -8.41945,
+   "altitude_m": 22.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.2436,
+    "scaledPathogenRisk": 0.2973,
+    "scaledFecalRisk": 0.2051,
+    "scaledArgRisk": 0.2283,
+    "samplingDate": "2023-06-27",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C3",
+     "name": "Vale das Flores",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.19307,
+     "longitude": -8.41945,
+     "altitude": 22.0
+    },
+    "healthRisk": {
+     "id": 23,
+     "researchSiteCode": "C3",
+     "samplingDate": "2023-06-27T00:00:00",
+     "scaledPathogenRisk": 0.2973,
+     "scaledFecalRisk": 0.2051,
+     "scaledArgRisk": 0.2283,
+     "healthRiskScore": 0.2436
+    }
+   }
+  },
+  {
+   "id": "C4",
+   "name": "Eiras",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.25289,
+   "lon": -8.43659,
+   "altitude_m": 17.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.0748,
+    "scaledPathogenRisk": 0.0496,
+    "scaledFecalRisk": 0.1409,
+    "scaledArgRisk": 0.0339,
+    "samplingDate": "2023-06-27",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C4",
+     "name": "Eiras",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.25289,
+     "longitude": -8.43659,
+     "altitude": 17.0
+    },
+    "healthRisk": {
+     "id": 24,
+     "researchSiteCode": "C4",
+     "samplingDate": "2023-06-27T00:00:00",
+     "scaledPathogenRisk": 0.0496,
+     "scaledFecalRisk": 0.1409,
+     "scaledArgRisk": 0.0339,
+     "healthRiskScore": 0.0748
+    }
+   }
+  },
+  {
+   "id": "C5",
+   "name": "Mina Hospital",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.2186,
+   "lon": -8.42733,
+   "altitude_m": 27.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.7822,
+    "scaledPathogenRisk": 1.0,
+    "scaledFecalRisk": 1.0,
+    "scaledArgRisk": 0.3465,
+    "samplingDate": "2023-06-29",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C5",
+     "name": "Mina Hospital",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.2186,
+     "longitude": -8.42733,
+     "altitude": 27.0
+    },
+    "healthRisk": {
+     "id": 25,
+     "researchSiteCode": "C5",
+     "samplingDate": "2023-06-29T00:00:00",
+     "scaledPathogenRisk": 1.0,
+     "scaledFecalRisk": 1.0,
+     "scaledArgRisk": 0.3465,
+     "healthRiskScore": 0.7822
+    }
+   }
+  },
+  {
+   "id": "C6",
+   "name": "Casa do Sal",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.21942,
+   "lon": -8.43772,
+   "altitude_m": 16.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.5952,
+    "scaledPathogenRisk": 0.7351,
+    "scaledFecalRisk": 0.6664,
+    "scaledArgRisk": 0.3841,
+    "samplingDate": "2023-06-29",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C6",
+     "name": "Casa do Sal",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.21942,
+     "longitude": -8.43772,
+     "altitude": 16.0
+    },
+    "healthRisk": {
+     "id": 26,
+     "researchSiteCode": "C6",
+     "samplingDate": "2023-06-29T00:00:00",
+     "scaledPathogenRisk": 0.7351,
+     "scaledFecalRisk": 0.6664,
+     "scaledArgRisk": 0.3841,
+     "healthRiskScore": 0.5952
+    }
+   }
+  },
+  {
+   "id": "C7",
+   "name": "São Romão",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.22243,
+   "lon": -8.40165,
+   "altitude_m": 53.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.2504,
+    "scaledPathogenRisk": 0.1783,
+    "scaledFecalRisk": 0.5702,
+    "scaledArgRisk": 0.0027,
+    "samplingDate": "2023-06-29",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C7",
+     "name": "São Romão",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.22243,
+     "longitude": -8.40165,
+     "altitude": 53.0
+    },
+    "healthRisk": {
+     "id": 27,
+     "researchSiteCode": "C7",
+     "samplingDate": "2023-06-29T00:00:00",
+     "scaledPathogenRisk": 0.1783,
+     "scaledFecalRisk": 0.5702,
+     "scaledArgRisk": 0.0027,
+     "healthRiskScore": 0.2504
+    }
+   }
+  },
+  {
+   "id": "C8",
+   "name": "Covões",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.19133,
+   "lon": -8.46002,
+   "altitude_m": 77.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.4279,
+    "scaledPathogenRisk": 0.406,
+    "scaledFecalRisk": 0.4457,
+    "scaledArgRisk": 0.432,
+    "samplingDate": "2023-06-28",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C8",
+     "name": "Covões",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.19133,
+     "longitude": -8.46002,
+     "altitude": 77.0
+    },
+    "healthRisk": {
+     "id": 28,
+     "researchSiteCode": "C8",
+     "samplingDate": "2023-06-28T00:00:00",
+     "scaledPathogenRisk": 0.406,
+     "scaledFecalRisk": 0.4457,
+     "scaledArgRisk": 0.432,
+     "healthRiskScore": 0.4279
+    }
+   }
+  },
+  {
+   "id": "C9",
+   "name": "Fornos",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.27702,
+   "lon": -8.4272,
+   "altitude_m": 19.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.1964,
+    "scaledPathogenRisk": 0.1265,
+    "scaledFecalRisk": 0.1443,
+    "scaledArgRisk": 0.3186,
+    "samplingDate": "2023-06-27",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C9",
+     "name": "Fornos",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.27702,
+     "longitude": -8.4272,
+     "altitude": 19.0
+    },
+    "healthRisk": {
+     "id": 29,
+     "researchSiteCode": "C9",
+     "samplingDate": "2023-06-27T00:00:00",
+     "scaledPathogenRisk": 0.1265,
+     "scaledFecalRisk": 0.1443,
+     "scaledArgRisk": 0.3186,
+     "healthRiskScore": 0.1964
+    }
+   }
+  },
+  {
+   "id": "C10",
+   "name": "Arregaça",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.19776,
+   "lon": -8.41773,
+   "altitude_m": 23.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.1851,
+    "scaledPathogenRisk": 0.05,
+    "scaledFecalRisk": 0.4146,
+    "scaledArgRisk": 0.0906,
+    "samplingDate": "2023-06-27",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C10",
+     "name": "Arregaça",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.19776,
+     "longitude": -8.41773,
+     "altitude": 23.0
+    },
+    "healthRisk": {
+     "id": 30,
+     "researchSiteCode": "C10",
+     "samplingDate": "2023-06-27T00:00:00",
+     "scaledPathogenRisk": 0.05,
+     "scaledFecalRisk": 0.4146,
+     "scaledArgRisk": 0.0906,
+     "healthRiskScore": 0.1851
+    }
+   }
+  },
+  {
+   "id": "C11",
+   "name": "Bairro São Miguel",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.22752,
+   "lon": -8.43757,
+   "altitude_m": 20.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.1278,
+    "scaledPathogenRisk": 0.0509,
+    "scaledFecalRisk": 0.187,
+    "scaledArgRisk": 0.1456,
+    "samplingDate": "2023-06-27",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C11",
+     "name": "Bairro São Miguel",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.22752,
+     "longitude": -8.43757,
+     "altitude": 20.0
+    },
+    "healthRisk": {
+     "id": 31,
+     "researchSiteCode": "C11",
+     "samplingDate": "2023-06-27T00:00:00",
+     "scaledPathogenRisk": 0.0509,
+     "scaledFecalRisk": 0.187,
+     "scaledArgRisk": 0.1456,
+     "healthRiskScore": 0.1278
+    }
+   }
+  },
+  {
+   "id": "C12",
+   "name": "Escola Agrária",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.20386,
+   "lon": -8.45302,
+   "altitude_m": 42.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.5324,
+    "scaledPathogenRisk": 0.4217,
+    "scaledFecalRisk": 0.8051,
+    "scaledArgRisk": 0.3704,
+    "samplingDate": "2023-06-28",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C12",
+     "name": "Escola Agrária",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.20386,
+     "longitude": -8.45302,
+     "altitude": 42.0
+    },
+    "healthRisk": {
+     "id": 32,
+     "researchSiteCode": "C12",
+     "samplingDate": "2023-06-28T00:00:00",
+     "scaledPathogenRisk": 0.4217,
+     "scaledFecalRisk": 0.8051,
+     "scaledArgRisk": 0.3704,
+     "healthRiskScore": 0.5324
+    }
+   }
+  },
+  {
+   "id": "C13",
+   "name": "Condeixa",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.11106,
+   "lon": -8.49052,
+   "altitude_m": 106.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.2165,
+    "scaledPathogenRisk": 0.1499,
+    "scaledFecalRisk": 0.2287,
+    "scaledArgRisk": 0.2708,
+    "samplingDate": "2023-06-28",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C13",
+     "name": "Condeixa",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.11106,
+     "longitude": -8.49052,
+     "altitude": 106.0
+    },
+    "healthRisk": {
+     "id": 33,
+     "researchSiteCode": "C13",
+     "samplingDate": "2023-06-28T00:00:00",
+     "scaledPathogenRisk": 0.1499,
+     "scaledFecalRisk": 0.2287,
+     "scaledArgRisk": 0.2708,
+     "healthRiskScore": 0.2165
+    }
+   }
+  },
+  {
+   "id": "C14",
+   "name": "Antanhol",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.16719,
+   "lon": -8.47817,
+   "altitude_m": 68.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.2243,
+    "scaledPathogenRisk": 0.2241,
+    "scaledFecalRisk": 0.1143,
+    "scaledArgRisk": 0.3343,
+    "samplingDate": "2023-06-28",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C14",
+     "name": "Antanhol",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.16719,
+     "longitude": -8.47817,
+     "altitude": 68.0
+    },
+    "healthRisk": {
+     "id": 34,
+     "researchSiteCode": "C14",
+     "samplingDate": "2023-06-28T00:00:00",
+     "scaledPathogenRisk": 0.2241,
+     "scaledFecalRisk": 0.1143,
+     "scaledArgRisk": 0.3343,
+     "healthRiskScore": 0.2243
+    }
+   }
+  },
+  {
+   "id": "C15",
+   "name": "Copeira",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.17943,
+   "lon": -8.42117,
+   "altitude_m": 25.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.3449,
+    "scaledPathogenRisk": 0.3791,
+    "scaledFecalRisk": 0.3851,
+    "scaledArgRisk": 0.2706,
+    "samplingDate": "2023-06-28",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C15",
+     "name": "Copeira",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.17943,
+     "longitude": -8.42117,
+     "altitude": 25.0
+    },
+    "healthRisk": {
+     "id": 35,
+     "researchSiteCode": "C15",
+     "samplingDate": "2023-06-28T00:00:00",
+     "scaledPathogenRisk": 0.3791,
+     "scaledFecalRisk": 0.3851,
+     "scaledArgRisk": 0.2706,
+     "healthRiskScore": 0.3449
+    }
+   }
+  },
+  {
+   "id": "C16",
+   "name": "Rio Velho",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.22461,
+   "lon": -8.44304,
+   "altitude_m": 15.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.3534,
+    "scaledPathogenRisk": 0.5063,
+    "scaledFecalRisk": 0.2531,
+    "scaledArgRisk": 0.3008,
+    "samplingDate": "2023-06-27",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C16",
+     "name": "Rio Velho",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.22461,
+     "longitude": -8.44304,
+     "altitude": 15.0
+    },
+    "healthRisk": {
+     "id": 36,
+     "researchSiteCode": "C16",
+     "samplingDate": "2023-06-27T00:00:00",
+     "scaledPathogenRisk": 0.5063,
+     "scaledFecalRisk": 0.2531,
+     "scaledArgRisk": 0.3008,
+     "healthRiskScore": 0.3534
+    }
+   }
+  },
+  {
+   "id": "C17",
+   "name": "Conraria",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.17422,
+   "lon": -8.39363,
+   "altitude_m": 27.0,
+   "has_polygon": false,
+   "health_risk": null,
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C17",
+     "name": "Conraria",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.17422,
+     "longitude": -8.39363,
+     "altitude": 27.0
+    },
+    "healthRisk": null
+   }
+  },
+  {
+   "id": "C18",
+   "name": "Ponte da Espertina",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.25621,
+   "lon": -8.45312,
+   "altitude_m": 14.0,
+   "has_polygon": false,
+   "health_risk": null,
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C18",
+     "name": "Ponte da Espertina",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.25621,
+     "longitude": -8.45312,
+     "altitude": 14.0
+    },
+    "healthRisk": null
+   }
+  },
+  {
+   "id": "C19",
+   "name": "Escravote",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.24812,
+   "lon": -8.41159,
+   "altitude_m": 42.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.4367,
+    "scaledPathogenRisk": 0.3044,
+    "scaledFecalRisk": 0.4625,
+    "scaledArgRisk": 0.5433,
+    "samplingDate": "2023-06-06",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C19",
+     "name": "Escravote",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.24812,
+     "longitude": -8.41159,
+     "altitude": 42.0
+    },
+    "healthRisk": {
+     "id": 37,
+     "researchSiteCode": "C19",
+     "samplingDate": "2023-06-06T00:00:00",
+     "scaledPathogenRisk": 0.3044,
+     "scaledFecalRisk": 0.4625,
+     "scaledArgRisk": 0.5433,
+     "healthRiskScore": 0.4367
+    }
+   }
+  },
+  {
+   "id": "C20",
+   "name": "Corujeira",
+   "city": "Coimbra",
+   "city_id": "CO",
+   "country": "PT",
+   "country_source": "derived from city name (not present in API response)",
+   "lat": 40.21085,
+   "lon": -8.47667,
+   "altitude_m": 14.0,
+   "has_polygon": false,
+   "health_risk": {
+    "healthRiskScore": 0.3304,
+    "scaledPathogenRisk": 0.2243,
+    "scaledFecalRisk": 0.2044,
+    "scaledArgRisk": 0.5623,
+    "samplingDate": "2023-06-06",
+    "scale": "numeric 0-1 (scaled); no categorical level in source"
+   },
+   "flags": [],
+   "raw": {
+    "site": {
+     "code": "C20",
+     "name": "Corujeira",
+     "city": {
+      "id": "CO",
+      "name": "Coimbra",
+      "longitude": -8.4103,
+      "latitude": 40.2033
+     },
+     "polygon": null,
+     "latitude": 40.21085,
+     "longitude": -8.47667,
+     "altitude": 14.0
+    },
+    "healthRisk": {
+     "id": 38,
+     "researchSiteCode": "C20",
+     "samplingDate": "2023-06-06T00:00:00",
+     "scaledPathogenRisk": 0.2243,
+     "scaledFecalRisk": 0.2044,
+     "scaledArgRisk": 0.5623,
+     "healthRiskScore": 0.3304
+    }
+   }
+  }
+ ]
+}

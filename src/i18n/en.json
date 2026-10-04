@@ -1,0 +1,238 @@
+{
+  "meta": {
+    "code": "en",
+    "name": "English",
+    "reviewed": true
+  },
+  "ui": {
+    "tagline": "What your stream's record says",
+    "navMap": "Streams",
+    "navSources": "Sources and data",
+    "language": "Language",
+    "mapTitle": "Choose a stream",
+    "mapIntro": "OneAquaHealth scientists studied urban streams in five European cities. Pick one to read what its record means for people, animals and the stream.",
+    "listTitle": "Sites in {city}",
+    "loading": "Loading the record",
+    "siteEyebrow": "{city} · site {id}",
+    "statusLab": "Lab health-risk: {level}, measured {date}",
+    "statusNoLab": "No lab health-risk result is published for this site yet.",
+    "labAge": "Scientists last checked this stream {days} days ago.",
+    "level_low": "low",
+    "level_moderate": "moderate",
+    "level_high": "high",
+    "level_unknown": "not published",
+    "doCheck": "Do a 90-second check here",
+    "clinicianLink": "Clinician reading (printable)",
+    "b1": "What scientists measured here",
+    "b1None": "OneAquaHealth has not published a lab result for this site in the data we used.",
+    "b2": "What people noticed",
+    "b2Empty": "No one has checked this stream yet. You could be first.",
+    "b2Saved": "Checks saved on this phone",
+    "b3": "What this means",
+    "people": "For people",
+    "animals": "For animals",
+    "stream": "For the stream",
+    "b3Intro": "Based on what was noticed here. This does not mean the water is unsafe. It means someone should look.",
+    "b3Nothing": "Nothing unusual has been noticed here yet. Readings appear once a check reports something.",
+    "b4": "What can be done",
+    "b4Intro": "Measures from OneAquaHealth's Catalogue of Measures that fit what was noticed.",
+    "whyCity": "Why this matters",
+    "fromOAH": "from OneAquaHealth",
+    "source": "Source",
+    "page": "p.",
+    "stripTitle": "Lab health-risk across {city}'s sites",
+    "stripNote": "Each dot is a site. This site is the large dot. Download the data as CSV.",
+    "downloadCsv": "Download CSV",
+    "checkTitle": "90-second stream check",
+    "checkIntro": "Seven short questions. Not sure is a useful answer. Nothing leaves your phone unless you choose to send it.",
+    "start": "Start",
+    "next": "Continue",
+    "back": "Back",
+    "of": "{n} of {total}",
+    "notSure": "Not sure",
+    "errorTitle": "There is a problem",
+    "errorChoose": "Choose an answer, or Not sure",
+    "savedTitle": "Saved on this phone",
+    "savedBody": "Thank you. Your check is part of this stream's record on this phone. It is marked preliminary until a reviewer looks at it.",
+    "offline": "You are offline. Your check is saved on this phone.",
+    "seeReading": "See the updated reading",
+    "showFhir": "Show the FHIR record",
+    "clinTitle": "Clinician reading",
+    "clinFor": "For GPs and public-health officers. Site {id}, {city}.",
+    "clinMay": "What it may indicate",
+    "clinNot": "What it does not tell you",
+    "clinAdvice": "Precautionary advice for people and dogs",
+    "clinContact": "When to contact the municipality or a vet",
+    "clinNone": "No finding has been reported for this site yet, so there is nothing to interpret.",
+    "notTitle": "What this is not",
+    "notBody": "This is not a diagnosis, not a water-quality test and not a statement that the water is safe or unsafe. It interprets what a resident noticed, in precautionary terms.",
+    "disclaimer": "Drafted by a final-year medical student. Not clinical advice.",
+    "print": "Print or save as PDF",
+    "dated": "Prepared {date}",
+    "sourcesTitle": "Sources and data",
+    "machineTr": "Machine-assisted translation, not yet reviewed by a native speaker.",
+    "skip": "Skip this question",
+    "tempError": "Enter a temperature between 0 and 40, or skip"
+  },
+  "questions": {
+    "foam": {
+      "q": "Is there foam on the water?",
+      "hint": "Look along the edges and behind stones.",
+      "a": {
+        "present": "Yes, foam",
+        "absent": "No foam"
+      }
+    },
+    "colourSmell": {
+      "q": "Does the water look or smell unusual?",
+      "hint": "For example an odd colour, a sewage or chemical smell, or rotten eggs.",
+      "a": {
+        "present": "Yes, unusual",
+        "absent": "Looks and smells normal"
+      }
+    },
+    "riparianVegetation": {
+      "q": "How much of the bank is covered by trees and plants?",
+      "hint": "Look along about 10 metres of bank on your side.",
+      "a": {
+        "0-20-percent": "Almost none (0 to 20%)",
+        "21-40-percent": "A little (21 to 40%)",
+        "41-60-percent": "About half (41 to 60%)",
+        "61-80-percent": "Most (61 to 80%)",
+        "81-100-percent": "Nearly all (81 to 100%)"
+      }
+    },
+    "macrophytes": {
+      "q": "How much of the stream bed has water plants growing in it?",
+      "hint": "Look into the water where you can see the bottom.",
+      "a": {
+        "0-20-percent": "Almost none (0 to 20%)",
+        "21-40-percent": "A little (21 to 40%)",
+        "41-60-percent": "About half (41 to 60%)",
+        "61-80-percent": "Most (61 to 80%)",
+        "81-100-percent": "Nearly all (81 to 100%)"
+      }
+    },
+    "invasiveOrganisms": {
+      "q": "Do you see plants or animals that don't belong here?",
+      "hint": "For example giant hogweed, Japanese knotweed or crayfish you don't recognise.",
+      "a": {
+        "present": "Yes, I think so",
+        "absent": "No"
+      }
+    },
+    "other": {
+      "q": "Do you notice any of these?",
+      "hint": "Choose all that apply.",
+      "a": {
+        "scum": "Green or blue-green scum",
+        "deadFish": "Dead fish",
+        "standingWater": "Pools of still water by the stream",
+        "none": "None of these"
+      }
+    },
+    "waterTemperature": {
+      "q": "Water temperature, if you have a thermometer",
+      "hint": "Optional. In degrees Celsius. Skip if you don't have one.",
+      "a": {}
+    }
+  },
+  "findings": {
+    "foam": {
+      "label": "Foam on the water",
+      "people": "Avoid touching or swallowing the water. Wash your hands before eating.",
+      "animals": "Keep dogs out of the water and stop them licking foam from their coat. Birds and fish live with whatever caused it.",
+      "stream": "Persistent foam can come from detergents or waste water. A sign the stream may be receiving pollution.",
+      "clin": {
+        "may": "Foam is often natural, from decaying plant matter. Persistent white foam with a soapy or perfumed smell points to detergents or untreated waste water entering the stream.",
+        "not": "It does not tell you whether harmful microbes or chemicals are present, or at what level.",
+        "advice": "Avoid skin contact and swallowing water. Wash hands, and cover cuts. Keep dogs out of the water, stop them drinking it or licking foam from their coat, and rinse them with clean water after contact.",
+        "contact": "Report persistent foam, foam with a sewage or detergent smell, or foam with dead fish to the municipality. See a vet if a dog vomits, has diarrhoea or seems unwell after contact. A patient with symptoms after contact should mention the exposure to their GP."
+      }
+    },
+    "colourSmell": {
+      "label": "Unusual colour or smell",
+      "people": "Do not paddle or swim, and keep children out. Wash hands before eating.",
+      "animals": "Keep dogs on a lead and out of the water. Low oxygen can stress fish and the insects birds feed on.",
+      "stream": "Unusual colour or smell can mean waste water, a spill or low oxygen from decaying matter.",
+      "clin": {
+        "may": "A sewage smell or discoloured water suggests waste-water discharge. A rotten-egg smell suggests hydrogen sulphide from decaying matter in low-oxygen water. A chemical smell may mean a spill.",
+        "not": "It cannot identify the source or confirm an infection or poisoning risk.",
+        "advice": "No swimming or paddling, especially for children. Avoid contact, wash hands before eating and cover cuts. Keep dogs on a lead and out of the water.",
+        "contact": "Report to the municipality the same day if you see a discharge or smell sewage or chemicals. Anyone with diarrhoea, vomiting, fever, or a skin or eye rash after contact should see their GP and mention the water."
+      }
+    },
+    "scum": {
+      "label": "Green or blue-green scum",
+      "people": "No swimming. Keep children away from the water's edge.",
+      "animals": "Keep dogs well away: some blooms are toxic and can kill a dog quickly. Fish and birds can be harmed too.",
+      "stream": "Scum often means an algal or cyanobacterial bloom, usually fed by nutrient pollution and warm, still water.",
+      "clin": {
+        "may": "A green or blue-green surface scum suggests an algal or cyanobacterial bloom. Some cyanobacteria produce toxins that affect the liver, nerves and skin.",
+        "not": "You cannot tell a toxic bloom from a harmless one by looking. Only laboratory testing can.",
+        "advice": "No swimming or paddling. Do not swallow the water or let it reach the eyes. Keep dogs on a lead, stop them drinking or entering the water, and wash their coat with clean water straight away if they get wet.",
+        "contact": "Treat a dog with vomiting, drooling, weakness, trembling or collapse after contact as an emergency and go to a vet at once. Report the bloom to the municipality. A person with skin or eye irritation, vomiting or diarrhoea after contact should see their GP."
+      }
+    },
+    "deadFish": {
+      "label": "Dead fish",
+      "people": "Do not touch or collect the fish. Keep children away.",
+      "animals": "Stop dogs eating or rolling on dead fish. The cause may still be affecting other wildlife.",
+      "stream": "Dead fish can mean very low oxygen, a toxic spill or disease. It is time-sensitive for sampling.",
+      "clin": {
+        "may": "Fish deaths can follow low oxygen in hot weather or after organic pollution, a toxic spill, or disease in the fish population.",
+        "not": "It does not establish the cause, or whether the water poses a risk to people.",
+        "advice": "Do not handle dead fish with bare hands, and wash hands after any contact with the water. Keep dogs away and stop them eating carcasses.",
+        "contact": "Report to the municipality or environment agency immediately, because samples need to be taken quickly. See a vet if a dog has eaten fish and becomes unwell."
+      }
+    },
+    "riparianVegetation": {
+      "label": "Little vegetation on the bank",
+      "people": "Less shade and greenery along the water. Banks may erode and be less safe to walk.",
+      "animals": "Fewer places for birds to nest and for fish and insects to shelter.",
+      "stream": "Bank vegetation shades and cools the water and filters run-off. Losing it weakens the stream's defences.",
+      "clin": {
+        "may": "Sparse bank vegetation usually reflects urban development, clearing or erosion, which reduces the stream's ability to filter run-off.",
+        "not": "It is an ecological indicator, not a direct health hazard.",
+        "advice": "No specific precaution. Take care on eroded banks, especially with children and dogs.",
+        "contact": "Mention it to the municipality as part of any restoration request. No medical or veterinary contact is needed for this finding alone."
+      }
+    },
+    "invasiveOrganisms": {
+      "label": "Plants or animals that don't belong",
+      "people": "Do not touch unknown plants. Some, like giant hogweed, can cause blistering burns in sunlight.",
+      "animals": "Stop dogs chewing plants by the water. Invasive species can crowd out native fish, insects and plants.",
+      "stream": "Invasive species change the stream's ecology and spread easily on boots, gear and paws.",
+      "clin": {
+        "may": "Invasive plants and animals suggest a disturbed ecosystem. A few invasive riparian plants, such as giant hogweed, cause phytophotodermatitis.",
+        "not": "Most invasive species pose no direct risk to human health. Seeing one does not mean the water is contaminated.",
+        "advice": "Avoid touching unfamiliar plants, wash skin promptly after contact and keep it out of the sun. Clean boots and gear before visiting another stream. Stop dogs chewing plants.",
+        "contact": "Report invasive species to the municipality. A person with blistering or a burn-like rash after contact with a plant, particularly after sun exposure, should see their GP."
+      }
+    },
+    "macrophytes": {
+      "label": "Few water plants",
+      "people": "No direct effect on people.",
+      "animals": "Water plants give fish, insects and snails food, shelter and places to breed.",
+      "stream": "Few water plants can follow pollution, shading changes or dredging, and leave the stream less able to clean itself.",
+      "clin": {
+        "may": "Few aquatic plants can reflect pollution, sediment, heavy shading or channel works.",
+        "not": "It is an ecological indicator, not a direct health hazard.",
+        "advice": "No specific precaution.",
+        "contact": "Mention it to the municipality as part of any restoration request. No medical or veterinary contact is needed for this finding alone."
+      }
+    },
+    "standingWater": {
+      "label": "Pools of still water",
+      "people": "Still water can breed mosquitoes. Cover up and use repellent at dusk.",
+      "animals": "Stop dogs drinking from stagnant pools, which can hold bacteria and parasites.",
+      "stream": "Pools by the stream can mean blocked flow or poor drainage, and they concentrate pollutants.",
+      "clin": {
+        "may": "Stagnant pools are mosquito breeding habitat and can concentrate microbes and pollutants.",
+        "not": "It does not show that disease-carrying mosquitoes are present.",
+        "advice": "Reduce bites with repellent and covering skin at dusk. Empty containers that hold water near homes. Stop dogs drinking from stagnant pools.",
+        "contact": "Report persistent pooling or many mosquito larvae to the municipality. A person with fever after many mosquito bites should see their GP and mention the exposure."
+      }
+    }
+  }
+}

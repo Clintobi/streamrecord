@@ -39,6 +39,21 @@ out = {
     'addressesNote': src['addressesNote'],
     'sources': {'catalogue': {'title': DOCS['zenodo:20040211'][0], 'url': DOCS['zenodo:20040211'][1]}},
 }
+# story quotes: verbatim English (website copy page), plus official translations from the Zenodo multilingual edition when extracted
+STORY = {'E1': 3, 'E2': 4, 'E3': 14, 'E4': 15, 'E5': 6, 'E6': 9, 'E7': 7, 'E8': 16, 'E9': 8, 'E10': 11, 'E11': 19, 'E12': 20}
+tr_path = os.path.join(root, 'content/policy_brief_translations.json')
+tr = json.load(open(tr_path))['quotes'] if os.path.exists(tr_path) else {}
+story = {}
+for k, i in STORY.items():
+    q = src['policyBrief']['quotes'][i]
+    entry = {'en': {'text': q['text'], 'page': q['page'], 'edition': 'web'}}
+    for lang in ('pt', 'it', 'nl', 'no', 'fr'):
+        t = (tr.get(k) or {}).get(lang) or {}
+        if t.get('text'):
+            entry[lang] = {'text': t['text'], 'page': t['page'], 'edition': 'zenodo'}
+    story[k] = entry
+out['story'] = {'quotes': story, 'zenodo': 'https://doi.org/10.5281/zenodo.22025388'}
+
 json.dump(out, open(os.path.join(root, 'public/data/library.json'), 'w'), indent=1, ensure_ascii=False)
 print(len(indicators), 'indicators for', [i['key'] for i in indicators], '|', len(measures), 'measures |', len(out['policyBrief']['quotes']), 'quotes')
 from collections import Counter; print(Counter(a for m in measures for a in m['addresses']))

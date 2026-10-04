@@ -76,7 +76,8 @@ header.site { background: var(--surface); border-bottom: 1px solid var(--hair); 
 .brand b { font-family: var(--serif); font-weight: 600; font-size: 1.28rem; letter-spacing: -0.015em; }
 .brand small { display: none; font-size: 0.82rem; color: var(--ink-2); border-left: 1px solid var(--hair); padding-left: 10px; margin-left: 2px; }
 @media (min-width: 900px) { .brand small { display: inline; } }
-nav.main { display: flex; gap: var(--s3); order: 3; width: 100%; }
+nav.main { display: flex; flex-wrap: wrap; gap: 0 var(--s3); order: 3; width: 100%; }
+@media (max-width: 400px) { nav.main { gap: 0 18px; } }
 nav.main a { color: var(--ink-2); text-decoration: none; font-weight: 700; font-size: 0.95rem; padding: 6px 0; min-height: 24px; border-bottom: 2px solid transparent; }
 nav.main a:hover { color: var(--ink); }
 nav.main a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--stream); }
@@ -339,3 +340,46 @@ nav.main .count, .rq-group h2 .count { display: inline-block; min-width: 1.5em; 
 .secondlook ul { margin: 6px 0 8px; padding-left: 1.2em; }
 .secondlook a { font-weight: 700; }
 .tag.strong { color: var(--concern); border-color: var(--concern); }
+
+/* home: the finding that opens the story */
+.homestat { display: grid; gap: 6px; margin: 0 0 var(--s5); padding: var(--s3) var(--s3) var(--s3); background: var(--stream-deep); color: #fff; text-decoration: none; border-radius: 2px; }
+.homestat .hs-quote { font-family: var(--serif); font-weight: 600; font-size: 1.45rem; line-height: 1.2; letter-spacing: -0.01em; text-wrap: balance; max-width: 26ch; min-height: 3.6em; }
+@media (min-width: 720px) { .homestat .hs-quote { min-height: 2.4em; max-width: 30ch; } }
+@media (min-width: 720px) { .homestat { padding: var(--s4) var(--s5); } .homestat .hs-quote { font-size: 2.4rem; } }
+.homestat .hs-cite { font-size: 0.85rem; color: #CFE3E3; }
+.homestat .hs-line { margin-top: 8px; max-width: 62ch; color: #E8F2F2; }
+.homestat .hs-cta { margin-top: 10px; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.homestat:hover .hs-cta { text-decoration-thickness: 2px; }
+.homestat:focus-visible { outline-offset: 4px; }
+
+/* story */
+.storyhead { padding-bottom: var(--s4); }
+.storyhead h1 { font-size: 2.3rem; max-width: 20ch; }
+@media (min-width: 720px) { .storyhead h1 { font-size: 3.2rem; } }
+.chapters { list-style: none; padding-top: 0; padding-bottom: 0; }
+.chapter { display: grid; grid-template-columns: 1fr; gap: var(--s1); border-top: 1px solid var(--hair); padding: var(--s4) 0; }
+@media (min-width: 900px) { .chapter { grid-template-columns: 120px minmax(0, 68ch); column-gap: var(--s5); justify-content: center; padding: var(--s5) 0; } }
+.chnum { font-family: var(--mono); font-size: 1rem; color: var(--stream); }
+@media (min-width: 900px) { .chnum { font-size: 2.2rem; letter-spacing: -0.04em; line-height: 1; padding-top: 4px; } }
+.chbody h2 { font-size: 1.6rem; margin-bottom: var(--s3); }
+.chbody .quote { margin-bottom: var(--s3); }
+.chbody .quote p { font-size: 1.3rem; }
+.ours { margin: var(--s2) 0 0; padding-top: var(--s2); border-top: 1px dashed var(--hair-strong); color: var(--ink); }
+.ourslabel { font-weight: 700; color: var(--stream); margin-right: 4px; }
+.storyend { max-width: 860px; }
+.storycta { background: var(--surface); border: 1px solid var(--hair); padding: var(--s3); margin: var(--s4) 0; }
+.storycta .actions { margin-top: var(--s1); }
+.quiz { margin-top: var(--s5); }
+.quizq { margin-top: var(--s4); }
+.quizq legend { font-size: 1.25rem; }
+.quizopts { display: grid; gap: 8px; }
+.quizopt { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 8px 14px; background: var(--surface); border: 1px solid var(--hair-strong); cursor: pointer; border-radius: 2px; transition: border-color 140ms var(--ease), background-color 140ms var(--ease); }
+.quizopt:hover { border-color: var(--ink-2); }
+.quizopt input { width: 22px; height: 22px; margin: 0; accent-color: var(--stream); flex: none; }
+.quizopt.right { border-color: var(--ok); box-shadow: inset 0 0 0 2px var(--ok); background: #E9F4EF; }
+.quizopt.wrong { border-color: var(--concern); background: #FBEDE4; }
+.quizfb { margin-top: 12px; padding: var(--s2); background: var(--surface); border: 1px solid var(--hair); }
+.quizfb.right strong { color: var(--ok); }
+.quizfb.wrong strong { color: var(--concern); }
+.quizfb .quote p { font-size: 1.05rem; }
+.quizscore { margin-top: var(--s3); font-weight: 700; font-size: 1.1rem; }

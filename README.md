@@ -6,11 +6,43 @@
 - Video: _added at submission_
 - Built for the OneAquaHealth IEEE Global Hackathon 2026. Work on this repository started on 2026-10-04, within the submission window the organisers extended to 4 October (Devpost update "Deadline Extended to October 4"); the commit history is intact.
 
+**Judges, 90 seconds:**
+1. Open the [story](https://streamrecord.vercel.app/#/story): OneAquaHealth's findings, verbatim and page-cited, in six languages.
+2. Open any [site reading](https://streamrecord.vercel.app/#/site/C5): the lab record, what it means for people, animals and the stream, and measures from the Catalogue of Measures.
+3. Open [Review](https://streamrecord.vercel.app/#/review), add the sample check and confirm it.
+4. Open [Sources and data](https://streamrecord.vercel.app/#/sources) for the FHIR validation table and the data package.
+
+## Architecture
+
+```mermaid
+flowchart LR
+  subgraph OAH["OneAquaHealth sources (frozen 2026-10-04, sha256)"]
+    API["ENORA API<br/>sites/all + health-risks"]
+    DOCS["Policy Brief, Catalogue of Measures,<br/>factsheets, field protocols (PDF)"]
+    IG["HL7 Europe OAH IG<br/>commit b907cf0"]
+  end
+  API --> PREP["prepare_data.py<br/>join on site code, our tertiles"]
+  DOCS --> LIB["build_library.py<br/>verbatim quotes, page-checked"]
+  IG --> FHIRB["fhir.ts<br/>transaction Bundle builder"]
+  PREP --> APP["Static React app on Vercel<br/>map, site reading, story, check,<br/>clinician page, review queue"]
+  LIB --> APP
+  APP -->|"citizen check (on the phone)"| FHIRB
+  FHIRB -->|"$validate"| V["hapi.fhir.org R4 +<br/>HL7 Europe OAH sandbox"]
+  PREP --> DP["datapackage.json + sites.csv<br/>frictionless-validated"]
+```
+
+- **No server, no account, no cold start.** The app is static files on a CDN. Citizen checks are stored on the phone and turned into FHIR R4 in the browser.
+- **Frozen, fingerprinted data.** Every snapshot is hashed, and the app makes no live calls. Swapping in the live ENORA API means changing two fetches in `scripts/`; the join and the bands are already code.
+- **Scaling to more cities** needs only new ENORA sites and a translation file. The site pages, story, FHIR and data package are generated.
+
 ## 1. Track alignment
 
 **Track 4 (Awareness & Storytelling) primary; Track 7 (Digital Health Standards) and Track 1 (Citizen Science UX) secondary.**
 
-- **Track 4.** Every reading is built on OneAquaHealth's own outputs: the lab health-risk scores from the ENORA API, the Policy Brief, the Catalogue of Measures and the indicator factsheets. Each finding is explained for people, for animals and for the stream itself, with a printable version for a GP or public-health officer.
+- **Track 4 ("educational modules, storytelling, and personalized insights").**
+  - **Story:** [What 100 streams told OneAquaHealth](https://streamrecord.vercel.app/#/story) tells the project's findings in seven chapters. Every step is a verbatim Policy Brief finding with its page, linked by one short line of ours to real sites in the data, and it ends with a three-question quiz.
+  - **Official translations:** in Portuguese, Italian, Dutch, Norwegian and French the quotes are OneAquaHealth's own translations from the multilingual edition (Zenodo 10.5281/zenodo.22025388). A script checked all 60 against their cited pages.
+  - **Readings:** every reading is built on OneAquaHealth's own outputs: the lab health-risk scores from the ENORA API, the Policy Brief, the Catalogue of Measures and the indicator factsheets. Each finding is explained for people, for animals and for the stream itself, with a printable version for a GP or public-health officer.
 - **Track 7.** Each citizen check becomes a FHIR R4 transaction Bundle. The OneAquaHealth IG is pinned to commit `b907cf0`, the Bundle is validated on two public servers with 0 errors, and every local code is listed with the reason it exists.
 - **Track 1.** A 90-second field check with one question per screen and "Not sure" on every coded question. It works offline and needs no account.
 
@@ -35,7 +67,8 @@
 | Citizen checks | Real when you make one | Stored only on your phone. No account, no server, and the app ships with no pre-filled checks |
 | Catalogue of Measures and Policy Brief text | Real | Quoted with page numbers |
 | People / animals / stream explanations | Ours | Drafted by a final-year medical student. Not clinical advice |
-| Translations (PT, IT, NL, NO, FR) | Machine-assisted | Not reviewed by native speakers; marked in the app |
+| Translations of our interface text (PT, IT, NL, NO, FR) | Machine-assisted | Not reviewed by native speakers; marked in the app |
+| OneAquaHealth quotes in the story and home page, in PT, IT, NL, NO, FR | Official | OneAquaHealth's own translations (Zenodo multilingual edition), each with its page; 60 checked by script |
 | Second-look rules and the review queue | Ours | Four rules we wrote (dead fish; scum in water below 10 °C; water above 30 °C; four or more "Not sure"). Not OneAquaHealth rules. The queue runs on this phone |
 | Sample check in the review queue | Synthetic | Added only when you press the sample button; labelled "sample, synthetic" wherever it appears |
 | Sending checks to the OneAquaHealth sandbox | Not integrated | Bundles are built and validated, but the app does not POST them |
@@ -65,7 +98,7 @@ Every quote was checked by script against the single PDF page it cites; see [`co
   - `Device` (the app)
   - `Provenance`
 - **Profiles used:** `location-oah`. We confirmed it exists at the pinned commit and test its rules (identifier, name, `mode = instance`, position) in [`src/fhir.test.ts`](src/fhir.test.ts).
-- **Profiles checked but not used:** `observation-indicators-oah`. It exists, but it fixes `status = final`. An untrained citizen's report should stay `preliminary`, so the Observations use base R4 and do not claim it.
+- **`observation-indicators-oah`, claimed only once confirmed.** The profile fixes `status = final`. An untrained citizen's report stays `preliminary` and does not claim it. Once a reviewer confirms the check, its Observations become `final` and claim the profile, so confirmed citizen data meets the same OAH Observation profile as lab indicators. Every rule of the profile is unit-tested.
 - **OAH codes used** (all 12 confirmed in `temporarySystem-oah-eu` at `b907cf0`):
   - `foam`, `riparianVegetation`, `macrophytes`, `invasiveOrganisms`, `waterTemperature`
   - `present`, `absent`

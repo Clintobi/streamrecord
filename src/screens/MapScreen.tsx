@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { loadCities, loadCity } from '../data'
+import { Library, loadCities, loadCity, loadLibrary } from '../data'
 import { useI18n } from '../i18n'
 import { CityIndex, labStatus, longDate, Site } from '../model'
 import { Shape, Skeleton } from '../ui'
@@ -22,6 +22,8 @@ export default function MapScreen({ city }: { city?: string }) {
   const mapRef = useRef<any>(null)
   const layerRef = useRef<any>(null)
 
+  const [lib, setLib] = useState<Library>({})
+  useEffect(() => { loadLibrary().then(setLib) }, [])
   useEffect(() => { loadCities().then((c) => { setCities(c); setSlug((s) => s || c.find((x) => x.slug === 'coimbra')?.slug || c[0]?.slug) }) }, [])
   useEffect(() => { if (slug) { setSites(null); loadCity(slug).then(setSites) } }, [slug])
   // start fetching the map code while the site data loads, rather than after
@@ -65,6 +67,19 @@ export default function MapScreen({ city }: { city?: string }) {
 
   return (
     <div className="wide">
+      <a className="homestat" href="#/story">
+        {(() => {
+          // official translation from the Policy Brief's multilingual edition when available, else the English
+          const q = lib.story?.quotes.E3
+          const use = q ? q[lang] || q.en : null
+          return use ? <>
+            <span className="hs-quote" lang={q![lang] ? (lang === 'no' ? 'nb' : lang) : 'en'}>“{use.text}”</span>
+            <span className="hs-cite">OneAquaHealth Policy Brief{use.edition === 'zenodo' ? ` (${t('officialTr')})` : ''}, {t('page')}{'\u00a0'}{use.page}</span>
+          </> : <span className="hs-quote">&nbsp;</span>
+        })()}
+        <span className="hs-line">{t('homeStatLine')}</span>
+        <span className="hs-cta">{t('readStory')} →</span>
+      </a>
       <h1>{t('mapTitle')}</h1>
       <p className="lede">{t('mapIntro')}</p>
       <div className="cities" role="group" aria-label="City">
@@ -80,7 +95,7 @@ export default function MapScreen({ city }: { city?: string }) {
         </ul>
       </div>
       <div className="maplayout">
-        <div ref={mapEl} id="map" role="img" aria-label={cur ? `Map of sites in ${cur.name}. The same sites are listed next to the map.` : 'Map'} />
+        <div ref={mapEl} id="map" role="region" aria-label={cur ? `Map of sites in ${cur.name}. The same sites are listed next to the map.` : 'Map'} />
         <section aria-labelledby="listh">
           <div className="listhead">
             <h2 id="listh">{t('listTitle', { city: cur?.name || '' })}</h2>

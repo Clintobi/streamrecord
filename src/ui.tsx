@@ -37,6 +37,7 @@ export function Layout({ children, route }: { children: ReactNode; route: string
           <a className="brand" href="#/" aria-label={`StreamRecord, ${t('tagline')}`}><Mark /><b>StreamRecord</b><small>{t('tagline')}</small></a>
           <nav className="main" aria-label="Main">
             <a href="#/" aria-current={onStreams ? 'page' : undefined}>{t('navMap')}</a>
+            <a href="#/story" aria-current={route === 'story' ? 'page' : undefined}>{t('navStory')}</a>
             <a href="#/review" aria-current={route === 'review' ? 'page' : undefined}>{t('navReview')}{pending > 0 && <span className="count" aria-label={`, ${pending} ${t('st_preliminary').toLowerCase()}`}>{pending}</span>}</a>
             <a href="#/sources" aria-current={route === 'sources' ? 'page' : undefined}>{t('navSources')}</a>
           </nav>

@@ -19,7 +19,7 @@ export default function Sources() {
       {!m ? <p className="meta">Loading.</p> : (
         <>
           <h2>Sources and licences</h2>
-          <div className="tablewrap"><table><thead><tr><th>Source</th><th>Licence</th><th>Retrieved</th></tr></thead><tbody>
+          <div className="tablewrap" tabIndex={0} role="region" aria-label="Scrollable table"><table><thead><tr><th>Source</th><th>Licence</th><th>Retrieved</th></tr></thead><tbody>
             {m.sources.map((s) => <tr key={s.url}><td><a href={s.url}>{s.title}</a><br /><span className="meta">{s.publisher}{s.note ? `. ${s.note}` : ''}</span>{s.sha256 && <><br /><span className="mono meta">sha256 {s.sha256.slice(0, 16)}…</span></>}</td><td>{s.licence}</td><td className="nw num">{s.retrieved}</td></tr>)}
           </tbody></table></div>
 
@@ -32,7 +32,7 @@ export default function Sources() {
           )}
 
           <h2>What is real and what is synthetic</h2>
-          <div className="tablewrap"><table><thead><tr><th>Item</th><th>Status</th><th>Note</th></tr></thead><tbody>
+          <div className="tablewrap" tabIndex={0} role="region" aria-label="Scrollable table"><table><thead><tr><th>Item</th><th>Status</th><th>Note</th></tr></thead><tbody>
             {m.realVsSynthetic.map((r) => <tr key={r.item}><td>{r.item}</td><td>{r.status}</td><td>{r.note}</td></tr>)}
           </tbody></table></div>
 
@@ -46,7 +46,7 @@ export default function Sources() {
             <>
               <h2>Evidence</h2>
               {m.evidence.validate?.length ? (
-                <div className="tablewrap"><table><thead><tr><th>Resource</th><th>Server</th><th>Checked against</th><th>Errors</th><th>Warnings</th><th>Checked</th></tr></thead><tbody>
+                <div className="tablewrap" tabIndex={0} role="region" aria-label="Scrollable table"><table><thead><tr><th>Resource</th><th>Server</th><th>Checked against</th><th>Errors</th><th>Warnings</th><th>Checked</th></tr></thead><tbody>
                   {m.evidence.validate.map((v, i) => <tr key={i}><td>{v.resource}</td><td className="mono">{v.server}</td><td>{v.profile || 'base R4'}</td><td>{v.errors}</td><td>{v.warnings}</td><td className="nw num">{v.at}</td></tr>)}
                 </tbody></table></div>) : null}
               {m.evidence.tests && <p>Unit tests: {m.evidence.tests}</p>}

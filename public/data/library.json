@@ -373,5 +373,394 @@
    "title": "OneAquaHealth Catalogue of Measures (D2.4)",
    "url": "https://doi.org/10.5281/zenodo.20040211"
   }
+ },
+ "story": {
+  "quotes": {
+   "E1": {
+    "en": {
+     "text": "The OneAquaHealth initiative investigated 100 urban stream sites across five European cities to assess how urbanization impacts freshwater ecosystems and how this degradation may increase health risks for people.",
+     "page": 1,
+     "edition": "web"
+    },
+    "pt": {
+     "text": "O projeto europeu OneAquaHealth investigou 100 ribeiras urbanas em cinco cidades europeias para avaliar como é que a urbanização impacta os ecossistemas de água doce, bem como é que esta degradação pode aumentar os riscos para a saúde humana.",
+     "page": 95,
+     "edition": "zenodo"
+    },
+    "it": {
+     "text": "L’iniziativa OneAquaHealth ha valutato 100 corsi d’acqua urbani in cinque città europee con lo scopo di quantificare gli effetti dell’urbanizzazione sugli ecosistemi di acqua dolce e comprendere in che modo il loro degrado potesse accrescere i rischi per la salute umana.",
+     "page": 60,
+     "edition": "zenodo"
+    },
+    "nl": {
+     "text": "In het kader van het OneAquaHealth-initiatief zijn 100 locaties langs stedelijke waterlopen in vijf Europese steden onderzocht om na te gaan welke impact verstedelijking heeft op zoetwaterecosystemen en in hoeverre deze achteruitgang de gezondheidsrisico’s voor mensen kan vergroten.",
+     "page": 12,
+     "edition": "zenodo"
+    },
+    "no": {
+     "text": "OneAquaHealth-initiativet undersøkte 100 urbane bekkesteder i fem europeiske byer for å vurdere hvordan urbanisering påvirker ferskvannsøkosystemer, og hvordan slik forringelse kan øke helserisikoen for mennesker.",
+     "page": 72,
+     "edition": "zenodo"
+    },
+    "fr": {
+     "text": "Dans le cadre de l'initiative « OneAquaHealth », 100 sites aquatiques urbains ont été étudiés dans cinq villes européennes afin de déterminer l'impact de l'urbanisation sur les écosystèmes d'eau douce et évaluer dans quelle mesure cette dégradation peut accroître les risques pour la santé humaine.",
+     "page": 24,
+     "edition": "zenodo"
+    }
+   },
+   "E2": {
+    "en": {
+     "text": "Urbanization consistently degrades freshwater ecosystem health and decreases biodiversity across European cities, with nutrient pollution, contamination by pharmaceuticals, alterations of the stream channel, soil sealing, artificial light at night, and loss of the natural riparian vegetation as the main drivers.",
+     "page": 2,
+     "edition": "web"
+    },
+    "pt": {
+     "text": "A urbanização degrada de forma consistente a saúde dos ecossistemas de água doce e diminui a biodiversidade nas cidades europeias, sendo a contaminação por nutrientes e produtos farmacêuticos, as alterações dos leitos ribeirinhos, a impermeabilização dos solos, a poluição luminosa, e a perda de vegetação ripária natural as principais causas desta degradação.",
+     "page": 96,
+     "edition": "zenodo"
+    },
+    "it": {
+     "text": "L’urbanizzazione compromette progressivamente la salute degli ecosistemi di acqua dolce e riduce la biodiversità nelle città europee. Tra le principali cause figurano l’inquinamento da nutrienti, la contaminazione da residui farmaceutici, le alterazioni morfologiche dei corsi d’acqua, l’impermeabilizzazione del suolo, l’illuminazione artificiale notturna e la perdita della vegetazione ripariale naturale.",
+     "page": 61,
+     "edition": "zenodo"
+    },
+    "nl": {
+     "text": "Verstedelijking leidt in Europese steden tot een voortdurende verslechtering van de gezondheid van zoetwaterecosystemen en een afname van de biodiversiteit, waarbij nutriëntenverontreiniging, verontreiniging door geneesmiddelen, ingrepen in de waterloop, bodemafdekking, kunstlicht ’s nachts en het verdwijnen van de natuurlijke oevervegetatie de belangrijkste oorzaken zijn.",
+     "page": 13,
+     "edition": "zenodo"
+    },
+    "no": {
+     "text": "Urbanisering forringer gjennomgående helsetilstanden i ferskvannsøkosystemer og reduserer det biologiske mangfoldet i europeiske byer. De viktigste drivkreftene er næringsstoff- og legemiddelforurensning, fysiske inngrep i elveløp, nedbygging og asfaltering av jord, kunstig lys om natten og tap av naturlig kantvegetasjon langs vassdrag.",
+     "page": 73,
+     "edition": "zenodo"
+    },
+    "fr": {
+     "text": "L’urbanisation dégrade la santé des écosystèmes d’eau douce et réduit la biodiversité dans les villes européennes, avec comme principaux facteurs la pollution par les nutriments et les produits pharmaceutiques, la modification des cours d’eau, l’imperméabilisation des sols, la lumière artificielle nocturne et la perte de la végétation naturelle des berges.",
+     "page": 25,
+     "edition": "zenodo"
+    }
+   },
+   "E3": {
+    "en": {
+     "text": "Sixteen pharmaceuticals were observed in 91% of the sites, often as complex mixtures.",
+     "page": 6,
+     "edition": "web"
+    },
+    "pt": {
+     "text": "Dezasseis produtos farmacêuticos foram detetados em 91% dos locais, frequentemente em misturas complexas.",
+     "page": 100,
+     "edition": "zenodo"
+    },
+    "it": {
+     "text": "Nell'ambito dello studio, sedici principi attivi farmaceutici sono stati rilevati nel 91% dei siti monitorati, spesso sotto forma di miscele complesse.",
+     "page": 65,
+     "edition": "zenodo"
+    },
+    "nl": {
+     "text": "Op 91 % van de locaties werden zestien geneesmiddelen aangetroffen, vaak als complexe mengsels.",
+     "page": 17,
+     "edition": "zenodo"
+    },
+    "no": {
+     "text": "Seksten ulike farmasøytiske stoffer ble påvist i 91% av bekkestedene, ofte som komplekse blandinger.",
+     "page": 77,
+     "edition": "zenodo"
+    },
+    "fr": {
+     "text": "Seize produits pharmaceutiques ont été observés sur 91 % des sites, souvent sous forme de mélanges complexes.",
+     "page": 29,
+     "edition": "zenodo"
+    }
+   },
+   "E4": {
+    "en": {
+     "text": "This contamination was mitigated in sites in good ecological condition.",
+     "page": 6,
+     "edition": "web"
+    },
+    "pt": {
+     "text": "Esta contaminação foi reduzida em locais com boas condições ecológicas.",
+     "page": 100,
+     "edition": "zenodo"
+    },
+    "it": {
+     "text": "Al contrario, nei siti caratterizzati da un buono stato ecologico, i livelli di contaminazione sono risultati sensibilmente inferiori, evidenziando il ruolo delle condizioni ambientali favorevoli nel mitigare la presenza e gli effetti di tali contaminanti.",
+     "page": 65,
+     "edition": "zenodo"
+    },
+    "nl": {
+     "text": "Deze verontreiniging was minder ernstig op locaties met een goede ecologische toestand.",
+     "page": 17,
+     "edition": "zenodo"
+    },
+    "no": {
+     "text": "Denne forurensningen var mindre i lokaliteter med god økologisk tilstand.",
+     "page": 77,
+     "edition": "zenodo"
+    },
+    "fr": {
+     "text": "Cette contamination était atténuée sur les sites présentant un bon état écologique.",
+     "page": 29,
+     "edition": "zenodo"
+    }
+   },
+   "E5": {
+    "en": {
+     "text": "Diatom (microalgae) morphological deformities were identified as early warning indicators of pharmaceutical contamination that would go undetected by standard monitoring.",
+     "page": 2,
+     "edition": "web"
+    },
+    "pt": {
+     "text": "Foram identificadas deformidades morfológicas em diatomáceas (microalgas) como indicador precoce da presença de produtos farmacêuticos, cuja presença não teria sido detetada através de métodos de monitorização tradicionais.",
+     "page": 96,
+     "edition": "zenodo"
+    },
+    "it": {
+     "text": "Le deformità morfologiche delle diatomee (microalghe) sono state identificate come indicatori precoci di contaminazione farmaceutica che, normalmente, sfuggono ai sistemi di monitoraggio standard.",
+     "page": 61,
+     "edition": "zenodo"
+    },
+    "nl": {
+     "text": "Morfologische afwijkingen bij diatomeeën (microalgen) werden aangemerkt als vroege waarschuwingssignalen voor verontreiniging door geneesmiddelen, die bij standaardmonitoring onopgemerkt zouden blijven.",
+     "page": 13,
+     "edition": "zenodo"
+    },
+    "no": {
+     "text": "Morfologiske deformiteter hos kiselalger (mikroalger) ble identifisert som tidlige varslingsindikatorer på farmasøytisk forurensning – endringer som ikke ville blitt avdekket gjennom standard monitorering.",
+     "page": 73,
+     "edition": "zenodo"
+    },
+    "fr": {
+     "text": "Les déformations des microalgues (diatomées) constituent des indicateurs d’alerte précoce de contamination pharmaceutique, non détectables par les méthodes standard de suivi.",
+     "page": 25,
+     "edition": "zenodo"
+    }
+   },
+   "E6": {
+    "en": {
+     "text": "Stream biofilms in more urbanized areas carry higher loads of clinically relevant pathogens and antibiotic resistance genes, posing human health risks.",
+     "page": 2,
+     "edition": "web"
+    },
+    "pt": {
+     "text": "Os biofilmes de pedras submersas em áreas mais urbanizadas contêm uma maior abundância de agentes patogénicos clinicamente relevantes, e com mais genes de resistência a antibióticos, constituindo riscos para a saúde humana.",
+     "page": 96,
+     "edition": "zenodo"
+    },
+    "it": {
+     "text": "I biofilm presenti nei corsi d'acqua urbanizzati trasportano cariche elevate di agenti patogeni clinicamente rilevanti e geni di resistenza agli antibiotici, ponendo rischi per la salute umana.",
+     "page": 61,
+     "edition": "zenodo"
+    },
+    "nl": {
+     "text": "Biofilms in meer verstedelijkte gebieden bevatten grotere hoeveelheden klinisch relevante ziekteverwekkers en genen voor antibioticaresistentie, wat risico’s voor de volksgezondheid verhoogt.",
+     "page": 13,
+     "edition": "zenodo"
+    },
+    "no": {
+     "text": "Strømbiofilmer (biofilm i elver og bekker) i mer urbaniserte områder inneholder høyere nivåer av klinisk relevante patogener og gener for antibiotikaresistens, noe som utgjør en potensiell helserisiko for mennesker.",
+     "page": 73,
+     "edition": "zenodo"
+    },
+    "fr": {
+     "text": "Les biofilms des cours d’eau en zone très urbanisée contiennent des charges plus élevées de pathogènes cliniquement pertinents et de gènes de résistance aux antibiotiques, représentant un risque pour la santé publique.",
+     "page": 25,
+     "edition": "zenodo"
+    }
+   },
+   "E7": {
+    "en": {
+     "text": "Degraded urban streams are associated with higher cause-specific mortality and reduced life expectancy, likely reflecting the loss of freshwater ecosystem services including water quality, climate regulation, and mental health benefits.",
+     "page": 2,
+     "edition": "web"
+    },
+    "pt": {
+     "text": "Ribeiras urbanas degradadas estão associadas com maior mortalidade por doenças por causa específica e esperança de vida mais reduzida, refletindo provavelmente a perda de serviços de ecossistema, incluindo a qualidade da água, regulação climática, e benefícios para a saúde mental.",
+     "page": 96,
+     "edition": "zenodo"
+    },
+    "it": {
+     "text": "Il degrado dei corsi d’acqua urbani è associato a un aumento della mortalità per cause specifiche e a una diminuzione dell’aspettativa di vita, verosimilmente in conseguenza della perdita dei servizi ecosistemici legati agli ambienti di acqua dolce, quali la depurazione delle acque, la mitigazione climatica e i benefici psicofisici per la popolazione.",
+     "page": 61,
+     "edition": "zenodo"
+    },
+    "nl": {
+     "text": "Aangetaste stedelijke waterlopen gaan gepaard met een hogere sterfte aan specifieke oorzakenen een lagere levensverwachting, wat waarschijnlijk het gevolg is van het verlies aan ecosysteemdiensten van zoetwater, waaronder waterkwaliteit, klimaatregulering en geestelijke gezondheidsvoordelen.",
+     "page": 13,
+     "edition": "zenodo"
+    },
+    "no": {
+     "text": "Degraderte urbane bekker er koblet til høyere årsaksspesifikk dødelighet og redusert forventet levealder, noe som trolig reflekterer tap av økosystemtjenester fra ferskvann, inkludert god vannkvalitet, klimaregulering og positive effekter på mental helse.",
+     "page": 73,
+     "edition": "zenodo"
+    },
+    "fr": {
+     "text": "Les cours d’eau urbains dégradés sont associés à une mortalité spécifique accrue et à une espérance de vie réduite, reflétant probablement la perte de services écosystémiques essentiels : qualité de l’eau, régulation climatique et bien-être mental.",
+     "page": 25,
+     "edition": "zenodo"
+    }
+   },
+   "E8": {
+    "en": {
+     "text": "The diversity of fish declined in more urbanized streams, while non-native species increased.",
+     "page": 6,
+     "edition": "web"
+    },
+    "pt": {
+     "text": "A diversidade de peixes diminuiu em ribeiras mais urbanizadas, enquanto as espécies não-nativas aumentaram.",
+     "page": 100,
+     "edition": "zenodo"
+    },
+    "it": {
+     "text": "La diversità delle comunità ittiche è risultata inferiore nei corsi d'acqua maggiormente urbanizzati, mentre è aumentata la presenza di specie non autoctone.",
+     "page": 65,
+     "edition": "zenodo"
+    },
+    "nl": {
+     "text": "De visdiversiteit nam af in meer verstedelijkte beken, terwijl het aantal uitheemse soorten toenam.",
+     "page": 17,
+     "edition": "zenodo"
+    },
+    "no": {
+     "text": "Fiskemangfoldet gikk ned i mer urbaniserte bekker, mens forekomsten av fremmede arter økte.",
+     "page": 77,
+     "edition": "zenodo"
+    },
+    "fr": {
+     "text": "La diversité des poissons a diminué dans les cours d'eau les plus urbanisés, tandis que les espèces non indigènes ont augmenté.",
+     "page": 29,
+     "edition": "zenodo"
+    }
+   },
+   "E9": {
+    "en": {
+     "text": "Invasive alien plants increase significantly with urbanization and pose direct human health risks through skin irritation, allergies, poisoning, and the creation of favorable habitats for disease vectors",
+     "page": 2,
+     "edition": "web"
+    },
+    "pt": {
+     "text": "Plantas exóticas invasoras aumentaram significativamente com a urbanização o que coloca riscos diretos para a saúde humana através de irritação cutânea, alergias, envenenamento, e a criação de habitats favoráveis a vetores de doenças.",
+     "page": 96,
+     "edition": "zenodo"
+    },
+    "it": {
+     "text": "Le piante aliene invasive aumentano significativamente con l'urbanizzazione e rappresentano un rischio diretto per la salute umana a causa di irritazioni cutanee, allergie, avvelenamenti e creazione di habitat favorevoli per i vettori di malattie.",
+     "page": 61,
+     "edition": "zenodo"
+    },
+    "nl": {
+     "text": "Het aantal invasieve uitheemse plantensoorten neemt aanzienlijk toe door de verstedelijking en vormt een direct gevaar voor de volksgezondheid door huidirritatie, allergieën, vergiftiging en het ontstaan van gunstige leefomgevingen voor ziekteverspreiders",
+     "page": 13,
+     "edition": "zenodo"
+    },
+    "no": {
+     "text": "Forekomsten av fremmede, invasive plantearter øker betydelig med graden av urbanisering og utgjør direkte helserisiko for mennesker gjennom hudirritasjon, allergi, forgiftning og ved å skape gunstige habitater for sykdomsvektorer.",
+     "page": 73,
+     "edition": "zenodo"
+    },
+    "fr": {
+     "text": "Les plantes exotiques envahissantes augmentent avec l’urbanisation et posent des risques pour la santé humaine : irritations cutanées, allergies, empoisonnements, ou création d’habitats favorables aux vecteurs de maladies.",
+     "page": 25,
+     "edition": "zenodo"
+    }
+   },
+   "E10": {
+    "en": {
+     "text": "intact riparian vegetation provide shade, regulating water and air temperature, filter pollutants from runoff, stabilize banks against erosion, and provide habitat for both aquatic and terrestrial biodiversity",
+     "page": 5,
+     "edition": "web"
+    },
+    "pt": {
+     "text": "vegetação ripária intacta proporciona sombra, regula a água e a temperatura, filtra contaminantes trazidos pela escorrência de águas, estabiliza as margens e previne a erosão, e proporciona habitat para a biodiversidade aquática e terrestre",
+     "page": 99,
+     "edition": "zenodo"
+    },
+    "it": {
+     "text": "Quest’ultima svolge funzioni essenziali per il funzionamento degli ecosistemi fluviali, contribuendo alla regolazione termica, alla filtrazione degli inquinanti, alla stabilizzazione delle sponde e al mantenimento della biodiversità.",
+     "page": 64,
+     "edition": "zenodo"
+    },
+    "nl": {
+     "text": "Intacte oevervegetatie biedt echter schaduw, reguleert de water- en luchttemperatuur, filtert verontreinigende stoffen uit afstromend water, stabiliseert oevers tegen erosie en biedt een habitat voor zowel aquatische als terrestrische biodiversiteit",
+     "page": 16,
+     "edition": "zenodo"
+    },
+    "no": {
+     "text": "Intakt kantvegetasjon gir imidlertid skygge som regulerer vann- og lufttemperatur, filtrerer forurensning fra avrenning, stabiliserer breddene mot erosjon og gir leveområder for både akvatisk og terrestrisk biologisk mangfold.",
+     "page": 76,
+     "edition": "zenodo"
+    },
+    "fr": {
+     "text": "une végétation des berges intacte fournit de l'ombre, régule la température de l'eau et de l'air, filtre les polluants présents dans les eaux de ruissellement, stabilise les berges contre l'érosion et offre un habitat à la biodiversité aquatique et terrestre",
+     "page": 28,
+     "edition": "zenodo"
+    }
+   },
+   "E11": {
+    "en": {
+     "text": "Therefore, the restoration of urban freshwater ecosystems should be acknowledged as a form of preventive public health intervention.",
+     "page": 9,
+     "edition": "web"
+    },
+    "pt": {
+     "text": "Por isso, o restauro de ecossistemas de água doce, deve ser reconhecido como uma medida de intervenção para a saúde pública.",
+     "page": 103,
+     "edition": "zenodo"
+    },
+    "it": {
+     "text": "Per queste ragioni, il ripristino degli ecosistemi acquatici urbani dovrebbe essere riconosciuto e promosso come una misura pubblica di prevenzione sanitaria a tutti gli effetti.",
+     "page": 68,
+     "edition": "zenodo"
+    },
+    "nl": {
+     "text": "Daarom moet het herstel van stedelijke zoetwaterecosystemen worden erkend als een vorm van preventieve volksgezondheidsmaatregel.",
+     "page": 20,
+     "edition": "zenodo"
+    },
+    "no": {
+     "text": "Restaurering av urbane ferskvannsøkosystemer bør derfor anerkjennes som et forebyggende folkehelsetiltak.",
+     "page": 80,
+     "edition": "zenodo"
+    },
+    "fr": {
+     "text": "C'est pourquoi la renaturalisation des écosystèmes d'eau douce urbains devrait être reconnue comme une mesure préventive en matière de santé publique.",
+     "page": 32,
+     "edition": "zenodo"
+    }
+   },
+   "E12": {
+    "en": {
+     "text": "Investing in ecosystem restoration has the potential to significantly reduce healthcare expenditure over time.",
+     "page": 9,
+     "edition": "web"
+    },
+    "pt": {
+     "text": "Investir no restauro dos ecossistemas tem potencial para reduzir significativamente os custos com a saúde.",
+     "page": 103,
+     "edition": "zenodo"
+    },
+    "it": {
+     "text": "Gli investimenti in interventi di restauro ecologico non solo migliorano la resilienza ambientale delle città, ma possono contribuire nel lungo periodo a ridurre l'incidenza di patologie correlate al degrado ambientale e, di conseguenza, i costi sostenuti dai sistemi sanitari.",
+     "page": 68,
+     "edition": "zenodo"
+    },
+    "nl": {
+     "text": "Investeren in het herstel van ecosystemen kan op termijn de uitgaven voor de gezondheidszorg aanzienlijk verminderen.",
+     "page": 20,
+     "edition": "zenodo"
+    },
+    "no": {
+     "text": "Investeringer i økosystemrestaurering har potensial til å redusere helseutgifter betydelig over tid.",
+     "page": 80,
+     "edition": "zenodo"
+    },
+    "fr": {
+     "text": "Les investissements dans la renaturalisation des écosystèmes ont le potentiel de réduire considérablement les dépenses de santé à long terme.",
+     "page": 32,
+     "edition": "zenodo"
+    }
+   }
+  },
+  "zenodo": "https://doi.org/10.5281/zenodo.22025388"
  }
 }

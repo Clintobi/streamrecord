@@ -27,6 +27,7 @@ export interface Library {
   measures?: { id: string; name: string; category?: string; oneLine: string; page: number | string; pdfPage?: number; quote?: string; addresses: string[] }[]
   cityWhy?: { text: string; page: number | string }[]
   unsourced?: string[]
+  story?: { quotes: Record<string, Record<string, { text: string; page: number; edition: 'web' | 'zenodo' }>>; zenodo: string }
   addressesNote?: string
   sources?: Record<string, { title: string; url: string }>
 }

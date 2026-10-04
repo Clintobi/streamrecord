@@ -34,3 +34,10 @@ export function loadLibrary(): Promise<Library> {
   if (!lib) lib = fetch('./data/library.json').then((r) => (r.ok ? r.json() : {})).catch(() => ({}))
   return lib
 }
+
+export interface Bands { n: number; tertile1: number; tertile2: number; min: number; max: number }
+let bands: Promise<Bands | null> | null = null
+export function loadBands(): Promise<Bands | null> {
+  if (!bands) bands = fetch('./data/bands.json').then((r) => (r.ok ? r.json() : null)).catch(() => null)
+  return bands
+}

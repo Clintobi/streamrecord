@@ -102,3 +102,11 @@ export function daysSince(dateIso?: string | null, now = new Date()): number | n
 export function fmt(template: string, vars: Record<string, string | number>): string {
   return template.replace(/\{(\w+)\}/g, (_, k) => (k in vars ? String(vars[k]) : `{${k}}`))
 }
+
+// "28 Jun 2023" in the reader's language; falls back to the ISO date.
+export function longDate(iso?: string | null, lang = 'en'): string {
+  if (!iso) return ''
+  const t = Date.parse(iso)
+  if (Number.isNaN(t)) return iso
+  return new Date(t).toLocaleDateString(lang === 'no' ? 'nb' : lang, { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })
+}

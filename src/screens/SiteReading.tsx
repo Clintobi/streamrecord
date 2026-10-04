@@ -1,47 +1,92 @@
 import { useEffect, useState } from 'react'
-import { findSite, Library, loadLibrary } from '../data'
+import { Bands, findSite, Library, loadBands, loadLibrary } from '../data'
 import { LANGS, useI18n } from '../i18n'
-import { CityIndex, daysSince, findingsFromChecks, labStatus, Site } from '../model'
+import { CityIndex, daysSince, findingsFromChecks, labStatus, longDate, Site } from '../model'
 import { checksFor } from '../store'
-import { Skeleton, StatusLine } from '../ui'
+import { Shape, Skeleton, StatusLine } from '../ui'
 
 const r2 = (v?: number | null) => (typeof v === 'number' ? v.toFixed(2) : 'n/a')
 
-export function DotStrip({ site, sites, cityName }: { site: Site; sites: Site[]; cityName: string }) {
+function downloadCsv(sites: Site[], cityName: string) {
+  const rows = [['site_id', 'site_name', 'city', 'risk_level_ours', 'risk_score', 'scaled_pathogen', 'scaled_fecal', 'scaled_arg', 'sampled', 'source'].join(',')]
+  for (const s of sites) {
+    const p = s.risk?.parts || {}
+    rows.push([s.id, `"${s.name.replace(/"/g, '""')}"`, s.city, s.risk?.level || '', s.risk?.score ?? '', p.scaledPathogenRisk ?? '', p.scaledFecalRisk ?? '', p.scaledArgRisk ?? '', s.risk?.date || '', 'api.enora-oah.eu'].join(','))
+  }
+  const a = document.createElement('a')
+  a.href = URL.createObjectURL(new Blob([rows.join('\n')], { type: 'text/csv' }))
+  a.download = `streamrecord-${cityName.toLowerCase()}-health-risk.csv`
+  a.click()
+}
+
+// Every site in the city on one honest 0 to 1 axis, with our tertile bands shaded behind it.
+// Built from positioned HTML rather than SVG so labels keep their real size on a phone.
+export function Scale({ site, sites, bands, cityName }: { site: Site; sites: Site[]; bands: Bands | null; cityName: string }) {
   const { t } = useI18n()
-  const scored = sites.filter((s) => typeof s.risk?.score === 'number')
-  const levels = ['low', 'moderate', 'high']
-  const useScore = scored.length >= Math.max(3, sites.length * 0.5)
-  const W = 640, H = 70, pad = 20
-  const vals = useScore ? scored.map((s) => s.risk!.score as number) : []
-  const min = useScore ? Math.min(...vals) : 0, max = useScore ? Math.max(...vals) : 2
-  const x = (s: Site) => {
-    if (useScore && typeof s.risk?.score === 'number') return pad + ((s.risk.score - min) / (max - min || 1)) * (W - 2 * pad)
-    const i = levels.indexOf(s.risk?.level || '')
-    return i < 0 ? -1 : pad + (i / 2) * (W - 2 * pad)
-  }
-  const pts = sites.filter((s) => x(s) >= 0)
-  if (pts.length < 2) return null
-  const csv = () => {
-    const rows = [['site_id', 'site_name', 'city', 'risk_level', 'risk_score', 'measured', 'source'].join(',')]
-    for (const s of sites) rows.push([s.id, `"${s.name.replace(/"/g, '""')}"`, s.city, s.risk?.level || '', s.risk?.score ?? '', s.risk?.date || '', 'api.enora-oah.eu'].join(','))
-    const a = document.createElement('a')
-    a.href = URL.createObjectURL(new Blob([rows.join('\n')], { type: 'text/csv' }))
-    a.download = `streamrecord-${cityName.toLowerCase()}-health-risk.csv`
-    a.click()
-  }
+  const others = sites.filter((s) => s.id !== site.id && typeof s.risk?.score === 'number')
+  const v = site.risk?.score as number
+  const t1 = bands?.tertile1 ?? 0.2269, t2 = bands?.tertile2 ?? 0.3491
+  const pct = (n: number) => `${(Math.max(0, Math.min(1, n)) * 100).toFixed(2)}%`
+  const anchor = v < 0.12 ? 'start' : v > 0.88 ? 'end' : 'mid'
   return (
-    <figure className="strip">
-      <figcaption><strong>{t('stripTitle', { city: cityName })}</strong></figcaption>
-      <svg viewBox={`0 0 ${W} ${H}`} width="100%" role="img" aria-label={`${pts.length} sites placed by lab health-risk; this site is highlighted.`}>
-        <line x1={pad} x2={W - pad} y1={34} y2={34} stroke="#D9D4C7" />
-        {pts.filter((s) => s.id !== site.id).map((s) => <circle key={s.id} cx={x(s)} cy={34} r={5} fill="#0072B2" fillOpacity={0.45} />)}
-        {x(site) >= 0 && <circle cx={x(site)} cy={34} r={9} fill="#0072B2" stroke="#1B2A2F" strokeWidth={2} />}
-        <text x={pad} y={62}>{useScore ? `lower ${min}` : t('level_low')}</text>
-        <text x={W - pad} y={62} textAnchor="end">{useScore ? `higher ${max}` : t('level_high')}</text>
-      </svg>
-      <p className="src">{t('stripNote')} <button className="btn secondary" style={{ minHeight: 36, padding: '4px 12px' }} onClick={csv}>{t('downloadCsv')}</button></p>
+    <figure className="scale">
+      <div className="track" role="img" aria-label={`${others.length + 1} sites in ${cityName} on a 0 to 1 scale. This site scores ${r2(v)}.`}>
+        <span className={`here-label ${anchor}`} style={{ left: pct(v) }} aria-hidden="true">{t('thisSite')} <b className="num">{r2(v)}</b></span>
+        <div className="bands" aria-hidden="true">
+          <span className="b-ok" style={{ width: pct(t1) }} />
+          <span className="b-look" style={{ width: pct(t2 - t1) }} />
+          <span className="b-concern" style={{ flex: 1 }} />
+          {others.map((s) => <i key={s.id} style={{ left: pct(s.risk!.score as number) }} />)}
+          <b className="here" style={{ left: pct(v) }} />
+        </div>
+        <div className="ticks" aria-hidden="true"><span>0</span><span>0.5</span><span>1</span></div>
+      </div>
+      <figcaption>{t('scaleCap', { city: cityName })}</figcaption>
     </figure>
+  )
+}
+
+function Record({ site, sites, city, bands }: { site: Site; sites: Site[]; city: CityIndex; bands: Bands | null }) {
+  const { t, lang } = useI18n()
+  const r = site.risk
+  const age = daysSince(r?.date)
+  if (!r || r.level === 'unknown' || typeof r.score !== 'number') {
+    return (
+      <section className="record" aria-labelledby="b1">
+        <h2 id="b1" className="sr-only">{t('b1')}</h2>
+        <div className="rhead" style={{ paddingBottom: 'var(--s3)' }}><StatusLine status="none">{t('statusNoLab')}</StatusLine></div>
+        <div className="rfoot"><p className="src">{t('b1None')} <a href="#/sources">ENORA OneAquaHealth API</a></p></div>
+      </section>
+    )
+  }
+  const p = r.parts || {}
+  const parts: [string, number | null | undefined][] = [[t('partPathogen'), p.scaledPathogenRisk], [t('partFecal'), p.scaledFecalRisk], [t('partArg'), p.scaledArgRisk]]
+  return (
+    <section className="record" aria-labelledby="b1">
+      <h2 id="b1" className="sr-only">{t('b1')}</h2>
+      <div className="rhead">
+        <StatusLine status={labStatus(site)} size={18}>{t(`head_${r.level}` as any)}</StatusLine>
+        <p className="score" style={{ margin: 0 }}><strong>{r2(r.score)}</strong> {t('scoreOf')}</p>
+      </div>
+      <div>
+        {age !== null && <p className="when">{t('sampledAgo', { date: longDate(r.date, lang), days: age.toLocaleString(lang === 'no' ? 'nb' : lang) })}</p>}
+        <Scale site={site} sites={sites} bands={bands} cityName={city.name} />
+      </div>
+      <dl className="parts">
+        {parts.map(([label, val]) => (
+          <div key={label} style={{ display: 'contents' }}>
+            <dt>{label}</dt>
+            <dd className="meter" aria-hidden="true"><span style={{ width: `${Math.max(0, Math.min(1, val ?? 0)) * 100}%` }} /></dd>
+            <dd className="v">{r2(val)}</dd>
+          </div>
+        ))}
+      </dl>
+      <p className="partscap">{t('partsCap')}</p>
+      <div className="rfoot">
+        <p className="src">{t('source')}: <a href="#/sources">ENORA OneAquaHealth API, health-risk snapshot</a></p>
+        <button className="linkbtn" onClick={() => downloadCsv(sites, city.name)}>{t('downloadCsv')}</button>
+      </div>
+    </section>
   )
 }
 
@@ -49,114 +94,124 @@ export default function SiteReading({ id }: { id: string }) {
   const { t, d, lang, setLang } = useI18n()
   const [data, setData] = useState<{ site: Site; city: CityIndex; sites: Site[] } | null | undefined>(undefined)
   const [lib, setLib] = useState<Library>({})
-  useEffect(() => { findSite(id).then(setData); loadLibrary().then(setLib) }, [id])
+  const [bands, setBands] = useState<Bands | null>(null)
+  useEffect(() => { findSite(id).then(setData); loadLibrary().then(setLib); loadBands().then(setBands) }, [id])
 
   if (data === undefined) return <Skeleton />
   if (data === null) return <div className="wrap"><h1>Site not found</h1><p><a href="#/">Back to the map</a></p></div>
   const { site, city, sites } = data
   const checks = checksFor(site.id)
   const findings = findingsFromChecks(checks)
-  const age = daysSince(site.risk?.date)
-  const st = labStatus(site)
   const F = d.findings as Record<string, any>
   // rank measures by how many of this site's findings they address (the mapping is our judgement, said on screen)
   const hits = (m: { addresses: string[] }) => m.addresses.filter((a) => findings.includes(a)).length
-  const measures = (lib.measures || []).filter((m) => hits(m) > 0).sort((a, b) => hits(b) - hits(a)).slice(0, 3)
-  const generalMeasures = measures.length ? measures : (lib.measures || []).filter((m) => /pollution|riparian/i.test(`${m.category} ${m.name}`)).slice(0, 2)
+  const matched = (lib.measures || []).filter((m) => hits(m) > 0).sort((a, b) => hits(b) - hits(a)).slice(0, 3)
+  const measures = matched.length ? matched : (lib.measures || []).filter((m) => /pollution|riparian/i.test(`${m.category} ${m.name}`)).slice(0, 2)
   const cat = lib.sources?.catalogue
   const pb = lib.policyBrief
+  const cityLang = city.lang !== lang && LANGS.some((l) => l.code === city.lang) ? city.lang : null
 
   return (
-    <article className="wrap">
-      {city.lang !== lang && LANGS.some((l) => l.code === city.lang) && (
-        <p className="meta noprint"><button className="btn secondary" style={{ minHeight: 40, padding: '4px 14px' }} onClick={() => setLang(city.lang)} lang={city.lang === 'no' ? 'nb' : city.lang}>
-          {({ pt: 'Ler em português', it: 'Leggi in italiano', nl: 'Lees in het Nederlands', no: 'Les på norsk', fr: 'Lire en français', en: 'Read in English' } as Record<string, string>)[city.lang]}
-        </button></p>
-      )}
-      <p className="eyebrow">{t('siteEyebrow', { city: city.name, id: site.id })}</p>
-      <h1>{site.name}</h1>
-      {site.risk && site.risk.level !== 'unknown'
-        ? <StatusLine status={st}>{t('statusLab', { level: t(`level_${site.risk.level}` as any), score: site.risk.score ?? '', date: site.risk.date || '' })}</StatusLine>
-        : <StatusLine status="none">{t('statusNoLab')}</StatusLine>}
-      {age !== null && <p className="meta">{t('labAge', { days: age.toLocaleString('en-GB') })}</p>}
-      <div className="actions">
-        <a className="btn" href={`#/check/${encodeURIComponent(site.id)}`}>{t('doCheck')}</a>
-        <a className="btn secondary" href={`#/clinician/${encodeURIComponent(site.id)}`}>{t('clinicianLink')}</a>
+    <article>
+      <div className="wide site-wide">
+        <div className="site-grid">
+          <div className="sitehead-col">
+            <nav className="crumbs noprint" aria-label="Breadcrumb">
+              <a href={`#/city/${city.slug}`}>← {t('backTo', { city: city.name })}</a>
+              {cityLang && (
+                <button className="btn secondary small" onClick={() => setLang(cityLang)} lang={cityLang === 'no' ? 'nb' : cityLang}>
+                  {({ pt: 'Ler em português', it: 'Leggi in italiano', nl: 'Lees in het Nederlands', no: 'Les på norsk', fr: 'Lire en français', en: 'Read in English' } as Record<string, string>)[cityLang]}
+                </button>
+              )}
+            </nav>
+            <header className="sitehead">
+              <p className="eyebrow">{t('siteEyebrow', { city: city.name, id: site.id })}</p>
+              <h1>{site.name}</h1>
+            </header>
+            <Record site={site} sites={sites} city={city} bands={bands} />
+            <div className="actions noprint">
+              <a className="btn" href={`#/check/${encodeURIComponent(site.id)}`}>{t('doCheck')}</a>
+              <a className="btn secondary" href={`#/clinician/${encodeURIComponent(site.id)}`}>{t('clinicianLink')}</a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <section className="block" aria-labelledby="b1">
-        <h2 id="b1">{t('b1')}</h2>
-        {site.risk && site.risk.level !== 'unknown' ? (
-          <>
-            <p className="reading"><span className="lab">{t('statusLab', { level: t(`level_${site.risk.level}` as any), score: site.risk.score ?? '', date: site.risk.date || '' })}</span>.</p>
-            {site.risk.parts && <p className="reading lab">{t('parts', { p: r2(site.risk.parts.scaledPathogenRisk), f: r2(site.risk.parts.scaledFecalRisk), a: r2(site.risk.parts.scaledArgRisk) })}</p>}
-            <p className="meta">{t('bandNote')}</p>
-            <DotStrip site={site} sites={sites} cityName={city.name} />
-          </>
-        ) : <p className="reading">{t('b1None')}</p>}
-        <p className="src">{t('source')}: <a href="#/sources">ENORA OneAquaHealth API, health-risk map snapshot</a></p>
-      </section>
-
-      <section className="block" aria-labelledby="b2">
-        <h2 id="b2">{t('b2')}</h2>
-        {checks.length === 0 ? <p className="reading">{t('b2Empty')}</p> : (
-          <>
-            <p className="meta">{t('b2Saved')}: {checks.length}</p>
-            <ul className="reading">
-              {findings.length === 0 && <li>{t('b3Nothing')}</li>}
-              {findings.map((f) => <li key={f}>{F[f]?.label} <span className="tag">preliminary</span></li>)}
-            </ul>
-          </>
-        )}
-        <p className="src">{t('source')}: citizen checks with StreamRecord, stored on this phone</p>
-      </section>
-
-      <section className="block" aria-labelledby="b3">
-        <h2 id="b3">{t('b3')}</h2>
-        {findings.length === 0 ? <p className="reading">{t('b3Nothing')}</p> : (
-          <>
-            <p className="meta">{t('b3Intro')}</p>
-            {findings.map((f) => (
-              <div key={f}>
-                <h3>{F[f]?.label}</h3>
-                <div className="three">
-                  <section><h3>{t('people')}</h3><p className="reading">{F[f]?.people}</p></section>
-                  <section><h3>{t('animals')}</h3><p className="reading">{F[f]?.animals}</p></section>
-                  <section><h3>{t('stream')}</h3><p className="reading">{F[f]?.stream}</p></section>
-                </div>
-              </div>
-            ))}
-          </>
-        )}
-        <p className="src">{t('source')}: <a href={`#/clinician/${encodeURIComponent(site.id)}`}>{t('disclaimer')}</a></p>
-      </section>
-
-      <section className="block" aria-labelledby="b4">
-        <h2 id="b4">{t('b4')}</h2>
-        {measures.length > 0 && <p className="meta">{t('b4Intro')}</p>}
-        {generalMeasures.length === 0 ? <p className="meta">Catalogue of Measures not loaded.</p> : (
-          <ul className="reading">
-            {generalMeasures.map((m) => (
-              <li key={m.id} style={{ marginBottom: 16 }}><strong>{m.name}.</strong> {m.oneLine}
-                {m.quote && <span className="lab" style={{ display: 'block', marginTop: 4 }}>"{m.quote}"</span>}
-                <span className="src">{t('fromOAH')}, Catalogue of Measures, {t('page')} {m.page}{cat ? <>, <a href={cat.url}>source</a></> : null}</span></li>
-            ))}
-          </ul>
-        )}
-        {generalMeasures.length > 0 && <p className="meta">{measures.length ? 'Which measure fits which sign is our judgement from each measure\'s stated aims; the Catalogue does not make that link itself.' : 'No signs reported here yet, so these are general measures for urban streams.'}</p>}
-      </section>
-
-      {pb && pb.quotes?.length ? (
-        <section className="block" aria-labelledby="why">
-          <h2 id="why">{t('whyCity')}</h2>
-          {pb.quotes.slice(0, 3).map((q, i) => (
-            <blockquote key={i} className="reading" style={{ margin: '0 0 16px', paddingLeft: 16, borderLeft: '3px solid #0F5C63' }}>
-              "{q.text}"
-              <p className="src">{t('fromOAH')}, Policy Brief{pb.date ? ` (${pb.date})` : ''}, {t('page')} {q.page}{pb.url ? <>, <a href={pb.url}>source</a></> : null}</p>
-            </blockquote>
-          ))}
+      <div className="wide sections">
+        <section className="sec" aria-labelledby="b2">
+          <h2 id="b2">{t('b2')}</h2>
+          <div className="body">
+            {checks.length === 0 ? <p className="reading empty">{t('b2Empty')}</p> : (
+              <>
+                <p className="meta">{t('checksN', { n: checks.length })}</p>
+                {findings.length === 0 ? <p className="reading">{t('b3Nothing')}</p> : (
+                  <ul className="findings">
+                    {findings.map((f) => <li key={f}><Shape status="look" /><span>{F[f]?.label}</span><span className="tag">{t('preliminary')}</span></li>)}
+                  </ul>
+                )}
+              </>
+            )}
+            <p className="src">{t('source')}: citizen checks with StreamRecord, stored on this phone</p>
+          </div>
         </section>
-      ) : null}
+
+        <section className="sec" aria-labelledby="b3">
+          <h2 id="b3">{t('b3')}</h2>
+          <div className="body">
+            {findings.length === 0 ? <p className="reading empty">{t('b3Nothing')}</p> : (
+              <>
+                <p className="reading">{t('b3Intro')}</p>
+                {findings.map((f) => (
+                  <div key={f} className="finding">
+                    <h3>{F[f]?.label}</h3>
+                    <div className="three">
+                      <section><h4>{t('people')}</h4><p>{F[f]?.people}</p></section>
+                      <section><h4>{t('animals')}</h4><p>{F[f]?.animals}</p></section>
+                      <section><h4>{t('stream')}</h4><p>{F[f]?.stream}</p></section>
+                    </div>
+                  </div>
+                ))}
+              </>
+            )}
+            <p className="src">{t('source')}: <a href={`#/clinician/${encodeURIComponent(site.id)}`}>{t('disclaimer')}</a></p>
+          </div>
+        </section>
+
+        <section className="sec" aria-labelledby="b4">
+          <h2 id="b4">{t('b4')}</h2>
+          <div className="body">
+            {matched.length > 0 && <p className="reading">{t('b4Intro')}</p>}
+            {measures.length === 0 ? <p className="meta">Catalogue of Measures not loaded.</p> : (
+              <ul className="measures">
+                {measures.map((m) => (
+                  <li key={m.id}>
+                    {m.category && <p className="cat">{m.category.charAt(0).toUpperCase() + m.category.slice(1)}</p>}
+                    <h3>{m.name}</h3>
+                    <p>{m.oneLine}</p>
+                    {m.quote && <p className="excerpt">“{m.quote}”</p>}
+                    <p className="cite">{t('fromOAH')}, Catalogue of Measures, {t('page')}{'\u00a0'}{m.page}{cat ? <>, <a href={cat.url}>source</a></> : null}</p>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {measures.length > 0 && <p className="src">{matched.length ? "Which measure fits which sign is our judgement from each measure's stated aims; the Catalogue does not make that link itself." : 'No signs reported here yet, so these are general measures for urban streams.'}</p>}
+          </div>
+        </section>
+
+        {pb && pb.quotes?.length ? (
+          <section className="sec" aria-labelledby="why">
+            <h2 id="why">{t('whyCity')}</h2>
+            <div className="body">
+              {pb.quotes.slice(0, 3).map((q, i) => (
+                <figure key={i} className="quote">
+                  <blockquote style={{ margin: 0 }}><p>“{q.text}”</p></blockquote>
+                  <figcaption>{t('fromOAH')}, Policy Brief{pb.date ? ` (${pb.date})` : ''}, {t('page')}{'\u00a0'}{q.page}{pb.url ? <>, <a href={pb.url}>source</a></> : null}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        ) : null}
+      </div>
     </article>
   )
 }

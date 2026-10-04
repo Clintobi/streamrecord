@@ -45,7 +45,7 @@ export default function FieldCheck({ id }: { id: string }) {
     const bundle = buildBundle(site, saved)
     return (
       <div className="wrap">
-        <div className="notice" role="status"><h1 style={{ fontSize: '1.6rem' }}>{t('savedTitle')}</h1><p>{t('savedBody')}</p>
+        <div className="notice" role="status"><h1><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="13" fill="var(--stream)" /><path d="M8 14.5l4 4 8-9" fill="none" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" /></svg>{t('savedTitle')}</h1><p>{t('savedBody')}</p>
           {!navigator.onLine && <p><strong>{t('offline')}</strong></p>}</div>
         <div className="actions">
           <a className="btn" href={`#/site/${encodeURIComponent(site.id)}`}>{t('seeReading')}</a>
@@ -59,7 +59,7 @@ export default function FieldCheck({ id }: { id: string }) {
   if (step === -1) {
     return (
       <div className="wrap">
-        <p className="eyebrow">{site.name}</p>
+        <nav className="crumbs noprint" aria-label="Breadcrumb"><a href={`#/site/${encodeURIComponent(site.id)}`}>← {site.name}</a></nav>
         <h1>{t('checkTitle')}</h1>
         <p className="reading">{t('checkIntro')}</p>
         <button className="btn" onClick={() => setStep(0)}>{t('start')}</button>
@@ -90,8 +90,8 @@ export default function FieldCheck({ id }: { id: string }) {
 
   return (
     <div className="wrap">
-      <p className="progress">{t('of', { n: step + 1, total })} · {site.name}</p>
-      <div className="progressbar" aria-hidden="true"><span style={{ width: `${((step + 1) / total) * 100}%` }} /></div>
+      <p className="progress"><span>{t('of', { n: step + 1, total })}</span><span>{site.name}</span></p>
+      <div className="steps" aria-hidden="true" style={{ ['--n' as any]: total }}>{QUESTIONS.map((_, i) => <span key={i} className={i <= step ? 'on' : undefined} />)}</div>
       {error && (
         <div className="error-summary" role="alert" tabIndex={-1} ref={errRef}>
           <h2>{t('errorTitle')}</h2>
@@ -103,7 +103,7 @@ export default function FieldCheck({ id }: { id: string }) {
           <legend>{qt.q}</legend>
           <p className="hint" id={`hint-${q.key}`}>{qt.hint}</p>
           {q.kind === 'temperature' ? (
-            <p><label htmlFor={`field-${q.key}`} className="sr-only">°C</label>
+            <p className="tempfield"><label htmlFor={`field-${q.key}`} className="sr-only">°C</label>
               <input id={`field-${q.key}`} type="number" inputMode="decimal" step="0.1" min={0} max={40}
                 value={typeof val === 'number' ? val : ''} onChange={(e) => set(e.target.value === '' ? null : Number(e.target.value))} /> °C</p>
           ) : (

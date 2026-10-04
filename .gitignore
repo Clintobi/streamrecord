@@ -5,3 +5,4 @@ dist
 content/sources/*.pdf
 content/sources/*.txt
 tsconfig.tsbuildinfo
+.design/

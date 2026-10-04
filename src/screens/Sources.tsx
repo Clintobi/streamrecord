@@ -13,19 +13,19 @@ export default function Sources() {
   const [m, setM] = useState<Meta | null>(null)
   useEffect(() => { fetch('./data/meta.json').then((r) => r.json()).then(setM).catch(() => setM(null)) }, [])
   return (
-    <div className="wrap">
+    <div className="wrap sources">
       <h1>{t('sourcesTitle')}</h1>
       {!m ? <p className="meta">Loading.</p> : (
         <>
           <h2>Sources and licences</h2>
-          <table><thead><tr><th>Source</th><th>Licence</th><th>Retrieved</th></tr></thead><tbody>
-            {m.sources.map((s) => <tr key={s.url}><td><a href={s.url}>{s.title}</a><br /><span className="meta">{s.publisher}{s.note ? `. ${s.note}` : ''}</span>{s.sha256 && <><br /><span className="mono meta">sha256 {s.sha256.slice(0, 16)}…</span></>}</td><td>{s.licence}</td><td>{s.retrieved}</td></tr>)}
-          </tbody></table>
+          <div className="tablewrap"><table><thead><tr><th>Source</th><th>Licence</th><th>Retrieved</th></tr></thead><tbody>
+            {m.sources.map((s) => <tr key={s.url}><td><a href={s.url}>{s.title}</a><br /><span className="meta">{s.publisher}{s.note ? `. ${s.note}` : ''}</span>{s.sha256 && <><br /><span className="mono meta">sha256 {s.sha256.slice(0, 16)}…</span></>}</td><td>{s.licence}</td><td className="nw num">{s.retrieved}</td></tr>)}
+          </tbody></table></div>
 
           <h2>What is real and what is synthetic</h2>
-          <table><thead><tr><th>Item</th><th>Status</th><th>Note</th></tr></thead><tbody>
+          <div className="tablewrap"><table><thead><tr><th>Item</th><th>Status</th><th>Note</th></tr></thead><tbody>
             {m.realVsSynthetic.map((r) => <tr key={r.item}><td>{r.item}</td><td>{r.status}</td><td>{r.note}</td></tr>)}
-          </tbody></table>
+          </tbody></table></div>
 
           <h2>FHIR</h2>
           <p>Implementation guide pinned at commit <code>{m.fhir.commit}</code>{m.fhir.package ? <> (package <code>{m.fhir.package}</code>)</> : null}{m.fhir.igRepo ? <>, <a href={m.fhir.igRepo}>source</a></> : null}.</p>
@@ -37,9 +37,9 @@ export default function Sources() {
             <>
               <h2>Evidence</h2>
               {m.evidence.validate?.length ? (
-                <table><thead><tr><th>Resource</th><th>Server</th><th>Checked against</th><th>Errors</th><th>Warnings</th><th>Checked</th></tr></thead><tbody>
-                  {m.evidence.validate.map((v, i) => <tr key={i}><td>{v.resource}</td><td className="mono">{v.server}</td><td>{v.profile || 'base R4'}</td><td>{v.errors}</td><td>{v.warnings}</td><td>{v.at}</td></tr>)}
-                </tbody></table>) : null}
+                <div className="tablewrap"><table><thead><tr><th>Resource</th><th>Server</th><th>Checked against</th><th>Errors</th><th>Warnings</th><th>Checked</th></tr></thead><tbody>
+                  {m.evidence.validate.map((v, i) => <tr key={i}><td>{v.resource}</td><td className="mono">{v.server}</td><td>{v.profile || 'base R4'}</td><td>{v.errors}</td><td>{v.warnings}</td><td className="nw num">{v.at}</td></tr>)}
+                </tbody></table></div>) : null}
               {m.evidence.tests && <p>Unit tests: {m.evidence.tests}</p>}
               {m.evidence.lighthouse && <p>Lighthouse (mobile): {m.evidence.lighthouse}</p>}
               {m.evidence.bundleKb && <p>JavaScript for the first view: {m.evidence.bundleKb}</p>}

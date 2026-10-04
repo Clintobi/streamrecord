@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { loadCities, loadCity } from '../data'
 import { useI18n } from '../i18n'
-import { CityIndex, labStatus, Site } from '../model'
+import { CityIndex, labStatus, longDate, Site } from '../model'
 import { Shape, Skeleton } from '../ui'
 
 const SHAPE_HTML: Record<string, string> = {
@@ -11,8 +11,10 @@ const SHAPE_HTML: Record<string, string> = {
   none: '<svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="5" fill="#FFFFFF" stroke="#1B2A2F" stroke-width="2"/></svg>',
 }
 
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
+
 export default function MapScreen({ city }: { city?: string }) {
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const [cities, setCities] = useState<CityIndex[] | null>(null)
   const [slug, setSlug] = useState<string | undefined>(city)
   const [sites, setSites] = useState<Site[] | null>(null)
@@ -44,7 +46,7 @@ export default function MapScreen({ city }: { city?: string }) {
       const group = L.layerGroup()
       for (const s of sites) {
         const icon = L.divIcon({ className: 'sr-marker', html: SHAPE_HTML[labStatus(s)], iconSize: [28, 28], iconAnchor: [14, 14] })
-        L.marker([s.lat, s.lon], { icon, title: s.name, keyboard: true })
+        L.marker([s.lat, s.lon], { icon, title: s.name, keyboard: true, zIndexOffset: ({ concern: 300, look: 200, ok: 100, none: 0 } as Record<string, number>)[labStatus(s)] })
           .on('click', () => { location.hash = `#/site/${encodeURIComponent(s.id)}` })
           .addTo(group)
       }
@@ -58,31 +60,44 @@ export default function MapScreen({ city }: { city?: string }) {
 
   if (!cities) return <Skeleton />
   const cur = cities.find((c) => c.slug === slug)
+  const dates = (sites || []).map((s) => s.risk?.date).filter(Boolean).sort() as string[]
+  const scored = (sites || []).filter((s) => typeof s.risk?.score === 'number').length
 
   return (
     <div className="wide">
       <h1>{t('mapTitle')}</h1>
-      <p className="reading" style={{ maxWidth: '68ch' }}>{t('mapIntro')}</p>
-      <div className="citybar" role="group" aria-label="City">
+      <p className="lede">{t('mapIntro')}</p>
+      <div className="cities" role="group" aria-label="City">
         {cities.map((c) => (
-          <button key={c.slug} aria-pressed={c.slug === slug} onClick={() => setSlug(c.slug)}>{c.name} ({c.count})</button>
+          <button key={c.slug} aria-pressed={c.slug === slug} onClick={() => setSlug(c.slug)}>{c.name}<span className="n">{c.count}</span></button>
         ))}
+      </div>
+      <div className="cityline">
+        <p className="meta">{sites && dates.length ? t('cityLine', { n: sites.length, scored, from: longDate(dates[0], lang), to: longDate(dates[dates.length - 1], lang) }) : '\u00a0'}</p>
+        <ul className="legend" aria-label="Legend">
+          {(['ok', 'look', 'concern'] as const).map((st, i) => <li key={st}><Shape status={st} />{cap(t(`level_${['low', 'moderate', 'high'][i]}` as any))}</li>)}
+          <li><Shape status="none" />{t('legendNone')}</li>
+        </ul>
       </div>
       <div className="maplayout">
         <div ref={mapEl} id="map" role="img" aria-label={cur ? `Map of sites in ${cur.name}. The same sites are listed next to the map.` : 'Map'} />
         <section aria-labelledby="listh">
-          <h2 id="listh" style={{ marginTop: 0 }}>{t('listTitle', { city: cur?.name || '' })}</h2>
+          <div className="listhead">
+            <h2 id="listh">{t('listTitle', { city: cur?.name || '' })}</h2>
+            <span className="meta">{t('listScore')}</span>
+          </div>
           {!sites ? <Skeleton /> : (
             <ul className="sitelist">
               {sites.map((s) => {
                 const st = labStatus(s)
+                const has = s.risk && s.risk.level !== 'unknown'
                 return (
                   <li key={s.id}>
                     <a href={`#/site/${encodeURIComponent(s.id)}`}>
                       <Shape status={st} />
-                      <span><strong>{s.name}</strong>
-                        <span className="meta">{s.risk && s.risk.level !== 'unknown' ? `${t('statusLab', { level: t(`level_${s.risk.level}` as any), score: s.risk.score ?? '', date: s.risk.date || '' })}` : t('level_unknown')}</span>
-                      </span>
+                      <span className="nm">{s.name}</span>
+                      <span className={`sc${has ? '' : ' none'}`}>{has && typeof s.risk!.score === 'number' ? s.risk!.score.toFixed(2) : '–'}</span>
+                      <span className="sub">{has ? `${cap(t(`level_${s.risk!.level}` as any))} · ${longDate(s.risk!.date, lang)}` : cap(t('level_unknown'))}</span>
                     </a>
                   </li>
                 )

@@ -114,11 +114,11 @@ Neither public server holds the OneAquaHealth IG. To make the base-R4 check poss
 | Measure | Result |
 |---|---|
 | Unit tests | 14 passing (vitest): bundle structure, narratives, reference resolution, Not sure → dataAbsentReason, OAH codes, UCUM, preliminary status, conditional create, determinism, finding rules, location-oah rules |
-| Lighthouse, Site Reading (mobile, production) | Performance 98, Accessibility 100, Best practices 100; LCP 1.9 s, CLS 0 |
+| Lighthouse, Site Reading (mobile, production) | Performance 94, Accessibility 100, Best practices 100; LCP 1.6 s, CLS 0 |
 | Lighthouse, Field check | Performance 99, Accessibility 100, Best practices 100; LCP 1.6 s |
-| Lighthouse, Map | Performance 84, Accessibility 97, Best practices 96; LCP 3.7 s (a third-party basemap tile) |
-| JavaScript for the first view | 62 KB gzipped JavaScript for the first view (190.8 KB raw); the map library (44 KB gzipped) and each translation (5 KB) load separately |
-| Time to the first Site Reading | 1.9 s largest contentful paint for a Site Reading (Lighthouse simulated slow 4G, Moto G Power profile) |
+| Lighthouse, Map | Performance 76 (median of three runs, range 64–89: LCP is a third-party basemap tile), Accessibility 97, Best practices 96 |
+| JavaScript for the first view | 64 KB gzipped JavaScript for the first view (197 KB raw); the map library (44 KB gzipped) and each translation (~6 KB) load separately |
+| Time to the first Site Reading | 1.6 s largest contentful paint for a Site Reading (Lighthouse simulated slow 4G) |
 
 The map loses accessibility points for one reason: markers for neighbouring sites overlap, so they fail Lighthouse's target-spacing check. Every site is also a 48 px row in the list beside the map, which is the "equivalent control" exception in WCAG 2.2 SC 2.5.8. Lighthouse cannot detect that. Raw reports: [`evidence/summary.json`](evidence/summary.json).
 

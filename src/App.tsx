@@ -25,5 +25,5 @@ export default function App() {
   else if (route === 'clinician' && id) screen = <ClinicianReading id={decodeURIComponent(id)} />
   else if (route === 'sources') screen = <Sources />
   else screen = <MapScreen city={route === 'city' ? id : undefined} />
-  return <Layout>{screen}</Layout>
+  return <Layout route={route || ''}>{screen}</Layout>
 }

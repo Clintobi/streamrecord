@@ -10,29 +10,41 @@ export function Shape({ status, size = 14 }: { status: Status; size?: number }) 
   return <svg width={s} height={s} viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.5" fill="#fff" stroke="var(--ink-2)" strokeWidth="1.5" strokeDasharray="2 2" /></svg>
 }
 
-export function StatusLine({ status, children }: { status: Status; children: ReactNode }) {
-  return <p className={`status ${status}`}><Shape status={status} /><span>{children}</span></p>
+export function StatusLine({ status, children, size = 16 }: { status: Status; children: ReactNode; size?: number }) {
+  return <p className={`status ${status}`}><Shape status={status} size={size} /><span>{children}</span></p>
 }
 
-export function Layout({ children }: { children: ReactNode }) {
+// The mark: two stream lines and a record tick, drawn on the 24px grid.
+export function Mark({ size = 26 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 26 26" aria-hidden="true">
+      <rect x="0.5" y="0.5" width="25" height="25" rx="2" fill="var(--stream)" />
+      <path d="M4 10.5c3-2.4 6 2.4 9 0s6-2.4 9 0" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+      <path d="M4 16.5c3-2.4 6 2.4 9 0s6-2.4 9 0" fill="none" stroke="#fff" strokeOpacity="0.55" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+export function Layout({ children, route }: { children: ReactNode; route: string }) {
   const { t, lang, setLang, d } = useI18n()
+  const onStreams = route === '' || route === 'city' || route === 'site' || route === 'check' || route === 'clinician'
   return (
     <>
       <header className="site">
         <div className="wide bar">
-          <a className="brand" href="#/">StreamRecord<small>{t('tagline')}</small></a>
+          <a className="brand" href="#/" aria-label={`StreamRecord, ${t('tagline')}`}><Mark /><b>StreamRecord</b><small>{t('tagline')}</small></a>
           <nav className="main" aria-label="Main">
-            <a href="#/">{t('navMap')}</a>
-            <a href="#/sources">{t('navSources')}</a>
+            <a href="#/" aria-current={onStreams ? 'page' : undefined}>{t('navMap')}</a>
+            <a href="#/sources" aria-current={route === 'sources' ? 'page' : undefined}>{t('navSources')}</a>
           </nav>
           <div className="lang">
-            <label htmlFor="lang">{t('language')}</label>
+            <label htmlFor="lang" className="sr-only">{t('language')}</label>
             <select id="lang" value={lang} onChange={(e) => setLang(e.target.value)}>
               {LANGS.map((l) => <option key={l.code} value={l.code} lang={l.code === 'no' ? 'nb' : l.code}>{l.name}</option>)}
             </select>
           </div>
         </div>
-        {d.meta && (d.meta as any).reviewed === false && <div className="wide"><p className="meta" role="note">{t('machineTr')}</p></div>}
+        {d.meta && (d.meta as any).reviewed === false && <div className="mtnote"><div className="wide"><p role="note">{t('machineTr')}</p></div></div>}
       </header>
       <main id="main" tabIndex={-1}>{children}</main>
       <footer className="site">

@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "code": "it",
+    "name": "Italiano",
+    "reviewed": false
+  },
+  "ui": {
+    "tagline": "Cosa dice la scheda del tuo torrente",
+    "navMap": "Torrenti",
+    "navSources": "Fonti e dati",
+    "language": "Lingua",
+    "mapTitle": "Scegli un torrente",
+    "mapIntro": "I ricercatori di OneAquaHealth hanno studiato i corsi d'acqua urbani in cinque città europee. Scegline uno per leggere cosa significa la sua scheda per le persone, gli animali e il torrente.",
+    "listTitle": "Siti a {city}",
+    "loading": "Caricamento della scheda",
+    "siteEyebrow": "{city} · sito {id}",
+    "statusLab": "Rischio per la salute (laboratorio): {level}, punteggio {score} su 1, campionato il {date}",
+    "statusNoLab": "Per questo sito non è ancora pubblicato un risultato di laboratorio sul rischio per la salute.",
+    "labAge": "I ricercatori hanno campionato questo torrente l'ultima volta {days} giorni fa.",
+    "level_low": "basso",
+    "level_moderate": "moderato",
+    "level_high": "alto",
+    "level_unknown": "non pubblicato",
+    "doCheck": "Fai qui un controllo di 90 secondi",
+    "clinicianLink": "Lettura per i medici (stampabile)",
+    "b1": "Cosa hanno misurato qui i ricercatori",
+    "b1None": "OneAquaHealth non ha pubblicato un risultato di laboratorio per questo sito nei dati che abbiamo usato.",
+    "b2": "Cosa hanno notato le persone",
+    "b2Empty": "Nessuno ha ancora controllato questo torrente. Potresti essere il primo.",
+    "b2Saved": "Controlli salvati su questo telefono",
+    "b3": "Cosa significa",
+    "people": "Per le persone",
+    "animals": "Per gli animali",
+    "stream": "Per il torrente",
+    "b3Intro": "In base a quanto notato qui. Non significa che l'acqua non sia sicura. Significa che qualcuno dovrebbe andare a vedere.",
+    "b3Nothing": "Finora qui non è stato notato nulla di insolito. Le letture compaiono quando un controllo segnala qualcosa.",
+    "b4": "Cosa si può fare",
+    "b4Intro": "Misure del Catalogo delle misure di OneAquaHealth adatte a quanto notato.",
+    "whyCity": "Perché è importante",
+    "fromOAH": "da OneAquaHealth",
+    "source": "Fonte",
+    "page": "p.",
+    "stripTitle": "Rischio per la salute (laboratorio) nei siti di {city}",
+    "stripNote": "Ogni punto è un sito. Questo sito è il punto grande. Scarica i dati in formato CSV.",
+    "downloadCsv": "Scarica CSV",
+    "checkTitle": "Controllo del torrente in 90 secondi",
+    "checkIntro": "Sette domande brevi. Non so è una risposta utile. Nulla lascia il tuo telefono, a meno che tu non scelga di inviarlo.",
+    "start": "Inizia",
+    "next": "Continua",
+    "back": "Indietro",
+    "of": "{n} di {total}",
+    "notSure": "Non so",
+    "errorTitle": "C'è un problema",
+    "errorChoose": "Scegli una risposta, oppure Non so",
+    "savedTitle": "Salvato su questo telefono",
+    "savedBody": "Grazie. Il tuo controllo fa parte della scheda di questo torrente su questo telefono. Resta segnato come preliminare finché qualcuno non lo esamina.",
+    "offline": "Sei offline. Il tuo controllo è salvato su questo telefono.",
+    "seeReading": "Vedi la lettura aggiornata",
+    "showFhir": "Mostra il record FHIR",
+    "clinTitle": "Lettura per i medici",
+    "clinFor": "Per medici di base e operatori di sanità pubblica. Sito {id}, {city}.",
+    "clinMay": "Cosa può indicare",
+    "clinNot": "Cosa non dice",
+    "clinAdvice": "Consigli precauzionali per persone e cani",
+    "clinContact": "Quando contattare il comune o un veterinario",
+    "clinNone": "Per questo sito non è stata ancora segnalata alcuna osservazione, quindi non c'è nulla da interpretare.",
+    "notTitle": "Cosa non è",
+    "notBody": "Non è una diagnosi, non è un'analisi della qualità dell'acqua e non afferma che l'acqua sia sicura o non sicura. Interpreta ciò che un residente ha notato, in termini precauzionali.",
+    "disclaimer": "Redatto da uno studente dell'ultimo anno di Medicina. Non è un parere clinico.",
+    "print": "Stampa o salva come PDF",
+    "dated": "Preparato il {date}",
+    "sourcesTitle": "Fonti e dati",
+    "machineTr": "Traduzione assistita da macchina, non ancora revisionata da un madrelingua.",
+    "skip": "Salta questa domanda",
+    "tempError": "Inserisci una temperatura tra 0 e 40, oppure salta",
+    "bandNote": "OneAquaHealth riporta un unico punteggio di rischio per la salute da 0 a 1 per ogni sito. Basso, moderato e alto sono una nostra suddivisione in terzi dei 96 siti misurati, non una classificazione ufficiale.",
+    "parts": "Rischio da patogeni {p} · rischio di contaminazione fecale {f} · rischio da geni di resistenza agli antibiotici {a} (ciascuno da 0 a 1)"
+  },
+  "questions": {
+    "foam": {
+      "q": "C'è schiuma sull'acqua?",
+      "hint": "Guarda lungo i bordi e dietro i sassi.",
+      "a": {
+        "present": "Sì, c'è schiuma",
+        "absent": "Niente schiuma"
+      }
+    },
+    "colourSmell": {
+      "q": "L'acqua ha un aspetto o un odore insolito?",
+      "hint": "Per esempio un colore strano, odore di fogna o di sostanze chimiche, o di uova marce.",
+      "a": {
+        "present": "Sì, insolito",
+        "absent": "Aspetto e odore normali"
+      }
+    },
+    "riparianVegetation": {
+      "q": "Quanta parte della sponda è coperta da alberi e piante?",
+      "hint": "Guarda circa 10 metri di sponda dalla tua parte.",
+      "a": {
+        "0-20-percent": "Quasi niente (da 0 a 20%)",
+        "21-40-percent": "Poca (da 21 a 40%)",
+        "41-60-percent": "Circa metà (da 41 a 60%)",
+        "61-80-percent": "La maggior parte (da 61 a 80%)",
+        "81-100-percent": "Quasi tutta (da 81 a 100%)"
+      }
+    },
+    "macrophytes": {
+      "q": "Quanta parte del fondo del torrente ha piante acquatiche?",
+      "hint": "Guarda nell'acqua dove riesci a vedere il fondo.",
+      "a": {
+        "0-20-percent": "Quasi niente (da 0 a 20%)",
+        "21-40-percent": "Poca (da 21 a 40%)",
+        "41-60-percent": "Circa metà (da 41 a 60%)",
+        "61-80-percent": "La maggior parte (da 61 a 80%)",
+        "81-100-percent": "Quasi tutto (da 81 a 100%)"
+      }
+    },
+    "invasiveOrganisms": {
+      "q": "Vedi piante o animali che non dovrebbero essere qui?",
+      "hint": "Per esempio panace di Mantegazza, poligono del Giappone o gamberi di fiume che non riconosci.",
+      "a": {
+        "present": "Sì, credo di sì",
+        "absent": "No"
+      }
+    },
+    "other": {
+      "q": "Noti qualcuna di queste cose?",
+      "hint": "Scegli tutte quelle che vedi.",
+      "a": {
+        "scum": "Patina verde o verde-azzurra",
+        "deadFish": "Pesci morti",
+        "standingWater": "Pozze d'acqua ferma vicino al torrente",
+        "none": "Nessuna di queste"
+      }
+    },
+    "waterTemperature": {
+      "q": "Temperatura dell'acqua, se hai un termometro",
+      "hint": "Facoltativo. In gradi Celsius. Salta se non ne hai uno.",
+      "a": {}
+    }
+  },
+  "findings": {
+    "foam": {
+      "label": "Schiuma sull'acqua",
+      "people": "Evita di toccare o ingerire l'acqua. Lavati le mani prima di mangiare.",
+      "animals": "Tieni i cani fuori dall'acqua e non lasciare che si lecchino la schiuma dal pelo. Uccelli e pesci convivono con ciò che l'ha causata.",
+      "stream": "Una schiuma persistente può derivare da detersivi o acque reflue. È un segnale che il torrente potrebbe ricevere inquinamento.",
+      "clin": {
+        "may": "La schiuma è spesso naturale, dovuta alla decomposizione di materiale vegetale. Una schiuma bianca persistente con odore di sapone o di profumo indica detersivi o acque reflue non trattate che entrano nel torrente.",
+        "not": "Non dice se sono presenti microbi o sostanze chimiche nocive, né in quale quantità.",
+        "advice": "Evita il contatto con la pelle e di ingerire l'acqua. Lavati le mani e copri eventuali tagli. Tieni i cani fuori dall'acqua, non lasciare che la bevano o si lecchino la schiuma dal pelo, e sciacquali con acqua pulita dopo il contatto.",
+        "contact": "Segnala al comune una schiuma persistente, una schiuma con odore di fogna o di detersivo, o schiuma con pesci morti. Porta il cane dal veterinario se vomita, ha diarrea o sembra stare male dopo il contatto. Un paziente con sintomi dopo il contatto dovrebbe riferire l'esposizione al proprio medico di base."
+      }
+    },
+    "colourSmell": {
+      "label": "Colore o odore insolito",
+      "people": "Non entrare in acqua e non nuotare, e tieni fuori i bambini. Lavati le mani prima di mangiare.",
+      "animals": "Tieni i cani al guinzaglio e fuori dall'acqua. La scarsità di ossigeno può mettere in difficoltà i pesci e gli insetti di cui si nutrono gli uccelli.",
+      "stream": "Un colore o un odore insolito può indicare acque reflue, uno sversamento o poco ossigeno dovuto a materiale in decomposizione.",
+      "clin": {
+        "may": "Un odore di fogna o un'acqua alterata nel colore suggeriscono uno scarico di acque reflue. Un odore di uova marce suggerisce idrogeno solforato da materiale in decomposizione in acqua povera di ossigeno. Un odore chimico può indicare uno sversamento.",
+        "not": "Non permette di identificare la fonte né di confermare un rischio di infezione o di avvelenamento.",
+        "advice": "Non nuotare e non entrare in acqua, soprattutto i bambini. Evita il contatto, lavati le mani prima di mangiare e copri eventuali tagli. Tieni i cani al guinzaglio e fuori dall'acqua.",
+        "contact": "Segnala al comune lo stesso giorno se vedi uno scarico o senti odore di fogna o di sostanze chimiche. Chi ha diarrea, vomito, febbre o un'irritazione della pelle o degli occhi dopo il contatto dovrebbe rivolgersi al proprio medico di base e parlare dell'acqua."
+      }
+    },
+    "scum": {
+      "label": "Patina verde o verde-azzurra",
+      "people": "Non nuotare. Tieni i bambini lontani dal bordo dell'acqua.",
+      "animals": "Tieni i cani ben lontani: alcune fioriture sono tossiche e possono uccidere un cane in poco tempo. Anche pesci e uccelli possono subire danni.",
+      "stream": "Una patina indica spesso una fioritura di alghe o di cianobatteri, di solito favorita dall'inquinamento da nutrienti e da acqua calda e ferma.",
+      "clin": {
+        "may": "Una patina superficiale verde o verde-azzurra suggerisce una fioritura di alghe o di cianobatteri. Alcuni cianobatteri producono tossine che colpiscono il fegato, il sistema nervoso e la pelle.",
+        "not": "Non si può distinguere a occhio una fioritura tossica da una innocua. Solo le analisi di laboratorio possono farlo.",
+        "advice": "Non nuotare e non entrare in acqua. Non ingerire l'acqua e non lasciare che arrivi agli occhi. Tieni i cani al guinzaglio, non lasciare che bevano o entrino in acqua, e lava subito il loro pelo con acqua pulita se si bagnano.",
+        "contact": "Un cane con vomito, salivazione eccessiva, debolezza, tremori o collasso dopo il contatto è un'emergenza: portalo subito dal veterinario. Segnala la fioritura al comune. Una persona con irritazione della pelle o degli occhi, vomito o diarrea dopo il contatto dovrebbe rivolgersi al proprio medico di base."
+      }
+    },
+    "deadFish": {
+      "label": "Pesci morti",
+      "people": "Non toccare né raccogliere i pesci. Tieni lontani i bambini.",
+      "animals": "Non lasciare che i cani mangino i pesci morti o ci si rotolino sopra. La causa potrebbe continuare a colpire altri animali selvatici.",
+      "stream": "I pesci morti possono indicare pochissimo ossigeno, uno sversamento tossico o una malattia. Il prelievo di campioni deve essere rapido.",
+      "clin": {
+        "may": "Le morie di pesci possono seguire la carenza di ossigeno con il caldo o dopo un inquinamento organico, uno sversamento tossico o una malattia nella popolazione ittica.",
+        "not": "Non stabilisce la causa, né se l'acqua rappresenti un rischio per le persone.",
+        "advice": "Non maneggiare i pesci morti a mani nude e lavati le mani dopo qualsiasi contatto con l'acqua. Tieni lontani i cani e non lasciare che mangino le carcasse.",
+        "contact": "Segnala subito al comune o all'agenzia per l'ambiente, perché i campioni vanno prelevati in fretta. Porta il cane dal veterinario se ha mangiato pesce e sta male."
+      }
+    },
+    "riparianVegetation": {
+      "label": "Poca vegetazione sulla sponda",
+      "people": "Meno ombra e meno verde lungo l'acqua. Le sponde possono erodersi ed essere meno sicure da percorrere.",
+      "animals": "Meno posti dove gli uccelli possono nidificare e dove pesci e insetti possono ripararsi.",
+      "stream": "La vegetazione di sponda fa ombra, raffredda l'acqua e filtra il ruscellamento. Perderla indebolisce le difese del torrente.",
+      "clin": {
+        "may": "Una vegetazione di sponda scarsa riflette di solito urbanizzazione, disboscamento o erosione, che riducono la capacità del torrente di filtrare il ruscellamento.",
+        "not": "È un indicatore ecologico, non un pericolo diretto per la salute.",
+        "advice": "Nessuna precauzione specifica. Fai attenzione alle sponde erose, soprattutto con bambini e cani.",
+        "contact": "Segnalalo al comune nell'ambito di un'eventuale richiesta di riqualificazione. Questa osservazione da sola non richiede di contattare un medico o un veterinario."
+      }
+    },
+    "invasiveOrganisms": {
+      "label": "Piante o animali che non dovrebbero essere qui",
+      "people": "Non toccare piante che non conosci. Alcune, come il panace di Mantegazza, possono causare ustioni con vesciche alla luce del sole.",
+      "animals": "Non lasciare che i cani mastichino le piante vicino all'acqua. Le specie invasive possono soppiantare pesci, insetti e piante autoctoni.",
+      "stream": "Le specie invasive cambiano l'ecologia del torrente e si diffondono facilmente con scarponi, attrezzatura e zampe.",
+      "clin": {
+        "may": "Piante e animali invasivi suggeriscono un ecosistema alterato. Alcune piante invasive delle sponde, come il panace di Mantegazza, causano fitofotodermatite.",
+        "not": "La maggior parte delle specie invasive non comporta un rischio diretto per la salute umana. Vederne una non significa che l'acqua sia contaminata.",
+        "advice": "Evita di toccare piante sconosciute, lava subito la pelle dopo il contatto e tienila al riparo dal sole. Pulisci scarponi e attrezzatura prima di visitare un altro torrente. Non lasciare che i cani mastichino le piante.",
+        "contact": "Segnala le specie invasive al comune. Una persona con vesciche o un'eruzione simile a una scottatura dopo il contatto con una pianta, soprattutto dopo l'esposizione al sole, dovrebbe rivolgersi al proprio medico di base."
+      }
+    },
+    "macrophytes": {
+      "label": "Poche piante acquatiche",
+      "people": "Nessun effetto diretto sulle persone.",
+      "animals": "Le piante acquatiche offrono a pesci, insetti e lumache cibo, riparo e luoghi dove riprodursi.",
+      "stream": "Poche piante acquatiche possono essere la conseguenza di inquinamento, cambiamenti nell'ombreggiamento o dragaggi, e rendono il torrente meno capace di depurarsi.",
+      "clin": {
+        "may": "La scarsità di piante acquatiche può riflettere inquinamento, sedimenti, forte ombreggiamento o lavori sull'alveo.",
+        "not": "È un indicatore ecologico, non un pericolo diretto per la salute.",
+        "advice": "Nessuna precauzione specifica.",
+        "contact": "Segnalalo al comune nell'ambito di un'eventuale richiesta di riqualificazione. Questa osservazione da sola non richiede di contattare un medico o un veterinario."
+      }
+    },
+    "standingWater": {
+      "label": "Pozze d'acqua ferma",
+      "people": "L'acqua ferma può favorire la riproduzione delle zanzare. Copriti e usa un repellente al tramonto.",
+      "animals": "Non lasciare che i cani bevano da pozze stagnanti, che possono contenere batteri e parassiti.",
+      "stream": "Le pozze vicino al torrente possono indicare un deflusso bloccato o un drenaggio scarso, e concentrano gli inquinanti.",
+      "clin": {
+        "may": "Le pozze stagnanti sono habitat di riproduzione delle zanzare e possono concentrare microbi e inquinanti.",
+        "not": "Non dimostra la presenza di zanzare vettori di malattie.",
+        "advice": "Riduci le punture con un repellente e coprendo la pelle al tramonto. Svuota i contenitori che raccolgono acqua vicino a casa. Non lasciare che i cani bevano da pozze stagnanti.",
+        "contact": "Segnala al comune ristagni persistenti o molte larve di zanzara. Una persona con febbre dopo molte punture di zanzara dovrebbe rivolgersi al proprio medico di base e riferire l'esposizione."
+      }
+    }
+  }
+}

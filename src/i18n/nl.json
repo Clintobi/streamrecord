@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "code": "nl",
+    "name": "Nederlands",
+    "reviewed": false
+  },
+  "ui": {
+    "tagline": "Wat het dossier van jouw beek zegt",
+    "navMap": "Beken",
+    "navSources": "Bronnen en gegevens",
+    "language": "Taal",
+    "mapTitle": "Kies een beek",
+    "mapIntro": "Onderzoekers van OneAquaHealth hebben stadsbeken in vijf Europese steden bestudeerd. Kies er een om te lezen wat het dossier betekent voor mensen, dieren en de beek.",
+    "listTitle": "Locaties in {city}",
+    "loading": "Dossier wordt geladen",
+    "siteEyebrow": "{city} · locatie {id}",
+    "statusLab": "Gezondheidsrisico volgens het lab: {level}, score {score} van 1, bemonsterd op {date}",
+    "statusNoLab": "Voor deze locatie is nog geen labuitslag over gezondheidsrisico gepubliceerd.",
+    "labAge": "Onderzoekers hebben deze beek {days} dagen geleden voor het laatst bemonsterd.",
+    "level_low": "laag",
+    "level_moderate": "matig",
+    "level_high": "hoog",
+    "level_unknown": "niet gepubliceerd",
+    "doCheck": "Doe hier een controle van 90 seconden",
+    "clinicianLink": "Toelichting voor zorgverleners (afdrukbaar)",
+    "b1": "Wat onderzoekers hier hebben gemeten",
+    "b1None": "OneAquaHealth heeft voor deze locatie geen labuitslag gepubliceerd in de gegevens die wij gebruikten.",
+    "b2": "Wat mensen hebben opgemerkt",
+    "b2Empty": "Niemand heeft deze beek nog gecontroleerd. Jij kunt de eerste zijn.",
+    "b2Saved": "Controles opgeslagen op deze telefoon",
+    "b3": "Wat dit betekent",
+    "people": "Voor mensen",
+    "animals": "Voor dieren",
+    "stream": "Voor de beek",
+    "b3Intro": "Op basis van wat hier is opgemerkt. Dit betekent niet dat het water onveilig is. Het betekent dat iemand moet gaan kijken.",
+    "b3Nothing": "Hier is nog niets ongewoons opgemerkt. Toelichtingen verschijnen zodra een controle iets meldt.",
+    "b4": "Wat er gedaan kan worden",
+    "b4Intro": "Maatregelen uit de Maatregelencatalogus van OneAquaHealth die passen bij wat is opgemerkt.",
+    "whyCity": "Waarom dit ertoe doet",
+    "fromOAH": "van OneAquaHealth",
+    "source": "Bron",
+    "page": "p.",
+    "stripTitle": "Gezondheidsrisico volgens het lab op de locaties in {city}",
+    "stripNote": "Elke stip is een locatie. Deze locatie is de grote stip. Download de gegevens als CSV.",
+    "downloadCsv": "CSV downloaden",
+    "checkTitle": "Beekcontrole van 90 seconden",
+    "checkIntro": "Zeven korte vragen. Weet ik niet is een nuttig antwoord. Er gaat niets van je telefoon af, tenzij je ervoor kiest het te versturen.",
+    "start": "Beginnen",
+    "next": "Verder",
+    "back": "Terug",
+    "of": "{n} van {total}",
+    "notSure": "Weet ik niet",
+    "errorTitle": "Er is een probleem",
+    "errorChoose": "Kies een antwoord, of Weet ik niet",
+    "savedTitle": "Opgeslagen op deze telefoon",
+    "savedBody": "Dank je. Je controle hoort nu bij het dossier van deze beek op deze telefoon. Hij blijft als voorlopig gemarkeerd tot iemand hem heeft beoordeeld.",
+    "offline": "Je bent offline. Je controle is opgeslagen op deze telefoon.",
+    "seeReading": "Bekijk de bijgewerkte toelichting",
+    "showFhir": "Toon het FHIR-record",
+    "clinTitle": "Toelichting voor zorgverleners",
+    "clinFor": "Voor huisartsen en medewerkers publieke gezondheid. Locatie {id}, {city}.",
+    "clinMay": "Wat het kan betekenen",
+    "clinNot": "Wat het niet zegt",
+    "clinAdvice": "Voorzorgsadvies voor mensen en honden",
+    "clinContact": "Wanneer contact opnemen met de gemeente of een dierenarts",
+    "clinNone": "Voor deze locatie is nog niets gemeld, dus er valt niets te duiden.",
+    "notTitle": "Wat dit niet is",
+    "notBody": "Dit is geen diagnose, geen waterkwaliteitstest en geen uitspraak dat het water veilig of onveilig is. Het duidt wat een bewoner heeft opgemerkt, uit voorzorg.",
+    "disclaimer": "Opgesteld door een geneeskundestudent in het laatste jaar. Geen medisch advies.",
+    "print": "Afdrukken of opslaan als pdf",
+    "dated": "Opgesteld op {date}",
+    "sourcesTitle": "Bronnen en gegevens",
+    "machineTr": "Machinaal ondersteunde vertaling, nog niet nagekeken door een moedertaalspreker.",
+    "skip": "Deze vraag overslaan",
+    "tempError": "Vul een temperatuur tussen 0 en 40 in, of sla over",
+    "bandNote": "OneAquaHealth geeft per locatie één gezondheidsrisicoscore van 0 tot 1. Laag, matig en hoog is onze eigen indeling van de 96 gemeten locaties in drie gelijke delen, geen officiële beoordeling.",
+    "parts": "Risico op ziekteverwekkers {p} · risico op fecale verontreiniging {f} · risico op antibioticaresistentiegenen {a} (elk 0 tot 1)"
+  },
+  "questions": {
+    "foam": {
+      "q": "Ligt er schuim op het water?",
+      "hint": "Kijk langs de randen en achter stenen.",
+      "a": {
+        "present": "Ja, schuim",
+        "absent": "Geen schuim"
+      }
+    },
+    "colourSmell": {
+      "q": "Ziet of ruikt het water ongewoon?",
+      "hint": "Bijvoorbeeld een vreemde kleur, een riool- of chemische geur, of een geur van rotte eieren.",
+      "a": {
+        "present": "Ja, ongewoon",
+        "absent": "Ziet en ruikt normaal"
+      }
+    },
+    "riparianVegetation": {
+      "q": "Hoeveel van de oever is bedekt met bomen en planten?",
+      "hint": "Kijk naar ongeveer 10 meter oever aan jouw kant.",
+      "a": {
+        "0-20-percent": "Bijna niets (0 tot 20%)",
+        "21-40-percent": "Een beetje (21 tot 40%)",
+        "41-60-percent": "Ongeveer de helft (41 tot 60%)",
+        "61-80-percent": "Het grootste deel (61 tot 80%)",
+        "81-100-percent": "Bijna alles (81 tot 100%)"
+      }
+    },
+    "macrophytes": {
+      "q": "Op hoeveel van de beekbodem groeien waterplanten?",
+      "hint": "Kijk in het water waar je de bodem kunt zien.",
+      "a": {
+        "0-20-percent": "Bijna niets (0 tot 20%)",
+        "21-40-percent": "Een beetje (21 tot 40%)",
+        "41-60-percent": "Ongeveer de helft (41 tot 60%)",
+        "61-80-percent": "Het grootste deel (61 tot 80%)",
+        "81-100-percent": "Bijna alles (81 tot 100%)"
+      }
+    },
+    "invasiveOrganisms": {
+      "q": "Zie je planten of dieren die hier niet thuishoren?",
+      "hint": "Bijvoorbeeld reuzenberenklauw, Japanse duizendknoop of rivierkreeften die je niet herkent.",
+      "a": {
+        "present": "Ja, ik denk het",
+        "absent": "Nee"
+      }
+    },
+    "other": {
+      "q": "Zie je een of meer van deze dingen?",
+      "hint": "Kies alles wat van toepassing is.",
+      "a": {
+        "scum": "Groene of blauwgroene laag op het water",
+        "deadFish": "Dode vissen",
+        "standingWater": "Plassen stilstaand water bij de beek",
+        "none": "Geen van deze"
+      }
+    },
+    "waterTemperature": {
+      "q": "Watertemperatuur, als je een thermometer hebt",
+      "hint": "Optioneel. In graden Celsius. Sla over als je er geen hebt.",
+      "a": {}
+    }
+  },
+  "findings": {
+    "foam": {
+      "label": "Schuim op het water",
+      "people": "Raak het water niet aan en slik het niet in. Was je handen voor het eten.",
+      "animals": "Houd honden uit het water en laat ze geen schuim uit hun vacht likken. Vogels en vissen leven met wat het schuim veroorzaakt.",
+      "stream": "Aanhoudend schuim kan komen van wasmiddelen of afvalwater. Een teken dat de beek mogelijk vervuiling ontvangt.",
+      "clin": {
+        "may": "Schuim is vaak natuurlijk en ontstaat door afbrekend plantmateriaal. Aanhoudend wit schuim met een zeep- of parfumgeur wijst op wasmiddelen of ongezuiverd afvalwater dat in de beek terechtkomt.",
+        "not": "Het zegt niet of er schadelijke micro-organismen of chemicaliën aanwezig zijn, of in welke hoeveelheid.",
+        "advice": "Vermijd huidcontact en slik geen water in. Was je handen en dek wondjes af. Houd honden uit het water, laat ze er niet van drinken of schuim uit hun vacht likken, en spoel ze na contact af met schoon water.",
+        "contact": "Meld aanhoudend schuim, schuim met een riool- of wasmiddelgeur, of schuim met dode vissen bij de gemeente. Ga naar een dierenarts als een hond na contact braakt, diarree heeft of ziek lijkt. Een patiënt met klachten na contact moet de blootstelling melden aan de huisarts."
+      }
+    },
+    "colourSmell": {
+      "label": "Ongewone kleur of geur",
+      "people": "Niet pootjebaden of zwemmen, en houd kinderen uit het water. Was je handen voor het eten.",
+      "animals": "Houd honden aan de lijn en uit het water. Weinig zuurstof kan vissen verzwakken, en ook de insecten waar vogels van leven.",
+      "stream": "Een ongewone kleur of geur kan wijzen op afvalwater, een lozing of lekkage, of weinig zuurstof door afbrekend materiaal.",
+      "clin": {
+        "may": "Een rioolgeur of verkleurd water wijst op een lozing van afvalwater. Een geur van rotte eieren wijst op waterstofsulfide uit afbrekend materiaal in zuurstofarm water. Een chemische geur kan op een lekkage of lozing wijzen.",
+        "not": "Het kan de bron niet aanwijzen en geen infectie- of vergiftigingsrisico bevestigen.",
+        "advice": "Niet zwemmen of pootjebaden, vooral kinderen niet. Vermijd contact, was je handen voor het eten en dek wondjes af. Houd honden aan de lijn en uit het water.",
+        "contact": "Meld het dezelfde dag bij de gemeente als je een lozing ziet of riool of chemicaliën ruikt. Wie na contact diarree, braken, koorts of uitslag op de huid of aan de ogen krijgt, moet naar de huisarts gaan en het water noemen."
+      }
+    },
+    "scum": {
+      "label": "Groene of blauwgroene laag op het water",
+      "people": "Niet zwemmen. Houd kinderen weg van de waterkant.",
+      "animals": "Houd honden ver weg: sommige bloeien zijn giftig en kunnen een hond snel doden. Ook vissen en vogels kunnen schade oplopen.",
+      "stream": "Een laag op het water wijst vaak op bloei van algen of blauwalg, meestal gevoed door vervuiling met voedingsstoffen en warm, stilstaand water.",
+      "clin": {
+        "may": "Een groene of blauwgroene laag op het oppervlak wijst op bloei van algen of cyanobacteriën (blauwalg). Sommige cyanobacteriën maken gifstoffen die de lever, het zenuwstelsel en de huid aantasten.",
+        "not": "Je kunt een giftige bloei niet op het oog onderscheiden van een onschuldige. Alleen laboratoriumonderzoek kan dat.",
+        "advice": "Niet zwemmen of pootjebaden. Slik het water niet in en laat het niet in de ogen komen. Houd honden aan de lijn, laat ze niet drinken of het water in gaan, en spoel hun vacht direct af met schoon water als ze nat worden.",
+        "contact": "Een hond die na contact braakt, kwijlt, zwak is, trilt of in elkaar zakt, is een spoedgeval: ga direct naar een dierenarts. Meld de bloei bij de gemeente. Iemand met huid- of oogirritatie, braken of diarree na contact moet naar de huisarts gaan."
+      }
+    },
+    "deadFish": {
+      "label": "Dode vissen",
+      "people": "Raak de vissen niet aan en neem ze niet mee. Houd kinderen op afstand.",
+      "animals": "Laat honden geen dode vis eten en er niet in rollen. De oorzaak kan nog steeds andere dieren treffen.",
+      "stream": "Dode vissen kunnen wijzen op zeer weinig zuurstof, een giftige lozing of ziekte. Monsters moeten snel worden genomen.",
+      "clin": {
+        "may": "Vissterfte kan volgen op zuurstofgebrek bij warm weer of na organische vervuiling, een giftige lozing of ziekte in de vispopulatie.",
+        "not": "Het stelt de oorzaak niet vast, en ook niet of het water een risico vormt voor mensen.",
+        "advice": "Pak dode vissen niet met blote handen op en was je handen na elk contact met het water. Houd honden op afstand en laat ze geen kadavers eten.",
+        "contact": "Meld het direct bij de gemeente of de waterbeheerder, want er moeten snel monsters worden genomen. Ga naar een dierenarts als een hond vis heeft gegeten en ziek wordt."
+      }
+    },
+    "riparianVegetation": {
+      "label": "Weinig begroeiing op de oever",
+      "people": "Minder schaduw en groen langs het water. Oevers kunnen afkalven en minder veilig zijn om te lopen.",
+      "animals": "Minder plekken voor vogels om te nestelen en voor vissen en insecten om te schuilen.",
+      "stream": "Oeverbegroeiing geeft schaduw, koelt het water en filtert afstromend water. Als die verdwijnt, wordt de beek minder weerbaar.",
+      "clin": {
+        "may": "Schaarse oeverbegroeiing komt meestal door bebouwing, kappen of erosie, waardoor de beek afstromend water minder goed kan filteren.",
+        "not": "Het is een ecologische indicator, geen direct gezondheidsrisico.",
+        "advice": "Geen specifieke voorzorg. Wees voorzichtig op afgekalfde oevers, vooral met kinderen en honden.",
+        "contact": "Noem het bij de gemeente als onderdeel van een verzoek om herstel. Voor deze bevinding alleen is geen contact met een arts of dierenarts nodig."
+      }
+    },
+    "invasiveOrganisms": {
+      "label": "Planten of dieren die hier niet thuishoren",
+      "people": "Raak onbekende planten niet aan. Sommige, zoals reuzenberenklauw, kunnen in zonlicht brandwonden met blaren veroorzaken.",
+      "animals": "Laat honden niet op planten bij het water kauwen. Invasieve soorten kunnen inheemse vissen, insecten en planten verdringen.",
+      "stream": "Invasieve soorten veranderen de ecologie van de beek en verspreiden zich makkelijk via laarzen, spullen en poten.",
+      "clin": {
+        "may": "Invasieve planten en dieren wijzen op een verstoord ecosysteem. Enkele invasieve oeverplanten, zoals reuzenberenklauw, veroorzaken fytofotodermatitis.",
+        "not": "De meeste invasieve soorten vormen geen direct risico voor de gezondheid van mensen. Het zien van een invasieve soort betekent niet dat het water verontreinigd is.",
+        "advice": "Raak onbekende planten niet aan, was de huid na contact meteen en houd die uit de zon. Maak laarzen en spullen schoon voordat je naar een andere beek gaat. Laat honden niet op planten kauwen.",
+        "contact": "Meld invasieve soorten bij de gemeente. Iemand met blaren of uitslag die op een brandwond lijkt na contact met een plant, vooral na blootstelling aan zon, moet naar de huisarts gaan."
+      }
+    },
+    "macrophytes": {
+      "label": "Weinig waterplanten",
+      "people": "Geen direct effect op mensen.",
+      "animals": "Waterplanten geven vissen, insecten en slakken voedsel, beschutting en plekken om zich voort te planten.",
+      "stream": "Weinig waterplanten kan het gevolg zijn van vervuiling, veranderde beschaduwing of baggeren, en maakt de beek minder goed in staat zichzelf te reinigen.",
+      "clin": {
+        "may": "Weinig waterplanten kan wijzen op vervuiling, slib, sterke beschaduwing of werkzaamheden aan de bedding.",
+        "not": "Het is een ecologische indicator, geen direct gezondheidsrisico.",
+        "advice": "Geen specifieke voorzorg.",
+        "contact": "Noem het bij de gemeente als onderdeel van een verzoek om herstel. Voor deze bevinding alleen is geen contact met een arts of dierenarts nodig."
+      }
+    },
+    "standingWater": {
+      "label": "Plassen stilstaand water",
+      "people": "In stilstaand water kunnen muggen broeden. Bedek je huid en gebruik muggenmiddel in de schemering.",
+      "animals": "Laat honden niet drinken uit stilstaande plassen, waarin bacteriën en parasieten kunnen zitten.",
+      "stream": "Plassen bij de beek kunnen wijzen op een geblokkeerde stroming of slechte afwatering, en ze concentreren vervuilende stoffen.",
+      "clin": {
+        "may": "Stilstaande plassen zijn broedplaatsen voor muggen en kunnen micro-organismen en vervuilende stoffen concentreren.",
+        "not": "Het toont niet aan dat er muggen aanwezig zijn die ziekten overbrengen.",
+        "advice": "Beperk muggenbeten met muggenmiddel en door de huid te bedekken in de schemering. Leeg bakken en potten waarin water blijft staan bij huizen. Laat honden niet drinken uit stilstaande plassen.",
+        "contact": "Meld aanhoudende plassen of veel muggenlarven bij de gemeente. Iemand met koorts na veel muggenbeten moet naar de huisarts gaan en de blootstelling noemen."
+      }
+    }
+  }
+}

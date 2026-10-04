@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "code": "fr",
+    "name": "Français",
+    "reviewed": false
+  },
+  "ui": {
+    "tagline": "Ce que dit le dossier de votre ruisseau",
+    "navMap": "Ruisseaux",
+    "navSources": "Sources et données",
+    "language": "Langue",
+    "mapTitle": "Choisissez un ruisseau",
+    "mapIntro": "Des scientifiques de OneAquaHealth ont étudié des ruisseaux urbains dans cinq villes européennes. Choisissez-en un pour lire ce que son dossier signifie pour les personnes, les animaux et le ruisseau.",
+    "listTitle": "Sites à {city}",
+    "loading": "Chargement du dossier",
+    "siteEyebrow": "{city} · site {id}",
+    "statusLab": "Risque sanitaire mesuré en laboratoire : {level}, score {score} sur 1, prélevé le {date}",
+    "statusNoLab": "Aucun résultat de laboratoire sur le risque sanitaire n'est encore publié pour ce site.",
+    "labAge": "Les scientifiques ont fait le dernier prélèvement dans ce ruisseau il y a {days} jours.",
+    "level_low": "faible",
+    "level_moderate": "modéré",
+    "level_high": "élevé",
+    "level_unknown": "non publié",
+    "doCheck": "Faites ici un relevé de 90 secondes",
+    "clinicianLink": "Lecture pour les soignants (imprimable)",
+    "b1": "Ce que les scientifiques ont mesuré ici",
+    "b1None": "OneAquaHealth n'a pas publié de résultat de laboratoire pour ce site dans les données que nous avons utilisées.",
+    "b2": "Ce que les gens ont remarqué",
+    "b2Empty": "Personne n'a encore fait de relevé sur ce ruisseau. Vous pouvez être la première personne à le faire.",
+    "b2Saved": "Relevés enregistrés sur ce téléphone",
+    "b3": "Ce que cela signifie",
+    "people": "Pour les personnes",
+    "animals": "Pour les animaux",
+    "stream": "Pour le ruisseau",
+    "b3Intro": "D'après ce qui a été remarqué ici. Cela ne veut pas dire que l'eau est dangereuse. Cela veut dire que quelqu'un devrait aller voir.",
+    "b3Nothing": "Rien d'inhabituel n'a encore été remarqué ici. Les lectures apparaissent dès qu'un relevé signale quelque chose.",
+    "b4": "Ce qui peut être fait",
+    "b4Intro": "Mesures du Catalogue de mesures de OneAquaHealth adaptées à ce qui a été remarqué.",
+    "whyCity": "Pourquoi c'est important",
+    "fromOAH": "de OneAquaHealth",
+    "source": "Source",
+    "page": "p.",
+    "stripTitle": "Risque sanitaire mesuré en laboratoire sur les sites de {city}",
+    "stripNote": "Chaque point est un site. Ce site est le grand point. Téléchargez les données au format CSV.",
+    "downloadCsv": "Télécharger le CSV",
+    "checkTitle": "Relevé du ruisseau en 90 secondes",
+    "checkIntro": "Sept questions courtes. Je ne sais pas est une réponse utile. Rien ne quitte votre téléphone, sauf si vous choisissez de l'envoyer.",
+    "start": "Commencer",
+    "next": "Continuer",
+    "back": "Retour",
+    "of": "{n} sur {total}",
+    "notSure": "Je ne sais pas",
+    "errorTitle": "Il y a un problème",
+    "errorChoose": "Choisissez une réponse, ou Je ne sais pas",
+    "savedTitle": "Enregistré sur ce téléphone",
+    "savedBody": "Merci. Votre relevé fait partie du dossier de ce ruisseau sur ce téléphone. Il reste marqué comme provisoire jusqu'à ce qu'une personne l'examine.",
+    "offline": "Vous êtes hors ligne. Votre relevé est enregistré sur ce téléphone.",
+    "seeReading": "Voir la lecture mise à jour",
+    "showFhir": "Afficher l'enregistrement FHIR",
+    "clinTitle": "Lecture pour les soignants",
+    "clinFor": "Pour les médecins traitants et les agents de santé publique. Site {id}, {city}.",
+    "clinMay": "Ce que cela peut indiquer",
+    "clinNot": "Ce que cela ne dit pas",
+    "clinAdvice": "Conseils de précaution pour les personnes et les chiens",
+    "clinContact": "Quand contacter la mairie ou un vétérinaire",
+    "clinNone": "Aucune observation n'a encore été signalée pour ce site, il n'y a donc rien à interpréter.",
+    "notTitle": "Ce que ceci n'est pas",
+    "notBody": "Ceci n'est pas un diagnostic, pas une analyse de la qualité de l'eau et pas une affirmation que l'eau est sûre ou dangereuse. Cela interprète ce qu'un habitant a remarqué, dans une logique de précaution.",
+    "disclaimer": "Rédigé par un étudiant en dernière année de médecine. Ne constitue pas un avis médical.",
+    "print": "Imprimer ou enregistrer en PDF",
+    "dated": "Préparé le {date}",
+    "sourcesTitle": "Sources et données",
+    "machineTr": "Traduction assistée par machine, pas encore relue par un locuteur natif.",
+    "skip": "Passer cette question",
+    "tempError": "Saisissez une température entre 0 et 40, ou passez la question",
+    "bandNote": "OneAquaHealth publie un seul score de risque sanitaire, de 0 à 1, par site. Faible, modéré et élevé sont notre propre découpage des 96 sites mesurés en tiers, pas une classification officielle.",
+    "parts": "Risque lié aux pathogènes {p} · risque de contamination fécale {f} · risque lié aux gènes de résistance aux antibiotiques {a} (chacun de 0 à 1)"
+  },
+  "questions": {
+    "foam": {
+      "q": "Y a-t-il de la mousse sur l'eau ?",
+      "hint": "Regardez le long des bords et derrière les pierres.",
+      "a": {
+        "present": "Oui, de la mousse",
+        "absent": "Pas de mousse"
+      }
+    },
+    "colourSmell": {
+      "q": "L'eau a-t-elle un aspect ou une odeur inhabituels ?",
+      "hint": "Par exemple une couleur étrange, une odeur d'égout ou de produits chimiques, ou d'œufs pourris.",
+      "a": {
+        "present": "Oui, inhabituel",
+        "absent": "Aspect et odeur normaux"
+      }
+    },
+    "riparianVegetation": {
+      "q": "Quelle part de la berge est couverte d'arbres et de plantes ?",
+      "hint": "Regardez environ 10 mètres de berge de votre côté.",
+      "a": {
+        "0-20-percent": "Presque rien (0 à 20 %)",
+        "21-40-percent": "Un peu (21 à 40 %)",
+        "41-60-percent": "Environ la moitié (41 à 60 %)",
+        "61-80-percent": "La plus grande partie (61 à 80 %)",
+        "81-100-percent": "Presque tout (81 à 100 %)"
+      }
+    },
+    "macrophytes": {
+      "q": "Quelle part du lit du ruisseau est occupée par des plantes aquatiques ?",
+      "hint": "Regardez dans l'eau, là où vous voyez le fond.",
+      "a": {
+        "0-20-percent": "Presque rien (0 à 20 %)",
+        "21-40-percent": "Un peu (21 à 40 %)",
+        "41-60-percent": "Environ la moitié (41 à 60 %)",
+        "61-80-percent": "La plus grande partie (61 à 80 %)",
+        "81-100-percent": "Presque tout (81 à 100 %)"
+      }
+    },
+    "invasiveOrganisms": {
+      "q": "Voyez-vous des plantes ou des animaux qui n'ont pas leur place ici ?",
+      "hint": "Par exemple la berce du Caucase, la renouée du Japon ou des écrevisses que vous ne reconnaissez pas.",
+      "a": {
+        "present": "Oui, je crois",
+        "absent": "Non"
+      }
+    },
+    "other": {
+      "q": "Remarquez-vous l'un de ces éléments ?",
+      "hint": "Choisissez tout ce qui s'applique.",
+      "a": {
+        "scum": "Pellicule verte ou bleu-vert",
+        "deadFish": "Poissons morts",
+        "standingWater": "Flaques d'eau stagnante près du ruisseau",
+        "none": "Aucun de ces éléments"
+      }
+    },
+    "waterTemperature": {
+      "q": "Température de l'eau, si vous avez un thermomètre",
+      "hint": "Facultatif. En degrés Celsius. Passez si vous n'en avez pas.",
+      "a": {}
+    }
+  },
+  "findings": {
+    "foam": {
+      "label": "Mousse sur l'eau",
+      "people": "Évitez de toucher ou d'avaler l'eau. Lavez-vous les mains avant de manger.",
+      "animals": "Tenez les chiens hors de l'eau et empêchez-les de lécher la mousse sur leur pelage. Les oiseaux et les poissons vivent avec ce qui l'a causée.",
+      "stream": "Une mousse persistante peut venir de détergents ou d'eaux usées. C'est un signe que le ruisseau reçoit peut-être une pollution.",
+      "clin": {
+        "may": "La mousse est souvent naturelle et provient de la décomposition de matière végétale. Une mousse blanche persistante à odeur de savon ou de parfum évoque des détergents ou des eaux usées non traitées qui arrivent dans le ruisseau.",
+        "not": "Cela ne dit pas si des microbes ou des produits chimiques nocifs sont présents, ni à quel niveau.",
+        "advice": "Évitez le contact avec la peau et n'avalez pas l'eau. Lavez-vous les mains et couvrez les plaies. Tenez les chiens hors de l'eau, empêchez-les d'en boire ou de lécher la mousse sur leur pelage, et rincez-les à l'eau propre après contact.",
+        "contact": "Signalez à la mairie une mousse persistante, une mousse à odeur d'égout ou de détergent, ou une mousse accompagnée de poissons morts. Consultez un vétérinaire si un chien vomit, a la diarrhée ou semble malade après contact. Un patient qui a des symptômes après contact doit signaler l'exposition à son médecin traitant."
+      }
+    },
+    "colourSmell": {
+      "label": "Couleur ou odeur inhabituelle",
+      "people": "Ne pataugez pas et ne vous baignez pas, et gardez les enfants hors de l'eau. Lavez-vous les mains avant de manger.",
+      "animals": "Tenez les chiens en laisse et hors de l'eau. Le manque d'oxygène peut affaiblir les poissons et les insectes dont se nourrissent les oiseaux.",
+      "stream": "Une couleur ou une odeur inhabituelle peut signaler des eaux usées, un déversement ou un manque d'oxygène dû à de la matière en décomposition.",
+      "clin": {
+        "may": "Une odeur d'égout ou une eau décolorée évoque un rejet d'eaux usées. Une odeur d'œufs pourris évoque du sulfure d'hydrogène issu de matière en décomposition dans une eau pauvre en oxygène. Une odeur chimique peut signaler un déversement.",
+        "not": "Cela ne permet pas d'identifier la source ni de confirmer un risque d'infection ou d'intoxication.",
+        "advice": "Pas de baignade ni de pataugeage, surtout pour les enfants. Évitez le contact, lavez-vous les mains avant de manger et couvrez les plaies. Tenez les chiens en laisse et hors de l'eau.",
+        "contact": "Signalez-le à la mairie le jour même si vous voyez un rejet ou sentez une odeur d'égout ou de produits chimiques. Toute personne qui a une diarrhée, des vomissements, de la fièvre ou une éruption sur la peau ou aux yeux après contact doit consulter son médecin traitant et mentionner l'eau."
+      }
+    },
+    "scum": {
+      "label": "Pellicule verte ou bleu-vert",
+      "people": "Pas de baignade. Gardez les enfants loin du bord de l'eau.",
+      "animals": "Tenez les chiens bien à l'écart : certaines efflorescences sont toxiques et peuvent tuer un chien rapidement. Les poissons et les oiseaux peuvent aussi en souffrir.",
+      "stream": "Une pellicule signale souvent une efflorescence d'algues ou de cyanobactéries, généralement favorisée par une pollution aux nutriments et une eau chaude et stagnante.",
+      "clin": {
+        "may": "Une pellicule verte ou bleu-vert en surface évoque une efflorescence d'algues ou de cyanobactéries. Certaines cyanobactéries produisent des toxines qui atteignent le foie, le système nerveux et la peau.",
+        "not": "On ne peut pas distinguer à l'œil une efflorescence toxique d'une efflorescence sans danger. Seule une analyse en laboratoire le peut.",
+        "advice": "Pas de baignade ni de pataugeage. N'avalez pas l'eau et évitez qu'elle n'atteigne les yeux. Tenez les chiens en laisse, empêchez-les de boire ou d'entrer dans l'eau, et lavez immédiatement leur pelage à l'eau propre s'ils sont mouillés.",
+        "contact": "Un chien qui vomit, bave, est faible, tremble ou s'effondre après contact est une urgence : allez immédiatement chez un vétérinaire. Signalez l'efflorescence à la mairie. Une personne qui a une irritation de la peau ou des yeux, des vomissements ou une diarrhée après contact doit consulter son médecin traitant."
+      }
+    },
+    "deadFish": {
+      "label": "Poissons morts",
+      "people": "Ne touchez pas les poissons et ne les ramassez pas. Gardez les enfants à l'écart.",
+      "animals": "Empêchez les chiens de manger des poissons morts ou de s'y rouler. La cause peut encore toucher d'autres animaux sauvages.",
+      "stream": "Des poissons morts peuvent signaler un manque d'oxygène très important, un déversement toxique ou une maladie. Les prélèvements doivent être faits rapidement.",
+      "clin": {
+        "may": "Une mortalité de poissons peut suivre un manque d'oxygène par temps chaud ou après une pollution organique, un déversement toxique ou une maladie dans la population de poissons.",
+        "not": "Cela n'établit pas la cause, ni si l'eau présente un risque pour les personnes.",
+        "advice": "Ne manipulez pas les poissons morts à mains nues et lavez-vous les mains après tout contact avec l'eau. Tenez les chiens à l'écart et empêchez-les de manger les carcasses.",
+        "contact": "Signalez-le immédiatement à la mairie ou à l'autorité environnementale, car les prélèvements doivent être faits rapidement. Consultez un vétérinaire si un chien a mangé du poisson et tombe malade."
+      }
+    },
+    "riparianVegetation": {
+      "label": "Peu de végétation sur la berge",
+      "people": "Moins d'ombre et de verdure le long de l'eau. Les berges peuvent s'éroder et être moins sûres pour marcher.",
+      "animals": "Moins d'endroits où les oiseaux peuvent nicher et où les poissons et les insectes peuvent s'abriter.",
+      "stream": "La végétation des berges fait de l'ombre, rafraîchit l'eau et filtre le ruissellement. La perdre affaiblit les défenses du ruisseau.",
+      "clin": {
+        "may": "Une végétation de berge clairsemée reflète en général l'urbanisation, le défrichement ou l'érosion, ce qui réduit la capacité du ruisseau à filtrer le ruissellement.",
+        "not": "C'est un indicateur écologique, pas un danger direct pour la santé.",
+        "advice": "Aucune précaution particulière. Faites attention sur les berges érodées, surtout avec des enfants et des chiens.",
+        "contact": "Mentionnez-le à la mairie dans le cadre d'une éventuelle demande de restauration. Cette observation seule ne nécessite pas de contacter un médecin ou un vétérinaire."
+      }
+    },
+    "invasiveOrganisms": {
+      "label": "Plantes ou animaux qui n'ont pas leur place ici",
+      "people": "Ne touchez pas les plantes que vous ne connaissez pas. Certaines, comme la berce du Caucase, peuvent provoquer des brûlures avec cloques au soleil.",
+      "animals": "Empêchez les chiens de mâchouiller les plantes au bord de l'eau. Les espèces invasives peuvent supplanter les poissons, les insectes et les plantes indigènes.",
+      "stream": "Les espèces invasives modifient l'écologie du ruisseau et se propagent facilement par les bottes, le matériel et les pattes.",
+      "clin": {
+        "may": "Des plantes et des animaux invasifs évoquent un écosystème perturbé. Quelques plantes invasives des berges, comme la berce du Caucase, provoquent une phytophotodermatose.",
+        "not": "La plupart des espèces invasives ne présentent pas de risque direct pour la santé humaine. En voir une ne signifie pas que l'eau est contaminée.",
+        "advice": "Évitez de toucher les plantes inconnues, lavez la peau rapidement après contact et protégez-la du soleil. Nettoyez les bottes et le matériel avant d'aller vers un autre ruisseau. Empêchez les chiens de mâchouiller les plantes.",
+        "contact": "Signalez les espèces invasives à la mairie. Une personne qui présente des cloques ou une éruption ressemblant à une brûlure après contact avec une plante, surtout après une exposition au soleil, doit consulter son médecin traitant."
+      }
+    },
+    "macrophytes": {
+      "label": "Peu de plantes aquatiques",
+      "people": "Pas d'effet direct sur les personnes.",
+      "animals": "Les plantes aquatiques offrent aux poissons, aux insectes et aux escargots de la nourriture, un abri et des lieux de reproduction.",
+      "stream": "Le manque de plantes aquatiques peut suivre une pollution, un changement d'ombrage ou un curage, et rend le ruisseau moins capable de s'épurer.",
+      "clin": {
+        "may": "Le manque de plantes aquatiques peut refléter une pollution, des sédiments, un fort ombrage ou des travaux sur le lit.",
+        "not": "C'est un indicateur écologique, pas un danger direct pour la santé.",
+        "advice": "Aucune précaution particulière.",
+        "contact": "Mentionnez-le à la mairie dans le cadre d'une éventuelle demande de restauration. Cette observation seule ne nécessite pas de contacter un médecin ou un vétérinaire."
+      }
+    },
+    "standingWater": {
+      "label": "Flaques d'eau stagnante",
+      "people": "L'eau stagnante peut servir de gîte aux moustiques. Couvrez-vous et utilisez un répulsif au crépuscule.",
+      "animals": "Empêchez les chiens de boire dans les flaques stagnantes, qui peuvent contenir des bactéries et des parasites.",
+      "stream": "Des flaques près du ruisseau peuvent signaler un écoulement bloqué ou un mauvais drainage, et elles concentrent les polluants.",
+      "clin": {
+        "may": "Les flaques stagnantes sont des gîtes larvaires pour les moustiques et peuvent concentrer microbes et polluants.",
+        "not": "Cela ne montre pas que des moustiques vecteurs de maladies sont présents.",
+        "advice": "Limitez les piqûres avec un répulsif et en couvrant la peau au crépuscule. Videz les récipients qui retiennent l'eau près des habitations. Empêchez les chiens de boire dans les flaques stagnantes.",
+        "contact": "Signalez à la mairie les flaques persistantes ou la présence de nombreuses larves de moustiques. Une personne qui a de la fièvre après de nombreuses piqûres de moustiques doit consulter son médecin traitant et mentionner l'exposition."
+      }
+    }
+  }
+}

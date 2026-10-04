@@ -1,0 +1,62 @@
+[
+ {
+  "slug": "coimbra",
+  "name": "Coimbra",
+  "country": "PT",
+  "lang": "pt",
+  "center": [
+   40.2099,
+   -8.4378
+  ],
+  "count": 20,
+  "withRisk": 18
+ },
+ {
+  "slug": "benevento",
+  "name": "Benevento",
+  "country": "IT",
+  "lang": "it",
+  "center": [
+   41.1313,
+   14.7548
+  ],
+  "count": 20,
+  "withRisk": 20
+ },
+ {
+  "slug": "ghent",
+  "name": "Ghent",
+  "country": "BE",
+  "lang": "nl",
+  "center": [
+   50.9328,
+   3.7515
+  ],
+  "count": 22,
+  "withRisk": 17
+ },
+ {
+  "slug": "oslo",
+  "name": "Oslo",
+  "country": "NO",
+  "lang": "no",
+  "center": [
+   59.9229,
+   10.7481
+  ],
+  "count": 20,
+  "withRisk": 20
+ },
+ {
+  "slug": "toulouse",
+  "name": "Toulouse",
+  "country": "FR",
+  "lang": "fr",
+  "center": [
+   43.5659,
+   1.4125
+  ],
+  "count": 24,
+  "withRisk": 21
+ }
+]

@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import { findSite, Library, loadLibrary } from '../data'
-import { useI18n } from '../i18n'
+import { LANGS, useI18n } from '../i18n'
 import { CityIndex, daysSince, findingsFromChecks, labStatus, Site } from '../model'
 import { checksFor } from '../store'
 import { Skeleton, StatusLine } from '../ui'
+
+const r2 = (v?: number | null) => (typeof v === 'number' ? v.toFixed(2) : 'n/a')
 
 export function DotStrip({ site, sites, cityName }: { site: Site; sites: Site[]; cityName: string }) {
   const { t } = useI18n()
@@ -44,7 +46,7 @@ export function DotStrip({ site, sites, cityName }: { site: Site; sites: Site[];
 }
 
 export default function SiteReading({ id }: { id: string }) {
-  const { t, d } = useI18n()
+  const { t, d, lang, setLang } = useI18n()
   const [data, setData] = useState<{ site: Site; city: CityIndex; sites: Site[] } | null | undefined>(undefined)
   const [lib, setLib] = useState<Library>({})
   useEffect(() => { findSite(id).then(setData); loadLibrary().then(setLib) }, [id])
@@ -64,12 +66,17 @@ export default function SiteReading({ id }: { id: string }) {
 
   return (
     <article className="wrap">
+      {city.lang !== lang && LANGS.some((l) => l.code === city.lang) && (
+        <p className="meta noprint"><button className="btn secondary" style={{ minHeight: 40, padding: '4px 14px' }} onClick={() => setLang(city.lang)} lang={city.lang === 'no' ? 'nb' : city.lang}>
+          {({ pt: 'Ler em português', it: 'Leggi in italiano', nl: 'Lees in het Nederlands', no: 'Les på norsk', fr: 'Lire en français', en: 'Read in English' } as Record<string, string>)[city.lang]}
+        </button></p>
+      )}
       <p className="eyebrow">{t('siteEyebrow', { city: city.name, id: site.id })}</p>
       <h1>{site.name}</h1>
       {site.risk && site.risk.level !== 'unknown'
-        ? <StatusLine status={st}>{t('statusLab', { level: t(`level_${site.risk.level}` as any), date: site.risk.date || '' })}</StatusLine>
+        ? <StatusLine status={st}>{t('statusLab', { level: t(`level_${site.risk.level}` as any), score: site.risk.score ?? '', date: site.risk.date || '' })}</StatusLine>
         : <StatusLine status="none">{t('statusNoLab')}</StatusLine>}
-      {age !== null && <p className="meta">{t('labAge', { days: age })}</p>}
+      {age !== null && <p className="meta">{t('labAge', { days: age.toLocaleString('en-GB') })}</p>}
       <div className="actions">
         <a className="btn" href={`#/check/${encodeURIComponent(site.id)}`}>{t('doCheck')}</a>
         <a className="btn secondary" href={`#/clinician/${encodeURIComponent(site.id)}`}>{t('clinicianLink')}</a>
@@ -79,7 +86,9 @@ export default function SiteReading({ id }: { id: string }) {
         <h2 id="b1">{t('b1')}</h2>
         {site.risk && site.risk.level !== 'unknown' ? (
           <>
-            <p className="reading"><span className="lab">{t('statusLab', { level: t(`level_${site.risk.level}` as any), date: site.risk.date || '' })}</span>{site.risk.label ? ` (${site.risk.label})` : ''}.</p>
+            <p className="reading"><span className="lab">{t('statusLab', { level: t(`level_${site.risk.level}` as any), score: site.risk.score ?? '', date: site.risk.date || '' })}</span>.</p>
+            {site.risk.parts && <p className="reading lab">{t('parts', { p: r2(site.risk.parts.scaledPathogenRisk), f: r2(site.risk.parts.scaledFecalRisk), a: r2(site.risk.parts.scaledArgRisk) })}</p>}
+            <p className="meta">{t('bandNote')}</p>
             <DotStrip site={site} sites={sites} cityName={city.name} />
           </>
         ) : <p className="reading">{t('b1None')}</p>}

@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "code": "pt",
+    "name": "Português",
+    "reviewed": false
+  },
+  "ui": {
+    "tagline": "O que diz o registo da sua ribeira",
+    "navMap": "Ribeiras",
+    "navSources": "Fontes e dados",
+    "language": "Idioma",
+    "mapTitle": "Escolha uma ribeira",
+    "mapIntro": "Cientistas da OneAquaHealth estudaram ribeiras urbanas em cinco cidades europeias. Escolha uma para ler o que o seu registo significa para as pessoas, os animais e a ribeira.",
+    "listTitle": "Locais em {city}",
+    "loading": "A carregar o registo",
+    "siteEyebrow": "{city} · local {id}",
+    "statusLab": "Risco para a saúde (laboratório): {level}, pontuação {score} em 1, amostra recolhida em {date}",
+    "statusNoLab": "Ainda não há resultado laboratorial de risco para a saúde publicado para este local.",
+    "labAge": "Os cientistas recolheram amostras desta ribeira pela última vez há {days} dias.",
+    "level_low": "baixo",
+    "level_moderate": "moderado",
+    "level_high": "elevado",
+    "level_unknown": "não publicado",
+    "doCheck": "Faça aqui uma verificação de 90 segundos",
+    "clinicianLink": "Leitura para profissionais de saúde (para imprimir)",
+    "b1": "O que os cientistas mediram aqui",
+    "b1None": "A OneAquaHealth não publicou um resultado laboratorial para este local nos dados que usámos.",
+    "b2": "O que as pessoas notaram",
+    "b2Empty": "Ainda ninguém verificou esta ribeira. Pode ser a primeira pessoa.",
+    "b2Saved": "Verificações guardadas neste telemóvel",
+    "b3": "O que isto significa",
+    "people": "Para as pessoas",
+    "animals": "Para os animais",
+    "stream": "Para a ribeira",
+    "b3Intro": "Com base no que foi notado aqui. Isto não significa que a água não é segura. Significa que alguém deve ir ver.",
+    "b3Nothing": "Ainda não foi notado nada de invulgar aqui. As leituras aparecem quando uma verificação regista alguma coisa.",
+    "b4": "O que se pode fazer",
+    "b4Intro": "Medidas do Catálogo de Medidas da OneAquaHealth adequadas ao que foi notado.",
+    "whyCity": "Porque é que isto importa",
+    "fromOAH": "da OneAquaHealth",
+    "source": "Fonte",
+    "page": "p.",
+    "stripTitle": "Risco para a saúde (laboratório) nos locais de {city}",
+    "stripNote": "Cada ponto é um local. Este local é o ponto maior. Descarregue os dados em CSV.",
+    "downloadCsv": "Descarregar CSV",
+    "checkTitle": "Verificação da ribeira em 90 segundos",
+    "checkIntro": "Sete perguntas curtas. Não sei é uma resposta útil. Nada sai do seu telemóvel, a não ser que decida enviar.",
+    "start": "Começar",
+    "next": "Continuar",
+    "back": "Voltar",
+    "of": "{n} de {total}",
+    "notSure": "Não sei",
+    "errorTitle": "Há um problema",
+    "errorChoose": "Escolha uma resposta, ou Não sei",
+    "savedTitle": "Guardado neste telemóvel",
+    "savedBody": "Obrigado. A sua verificação faz parte do registo desta ribeira neste telemóvel. Fica marcada como preliminar até ser revista por alguém.",
+    "offline": "Está sem ligação. A sua verificação ficou guardada neste telemóvel.",
+    "seeReading": "Ver a leitura atualizada",
+    "showFhir": "Mostrar o registo FHIR",
+    "clinTitle": "Leitura para profissionais de saúde",
+    "clinFor": "Para médicos de família e profissionais de saúde pública. Local {id}, {city}.",
+    "clinMay": "O que pode indicar",
+    "clinNot": "O que não lhe diz",
+    "clinAdvice": "Conselhos de precaução para pessoas e cães",
+    "clinContact": "Quando contactar a câmara municipal ou um veterinário",
+    "clinNone": "Ainda não foi registada nenhuma observação para este local, por isso não há nada a interpretar.",
+    "notTitle": "O que isto não é",
+    "notBody": "Isto não é um diagnóstico, não é uma análise à qualidade da água e não afirma que a água é segura ou insegura. Interpreta o que um residente notou, em termos de precaução.",
+    "disclaimer": "Redigido por um estudante do último ano de Medicina. Não é aconselhamento clínico.",
+    "print": "Imprimir ou guardar em PDF",
+    "dated": "Preparado em {date}",
+    "sourcesTitle": "Fontes e dados",
+    "machineTr": "Tradução assistida por máquina, ainda não revista por um falante nativo.",
+    "skip": "Saltar esta pergunta",
+    "tempError": "Introduza uma temperatura entre 0 e 40, ou salte esta pergunta",
+    "bandNote": "A OneAquaHealth indica uma única pontuação de risco para a saúde, de 0 a 1, por local. Baixo, moderado e elevado são uma divisão nossa dos 96 locais medidos em terços, não uma classificação oficial.",
+    "parts": "Risco de agentes patogénicos {p} · risco de contaminação fecal {f} · risco de genes de resistência a antibióticos {a} (cada um de 0 a 1)"
+  },
+  "questions": {
+    "foam": {
+      "q": "Há espuma na água?",
+      "hint": "Observe junto às margens e atrás das pedras.",
+      "a": {
+        "present": "Sim, há espuma",
+        "absent": "Não há espuma"
+      }
+    },
+    "colourSmell": {
+      "q": "A água tem um aspeto ou cheiro invulgar?",
+      "hint": "Por exemplo, uma cor estranha, cheiro a esgoto ou a químicos, ou a ovos podres.",
+      "a": {
+        "present": "Sim, invulgar",
+        "absent": "Aspeto e cheiro normais"
+      }
+    },
+    "riparianVegetation": {
+      "q": "Que parte da margem está coberta por árvores e plantas?",
+      "hint": "Observe cerca de 10 metros de margem do seu lado.",
+      "a": {
+        "0-20-percent": "Quase nada (0 a 20%)",
+        "21-40-percent": "Pouca (21 a 40%)",
+        "41-60-percent": "Cerca de metade (41 a 60%)",
+        "61-80-percent": "A maior parte (61 a 80%)",
+        "81-100-percent": "Quase toda (81 a 100%)"
+      }
+    },
+    "macrophytes": {
+      "q": "Que parte do leito da ribeira tem plantas aquáticas a crescer?",
+      "hint": "Observe a água onde consegue ver o fundo.",
+      "a": {
+        "0-20-percent": "Quase nada (0 a 20%)",
+        "21-40-percent": "Pouca (21 a 40%)",
+        "41-60-percent": "Cerca de metade (41 a 60%)",
+        "61-80-percent": "A maior parte (61 a 80%)",
+        "81-100-percent": "Quase todo (81 a 100%)"
+      }
+    },
+    "invasiveOrganisms": {
+      "q": "Vê plantas ou animais que não pertencem a este lugar?",
+      "hint": "Por exemplo, canabrás-gigante, erva-japonesa ou lagostins que não reconhece.",
+      "a": {
+        "present": "Sim, acho que sim",
+        "absent": "Não"
+      }
+    },
+    "other": {
+      "q": "Nota alguma destas coisas?",
+      "hint": "Escolha todas as que se aplicam.",
+      "a": {
+        "scum": "Película verde ou verde-azulada",
+        "deadFish": "Peixes mortos",
+        "standingWater": "Poças de água parada junto à ribeira",
+        "none": "Nenhuma destas"
+      }
+    },
+    "waterTemperature": {
+      "q": "Temperatura da água, se tiver um termómetro",
+      "hint": "Opcional. Em graus Celsius. Salte se não tiver termómetro.",
+      "a": {}
+    }
+  },
+  "findings": {
+    "foam": {
+      "label": "Espuma na água",
+      "people": "Evite tocar na água ou engoli-la. Lave as mãos antes de comer.",
+      "animals": "Mantenha os cães fora da água e não os deixe lamber a espuma do pelo. As aves e os peixes vivem com aquilo que a causou.",
+      "stream": "Espuma persistente pode vir de detergentes ou de águas residuais. É sinal de que a ribeira pode estar a receber poluição.",
+      "clin": {
+        "may": "A espuma é muitas vezes natural, resultante da decomposição de matéria vegetal. Espuma branca persistente com cheiro a sabão ou a perfume aponta para detergentes ou águas residuais não tratadas a entrar na ribeira.",
+        "not": "Não diz se há micróbios ou químicos nocivos, nem em que quantidade.",
+        "advice": "Evite o contacto com a pele e não engula a água. Lave as mãos e tape os cortes. Mantenha os cães fora da água, não os deixe bebê-la nem lamber a espuma do pelo, e passe-os por água limpa depois do contacto.",
+        "contact": "Comunique à câmara municipal espuma persistente, espuma com cheiro a esgoto ou a detergente, ou espuma com peixes mortos. Leve o cão ao veterinário se vomitar, tiver diarreia ou parecer doente depois do contacto. Um doente com sintomas após o contacto deve referir a exposição ao seu médico de família."
+      }
+    },
+    "colourSmell": {
+      "label": "Cor ou cheiro invulgar",
+      "people": "Não chapinhe nem nade, e mantenha as crianças fora da água. Lave as mãos antes de comer.",
+      "animals": "Mantenha os cães à trela e fora da água. A falta de oxigénio pode afetar os peixes e os insetos de que as aves se alimentam.",
+      "stream": "Uma cor ou cheiro invulgar pode indicar águas residuais, um derrame ou falta de oxigénio devido a matéria em decomposição.",
+      "clin": {
+        "may": "Cheiro a esgoto ou água descolorada sugere descarga de águas residuais. Cheiro a ovos podres sugere sulfureto de hidrogénio libertado por matéria em decomposição em água com pouco oxigénio. Cheiro a químicos pode indicar um derrame.",
+        "not": "Não permite identificar a origem nem confirmar risco de infeção ou intoxicação.",
+        "advice": "Não nadar nem chapinhar, sobretudo as crianças. Evite o contacto, lave as mãos antes de comer e tape os cortes. Mantenha os cães à trela e fora da água.",
+        "contact": "Comunique à câmara municipal no mesmo dia se vir uma descarga ou sentir cheiro a esgoto ou a químicos. Quem tiver diarreia, vómitos, febre ou erupção na pele ou nos olhos depois do contacto deve consultar o seu médico de família e referir a água."
+      }
+    },
+    "scum": {
+      "label": "Película verde ou verde-azulada",
+      "people": "Não nade. Mantenha as crianças afastadas da beira da água.",
+      "animals": "Mantenha os cães bem afastados: algumas florações são tóxicas e podem matar um cão rapidamente. Os peixes e as aves também podem ser afetados.",
+      "stream": "Uma película à superfície indica muitas vezes uma floração de algas ou de cianobactérias, geralmente alimentada por poluição com nutrientes e por água quente e parada.",
+      "clin": {
+        "may": "Uma película verde ou verde-azulada à superfície sugere uma floração de algas ou de cianobactérias. Algumas cianobactérias produzem toxinas que afetam o fígado, o sistema nervoso e a pele.",
+        "not": "Não é possível distinguir à vista uma floração tóxica de uma inofensiva. Só uma análise laboratorial o permite.",
+        "advice": "Não nadar nem chapinhar. Não engula a água nem a deixe chegar aos olhos. Mantenha os cães à trela, não os deixe beber nem entrar na água, e lave-lhes o pelo com água limpa de imediato se se molharem.",
+        "contact": "Um cão com vómitos, salivação excessiva, fraqueza, tremores ou colapso depois do contacto é uma emergência: vá de imediato a um veterinário. Comunique a floração à câmara municipal. Uma pessoa com irritação da pele ou dos olhos, vómitos ou diarreia depois do contacto deve consultar o seu médico de família."
+      }
+    },
+    "deadFish": {
+      "label": "Peixes mortos",
+      "people": "Não toque nos peixes nem os apanhe. Mantenha as crianças afastadas.",
+      "animals": "Não deixe os cães comer peixes mortos nem rebolar sobre eles. A causa pode continuar a afetar outros animais selvagens.",
+      "stream": "Peixes mortos podem indicar muito pouco oxigénio, um derrame tóxico ou doença. A recolha de amostras tem de ser rápida.",
+      "clin": {
+        "may": "A morte de peixes pode seguir-se a falta de oxigénio em tempo quente ou após poluição orgânica, a um derrame tóxico ou a doença na população de peixes.",
+        "not": "Não estabelece a causa, nem se a água representa risco para as pessoas.",
+        "advice": "Não manuseie peixes mortos com as mãos desprotegidas e lave as mãos depois de qualquer contacto com a água. Mantenha os cães afastados e não os deixe comer carcaças.",
+        "contact": "Comunique de imediato à câmara municipal ou à autoridade ambiental, porque é preciso recolher amostras rapidamente. Leve o cão ao veterinário se tiver comido peixe e ficar doente."
+      }
+    },
+    "riparianVegetation": {
+      "label": "Pouca vegetação na margem",
+      "people": "Menos sombra e menos verde junto à água. As margens podem sofrer erosão e ser menos seguras para caminhar.",
+      "animals": "Menos lugares para as aves fazerem ninho e para os peixes e insetos se abrigarem.",
+      "stream": "A vegetação da margem dá sombra, arrefece a água e filtra a escorrência. Perdê-la enfraquece as defesas da ribeira.",
+      "clin": {
+        "may": "Pouca vegetação na margem reflete geralmente urbanização, desmatação ou erosão, o que reduz a capacidade da ribeira para filtrar a escorrência.",
+        "not": "É um indicador ecológico, não um perigo direto para a saúde.",
+        "advice": "Nenhuma precaução específica. Tenha cuidado nas margens com erosão, sobretudo com crianças e cães.",
+        "contact": "Refira-o à câmara municipal num eventual pedido de recuperação. Esta observação, por si só, não exige contacto médico nem veterinário."
+      }
+    },
+    "invasiveOrganisms": {
+      "label": "Plantas ou animais que não pertencem aqui",
+      "people": "Não toque em plantas que não conhece. Algumas, como o canabrás-gigante, podem causar queimaduras com bolhas quando há sol.",
+      "animals": "Não deixe os cães mastigar plantas junto à água. As espécies invasoras podem afastar peixes, insetos e plantas nativos.",
+      "stream": "As espécies invasoras alteram a ecologia da ribeira e espalham-se facilmente em botas, equipamento e patas.",
+      "clin": {
+        "may": "Plantas e animais invasores sugerem um ecossistema perturbado. Algumas plantas invasoras das margens, como o canabrás-gigante, causam fitofotodermatite.",
+        "not": "A maioria das espécies invasoras não representa risco direto para a saúde humana. Ver uma não significa que a água está contaminada.",
+        "advice": "Evite tocar em plantas desconhecidas, lave a pele logo após o contacto e proteja-a do sol. Limpe as botas e o equipamento antes de visitar outra ribeira. Não deixe os cães mastigar plantas.",
+        "contact": "Comunique espécies invasoras à câmara municipal. Uma pessoa com bolhas ou uma erupção semelhante a uma queimadura depois de tocar numa planta, sobretudo após exposição ao sol, deve consultar o seu médico de família."
+      }
+    },
+    "macrophytes": {
+      "label": "Poucas plantas aquáticas",
+      "people": "Sem efeito direto nas pessoas.",
+      "animals": "As plantas aquáticas dão aos peixes, insetos e caracóis alimento, abrigo e locais para se reproduzirem.",
+      "stream": "A escassez de plantas aquáticas pode resultar de poluição, de alterações na sombra ou de dragagens, e deixa a ribeira com menos capacidade de se limpar.",
+      "clin": {
+        "may": "Poucas plantas aquáticas podem refletir poluição, sedimentos, muita sombra ou obras no leito.",
+        "not": "É um indicador ecológico, não um perigo direto para a saúde.",
+        "advice": "Nenhuma precaução específica.",
+        "contact": "Refira-o à câmara municipal num eventual pedido de recuperação. Esta observação, por si só, não exige contacto médico nem veterinário."
+      }
+    },
+    "standingWater": {
+      "label": "Poças de água parada",
+      "people": "A água parada pode servir de criadouro a mosquitos. Cubra a pele e use repelente ao fim do dia.",
+      "animals": "Não deixe os cães beber de poças estagnadas, que podem conter bactérias e parasitas.",
+      "stream": "Poças junto à ribeira podem indicar escoamento bloqueado ou má drenagem, e concentram poluentes.",
+      "clin": {
+        "may": "As poças estagnadas são criadouros de mosquitos e podem concentrar micróbios e poluentes.",
+        "not": "Não mostra que haja mosquitos transmissores de doenças.",
+        "advice": "Reduza as picadas com repelente e cobrindo a pele ao fim do dia. Esvazie os recipientes com água perto das casas. Não deixe os cães beber de poças estagnadas.",
+        "contact": "Comunique à câmara municipal acumulações de água persistentes ou muitas larvas de mosquito. Uma pessoa com febre depois de muitas picadas de mosquito deve consultar o seu médico de família e referir a exposição."
+      }
+    }
+  }
+}

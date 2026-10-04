@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "code": "no",
+    "name": "Norsk bokmål",
+    "reviewed": false
+  },
+  "ui": {
+    "tagline": "Hva registeret for bekken din sier",
+    "navMap": "Bekker",
+    "navSources": "Kilder og data",
+    "language": "Språk",
+    "mapTitle": "Velg en bekk",
+    "mapIntro": "Forskere i OneAquaHealth har undersøkt bybekker i fem europeiske byer. Velg en for å lese hva registeret betyr for mennesker, dyr og bekken.",
+    "listTitle": "Målepunkter i {city}",
+    "loading": "Laster registeret",
+    "siteEyebrow": "{city} · målepunkt {id}",
+    "statusLab": "Helserisiko fra laboratoriet: {level}, poengsum {score} av 1, prøvetatt {date}",
+    "statusNoLab": "Det er ikke publisert noe laboratorieresultat om helserisiko for dette målepunktet ennå.",
+    "labAge": "Forskerne tok sist prøver av denne bekken for {days} dager siden.",
+    "level_low": "lav",
+    "level_moderate": "moderat",
+    "level_high": "høy",
+    "level_unknown": "ikke publisert",
+    "doCheck": "Gjør en sjekk på 90 sekunder her",
+    "clinicianLink": "Vurdering for helsepersonell (kan skrives ut)",
+    "b1": "Hva forskerne målte her",
+    "b1None": "OneAquaHealth har ikke publisert et laboratorieresultat for dette målepunktet i dataene vi brukte.",
+    "b2": "Hva folk har lagt merke til",
+    "b2Empty": "Ingen har sjekket denne bekken ennå. Du kan være den første.",
+    "b2Saved": "Sjekker lagret på denne telefonen",
+    "b3": "Hva dette betyr",
+    "people": "For mennesker",
+    "animals": "For dyr",
+    "stream": "For bekken",
+    "b3Intro": "Basert på det som er observert her. Dette betyr ikke at vannet er farlig. Det betyr at noen bør se på det.",
+    "b3Nothing": "Ingenting uvanlig er observert her ennå. Vurderinger vises når en sjekk melder om noe.",
+    "b4": "Hva som kan gjøres",
+    "b4Intro": "Tiltak fra OneAquaHealths tiltakskatalog som passer til det som er observert.",
+    "whyCity": "Hvorfor dette er viktig",
+    "fromOAH": "fra OneAquaHealth",
+    "source": "Kilde",
+    "page": "s.",
+    "stripTitle": "Helserisiko fra laboratoriet på målepunktene i {city}",
+    "stripNote": "Hvert punkt er et målepunkt. Dette målepunktet er det store punktet. Last ned dataene som CSV.",
+    "downloadCsv": "Last ned CSV",
+    "checkTitle": "Bekkesjekk på 90 sekunder",
+    "checkIntro": "Sju korte spørsmål. Vet ikke er et nyttig svar. Ingenting forlater telefonen din med mindre du velger å sende det.",
+    "start": "Start",
+    "next": "Fortsett",
+    "back": "Tilbake",
+    "of": "{n} av {total}",
+    "notSure": "Vet ikke",
+    "errorTitle": "Det er et problem",
+    "errorChoose": "Velg et svar, eller Vet ikke",
+    "savedTitle": "Lagret på denne telefonen",
+    "savedBody": "Takk. Sjekken din er nå en del av registeret for denne bekken på denne telefonen. Den er merket som foreløpig til noen har gått gjennom den.",
+    "offline": "Du er frakoblet. Sjekken din er lagret på denne telefonen.",
+    "seeReading": "Se den oppdaterte vurderingen",
+    "showFhir": "Vis FHIR-posten",
+    "clinTitle": "Vurdering for helsepersonell",
+    "clinFor": "For fastleger og ansatte i folkehelsearbeid. Målepunkt {id}, {city}.",
+    "clinMay": "Hva det kan tyde på",
+    "clinNot": "Hva det ikke forteller deg",
+    "clinAdvice": "Føre var-råd for mennesker og hunder",
+    "clinContact": "Når du bør kontakte kommunen eller en veterinær",
+    "clinNone": "Ingen funn er meldt for dette målepunktet ennå, så det er ingenting å tolke.",
+    "notTitle": "Hva dette ikke er",
+    "notBody": "Dette er ikke en diagnose, ikke en vannkvalitetstest og ikke en påstand om at vannet er trygt eller farlig. Det tolker hva en innbygger har lagt merke til, ut fra et føre var-prinsipp.",
+    "disclaimer": "Utarbeidet av en medisinstudent på siste studieår. Ikke medisinske råd.",
+    "print": "Skriv ut eller lagre som PDF",
+    "dated": "Utarbeidet {date}",
+    "sourcesTitle": "Kilder og data",
+    "machineTr": "Maskinassistert oversettelse, ikke gjennomgått av en som har språket som morsmål ennå.",
+    "skip": "Hopp over dette spørsmålet",
+    "tempError": "Skriv inn en temperatur mellom 0 og 40, eller hopp over",
+    "bandNote": "OneAquaHealth oppgir én helserisikoskår fra 0 til 1 per målepunkt. Lav, moderat og høy er vår egen inndeling av de 96 målte målepunktene i tredjedeler, ikke en offisiell vurdering.",
+    "parts": "Risiko for sykdomsfremkallende mikrober {p} · risiko for fekal forurensning {f} · risiko for antibiotikaresistensgener {a} (hver fra 0 til 1)"
+  },
+  "questions": {
+    "foam": {
+      "q": "Er det skum på vannet?",
+      "hint": "Se langs kantene og bak steiner.",
+      "a": {
+        "present": "Ja, skum",
+        "absent": "Ikke skum"
+      }
+    },
+    "colourSmell": {
+      "q": "Ser eller lukter vannet uvanlig?",
+      "hint": "For eksempel en rar farge, lukt av kloakk eller kjemikalier, eller lukt av råtne egg.",
+      "a": {
+        "present": "Ja, uvanlig",
+        "absent": "Ser og lukter normalt"
+      }
+    },
+    "riparianVegetation": {
+      "q": "Hvor mye av bredden er dekket av trær og planter?",
+      "hint": "Se på omtrent 10 meter av bredden på din side.",
+      "a": {
+        "0-20-percent": "Nesten ingenting (0 til 20 %)",
+        "21-40-percent": "Litt (21 til 40 %)",
+        "41-60-percent": "Omtrent halvparten (41 til 60 %)",
+        "61-80-percent": "Det meste (61 til 80 %)",
+        "81-100-percent": "Nesten alt (81 til 100 %)"
+      }
+    },
+    "macrophytes": {
+      "q": "Hvor mye av bekkebunnen har vannplanter som vokser?",
+      "hint": "Se ned i vannet der du kan se bunnen.",
+      "a": {
+        "0-20-percent": "Nesten ingenting (0 til 20 %)",
+        "21-40-percent": "Litt (21 til 40 %)",
+        "41-60-percent": "Omtrent halvparten (41 til 60 %)",
+        "61-80-percent": "Det meste (61 til 80 %)",
+        "81-100-percent": "Nesten alt (81 til 100 %)"
+      }
+    },
+    "invasiveOrganisms": {
+      "q": "Ser du planter eller dyr som ikke hører hjemme her?",
+      "hint": "For eksempel kjempebjørnekjeks, parkslirekne eller kreps du ikke kjenner igjen.",
+      "a": {
+        "present": "Ja, jeg tror det",
+        "absent": "Nei"
+      }
+    },
+    "other": {
+      "q": "Legger du merke til noe av dette?",
+      "hint": "Velg alt som passer.",
+      "a": {
+        "scum": "Grønt eller blågrønt belegg på vannet",
+        "deadFish": "Død fisk",
+        "standingWater": "Dammer med stillestående vann ved bekken",
+        "none": "Ingen av disse"
+      }
+    },
+    "waterTemperature": {
+      "q": "Vanntemperatur, hvis du har et termometer",
+      "hint": "Valgfritt. I grader celsius. Hopp over hvis du ikke har et.",
+      "a": {}
+    }
+  },
+  "findings": {
+    "foam": {
+      "label": "Skum på vannet",
+      "people": "Unngå å ta på eller svelge vannet. Vask hendene før du spiser.",
+      "animals": "Hold hunder unna vannet og ikke la dem slikke skum av pelsen. Fugler og fisk lever med det som har forårsaket skummet.",
+      "stream": "Vedvarende skum kan komme fra vaskemidler eller avløpsvann. Det er et tegn på at bekken kan bli forurenset.",
+      "clin": {
+        "may": "Skum er ofte naturlig og kommer fra plantemateriale som brytes ned. Vedvarende hvitt skum med lukt av såpe eller parfyme tyder på vaskemidler eller urenset avløpsvann som renner ut i bekken.",
+        "not": "Det sier ikke om skadelige mikrober eller kjemikalier er til stede, eller i hvilken mengde.",
+        "advice": "Unngå hudkontakt og ikke svelg vann. Vask hendene og dekk til sår. Hold hunder unna vannet, ikke la dem drikke det eller slikke skum av pelsen, og skyll dem med rent vann etter kontakt.",
+        "contact": "Meld fra til kommunen om vedvarende skum, skum som lukter kloakk eller vaskemiddel, eller skum sammen med død fisk. Oppsøk veterinær hvis en hund kaster opp, får diaré eller virker syk etter kontakt. En pasient med symptomer etter kontakt bør nevne eksponeringen for fastlegen sin."
+      }
+    },
+    "colourSmell": {
+      "label": "Uvanlig farge eller lukt",
+      "people": "Ikke vass eller svøm, og hold barn unna vannet. Vask hendene før du spiser.",
+      "animals": "Hold hunder i bånd og unna vannet. Lite oksygen kan stresse fisk og insektene fuglene lever av.",
+      "stream": "Uvanlig farge eller lukt kan bety avløpsvann, et utslipp eller lite oksygen fordi noe brytes ned.",
+      "clin": {
+        "may": "Kloakklukt eller misfarget vann tyder på utslipp av avløpsvann. Lukt av råtne egg tyder på hydrogensulfid fra materiale som brytes ned i oksygenfattig vann. Kjemikalielukt kan bety et utslipp.",
+        "not": "Det kan ikke fastslå kilden eller bekrefte en risiko for infeksjon eller forgiftning.",
+        "advice": "Ikke svøm eller vass, særlig ikke barn. Unngå kontakt, vask hendene før du spiser og dekk til sår. Hold hunder i bånd og unna vannet.",
+        "contact": "Meld fra til kommunen samme dag hvis du ser et utslipp eller kjenner lukt av kloakk eller kjemikalier. Den som får diaré, oppkast, feber eller utslett på huden eller i øynene etter kontakt, bør gå til fastlegen og nevne vannet."
+      }
+    },
+    "scum": {
+      "label": "Grønt eller blågrønt belegg",
+      "people": "Ikke svøm. Hold barn borte fra vannkanten.",
+      "animals": "Hold hunder godt unna: noen oppblomstringer er giftige og kan drepe en hund raskt. Fisk og fugler kan også ta skade.",
+      "stream": "Belegg på vannet betyr ofte en oppblomstring av alger eller cyanobakterier, som regel drevet av næringsforurensning og varmt, stillestående vann.",
+      "clin": {
+        "may": "Et grønt eller blågrønt belegg på overflaten tyder på en oppblomstring av alger eller cyanobakterier (blågrønnalger). Noen cyanobakterier lager giftstoffer som påvirker leveren, nervesystemet og huden.",
+        "not": "Du kan ikke se forskjell på en giftig og en ufarlig oppblomstring. Bare laboratorieanalyser kan avgjøre det.",
+        "advice": "Ikke svøm eller vass. Ikke svelg vannet, og unngå at det kommer i øynene. Hold hunder i bånd, ikke la dem drikke eller gå uti vannet, og vask pelsen med rent vann med en gang hvis de blir våte.",
+        "contact": "En hund med oppkast, sikling, svakhet, skjelving eller kollaps etter kontakt er et akutt tilfelle: dra til veterinær med en gang. Meld fra om oppblomstringen til kommunen. En person med irritasjon i hud eller øyne, oppkast eller diaré etter kontakt bør gå til fastlegen."
+      }
+    },
+    "deadFish": {
+      "label": "Død fisk",
+      "people": "Ikke ta på eller plukk opp fisken. Hold barn unna.",
+      "animals": "Ikke la hunder spise eller rulle seg i død fisk. Årsaken kan fortsatt påvirke andre ville dyr.",
+      "stream": "Død fisk kan bety svært lite oksygen, et giftig utslipp eller sykdom. Prøver må tas raskt.",
+      "clin": {
+        "may": "Fiskedød kan komme etter oksygenmangel i varmt vær eller etter organisk forurensning, et giftig utslipp eller sykdom i fiskebestanden.",
+        "not": "Det fastslår ikke årsaken, eller om vannet utgjør en risiko for mennesker.",
+        "advice": "Ikke håndter død fisk med bare hender, og vask hendene etter all kontakt med vannet. Hold hunder unna og ikke la dem spise kadaver.",
+        "contact": "Meld fra til kommunen eller miljømyndighetene med en gang, fordi prøver må tas raskt. Oppsøk veterinær hvis en hund har spist fisk og blir syk."
+      }
+    },
+    "riparianVegetation": {
+      "label": "Lite vegetasjon på bredden",
+      "people": "Mindre skygge og grønt langs vannet. Breddene kan erodere og bli mindre trygge å gå på.",
+      "animals": "Færre steder der fugler kan hekke og der fisk og insekter kan søke ly.",
+      "stream": "Vegetasjon langs bredden gir skygge, kjøler vannet og filtrerer avrenning. Når den forsvinner, svekkes bekkens forsvar.",
+      "clin": {
+        "may": "Sparsom vegetasjon langs bredden skyldes som regel utbygging, rydding eller erosjon, som svekker bekkens evne til å filtrere avrenning.",
+        "not": "Det er en økologisk indikator, ikke en direkte helsefare.",
+        "advice": "Ingen spesielle forholdsregler. Vær forsiktig på eroderte bredder, særlig med barn og hunder.",
+        "contact": "Nevn det for kommunen som en del av en eventuell forespørsel om restaurering. Dette funnet alene krever ikke kontakt med lege eller veterinær."
+      }
+    },
+    "invasiveOrganisms": {
+      "label": "Planter eller dyr som ikke hører hjemme her",
+      "people": "Ikke ta på planter du ikke kjenner. Noen, som kjempebjørnekjeks, kan gi brannskader med blemmer i sollys.",
+      "animals": "Ikke la hunder tygge på planter ved vannet. Fremmede arter kan fortrenge stedegen fisk, insekter og planter.",
+      "stream": "Fremmede arter endrer økologien i bekken og spres lett med støvler, utstyr og poter.",
+      "clin": {
+        "may": "Fremmede planter og dyr tyder på et forstyrret økosystem. Noen få fremmede kantplanter, som kjempebjørnekjeks, gir fytofotodermatitt.",
+        "not": "De fleste fremmede arter utgjør ingen direkte risiko for menneskers helse. At du ser en, betyr ikke at vannet er forurenset.",
+        "advice": "Unngå å ta på ukjente planter, vask huden straks etter kontakt og hold den unna sol. Rengjør støvler og utstyr før du besøker en annen bekk. Ikke la hunder tygge på planter.",
+        "contact": "Meld fra om fremmede arter til kommunen. En person som får blemmer eller et utslett som ligner en brannskade etter kontakt med en plante, særlig etter soleksponering, bør gå til fastlegen."
+      }
+    },
+    "macrophytes": {
+      "label": "Få vannplanter",
+      "people": "Ingen direkte virkning på mennesker.",
+      "animals": "Vannplanter gir fisk, insekter og snegler mat, ly og steder å formere seg.",
+      "stream": "Få vannplanter kan skyldes forurensning, endret skygge eller mudring, og gjør bekken dårligere i stand til å rense seg selv.",
+      "clin": {
+        "may": "Få vannplanter kan skyldes forurensning, sediment, mye skygge eller inngrep i bekkeløpet.",
+        "not": "Det er en økologisk indikator, ikke en direkte helsefare.",
+        "advice": "Ingen spesielle forholdsregler.",
+        "contact": "Nevn det for kommunen som en del av en eventuell forespørsel om restaurering. Dette funnet alene krever ikke kontakt med lege eller veterinær."
+      }
+    },
+    "standingWater": {
+      "label": "Dammer med stillestående vann",
+      "people": "Stillestående vann kan bli yngleplass for mygg. Dekk til huden og bruk myggmiddel i skumringen.",
+      "animals": "Ikke la hunder drikke av stillestående dammer, som kan inneholde bakterier og parasitter.",
+      "stream": "Dammer ved bekken kan bety at vannføringen er blokkert eller at dreneringen er dårlig, og de konsentrerer forurensning.",
+      "clin": {
+        "may": "Stillestående dammer er yngleplasser for mygg og kan konsentrere mikrober og forurensning.",
+        "not": "Det viser ikke at det finnes mygg som sprer sykdom.",
+        "advice": "Reduser myggstikk med myggmiddel og ved å dekke til huden i skumringen. Tøm beholdere som samler vann nær hus. Ikke la hunder drikke av stillestående dammer.",
+        "contact": "Meld fra til kommunen om vedvarende dammer eller mange mygglarver. En person som får feber etter mange myggstikk, bør gå til fastlegen og nevne eksponeringen."
+      }
+    }
+  }
+}

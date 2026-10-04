@@ -9,7 +9,7 @@ export interface Site {
   country: string
   lat: number
   lon: number
-  risk?: { level: RiskLevel; score?: number | null; date?: string | null; label?: string | null }
+  risk?: { level: RiskLevel; score?: number | null; date?: string | null; label?: string | null; parts?: { scaledPathogenRisk?: number | null; scaledFecalRisk?: number | null; scaledArgRisk?: number | null } } | null
 }
 
 export interface CityIndex {

@@ -33,9 +33,9 @@ export default function MapScreen({ city }: { city?: string }) {
       if (cancelled || !mapEl.current) return
       if (!mapRef.current) {
         mapRef.current = L.map(mapEl.current, { scrollWheelZoom: false })
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-          subdomains: 'abcd', maxZoom: 19,
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+          attribution: 'Basemap &copy; Esri, HERE, Garmin, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          maxZoom: 16,
         }).addTo(mapRef.current)
       }
       layerRef.current?.remove()
@@ -79,7 +79,7 @@ export default function MapScreen({ city }: { city?: string }) {
                     <a href={`#/site/${encodeURIComponent(s.id)}`}>
                       <Shape status={st} />
                       <span><strong>{s.name}</strong>
-                        <span className="meta">{s.risk && s.risk.level !== 'unknown' ? `${t('statusLab', { level: t(`level_${s.risk.level}` as any), date: s.risk.date || '' })}` : t('level_unknown')}</span>
+                        <span className="meta">{s.risk && s.risk.level !== 'unknown' ? `${t('statusLab', { level: t(`level_${s.risk.level}` as any), score: s.risk.score ?? '', date: s.risk.date || '' })}` : t('level_unknown')}</span>
                       </span>
                     </a>
                   </li>

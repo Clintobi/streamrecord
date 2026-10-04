@@ -14,9 +14,9 @@
     "listTitle": "Sites in {city}",
     "loading": "Loading the record",
     "siteEyebrow": "{city} · site {id}",
-    "statusLab": "Lab health-risk: {level}, measured {date}",
+    "statusLab": "Lab health-risk: {level}, score {score} of 1, sampled {date}",
     "statusNoLab": "No lab health-risk result is published for this site yet.",
-    "labAge": "Scientists last checked this stream {days} days ago.",
+    "labAge": "Scientists last sampled this stream {days} days ago.",
     "level_low": "low",
     "level_moderate": "moderate",
     "level_high": "high",
@@ -72,7 +72,9 @@
     "sourcesTitle": "Sources and data",
     "machineTr": "Machine-assisted translation, not yet reviewed by a native speaker.",
     "skip": "Skip this question",
-    "tempError": "Enter a temperature between 0 and 40, or skip"
+    "tempError": "Enter a temperature between 0 and 40, or skip",
+    "bandNote": "OneAquaHealth reports one health-risk score from 0 to 1 per site. Low, moderate and high are our own split of the 96 measured sites into thirds, not an official rating.",
+    "parts": "Pathogen risk {p} · faecal contamination risk {f} · antibiotic-resistance gene risk {a} (each 0 to 1)"
   },
   "questions": {
     "foam": {

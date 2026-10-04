@@ -165,9 +165,10 @@ Neither public server holds the OneAquaHealth IG. To make the base-R4 check poss
 
 | Measure | Result |
 |---|---|
-| Unit tests | 18 passing (vitest): bundle structure, narratives, reference resolution, Not sure → dataAbsentReason, OAH codes, UCUM, status, conditional create, determinism, finding rules, location-oah rules, second-look rules, review statuses and verifier Provenance, unnamed sites |
-| Lighthouse, Site Reading (mobile, production) | Performance 94, Accessibility 100, Best practices 100; LCP 1.6 s, CLS 0 |
-| Lighthouse, Field check | Performance 99, Accessibility 100, Best practices 100; LCP 1.6 s |
+| Unit tests | 21 passing (vitest), run in CI on every push with the build and the data package validation |
+| Lighthouse, Site Reading (mobile, production) | Performance 94, Accessibility 100, Best practices 100; LCP 2.2 s, CLS 0 |
+| Lighthouse, Field check | Performance 92, Accessibility 100, Best practices 100; LCP 1.9 s |
+| Lighthouse, Story | Performance 97, Accessibility 100, Best practices 100; LCP 1.9 s |
 | Lighthouse, Map | Performance 76 (median of three runs, range 64–89: LCP is a third-party basemap tile), Accessibility 97, Best practices 96 |
 | JavaScript for the first view | 64 KB gzipped JavaScript for the first view (197 KB raw); the map library (44 KB gzipped) and each translation (~6 KB) load separately |
 | Time to the first Site Reading | 1.6 s largest contentful paint for a Site Reading (Lighthouse simulated slow 4G) |

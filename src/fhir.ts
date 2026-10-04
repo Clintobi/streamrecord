@@ -9,6 +9,8 @@ export const IG = {
 }
 
 export const LOCATION_OAH = 'http://hl7.eu/fhir/ig/oah/StructureDefinition/location-oah'
+// fixes status = final, so only a reviewer-confirmed check can claim it
+export const OBSERVATION_OAH = 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'
 export const SITE_ID_SYSTEM = 'https://api.enora-oah.eu/api/sites'
 export const QUESTIONNAIRE = 'https://streamrecord.vercel.app/fhir/Questionnaire/streamrecord-check|0.1.0'
 export const CATEGORY = { system: LOCAL_CS, code: 'citizen-science', display: 'Citizen science' }
@@ -91,6 +93,8 @@ export function buildBundle(site: Site, check: Check): R {
     const a = check.answers[q.key]
     const obs: R = {
       resourceType: 'Observation',
+      // once confirmed, a citizen observation meets the same OAH profile as lab indicators
+      ...(check.status === 'final' ? { meta: { profile: [OBSERVATION_OAH] } } : {}),
       text: narrative(`${q.key}: ${a === 'unsure' ? 'not sure' : Array.isArray(a) ? a.join(', ') : String(a)} (citizen check, ${STATUS_WORD[check.status]})`),
       // preliminary until a reviewer confirms (final) or rejects (entered-in-error)
       status: check.status,

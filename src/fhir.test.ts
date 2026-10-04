@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { buildBundle, LOCATION_OAH } from './fhir'
+import { buildBundle, LOCATION_OAH, OBSERVATION_OAH } from './fhir'
 import { Check, confirmedFindings, findingsFromAnswers, findingsFromChecks, secondLook, Site, daysSince, labStatus } from './model'
 
 const site: Site = { id: 'PT01', name: 'Test stream', city: 'Coimbra', country: 'PT', lat: 40.2, lon: -8.4, risk: { level: 'moderate', score: 0.5, date: '2025-06-12' } }
@@ -66,7 +66,23 @@ describe('location-oah rules (IG commit b907cf0)', () => {
     expect(typeof loc.position.latitude).toBe('number')
     expect(typeof loc.position.longitude).toBe('number')
   })
-  it('Observations do not claim observation-indicators-oah, which fixes status = final', () => {
+  it('a confirmed check claims observation-indicators-oah and meets its rules (status final, code, subject location-oah, effective, performer, value type)', () => {
+    const b = buildBundle(site, { ...check, status: 'final', review: { decision: 'final', reason: 'ok', reviewer: 'R', at: '2026-10-04T15:00:00Z' } })
+    const loc = b.entry[0]
+    for (const e of b.entry.filter((x: any) => x.resource.resourceType === 'Observation')) {
+      const o = e.resource
+      expect(o.meta.profile).toEqual([OBSERVATION_OAH])
+      expect(o.status).toBe('final')
+      expect(o.code.coding.length).toBeGreaterThan(0)
+      expect(o.subject.reference).toBe(loc.fullUrl)
+      expect(loc.resource.meta.profile).toEqual([LOCATION_OAH])
+      expect(o.effectiveDateTime).toBeTruthy()
+      expect(o.performer.length).toBeGreaterThan(0)
+      expect(Object.keys(o).filter((k) => k.startsWith('value')).every((k) => k === 'valueCodeableConcept' || k === 'valueQuantity')).toBe(true)
+    }
+  })
+  it('unreviewed and rejected Observations do not claim observation-indicators-oah, which fixes status = final', () => {
+    for (const e of buildBundle(site, { ...check, status: 'entered-in-error' }).entry.filter((x: any) => x.resource.resourceType === 'Observation')) expect(e.resource.meta).toBeUndefined()
     for (const e of bundle().entry.filter((x: any) => x.resource.resourceType === 'Observation')) {
       expect(e.resource.meta).toBeUndefined()
       expect(e.resource.status).toBe('preliminary')

@@ -22,7 +22,8 @@ function useHash() {
 
 export default function App() {
   const h = useHash()
-  const [, route, id] = h.replace(/^#/, '').split('/')
+  const [, route, rawId] = h.replace(/^#/, '').split('/')
+  const id = rawId?.split('?')[0]
   let screen
   if (route === 'site' && id) screen = <SiteReading id={decodeURIComponent(id)} />
   else if (route === 'check' && id) screen = <FieldCheck id={decodeURIComponent(id)} />

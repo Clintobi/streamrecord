@@ -470,3 +470,45 @@ nav.main .count, .rq-group h2 .count { display: inline-block; min-width: 1.5em; 
   .sign-body { grid-template-columns: 1fr auto; }
   .facts { max-width: none; }
 }
+
+/* background + today */
+.today { margin-top: var(--s3); background: var(--surface); border: 1px solid var(--hair); }
+.today > * { padding-left: var(--s3); padding-right: var(--s3); }
+@media (max-width: 560px) { .today > * { padding-left: var(--s2); padding-right: var(--s2); } }
+.today h2 { font-size: 1.3rem; margin: 0; padding-top: var(--s3); }
+.tdrow { padding-top: var(--s2); padding-bottom: var(--s2); border-bottom: 1px solid var(--hair); }
+.tdrow p { margin: 0; }
+.tdlabel { font-size: 0.8rem; font-weight: 700; color: var(--ink-2); margin-bottom: 4px !important; }
+.status-line { display: flex; align-items: flex-start; gap: 10px; }
+.status-line svg { flex: none; margin-top: 4px; }
+.status-line.big { font-size: 1.15rem; font-weight: 700; }
+.rainstate { display: flex; gap: 10px; align-items: flex-start; font-weight: 700; }
+.rainstate svg { flex: none; margin-top: 2px; }
+.rainstate.r-dry { color: var(--ink); }
+.rainstate.r-some { color: var(--look); }
+.rainstate.r-flush { color: var(--concern); }
+.raindays { display: flex; gap: var(--s3); margin-top: 12px; }
+.rd { display: grid; justify-items: center; gap: 2px; font-size: 0.8rem; }
+.rdbar { width: 28px; height: 44px; background: var(--sunk); display: flex; align-items: flex-end; }
+.rdbar span { display: block; width: 100%; background: var(--info, #0072B2); }
+.rdlabel { color: var(--ink-2); }
+.tdaction { padding-top: var(--s2); padding-bottom: var(--s2); }
+.tdaction.act2 { background: #FBF5E8; }
+.tdaction.act3 { background: #FBEDE4; }
+.tdaction.act3 .status-line { color: var(--concern); }
+.tdaction.act2 .status-line { color: var(--look); }
+.today details.how { margin: 0; border-bottom: 0; }
+.today details.how > :not(summary) { margin-left: 0; }
+.grid { font-size: 0.82rem; }
+.grid td.act2 { background: #FBF5E8; }
+.grid td.act3 { background: #FBEDE4; font-weight: 700; }
+.grid tr.here th { background: var(--stream-tint); color: var(--stream-deep); }
+.knowgrid { display: grid; grid-template-columns: 1fr; gap: var(--s2); }
+@media (min-width: 720px) { .knowgrid { grid-template-columns: 1fr 1fr; } }
+.knowgrid h3 { font-family: var(--sans); font-size: 0.95rem; margin: 0 0 4px; }
+.knowgrid ul { margin: 0; padding-left: 1.1em; font-size: 0.92rem; }
+
+.sign-rain { font-weight: 700; color: var(--stream-deep); }
+.cityrain { font-weight: 700; }
+.cityrain.r-some { color: var(--look); }
+.cityrain.r-flush { color: var(--concern); }

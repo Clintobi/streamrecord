@@ -152,3 +152,27 @@ describe('OneAquaHealth app questions', () => {
     expect(obs('feelings').valueCodeableConcept.coding[0].system).toBe('https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local')
   })
 })
+
+import { actionFor, rainState } from './today'
+describe('background + today (rain window)', () => {
+  const hours = (mm: number[]) => ({ t: mm.map((_, i) => new Date(Date.UTC(2026, 9, 1, 0) + i * 3600e3).toISOString().slice(0, 16)), mm })
+  it('classifies the last 72 h of rain and times the window from the last wet hour', () => {
+    const dry = hours(Array(72).fill(0.02))
+    expect(rainState(dry.t, dry.mm).level).toBe('dry')
+    const wet = hours([...Array(60).fill(0), 3, 2, 1.5, ...Array(9).fill(0)])
+    const s = rainState(wet.t, wet.mm)
+    expect(s.level).toBe('flush'); expect(s.sum72).toBe(6.5); expect(s.lastWet).toBe(wet.t[62])
+    expect(s.hoursLeft).toBe(72 - 9)
+    const some = hours([...Array(70).fill(0), 1.2, 1.0])
+    expect(rainState(some.t, some.mm).level).toBe('some')
+  })
+  it('never lowers the action when it rains, and never says nothing for an untested stream', () => {
+    for (const b of ['low', 'moderate', 'high', undefined]) {
+      expect(actionFor(b, 'some')).toBeGreaterThanOrEqual(actionFor(b, 'dry'))
+      expect(actionFor(b, 'flush')).toBeGreaterThanOrEqual(actionFor(b, 'some'))
+    }
+    expect(actionFor(undefined, 'dry')).toBe(1)
+    expect(actionFor('high', 'flush')).toBe(3)
+    expect(actionFor('low', 'dry')).toBe(0)
+  })
+})

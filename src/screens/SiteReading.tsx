@@ -4,6 +4,7 @@ import { LANGS, useI18n } from '../i18n'
 import { CityIndex, confirmedFindings, daysSince, lowerNearby, findingsFromChecks, labStatus, longDate, secondLook, Site } from '../model'
 import { checksFor } from '../store'
 import { History, StreamFacts } from '../facts'
+import { actionFor, demoRain, fetchRain, GRID_ROWS, gridCell, RainState } from '../today'
 import { ReadAloud, Shape, Skeleton, StatusLine } from '../ui'
 
 const r2 = (v?: number | null) => (typeof v === 'number' ? v.toFixed(2) : 'n/a')
@@ -87,6 +88,83 @@ function Record({ site, sites, city, bands }: { site: Site; sites: Site[]; city:
         <p className="src">{t('source')}: <a href="#/sources">ENORA OneAquaHealth API, health-risk snapshot</a></p>
         <button className="linkbtn" onClick={() => downloadCsv(sites, city.name)}>{t('downloadCsv')}</button>
       </div>
+    </section>
+  )
+}
+
+const ACT_STATUS = ['none', 'none', 'look', 'concern'] as const
+const upFirst = (x: string) => x.charAt(0).toUpperCase() + x.slice(1)
+
+// Background + today: the 2023 lab band, live rain in the last 72 h, and one action.
+function Today({ site }: { site: Site }) {
+  const { t, lang } = useI18n()
+  const demo = Number((location.hash.split('?')[1] || '').match(/(?:^|&)rain=([\d.]+)/)?.[1])
+  const [rain, setRain] = useState<RainState | null | undefined>(undefined)
+  const [fetched, setFetched] = useState<string>('')
+  useEffect(() => {
+    if (demo > 0) { setRain(demoRain(demo)); setFetched(new Date().toISOString()); return }
+    const ac = new AbortController()
+    fetchRain(site.lat, site.lon, ac.signal).then((r) => { setRain(r); setFetched(new Date().toISOString()) })
+    return () => ac.abort()
+  }, [site.id, demo])
+  const band = site.risk && site.risk.level !== 'unknown' ? site.risk.level : undefined
+  const age = daysSince(site.risk?.date)
+  const loc = lang === 'no' ? 'nb' : lang
+  const time = (iso: string) => new Date(iso).toLocaleString(loc, { weekday: 'short', hour: '2-digit', minute: '2-digit' })
+  const act = rain ? actionFor(band, rain.level) : null
+  const max = rain ? Math.max(5, ...rain.days) : 5
+  return (
+    <section className="today" aria-labelledby="today-h">
+      <h2 id="today-h">{t('todayTitle')}</h2>
+      <div className="tdrow">
+        <p className="tdlabel">{t('bgLabel')}</p>
+        {band
+          ? <p className="status-line" style={{ opacity: age && age > 365 ? 0.85 : 1 }}><Shape status={labStatus(site)} /> {upFirst(t('bgVal', { band: t(`level_${band}` as any), date: longDate(site.risk?.date, lang), y: ((age || 0) / 365.25).toLocaleString(loc, { maximumFractionDigits: 1 }) }))}</p>
+          : <p className="status-line"><Shape status="none" /> {t('rowNone')}</p>}
+      </div>
+      <div className="tdrow">
+        <p className="tdlabel">{t('rainLabel')}</p>
+        {rain === undefined ? <p className="meta">…</p> : rain === null ? <p>{t('rainFail')}</p> : (
+          <>
+            <p className={`rainstate r-${rain.level}`} data-read>
+              <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 13a4 4 0 0 1 .4-8 5 5 0 0 1 9.4 1.5A3.3 3.3 0 0 1 15 13z" fill="none" stroke="currentColor" strokeWidth="1.6" />{rain.level !== 'dry' && <path d="M7 15l-1 3M11 15l-1 3M15 15l-1 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />}</svg>
+              <span>{t(`rain_${rain.level}` as any)}{rain.windowEnds && rain.hoursLeft ? <> {t('windowUntil', { when: time(rain.windowEnds), h: rain.hoursLeft })}</> : null}</span>
+            </p>
+            <div className="raindays" aria-label={`${rain.sum72} mm in 72 h`}>
+              {[2, 1, 0].map((i) => (
+                <div key={i} className="rd">
+                  <span className="rdbar"><span style={{ height: `${Math.max(2, (rain.days[i] / max) * 100)}%` }} /></span>
+                  <span className="num">{rain.days[i]} mm</span>
+                  <span className="rdlabel">{t(`d${i}` as any)}</span>
+                </div>
+              ))}
+            </div>
+            {demo > 0 && <p className="meta">{t('demoRain', { mm: demo })}</p>}
+          </>
+        )}
+      </div>
+      <div className={`tdaction act${act ?? 1}`} data-read>
+        <p className="tdlabel">{t('actLabel')}</p>
+        <p className="status-line big"><Shape status={ACT_STATUS[act ?? 1]} size={18} /> {rain === null ? t('act2') : t(`act${act ?? 1}` as any)}</p>
+      </div>
+      <details className="how">
+        <summary>{t('howTitle')}</summary>
+        <p>{t('howBody')}</p>
+        <div className="tablewrap" tabIndex={0} role="region" aria-label={t('howTitle')}>
+          <table className="grid">
+            <thead><tr><th></th><th>{t('colDry')}</th><th>{t('colSome')}</th><th>{t('colFlush')}</th></tr></thead>
+            <tbody>{GRID_ROWS.map((b) => (
+              <tr key={b} className={b === (band || 'unknown') ? 'here' : ''}><th>{b === 'unknown' ? t('rowNone') : t(`level_${b}` as any)}</th>
+                {([0, 1, 2] as const).map((i) => { const a = gridCell(b, i); return <td key={i} className={`act${a}`}>{(t(`act${a}` as any) as string).split(':')[0]}</td> })}</tr>
+            ))}</tbody>
+          </table>
+        </div>
+        <div className="knowgrid">
+          <div><h3>{t('knowTitle')}</h3><ul><li>{t('know1')}</li><li>{t('know2')}</li></ul></div>
+          <div><h3>{t('dontKnowTitle')}</h3><ul><li>{t('dk1')}</li><li>{t('dk2')}</li><li>{t('dk3')}</li></ul></div>
+        </div>
+        <p className="src">{fetched && rain ? t('rainSource', { time: time(fetched) }) : 'Rain: Open-Meteo (CC BY 4.0).'} <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32006L0007">Directive 2006/7/EC</a> · <a href="https://bathingwaters.sepa.org.uk/predictions/">SEPA bathing water predictions</a> · <a href="https://journals.plos.org/plosmedicine/article?id=10.1371%2Fjournal.pmed.1002614">urban streams after rain</a></p>
+      </details>
     </section>
   )
 }
@@ -177,6 +255,7 @@ export default function SiteReading({ id }: { id: string }) {
               {site.unnamed && <p className="meta">{t('unnamedNote')}</p>}
             </header>
             <Record site={site} sites={sites} city={city} bands={bands} />
+            <Today site={site} />
             <ForYou site={site} findings={findings} />
             {lowerNearby(site, sites).length > 0 && (
               <section className="nearby" aria-labelledby="nearby-h">

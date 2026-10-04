@@ -9,7 +9,8 @@
 - Built for the OneAquaHealth IEEE Global Hackathon 2026. Work on this repository started on 2026-10-04, within the submission window the organisers extended to 4 October (Devpost update "Deadline Extended to October 4"); the commit history is intact.
 
 **Judges, 90 seconds:**
-0. Open a [printable stream sign](https://streamrecord.vercel.app/#/sign/C6): the Stream Facts label and a QR code a city could post by the water.
+0. Open a [site reading after rain](https://streamrecord.vercel.app/#/site/C6?rain=12): the 2023 lab background plus live rain over the last 72 hours become one action.
+1. Open a [printable stream sign](https://streamrecord.vercel.app/#/sign/C6): the Stream Facts label and a QR code a city could post by the water.
 1. Open the [story](https://streamrecord.vercel.app/#/story): OneAquaHealth's findings, verbatim and page-cited, in six languages.
 2. Open any [site reading](https://streamrecord.vercel.app/#/site/C5): the lab record, what it means for people, animals and the stream, and measures from the Catalogue of Measures.
 3. Open [Review](https://streamrecord.vercel.app/#/review), add the sample check and confirm it.
@@ -37,6 +38,24 @@ flowchart LR
 - **No server, no account, no cold start.** The app is static files on a CDN. Citizen checks are stored on the phone and turned into FHIR R4 in the browser.
 - **Frozen, fingerprinted data.** Every snapshot is hashed, and the app makes no live calls. Swapping in the live ENORA API means changing two fetches in `scripts/`; the join and the bands are already code.
 - **Scaling to more cities** needs only new ENORA sites and a translation file. The site pages, story, FHIR and data package are generated.
+
+## The core idea: background + today
+
+A stream's 2023 lab result is its **background**. Rain in the last 72 hours is **today**. StreamRecord combines the two into one action, the way a weather warning combines likelihood and impact.
+
+- **Why rain:** after rain, urban streams can carry 10 to 100 times more faecal bacteria, washed in from streets and overflowing sewers ([PLOS Medicine](https://journals.plos.org/plosmedicine/article?id=10.1371%2Fjournal.pmed.1002614)).
+- **Why a 72-hour window:** the EU Bathing Water Directive defines short-term pollution as contamination "not normally expected to affect bathing water quality for more than approximately 72 hours" ([2006/7/EC](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32006L0007)). That law applies in Portugal, Italy, Belgium and France.
+- **Proven in practice:** rain-based predictions have run on Scotland's electronic beach signs since 2004. They were "correct or precautionary on 99% of days" ([SEPA](https://bathingwaters.sepa.org.uk/predictions/); [study](https://ui.adsabs.harvard.edu/abs/2009AqEHM..12..183M/abstract)).
+- **What the site page shows:**
+  - the lab band, with its age stamped;
+  - live rainfall from Open-Meteo for the last 72 hours, with a countdown to when the window closes;
+  - one action from a published grid, running "usual care / be aware / be prepared / avoid contact today". There is no "safe" cell.
+- **How it's written:** following the risk-communication evidence.
+  - It escalates only after rain, because alerts lose their effect when repeated (Neidell 2009).
+  - It gives numbers and dates instead of vague hedging, which costs less trust (van der Bles et al., PNAS 2020).
+  - A "what we know / what we don't know" box follows the Harding Center fact-box format (RCT, d = 0.39 for comprehension).
+- **Why people come back:** the advice changes whenever it rains.
+- **Honest limits:** the 2 mm and 5 mm thresholds are borrowed from bathing-water practice and are **not calibrated for these streams**, and the page says so. A `?rain=12` URL parameter (for example `#/site/C6?rain=12`) shows the rain state on a dry day, and is labelled as a demonstration.
 
 ## What's borrowed from other fields
 

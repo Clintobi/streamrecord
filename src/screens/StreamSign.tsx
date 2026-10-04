@@ -37,6 +37,7 @@ export default function StreamSign({ id }: { id: string }) {
           <div className="sign-qr">
             <QR text={url} size={220} label={`QR code linking to ${url}`} />
             <p><strong>{t('factsScan')}</strong></p>
+            <p className="sign-rain">{t('signRain')}</p>
             <p className="mono sign-url">{url.replace('https://', '')}</p>
             <p className="sign-langs" lang="mul">Português · Italiano · Nederlands · Norsk · Français · English</p>
           </div>

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Library, loadCities, loadCity, loadLibrary } from '../data'
+import { fetchRain, RainState } from '../today'
 import { useI18n } from '../i18n'
 import { CityIndex, labStatus, longDate, Site } from '../model'
 import { Shape, Skeleton } from '../ui'
@@ -23,6 +24,7 @@ export default function MapScreen({ city }: { city?: string }) {
   const layerRef = useRef<any>(null)
 
   const [lib, setLib] = useState<Library>({})
+  const [cityRain, setCityRain] = useState<RainState | null>(null)
   useEffect(() => { loadLibrary().then(setLib) }, [])
   useEffect(() => { loadCities().then((c) => { setCities(c); setSlug((s) => s || c.find((x) => x.slug === 'coimbra')?.slug || c[0]?.slug) }) }, [])
   useEffect(() => { if (slug) { setSites(null); loadCity(slug).then(setSites) } }, [slug])
@@ -60,6 +62,15 @@ export default function MapScreen({ city }: { city?: string }) {
     return () => { cancelled = true }
   }, [sites, cities, slug])
 
+  useEffect(() => {
+    const c = cities?.find((x) => x.slug === slug)
+    if (!c) return
+    setCityRain(null)
+    const ac = new AbortController()
+    fetchRain(c.center[0], c.center[1], ac.signal).then(setCityRain)
+    return () => ac.abort()
+  }, [slug, cities])
+
   if (!cities) return <Skeleton />
   const cur = cities.find((c) => c.slug === slug)
   const dates = (sites || []).map((s) => s.risk?.date).filter(Boolean).sort() as string[]
@@ -88,7 +99,7 @@ export default function MapScreen({ city }: { city?: string }) {
         ))}
       </div>
       <div className="cityline">
-        <p className="meta">{sites && dates.length ? t('cityLine', { n: sites.length, scored, from: longDate(dates[0], lang), to: longDate(dates[dates.length - 1], lang) }) : '\u00a0'}</p>
+        <p className="meta">{cityRain && <span className={`cityrain r-${cityRain.level}`}>{t('cityRain', { city: cur?.name || '', mm: cityRain.sum72 })} · </span>}{sites && dates.length ? t('cityLine', { n: sites.length, scored, from: longDate(dates[0], lang), to: longDate(dates[dates.length - 1], lang) }) : '\u00a0'}</p>
         <ul className="legend" aria-label="Legend">
           {(['ok', 'look', 'concern'] as const).map((st, i) => <li key={st}><Shape status={st} />{cap(t(`level_${['low', 'moderate', 'high'][i]}` as any))}</li>)}
           <li><Shape status="none" />{t('legendNone')}</li>

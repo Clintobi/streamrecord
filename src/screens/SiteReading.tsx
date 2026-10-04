@@ -90,6 +90,49 @@ function Record({ site, sites, city, bands }: { site: Site; sites: Site[]; city:
   )
 }
 
+const ROLES = ['parent', 'dog', 'walker', 'garden', 'gp'] as const
+type Role = typeof ROLES[number]
+const ROLE_KEY = 'streamrecord.role'
+
+// "This stream, for you": the same record, told for the person reading it.
+function ForYou({ site, findings }: { site: Site; findings: string[] }) {
+  const { t, d } = useI18n()
+  const [role, setRole] = useState<Role | null>(() => { try { return (localStorage.getItem(ROLE_KEY) as Role) || null } catch { return null } })
+  const pick = (r: Role) => { setRole(r); try { localStorage.setItem(ROLE_KEY, r) } catch { /* per-device convenience only */ } }
+  const F = d.findings as Record<string, any>
+  const lvl = site.risk && site.risk.level !== 'unknown' ? site.risk.level : 'none'
+  const line = (f: string) => role === 'dog' ? F[f]?.animals : role === 'gp' ? F[f]?.clin?.may : F[f]?.people
+  return (
+    <section className="foryou" aria-labelledby="foryou-h">
+      <h2 id="foryou-h">{t('youTitle')}</h2>
+      <fieldset>
+        <legend className="meta">{t('youIntro')}</legend>
+        <div className="roles">
+          {ROLES.map((r) => (
+            <label key={r} className="role">
+              <input type="radio" name="role" checked={role === r} onChange={() => pick(r)} />
+              <span>{t(`role_${r}` as any)}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+      {role && (
+        <div className="youcard" aria-live="polite">
+          <p className="youline" data-read>{role === 'gp' ? t('you_gp') : t(`you_${role}_${lvl}` as any)}</p>
+          {role === 'gp' && <a className="btn small" href={`#/clinician/${encodeURIComponent(site.id)}`}>{t('openClinician')}</a>}
+          {findings.length > 0 && (
+            <>
+              <h3>{t('youSigns')}</h3>
+              <ul>{findings.map((f) => <li key={f} data-read><strong>{F[f]?.label}.</strong> {line(f)}</li>)}</ul>
+            </>
+          )}
+          <p className="meta">{t('youNote')}</p>
+        </div>
+      )}
+    </section>
+  )
+}
+
 export default function SiteReading({ id }: { id: string }) {
   const { t, d, lang, setLang } = useI18n()
   const [data, setData] = useState<{ site: Site; city: CityIndex; sites: Site[] } | null | undefined>(undefined)
@@ -133,6 +176,7 @@ export default function SiteReading({ id }: { id: string }) {
               {site.unnamed && <p className="meta">{t('unnamedNote')}</p>}
             </header>
             <Record site={site} sites={sites} city={city} bands={bands} />
+            <ForYou site={site} findings={findings} />
             {lowerNearby(site, sites).length > 0 && (
               <section className="nearby" aria-labelledby="nearby-h">
                 <h2 id="nearby-h">{t('nearbyTitle')}</h2>

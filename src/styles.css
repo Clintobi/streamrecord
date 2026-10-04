@@ -400,3 +400,21 @@ nav.main .count, .rq-group h2 .count { display: inline-block; min-width: 1.5em; 
 .views dt { color: var(--ink-2); }
 .views dd { margin: 0; }
 .choice .rest { font-weight: 400; }
+
+/* this stream, for you */
+.foryou { margin-top: var(--s3); background: var(--surface); border: 1px solid var(--hair); padding: var(--s3); }
+@media (max-width: 560px) { .foryou { padding: var(--s2); } }
+.foryou h2 { font-size: 1.3rem; margin: 0 0 4px; }
+.foryou fieldset legend { margin-bottom: 10px; }
+.roles { display: flex; flex-wrap: wrap; gap: 8px; }
+.role { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 6px 14px 6px 10px; border: 1px solid var(--hair-strong); border-radius: 999px; background: var(--bg); cursor: pointer; font-weight: 700; font-size: 0.95rem; transition: border-color 140ms var(--ease), background-color 140ms var(--ease); }
+.role:hover { border-color: var(--ink-2); }
+.role input { width: 18px; height: 18px; margin: 0; accent-color: var(--stream); }
+.role:has(input:checked) { border-color: var(--stream); background: var(--stream-tint); box-shadow: inset 0 0 0 1px var(--stream); }
+.role:has(input:focus-visible) { outline: 3px solid var(--stream); outline-offset: 2px; }
+.youcard { margin-top: var(--s2); padding-top: var(--s2); border-top: 1px solid var(--hair); }
+.youline { font-family: var(--serif); font-size: 1.2rem; line-height: 1.45; margin-bottom: var(--s2); }
+.youcard h3 { font-family: var(--sans); font-size: 0.95rem; margin: var(--s2) 0 6px; }
+.youcard ul { margin: 0 0 var(--s2); padding-left: 1.2em; }
+.youcard li + li { margin-top: 6px; }
+.foryou fieldset legend { font-family: var(--sans); font-size: 0.95rem; font-weight: 400; color: var(--ink-2); line-height: 1.4; }

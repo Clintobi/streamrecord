@@ -1,0 +1,30 @@
+# HL7 Europe OneAquaHealth FHIR IG lock (verified 2026-10-04)
+repo: https://github.com/hl7-eu/oah
+commit: b907cf0869b59d82d9138b3d147fca66f333d911   # 2026-06-11T10:56:44Z, Giorgio Cangioli, "Revised ConceptMaps to properly manage StructureDefinitions as implicit code systems"; also the master HEAD at verification time
+package_id: hl7.eu.fhir.oah
+package_version: 0.1.0-ci-build      # sushi-config.yaml: version 0.1.0-ci-build, releaseLabel ci-build, status draft
+package_ref: hl7.eu.fhir.oah#0.1.0-ci-build
+fhir_version: 4.0.1
+canonical_base: http://hl7.eu/fhir/ig/oah
+license: not set (sushi-config.yaml has "# license: CC0-1.0" commented out; GitHub repo license = none)
+
+codesystem:
+  - http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu   # name TemporaryOahSystem, 185 concepts, caseSensitive true, experimental true
+  # NOTE: ValueSet OahIndicatorsVs reuses the same id -> http://hl7.eu/fhir/ig/oah/ValueSet/temporarySystem-oah-eu ("codes from system TemporaryOahSystem")
+
+profiles:   # StructureDefinition canonical = <canonical_base>/StructureDefinition/<id>
+  location-oah:                   http://hl7.eu/fhir/ig/oah/StructureDefinition/location-oah                   # LocationOah, parent Location
+  observation-indicators-oah:     http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah     # ObservationIndicatorsOah, parent Observation
+  observation-with-component-oah: http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-with-component-oah # ObservationWithCompOah, parent ObservationIndicatorsOah
+  observation-health-measure-oah: http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-health-measure-oah # ObservationHealthMeasureOah, parent Observation
+  # also present: specimen-oah, group-oah, library-oah
+
+questionnaire: none in the IG at this commit (only a Reference(QuestionnaireResponse) in logical model SampleOah site.formReference)
+
+servers_checked_2026-10-04T12:55Z:
+  https://hapi.fhir.org/baseR4/metadata: 200   # slow, >40 s for the full body
+  https://sandbox.hl7europe.eu/oneaquahealth/fhir/metadata: 200   # HAPI FHIR 8.2.0, R4 4.0.1; holds 0 CodeSystem/ValueSet/StructureDefinition/Questionnaire, 619 Observation, 130 Location, 24 QuestionnaireResponse (all from other hackathon teams' questionnaires)
+
+examples: the IG has no citizen-science examples. It contains 475 example instances: 234 ObservationWithCompOah (chemistry and pollutants), 141 ObservationHealthMeasureOah, 45 GroupOah, 17 LocationOah, 17 LibraryOah, 10 ObservationIndicatorsOah (water temperature and conductivity, Crete), and others.
+  copied as the closest pattern, hand-transcribed from FSH: fhir/examples/Location-Loc-Giofyros.json, fhir/examples/Observation-Obs-WaterTemp-Giofyros-2024-11-21.json
+compile_status: SUSHI 3 build failed. The packages.fhir.org and simplifier downloads of hl7.fhir.r4.core#4.0.1 kept resetting at about 9.5 of 12.8 MB, and hl7.fhir.uv.xver-r5.r4#0.1.0 also failed. The JSON in fhir/ was transcribed from the FSH source, so it is NOT IG-publisher output.

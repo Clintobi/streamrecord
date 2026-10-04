@@ -8,8 +8,9 @@ export const IG = {
   package: 'hl7.eu.fhir.oah#0.1.0-ci-build',
 }
 
+export const LOCATION_OAH = 'http://hl7.eu/fhir/ig/oah/StructureDefinition/location-oah'
 export const SITE_ID_SYSTEM = 'https://api.enora-oah.eu/api/sites'
-export const QUESTIONNAIRE = 'https://streamrecord.app/fhir/Questionnaire/streamrecord-check|0.1.0'
+export const QUESTIONNAIRE = 'https://streamrecord.vercel.app/fhir/Questionnaire/streamrecord-check|0.1.0'
 export const CATEGORY = { system: LOCAL_CS, code: 'citizen-science', display: 'Citizen science' }
 
 type R = Record<string, any>
@@ -46,10 +47,13 @@ export function buildBundle(site: Site, check: Check): R {
 
   const location: R = {
     resourceType: 'Location',
+    // location-oah verified at the pinned IG commit (identifier 1.., name 1.., mode = instance)
+    meta: { profile: [LOCATION_OAH] },
     text: narrative(`${site.name}, ${site.city} (OneAquaHealth site ${site.id})`),
     identifier: [{ system: SITE_ID_SYSTEM, value: site.id }],
     status: 'active',
     name: site.name,
+    mode: 'instance',
     address: { city: site.city, country: site.country },
     position: { longitude: site.lon, latitude: site.lat },
   }
@@ -90,6 +94,8 @@ export function buildBundle(site: Site, check: Check): R {
       code: { coding: [{ system: q.code.system, code: q.code.code }] },
       subject: { reference: `urn:uuid:${locId}` },
       effectiveDateTime: check.createdAt,
+      // no account, no identity: the observer is recorded only as an anonymous citizen
+      performer: [{ display: 'Anonymous citizen observer (StreamRecord, no account)' }],
       derivedFrom: [{ reference: `urn:uuid:${qrId}` }],
       ...valueFor(q.key, a),
     }

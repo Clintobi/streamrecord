@@ -1,0 +1,37 @@
+{
+ "resourceType": "Location",
+ "id": "Loc-Giofyros",
+ "meta": {
+  "profile": [
+   "http://hl7.eu/fhir/ig/oah/StructureDefinition/location-oah"
+  ]
+ },
+ "identifier": [
+  {
+   "system": "https://oneaquahealth.eu/location-id",
+   "value": "giofyros-1"
+  }
+ ],
+ "name": "Giofyros monitoring reach",
+ "description": "Urban stream segment sampled for OAH monitoring",
+ "mode": "instance",
+ "type": [
+  {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "420531007",
+     "display": "River"
+    }
+   ]
+  }
+ ],
+ "position": {
+  "longitude": 25.10592,
+  "latitude": 35.32135
+ },
+ "partOf": {
+  "reference": "Location/Giofyros"
+ },
+ "_provenance_note": "Hand-transcribed from input/fsh/examples/water_tmp.fsh in https://github.com/hl7-eu/oah @ b907cf0869b59d82d9138b3d147fca66f333d911 (values verbatim; meta.profile added per InstanceOf). Not SUSHI output. This is a lab/handheld-tester monitoring example (Crete), NOT a citizen-science example; the IG contains no citizen-science examples."
+}

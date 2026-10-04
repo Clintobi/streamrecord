@@ -3,3 +3,5 @@ dist
 .DS_Store
 .vercel
 content/sources/*.pdf
+content/sources/*.txt
+tsconfig.tsbuildinfo

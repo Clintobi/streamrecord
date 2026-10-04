@@ -1,0 +1,54 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "streamrecord-local",
+  "url": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+  "version": "0.1.0",
+  "name": "StreamRecordLocal",
+  "title": "StreamRecord local codes",
+  "status": "draft",
+  "experimental": true,
+  "caseSensitive": true,
+  "content": "complete",
+  "date": "2026-10-04",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Codes StreamRecord needs that the OneAquaHealth temporary CodeSystem (IG commit b907cf0) does not have.</div>"
+  },
+  "concept": [
+    {
+      "code": "citizen-science",
+      "display": "Citizen science",
+      "definition": "Observation category: reported by a member of the public with no training, unverified."
+    },
+    {
+      "code": "colourSmell",
+      "display": "Unusual colour or smell",
+      "definition": "Refines OAH \"foam\" (Foam/colour/smell) so foam and colour/smell can be answered separately."
+    },
+    {
+      "code": "otherSigns",
+      "display": "Other visible signs",
+      "definition": "Question code for the multi-select of scum, dead fish and standing water."
+    },
+    {
+      "code": "scum",
+      "display": "Green or blue-green scum",
+      "definition": "A coloured film or scum on the surface. Not a confirmed cyanobacterial bloom."
+    },
+    {
+      "code": "deadFish",
+      "display": "Dead fish",
+      "definition": "One or more dead fish seen in or by the water."
+    },
+    {
+      "code": "standingWater",
+      "display": "Standing water nearby",
+      "definition": "Still water pools near the stream (possible mosquito breeding)."
+    },
+    {
+      "code": "none",
+      "display": "None of these",
+      "definition": "None of the other signs were seen."
+    }
+  ]
+}

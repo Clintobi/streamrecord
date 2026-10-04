@@ -23,8 +23,10 @@ export async function findSite(id: string): Promise<{ site: Site; city: CityInde
 export interface Library {
   policyBrief?: { url?: string; date?: string; title?: string; quotes: { text: string; page: number | string }[] }
   indicators?: { key: string; title: string; explanation: string; source: { record: string; file?: string; page?: number | string; url?: string }; supportingQuote?: string }[]
-  measures?: { id: string; name: string; category?: string; oneLine: string; page: number | string; quote?: string; addresses: string[] }[]
+  measures?: { id: string; name: string; category?: string; oneLine: string; page: number | string; pdfPage?: number; quote?: string; addresses: string[] }[]
   cityWhy?: { text: string; page: number | string }[]
+  unsourced?: string[]
+  addressesNote?: string
   sources?: Record<string, { title: string; url: string }>
 }
 let lib: Promise<Library> | null = null

@@ -1,0 +1,289 @@
+[
+  {
+    "resource": "Location",
+    "server": "https://hapi.fhir.org/baseR4",
+    "note": "base R4; location-oah rules checked by unit test (IG not on server)",
+    "http": 200,
+    "errors": 0,
+    "warnings": 0,
+    "at": "2026-10-04T13:06:21.921Z",
+    "errorText": [],
+    "warningText": []
+  },
+  {
+    "resource": "QuestionnaireResponse",
+    "server": "https://hapi.fhir.org/baseR4",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 1,
+    "at": "2026-10-04T13:06:22.252Z",
+    "errorText": [],
+    "warningText": [
+      "The questionnaire 'https://streamrecord.vercel.app/fhir/Questionnaire/streamrecord-check|0.1.0' could not be resolved, so no validation can be performed against the base questionnaire"
+    ]
+  },
+  {
+    "resource": "Observation:foam",
+    "server": "https://hapi.fhir.org/baseR4",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 3,
+    "at": "2026-10-04T13:06:22.595Z",
+    "errorText": [],
+    "warningText": [
+      "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
+      "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#foam'",
+      "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#present'"
+    ]
+  },
+  {
+    "resource": "Observation:colourSmell",
+    "server": "https://hapi.fhir.org/baseR4",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 2,
+    "at": "2026-10-04T13:06:22.906Z",
+    "errorText": [],
+    "warningText": [
+      "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
+      "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#colourSmell'"
+    ]
+  },
+  {
+    "resource": "Observation:riparianVegetation",
+    "server": "https://hapi.fhir.org/baseR4",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 3,
+    "at": "2026-10-04T13:06:23.208Z",
+    "errorText": [],
+    "warningText": [
+      "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
+      "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#riparianVegetation'",
+      "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#21-40-percent'"
+    ]
+  },
+  {
+    "resource": "Observation:macrophytes",
+    "server": "https://hapi.fhir.org/baseR4",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 3,
+    "at": "2026-10-04T13:06:23.503Z",
+    "errorText": [],
+    "warningText": [
+      "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
+      "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#macrophytes'",
+      "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#41-60-percent'"
+    ]
+  },
+  {
+    "resource": "Observation:invasiveOrganisms",
+    "server": "https://hapi.fhir.org/baseR4",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 3,
+    "at": "2026-10-04T13:06:23.795Z",
+    "errorText": [],
+    "warningText": [
+      "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
+      "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#invasiveOrganisms'",
+      "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#absent'"
+    ]
+  },
+  {
+    "resource": "Observation:otherSigns",
+    "server": "https://hapi.fhir.org/baseR4",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 3,
+    "at": "2026-10-04T13:06:24.106Z",
+    "errorText": [],
+    "warningText": [
+      "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
+      "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#otherSigns'",
+      "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#scum'"
+    ]
+  },
+  {
+    "resource": "Observation:waterTemperature",
+    "server": "https://hapi.fhir.org/baseR4",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 2,
+    "at": "2026-10-04T13:06:24.412Z",
+    "errorText": [],
+    "warningText": [
+      "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
+      "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#waterTemperature'"
+    ]
+  },
+  {
+    "resource": "Device",
+    "server": "https://hapi.fhir.org/baseR4",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 0,
+    "at": "2026-10-04T13:06:24.725Z",
+    "errorText": [],
+    "warningText": []
+  },
+  {
+    "resource": "Provenance",
+    "server": "https://hapi.fhir.org/baseR4",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 0,
+    "at": "2026-10-04T13:06:25.037Z",
+    "errorText": [],
+    "warningText": []
+  },
+  {
+    "resource": "Location",
+    "server": "https://sandbox.hl7europe.eu/oneaquahealth/fhir",
+    "note": "base R4; location-oah rules checked by unit test (IG not on server)",
+    "http": 200,
+    "errors": 0,
+    "warnings": 0,
+    "at": "2026-10-04T13:06:27.906Z",
+    "errorText": [],
+    "warningText": []
+  },
+  {
+    "resource": "QuestionnaireResponse",
+    "server": "https://sandbox.hl7europe.eu/oneaquahealth/fhir",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 1,
+    "at": "2026-10-04T13:06:31.042Z",
+    "errorText": [],
+    "warningText": [
+      "The questionnaire 'https://streamrecord.vercel.app/fhir/Questionnaire/streamrecord-check|0.1.0' could not be resolved, so no validation can be performed against the base questionnaire"
+    ]
+  },
+  {
+    "resource": "Observation:foam",
+    "server": "https://sandbox.hl7europe.eu/oneaquahealth/fhir",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 0,
+    "at": "2026-10-04T13:06:31.387Z",
+    "errorText": [],
+    "warningText": []
+  },
+  {
+    "resource": "Observation:colourSmell",
+    "server": "https://sandbox.hl7europe.eu/oneaquahealth/fhir",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 0,
+    "at": "2026-10-04T13:06:32.330Z",
+    "errorText": [],
+    "warningText": []
+  },
+  {
+    "resource": "Observation:riparianVegetation",
+    "server": "https://sandbox.hl7europe.eu/oneaquahealth/fhir",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 0,
+    "at": "2026-10-04T13:06:32.670Z",
+    "errorText": [],
+    "warningText": []
+  },
+  {
+    "resource": "Observation:macrophytes",
+    "server": "https://sandbox.hl7europe.eu/oneaquahealth/fhir",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 0,
+    "at": "2026-10-04T13:06:32.972Z",
+    "errorText": [],
+    "warningText": []
+  },
+  {
+    "resource": "Observation:invasiveOrganisms",
+    "server": "https://sandbox.hl7europe.eu/oneaquahealth/fhir",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 0,
+    "at": "2026-10-04T13:06:33.823Z",
+    "errorText": [],
+    "warningText": []
+  },
+  {
+    "resource": "Observation:otherSigns",
+    "server": "https://sandbox.hl7europe.eu/oneaquahealth/fhir",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 0,
+    "at": "2026-10-04T13:06:34.691Z",
+    "errorText": [],
+    "warningText": []
+  },
+  {
+    "resource": "Observation:waterTemperature",
+    "server": "https://sandbox.hl7europe.eu/oneaquahealth/fhir",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 0,
+    "at": "2026-10-04T13:06:35.024Z",
+    "errorText": [],
+    "warningText": []
+  },
+  {
+    "resource": "Device",
+    "server": "https://sandbox.hl7europe.eu/oneaquahealth/fhir",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 0,
+    "at": "2026-10-04T13:06:35.334Z",
+    "errorText": [],
+    "warningText": []
+  },
+  {
+    "resource": "Provenance",
+    "server": "https://sandbox.hl7europe.eu/oneaquahealth/fhir",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 0,
+    "at": "2026-10-04T13:06:35.652Z",
+    "errorText": [],
+    "warningText": []
+  },
+  {
+    "resource": "Bundle (transaction, all entries)",
+    "server": "https://hapi.fhir.org/baseR4",
+    "note": "base R4",
+    "http": 200,
+    "errors": 0,
+    "warnings": 20,
+    "at": "2026-10-04T13:06:37.607Z",
+    "errorText": [],
+    "warningText": [
+      "The questionnaire 'https://streamrecord.vercel.app/fhir/Questionnaire/streamreco",
+      "CodeSystem is unknown and can't be validated: https://streamrecord.vercel.app/fh",
+      "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSyst"
+    ]
+  }
+]

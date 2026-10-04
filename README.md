@@ -1,0 +1,132 @@
+# StreamRecord
+
+**What a stream's OneAquaHealth record means for the people, pets and wildlife living next to it, in their own language, and what the city can do about it.**
+
+- Live: https://streamrecord.vercel.app
+- Video: _added at submission_
+- Built for the OneAquaHealth IEEE Global Hackathon 2026. Work on this repository started on 2026-10-04; the commit history is intact.
+
+## 1. Track alignment
+
+**Track 4 (Awareness & Storytelling) primary; Track 7 (Digital Health Standards) and Track 1 (Citizen Science UX) secondary.**
+
+- **Track 4.** Every reading is built on OneAquaHealth's own outputs: the lab health-risk scores from the ENORA API, the Policy Brief, the Catalogue of Measures and the indicator factsheets. Each finding is explained for people, for animals and for the stream itself, with a printable version for a GP or public-health officer.
+- **Track 7.** Each citizen check becomes a FHIR R4 transaction Bundle. The OneAquaHealth IG is pinned to commit `b907cf0`, the Bundle is validated on two public servers with 0 errors, and every local code is listed with the reason it exists.
+- **Track 1.** A 90-second field check with one question per screen and "Not sure" on every coded question. It works offline and needs no account.
+
+## 2. Try it in 60 seconds
+
+1. Open https://streamrecord.vercel.app on a phone.
+2. Pick **Coimbra**, then any site in the list. You get the lab health-risk score, where it sits among the city's sites, and the date the scientists last sampled it.
+3. Tap **Ler em português** to read the page in the city's language. The translations are marked as machine-assisted.
+4. Tap **Do a 90-second check here** and answer the seven questions. Choose **Not sure** at least once.
+5. After saving, tap **Show the FHIR record** to see the Bundle the check produced. The site page now shows what you saw, and what it can mean for people, animals and the stream.
+6. Open **Clinician reading (printable)** and print it (A4 print layout).
+7. Open **Sources and data** for the validation table and licences.
+
+## 3. What is real and what is synthetic
+
+| Item | Status | Note |
+|---|---|---|
+| 106 research sites (names, coordinates, cities) | Real | ENORA API snapshot, 2026-10-04 |
+| Lab health-risk score and its three parts (96 sites) | Real | ENORA API snapshot; sampled 2023-05-05 to 2024-08-05 |
+| Low / moderate / high bands | Ours | Tertiles of the 96 scores (cut points 0.2269 and 0.3491). **Not an official OneAquaHealth rating** |
+| Citizen checks | Real when you make one | Stored only on your phone. No account, no server, and the app ships with no pre-filled checks |
+| Catalogue of Measures and Policy Brief text | Real | Quoted with page numbers |
+| People / animals / stream explanations | Ours | Drafted by a final-year medical student. Not clinical advice |
+| Translations (PT, IT, NL, NO, FR) | Machine-assisted | Not reviewed by native speakers; marked in the app |
+| Sending checks to the OneAquaHealth sandbox | Not integrated | Bundles are built and validated, but the app does not POST them |
+
+## 4. Sources and licences
+
+| Source | Retrieved | Licence |
+|---|---|---|
+| ENORA API `sites/all`, https://api.enora-oah.eu/api/sites/all (sha256 `c0272962…f0c632`) | 2026-10-04 12:41Z | No licence stated; used for hackathon demonstration with attribution |
+| ENORA API `resilience-map/health-risks`, https://api.enora-oah.eu/api/resilience-map/health-risks (sha256 `3aee0027…bf5aa8`) | 2026-10-04 12:42Z | As above |
+| OneAquaHealth Policy Brief (May 2026), https://www.oneaquahealth.eu/app/uploads/2026/05/OneAquaHealth-Policy-Brief.pdf | 2026-10-04 | None stated on this copy; Zenodo edition [10.5281/zenodo.22025388](https://doi.org/10.5281/zenodo.22025388) is CC-BY-4.0 |
+| OneAquaHealth Catalogue of Measures (D2.4), [10.5281/zenodo.20040211](https://doi.org/10.5281/zenodo.20040211) | 2026-10-04 | CC-BY-4.0 |
+| OneAquaHealth Key Indicators Factsheets, [10.5281/zenodo.20345207](https://doi.org/10.5281/zenodo.20345207) | 2026-10-04 | CC-BY-4.0 |
+| OneAquaHealth Field Sampling Protocols, [10.5281/zenodo.20344421](https://doi.org/10.5281/zenodo.20344421) | 2026-10-04 | CC-BY-4.0 |
+| HL7 Europe OneAquaHealth FHIR IG, https://github.com/hl7-eu/oah at `b907cf0` | 2026-10-04 | Not set in the repository |
+| Basemap: Esri World Light Gray Base | live tiles | Esri terms of use; OpenStreetMap data ODbL |
+
+Every quote was checked by script against the single PDF page it cites; see [`content/SOURCES.md`](content/SOURCES.md). Foam, smell and dead fish appear in none of these documents, so the app quotes nothing for them. The data is frozen in `data/snapshots/`. The join method, the field shapes and the known quirks are documented in [`data/snapshots/SOURCE.md`](data/snapshots/SOURCE.md). One quirk worth knowing: the API's city id `BE` means Benevento, not Belgium. The app makes no live calls to the API.
+
+## 5. FHIR
+
+- **IG:** `hl7.eu.fhir.oah#0.1.0-ci-build`, pinned to commit [`b907cf0`](https://github.com/hl7-eu/oah/tree/b907cf0869b59d82d9138b3d147fca66f333d911). See [`fhir/ig.lock`](fhir/ig.lock).
+- **Bundle:** a `transaction` containing:
+  - `Location`, conditional create on the OneAquaHealth site code
+  - `QuestionnaireResponse`
+  - one `Observation` per answer
+  - `Device` (the app)
+  - `Provenance`
+- **Profiles used:** `location-oah`. We confirmed it exists at the pinned commit and test its rules (identifier, name, `mode = instance`, position) in [`src/fhir.test.ts`](src/fhir.test.ts).
+- **Profiles checked but not used:** `observation-indicators-oah`. It exists, but it fixes `status = final`. An untrained citizen's report should stay `preliminary`, so the Observations use base R4 and do not claim it.
+- **OAH codes used** (all 12 confirmed in `temporarySystem-oah-eu` at `b907cf0`):
+  - `foam`, `riparianVegetation`, `macrophytes`, `invasiveOrganisms`, `waterTemperature`
+  - `present`, `absent`
+  - `0-20-percent` … `81-100-percent`
+- **"Not sure"** becomes `dataAbsentReason = asked-unknown` (FHIR core) with no value.
+- **Units:** temperature uses UCUM `Cel`.
+- **Local codes, and why** (published as a real CodeSystem at https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local):
+  - `citizen-science`: we found no standard Observation category for citizen data.
+  - `colourSmell`: OAH `foam` means "Foam/colour/smell" as one concept. We ask about colour and smell separately.
+  - `scum`, `deadFish`, `standingWater`, `none`: these are not in the OAH CodeSystem at this commit.
+- **Questionnaire:** the IG has none, so ours is published at https://streamrecord.vercel.app/fhir/Questionnaire/streamrecord-check.
+
+## 6. Evidence
+
+**`$validate`.** Run by [`scripts/validate.ts`](scripts/validate.ts) on a real bundle for site C1 (Coimbra), with synthetic answers chosen to exercise every value type. The bundle is in [`evidence/sample-bundle.json`](evidence/sample-bundle.json) and the raw results are in [`evidence/validate.json`](evidence/validate.json).
+
+<!-- VALIDATE -->
+
+Neither public server holds the OneAquaHealth IG. To make the base-R4 check possible, `meta.profile` is removed before the resource is sent, and the `location-oah` rules are checked by unit tests instead. All remaining warnings are "CodeSystem is unknown" or "questionnaire could not be resolved": the servers don't have that terminology loaded. Our Questionnaire and local CodeSystem each validate on HAPI with 0 errors and 0 warnings.
+
+<!-- METRICS -->
+
+## 7. Accessibility statement
+
+The app targets WCAG 2.2 AA.
+- **Status cues:** status is never shown by colour alone. Every status has a shape (circle, triangle, square, dashed circle) and a word, and the map colours come from the Okabe-Ito colour-blind-safe palette.
+- **Field check:** one question per screen, following the GOV.UK pattern. Error summaries move focus to the problem and link to it.
+- **Touch and type:** buttons, answer choices and list rows are 44–56 px tall; the small header links meet the WCAG 2.2 minimum of 24 px. Body text is set in Atkinson Hyperlegible Next, a typeface the Braille Institute designed for low-vision readers.
+- **Map:** every site on the map is also in a plain list next to it, so the map is never the only way in.
+- **Navigation and motion:** there is a skip link, a visible focus ring and support for reduced motion.
+- **Language:** `lang` is set on the page for each language.
+
+Known gaps: the map markers can be reached with a keyboard but have only their site name as a label, and nobody using a screen reader has tested the app yet.
+
+## 8. Limitations and what it is not
+
+- **It is not a water-safety verdict.** The lab score covers samples taken in 2023–2024. The app shows how long ago the scientists sampled each stream, and never says the water is safe or unsafe today.
+- **The low/moderate/high bands are ours.** They are statistical thirds of the 96 scores, not thresholds set by OneAquaHealth.
+- **Citizen checks are unverified.** They stay `preliminary`. A finding says "someone should look"; it never says the water is unsafe.
+- **The health text is not clinical advice.** It was written by a medical student and has not been reviewed by a clinician or veterinarian.
+- **No upload yet.** Checks stay on the phone and are not sent to the OneAquaHealth sandbox. That step is proposed, not integrated.
+- **10 of the 106 sites have no health-risk value** (C17, C18, G1, G17–G20, T15, T21, T24). For these the app says so instead of guessing.
+
+## 9. AI-assistance disclosure
+
+StreamRecord was built with Claude Code (Anthropic). Claude Code was used for:
+- fetching and joining the data;
+- checking the IG at the pinned commit;
+- writing the app and the tests;
+- the first drafts of the translations and health text.
+
+The concept, the review of the clinical framing and the final decisions are the author's. Every quote is copied verbatim from the cited page, and every code was checked against the IG source.
+
+## 10. Run it locally
+
+```
+npm install
+npm run dev        # http://localhost:5173
+npm test           # unit tests
+npx vite-node scripts/validate.ts   # re-run $validate (needs network)
+```
+
+## 11. Licence
+
+Code is released under the MIT licence; see [LICENSE](LICENSE). Data and documents stay under their sources' terms.
+
+**StreamRecord is not affiliated with, or endorsed by, OneAquaHealth, ENORA or HL7 Europe.**

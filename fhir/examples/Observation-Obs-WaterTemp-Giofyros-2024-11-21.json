@@ -1,0 +1,38 @@
+{
+ "resourceType": "Observation",
+ "id": "Obs-WaterTemp-Giofyros-2024-11-21",
+ "meta": {
+  "profile": [
+   "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+  ]
+ },
+ "status": "final",
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+    "code": "waterTemperature",
+    "display": "Water temperature"
+   }
+  ]
+ },
+ "subject": {
+  "reference": "Location/Loc-Giofyros"
+ },
+ "effectiveDateTime": "2024-11-21",
+ "performer": [
+  {
+   "display": "OneAquaHealth Crete Lab"
+  }
+ ],
+ "device": {
+  "reference": "Device/Dev-HI98130"
+ },
+ "valueQuantity": {
+  "value": 18.6,
+  "unit": "Celsius",
+  "system": "http://unitsofmeasure.org",
+  "code": "Cel"
+ },
+ "_provenance_note": "Hand-transcribed from input/fsh/examples/water_tmp.fsh in https://github.com/hl7-eu/oah @ b907cf0869b59d82d9138b3d147fca66f333d911 (values verbatim; meta.profile added per InstanceOf). Not SUSHI output. This is a lab/handheld-tester monitoring example (Crete), NOT a citizen-science example; the IG contains no citizen-science examples."
+}

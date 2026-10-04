@@ -1,0 +1,4 @@
+node_modules
+content/sources
+data/snapshots/raw
+.git

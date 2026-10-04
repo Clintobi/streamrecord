@@ -22,14 +22,16 @@ export default function MapScreen({ city }: { city?: string }) {
 
   useEffect(() => { loadCities().then((c) => { setCities(c); setSlug((s) => s || c.find((x) => x.slug === 'coimbra')?.slug || c[0]?.slug) }) }, [])
   useEffect(() => { if (slug) { setSites(null); loadCity(slug).then(setSites) } }, [slug])
+  // start fetching the map code while the site data loads, rather than after
+  const leaflet = useRef<Promise<any> | null>(null)
+  if (!leaflet.current) leaflet.current = Promise.all([import('leaflet'), import('leaflet/dist/leaflet.css')]).then(([m]) => m.default)
 
   // map is lazy-loaded after the list has rendered
   useEffect(() => {
     if (!sites || !cities || !slug || !mapEl.current) return
     let cancelled = false
     ;(async () => {
-      const L = (await import('leaflet')).default
-      await import('leaflet/dist/leaflet.css')
+      const L = await leaflet.current!
       if (cancelled || !mapEl.current) return
       if (!mapRef.current) {
         mapRef.current = L.map(mapEl.current, { scrollWheelZoom: false })
@@ -41,7 +43,7 @@ export default function MapScreen({ city }: { city?: string }) {
       layerRef.current?.remove()
       const group = L.layerGroup()
       for (const s of sites) {
-        const icon = L.divIcon({ className: 'sr-marker', html: SHAPE_HTML[labStatus(s)], iconSize: [16, 16], iconAnchor: [8, 8] })
+        const icon = L.divIcon({ className: 'sr-marker', html: SHAPE_HTML[labStatus(s)], iconSize: [28, 28], iconAnchor: [14, 14] })
         L.marker([s.lat, s.lon], { icon, title: s.name, keyboard: true })
           .on('click', () => { location.hash = `#/site/${encodeURIComponent(s.id)}` })
           .addTo(group)

@@ -23,7 +23,7 @@ export interface CityIndex {
 
 // FHIR code systems
 export const OAH_CS = 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu'
-export const LOCAL_CS = 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local'
+export const LOCAL_CS = 'https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local'
 export const DAR_CS = 'http://terminology.hl7.org/CodeSystem/data-absent-reason'
 
 export type QKind = 'presence' | 'band' | 'multi' | 'temperature'

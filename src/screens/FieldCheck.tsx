@@ -130,13 +130,18 @@ export default function FieldCheck({ id }: { id: string }) {
             </div>
           )}
         </fieldset>
-        {ind && (
+        {ind ? (
           <details style={{ marginTop: 24 }}>
             <summary>About this indicator</summary>
             <p className="reading">{ind.explanation}</p>
-            <p className="src">From OneAquaHealth, {ind.source.record}{ind.source.page ? `, p. ${ind.source.page}` : ''}</p>
+            <p className="src">Based on {ind.source.url ? <a href={ind.source.url}>{ind.source.record}</a> : ind.source.record}{ind.source.page ? `, p. ${ind.source.page}` : ''}</p>
           </details>
-        )}
+        ) : lib.unsourced?.includes(q.key) ? (
+          <details style={{ marginTop: 24 }}>
+            <summary>About this question</summary>
+            <p className="reading">None of OneAquaHealth's published documents explain this sign, so StreamRecord quotes nothing for it. It is asked because residents notice it and it is easy to report.</p>
+          </details>
+        ) : null}
         <div className="actions">
           <button type="submit" className="btn">{t('next')}</button>
           {q.optional && <button type="button" className="btn secondary" onClick={() => { const a2 = { ...answers, [q.key]: null }; setAnswers(a2); setError(null); advance(a2) }}>{t('skip')}</button>}

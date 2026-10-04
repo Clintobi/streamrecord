@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { buildBundle } from './fhir'
+import { buildBundle, LOCATION_OAH } from './fhir'
 import { Check, findingsFromAnswers, Site, daysSince, labStatus } from './model'
 
 const site: Site = { id: 'PT01', name: 'Test stream', city: 'Coimbra', country: 'PT', lat: 40.2, lon: -8.4, risk: { level: 'moderate', score: 0.5, date: '2025-06-12' } }
@@ -52,4 +52,25 @@ describe('findings', () => {
   })
   it('maps lab levels to status', () => { expect(labStatus(site)).toBe('look'); expect(labStatus({ ...site, risk: undefined })).toBe('none') })
   it('counts days since a lab check', () => { expect(daysSince('2025-06-12', new Date('2026-10-04'))).toBe(479); expect(daysSince(null)).toBeNull() })
+})
+
+const bundle = () => buildBundle(site, check)
+
+describe('location-oah rules (IG commit b907cf0)', () => {
+  it('Location declares the profile and meets identifier 1.., name 1.., mode = instance, position lat/long', () => {
+    const loc = bundle().entry[0].resource
+    expect(loc.meta.profile).toEqual([LOCATION_OAH])
+    expect(loc.identifier.length).toBeGreaterThan(0)
+    expect(loc.name).toBeTruthy()
+    expect(loc.mode).toBe('instance')
+    expect(typeof loc.position.latitude).toBe('number')
+    expect(typeof loc.position.longitude).toBe('number')
+  })
+  it('Observations do not claim observation-indicators-oah, which fixes status = final', () => {
+    for (const e of bundle().entry.filter((x: any) => x.resource.resourceType === 'Observation')) {
+      expect(e.resource.meta).toBeUndefined()
+      expect(e.resource.status).toBe('preliminary')
+      expect(e.resource.performer?.length).toBeGreaterThan(0)
+    }
+  })
 })

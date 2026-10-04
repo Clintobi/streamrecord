@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/fhir/Questionnaire/streamrecord-check", "destination": "/fhir/Questionnaire-streamrecord-check.json" },
+    { "source": "/fhir/CodeSystem/streamrecord-local", "destination": "/fhir/CodeSystem-streamrecord-local.json" }
+  ],
+  "headers": [
+    { "source": "/fhir/(.*)", "headers": [{ "key": "Content-Type", "value": "application/fhir+json; charset=utf-8" }, { "key": "Access-Control-Allow-Origin", "value": "*" }] }
+  ]
+}

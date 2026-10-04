@@ -1,0 +1,934 @@
+{
+  "generated": "2026-10-04T13:09Z",
+  "pageConvention": "'page' is the 1-based PDF page index (pdftotext -f N -l N). For the Catalogue of Measures, 'printedPage' is the number printed in the page footer (PDF page minus 2). For the Policy Brief and Field Protocols the printed number equals the PDF page; the Factsheets have no printed page numbers.",
+  "quoteConvention": "Quotes are copied verbatim from pdftotext output; only line breaks were joined with single spaces. Grammar and spelling are the source's own.",
+  "policyBrief": {
+    "title": "Urban stream ecosystem health as a One Health priority (OneAquaHealth Policy Brief)",
+    "url": "https://www.oneaquahealth.eu/app/uploads/2026/05/OneAquaHealth-Policy-Brief.pdf",
+    "doi_or_link": "https://www.oneaquahealth.eu/app/uploads/2026/05/OneAquaHealth-Policy-Brief.pdf",
+    "date": "2026-05-06",
+    "dateNote": "File uploaded to oneaquahealth.eu on 6 May 2026 (HTTP Last-Modified and PDF creation date); the brief itself says 'Produced in April 2026.' (page 11). Later Zenodo versions: 10.5281/zenodo.21476580 (2026-07-21) and 10.5281/zenodo.22025388 (2026-08-20, concept DOI 10.5281/zenodo.21476579), both CC-BY-4.0, with the same English text for every quote below; pages 1-11 are the English section in all versions.",
+    "zenodo": {
+      "doi": "10.5281/zenodo.22025388",
+      "url": "https://doi.org/10.5281/zenodo.22025388",
+      "conceptDoi": "10.5281/zenodo.21476579",
+      "licence": "cc-by-4.0",
+      "localFile": "sources/policy_brief_22025388.pdf"
+    },
+    "localFile": "sources/policy_brief_oah_site_2026-05.pdf",
+    "quotes": [
+      {
+        "text": "Urban freshwater ecosystem restoration should be prioritized as a preventive One Health measure that simultaneously protects biodiversity and reduces public health risks.",
+        "page": 1
+      },
+      {
+        "text": "Immediate investment is needed to rehabilitate riparian zones, renaturalize channels, and upgrade sewage systems and wastewater treatments to address pollution and emerging contaminants.",
+        "page": 1
+      },
+      {
+        "text": "Systematic monitoring of urban streams should be integrated into public health surveillance frameworks.",
+        "page": 1
+      },
+      {
+        "text": "The OneAquaHealth initiative investigated 100 urban stream sites across five European cities to assess how urbanization impacts freshwater ecosystems and how this degradation may increase health risks for people.",
+        "page": 1
+      },
+      {
+        "text": "Urbanization consistently degrades freshwater ecosystem health and decreases biodiversity across European cities, with nutrient pollution, contamination by pharmaceuticals, alterations of the stream channel, soil sealing, artificial light at night, and loss of the natural riparian vegetation as the main drivers.",
+        "page": 2
+      },
+      {
+        "text": "Pharmaceuticals were detected in 91% of monitored sites, confirming widespread contamination with risks for aquatic organisms and humans.",
+        "page": 2
+      },
+      {
+        "text": "Diatom (microalgae) morphological deformities were identified as early warning indicators of pharmaceutical contamination that would go undetected by standard monitoring.",
+        "page": 2
+      },
+      {
+        "text": "Degraded urban streams are associated with higher cause-specific mortality and reduced life expectancy, likely reflecting the loss of freshwater ecosystem services including water quality, climate regulation, and mental health benefits.",
+        "page": 2
+      },
+      {
+        "text": "Invasive alien plants increase significantly with urbanization and pose direct human health risks through skin irritation, allergies, poisoning, and the creation of favorable habitats for disease vectors",
+        "page": 2
+      },
+      {
+        "text": "Stream biofilms in more urbanized areas carry higher loads of clinically relevant pathogens and antibiotic resistance genes, posing human health risks.",
+        "page": 2
+      },
+      {
+        "text": "The OneAquaHealth project focused on 100 urban stream sites across five European cities, Benevento (Italy), Coimbra (Portugal), Ghent (Belgium), Oslo (Norway), and Toulouse (France)",
+        "page": 3
+      },
+      {
+        "text": "intact riparian vegetation provide shade, regulating water and air temperature, filter pollutants from runoff, stabilize banks against erosion, and provide habitat for both aquatic and terrestrial biodiversity",
+        "page": 5
+      },
+      {
+        "text": "In addition, invasive invertebrate species were recorded in many urban streams.",
+        "page": 5
+      },
+      {
+        "text": "These deformities can therefore be used as early-warnings of contaminations that would go undetected by standard monitoring.",
+        "page": 6
+      },
+      {
+        "text": "Sixteen pharmaceuticals were observed in 91% of the sites, often as complex mixtures.",
+        "page": 6
+      },
+      {
+        "text": "This contamination was mitigated in sites in good ecological condition.",
+        "page": 6
+      },
+      {
+        "text": "The diversity of fish declined in more urbanized streams, while non-native species increased.",
+        "page": 6
+      },
+      {
+        "text": "The app enables citizens to submit georeferenced observations from urban stream sites, including information on water flow types, colour, vegetation, channel characteristics, and surrounding land use, complemented by photo and video uploads.",
+        "page": 8
+      },
+      {
+        "text": "Restoring degraded urban streams can help reduce health risks associated with poor water quality, flooding, heat waves, biodiversity loss, and limited access to blue-green spaces.",
+        "page": 9
+      },
+      {
+        "text": "Therefore, the restoration of urban freshwater ecosystems should be acknowledged as a form of preventive public health intervention.",
+        "page": 9
+      },
+      {
+        "text": "Investing in ecosystem restoration has the potential to significantly reduce healthcare expenditure over time.",
+        "page": 9
+      },
+      {
+        "text": "OneAquaHealth findings confirm the critical role of riparian zones with well-vegetated margins to buffer water temperature and humidity, filter pollutants, support biological communities, and ultimately protect the ecosystem services that urban populations depend on.",
+        "page": 9
+      }
+    ]
+  },
+  "cityWhy": [
+    {
+      "text": "The OneAquaHealth initiative investigated 100 urban stream sites across five European cities to assess how urbanization impacts freshwater ecosystems and how this degradation may increase health risks for people.",
+      "page": 1,
+      "source": "OneAquaHealth Policy Brief (May 2026)"
+    },
+    {
+      "text": "Pharmaceuticals were detected in 91% of monitored sites, confirming widespread contamination with risks for aquatic organisms and humans.",
+      "page": 2,
+      "source": "OneAquaHealth Policy Brief (May 2026)"
+    },
+    {
+      "text": "Diatom (microalgae) morphological deformities were identified as early warning indicators of pharmaceutical contamination that would go undetected by standard monitoring.",
+      "page": 2,
+      "source": "OneAquaHealth Policy Brief (May 2026)"
+    },
+    {
+      "text": "Urban freshwater ecosystem restoration should be prioritized as a preventive One Health measure that simultaneously protects biodiversity and reduces public health risks.",
+      "page": 1,
+      "source": "OneAquaHealth Policy Brief (May 2026)"
+    },
+    {
+      "text": "Degraded urban streams are associated with higher cause-specific mortality and reduced life expectancy, likely reflecting the loss of freshwater ecosystem services including water quality, climate regulation, and mental health benefits.",
+      "page": 2,
+      "source": "OneAquaHealth Policy Brief (May 2026)"
+    },
+    {
+      "text": "Invasive alien plants increase significantly with urbanization and pose direct human health risks through skin irritation, allergies, poisoning, and the creation of favorable habitats for disease vectors",
+      "page": 2,
+      "source": "OneAquaHealth Policy Brief (May 2026)"
+    },
+    {
+      "text": "Stream biofilms in more urbanized areas carry higher loads of clinically relevant pathogens and antibiotic resistance genes, posing human health risks.",
+      "page": 2,
+      "source": "OneAquaHealth Policy Brief (May 2026)"
+    },
+    {
+      "text": "Restoring degraded urban streams can help reduce health risks associated with poor water quality, flooding, heat waves, biodiversity loss, and limited access to blue-green spaces.",
+      "page": 9,
+      "source": "OneAquaHealth Policy Brief (May 2026)"
+    }
+  ],
+  "indicators": [
+    {
+      "key": "water_temperature",
+      "title": "Water temperature",
+      "citizenCheck": true,
+      "explanation": "Water temperature is one of the basic readings OneAquaHealth takes at every site, alongside dissolved oxygen, pH and conductivity. Warm water holds less oxygen, and the project's Catalogue of Measures lists high water temperature among the altered physico-chemical conditions that stress urban streams. Shade from bankside trees helps keep water cool.",
+      "source": {
+        "record": "zenodo:20344421",
+        "doi": "10.5281/zenodo.20344421",
+        "file": "Field Sampling protocols OAH_zenodo_final_mjf.pdf",
+        "localFile": "sources/field_protocols_20344421.pdf",
+        "page": 4
+      },
+      "supportingQuote": "Measure water temperature, dissolved O2, pH, conductivity and total dissolved solids in the water using the multiparameter probe;",
+      "alsoSee": [
+        {
+          "source": {
+            "record": "zenodo:20040211",
+            "doi": "10.5281/zenodo.20040211",
+            "file": "OAH_Catalogue of measures.pdf",
+            "localFile": "sources/catalogue_of_measures_20040211.pdf",
+            "page": 32,
+            "printedPage": 30
+          },
+          "quote": "Altered physico-chemical properties (e.g., low dissolved oxygen, high water temperature, acidification)."
+        },
+        {
+          "source": {
+            "record": "oneaquahealth.eu policy brief (6 May 2026)",
+            "doi": null,
+            "file": "OneAquaHealth-Policy-Brief.pdf",
+            "localFile": "sources/policy_brief_oah_site_2026-05.pdf",
+            "page": 9
+          },
+          "quote": "OneAquaHealth findings confirm the critical role of riparian zones with well-vegetated margins to buffer water temperature and humidity, filter pollutants, support biological communities, and ultimately protect the ecosystem services that urban populations depend on."
+        }
+      ]
+    },
+    {
+      "key": "riparian_vegetation",
+      "title": "Riparian (bankside) vegetation",
+      "citizenCheck": true,
+      "explanation": "Riparian vegetation is the band of trees, shrubs and herbs along the stream banks. OneAquaHealth scores how much of each margin is covered by herbaceous plants, shrubs and trees. Intact bankside vegetation shades and cools the water, filters polluted runoff, holds banks together and gives wildlife a place to live.",
+      "source": {
+        "record": "zenodo:20344421",
+        "doi": "10.5281/zenodo.20344421",
+        "file": "Field Sampling protocols OAH_zenodo_final_mjf.pdf",
+        "localFile": "sources/field_protocols_20344421.pdf",
+        "page": 7
+      },
+      "supportingQuote": "A census is conducted on the vegetation coverage percentage in the study area, that includes 10 m in each margin.",
+      "alsoSee": [
+        {
+          "source": {
+            "record": "oneaquahealth.eu policy brief (6 May 2026)",
+            "doi": null,
+            "file": "OneAquaHealth-Policy-Brief.pdf",
+            "localFile": "sources/policy_brief_oah_site_2026-05.pdf",
+            "page": 5
+          },
+          "quote": "intact riparian vegetation provide shade, regulating water and air temperature, filter pollutants from runoff, stabilize banks against erosion, and provide habitat for both aquatic and terrestrial biodiversity"
+        }
+      ]
+    },
+    {
+      "key": "macrophytes",
+      "title": "Macrophytes (in-channel plants)",
+      "citizenCheck": true,
+      "explanation": "Macrophytes are plants growing in the stream itself: mosses, floating plants, submerged weeds, reeds and filamentous algae. The OneAquaHealth field form records which types are absent, present or extensive (covering more than a third of the channel) and whether non-native species are among them. Disappearing aquatic plants signal a loss of habitat.",
+      "source": {
+        "record": "zenodo:20344421",
+        "doi": "10.5281/zenodo.20344421",
+        "file": "Field Sampling protocols OAH_zenodo_final_mjf.pdf",
+        "localFile": "sources/field_protocols_20344421.pdf",
+        "page": 7
+      },
+      "supportingQuote": "To obtain a simple structural classification of the different types of macrophytes found in the urban streams.",
+      "alsoSee": [
+        {
+          "source": {
+            "record": "zenodo:20040211",
+            "doi": "10.5281/zenodo.20040211",
+            "file": "OAH_Catalogue of measures.pdf",
+            "localFile": "sources/catalogue_of_measures_20040211.pdf",
+            "page": 32,
+            "printedPage": 30
+          },
+          "quote": "Lack of expected aquatic habitats. Loss of pools, riffles, and woody debris; deposits of inorganic and organic matter, macrophytes disappearance)."
+        }
+      ]
+    },
+    {
+      "key": "filamentous_algae",
+      "title": "Filamentous algae / algal growth",
+      "citizenCheck": true,
+      "explanation": "Filamentous algae are one of the in-channel vegetation types on the OneAquaHealth field form. The Catalogue of Measures notes that excessive algal growth can persist when nutrient inputs stay high, and the diatom factsheet warns that some algal blooms produce toxins or use up oxygen, which can lead to fish kills.",
+      "source": {
+        "record": "zenodo:20344421",
+        "doi": "10.5281/zenodo.20344421",
+        "file": "Field Sampling protocols OAH_zenodo_final_mjf.pdf",
+        "localFile": "sources/field_protocols_20344421.pdf",
+        "page": 7
+      },
+      "supportingQuote": "(e.g., filamentous algae, submerged broad-leaved, free-floating, emergent reeds, etc…)",
+      "alsoSee": [
+        {
+          "source": {
+            "record": "zenodo:20040211",
+            "doi": "10.5281/zenodo.20040211",
+            "file": "OAH_Catalogue of measures.pdf",
+            "localFile": "sources/catalogue_of_measures_20040211.pdf",
+            "page": 44,
+            "printedPage": 42
+          },
+          "quote": "Sediment clogging or excessive algal growth may reduce performance if nutrient inputs remain high."
+        },
+        {
+          "source": {
+            "record": "zenodo:20345207",
+            "doi": "10.5281/zenodo.20345207",
+            "file": "FactSheets_Combined_zenodo_final_mjf.pdf",
+            "localFile": "sources/factsheets_20345207.pdf",
+            "page": 3
+          },
+          "quote": "leading to fish kills"
+        }
+      ]
+    },
+    {
+      "key": "invasive_organisms",
+      "title": "Invasive alien plants and animals",
+      "citizenCheck": true,
+      "explanation": "Invasive alien species are plants or animals introduced outside their natural range that spread fast and cause harm. Along streams, invasive plants are counted along a 100-metre stretch of both banks. They thrive in disturbed, polluted places, so their presence signals degradation. Some cause skin irritation, allergies or poisoning, or shelter disease-carrying insects.",
+      "source": {
+        "record": "zenodo:20345207",
+        "doi": "10.5281/zenodo.20345207",
+        "file": "FactSheets_Combined_zenodo_final_mjf.pdf",
+        "localFile": "sources/factsheets_20345207.pdf",
+        "page": 13
+      },
+      "supportingQuote": "AIPs are a cost-effective, sensitive, and easily observable indicator of disturbance, ecosystem stress, and biodiversity decline, making them a good tool in freshwater health monitoring.",
+      "alsoSee": [
+        {
+          "source": {
+            "record": "oneaquahealth.eu policy brief (6 May 2026)",
+            "doi": null,
+            "file": "OneAquaHealth-Policy-Brief.pdf",
+            "localFile": "sources/policy_brief_oah_site_2026-05.pdf",
+            "page": 2
+          },
+          "quote": "Invasive alien plants increase significantly with urbanization and pose direct human health risks through skin irritation, allergies, poisoning, and the creation of favorable habitats for disease vectors"
+        },
+        {
+          "source": {
+            "record": "oneaquahealth.eu policy brief (6 May 2026)",
+            "doi": null,
+            "file": "OneAquaHealth-Policy-Brief.pdf",
+            "localFile": "sources/policy_brief_oah_site_2026-05.pdf",
+            "page": 5
+          },
+          "quote": "In addition, invasive invertebrate species were recorded in many urban streams."
+        },
+        {
+          "source": {
+            "record": "zenodo:20345207",
+            "doi": "10.5281/zenodo.20345207",
+            "file": "FactSheets_Combined_zenodo_final_mjf.pdf",
+            "localFile": "sources/factsheets_20345207.pdf",
+            "page": 5
+          },
+          "quote": "Exotic or invasive species are removed according to local regulations."
+        }
+      ]
+    },
+    {
+      "key": "water_colour",
+      "title": "Water colour",
+      "citizenCheck": true,
+      "explanation": "Water colour is one of the observations the OneAquaHealth Citizen Science App asks people to record, together with flow type, vegetation, channel features and surrounding land use, backed by photos or video. The project sources do not define colour categories or thresholds, so colour is a prompt for follow-up rather than a measurement.",
+      "source": {
+        "record": "oneaquahealth.eu policy brief (6 May 2026)",
+        "doi": null,
+        "file": "OneAquaHealth-Policy-Brief.pdf",
+        "localFile": "sources/policy_brief_oah_site_2026-05.pdf",
+        "page": 8
+      },
+      "supportingQuote": "The app enables citizens to submit georeferenced observations from urban stream sites, including information on water flow types, colour, vegetation, channel characteristics, and surrounding land use, complemented by photo and video uploads."
+    },
+    {
+      "key": "flow_type",
+      "title": "Flow type (riffles, pools, no flow)",
+      "citizenCheck": true,
+      "explanation": "The OneAquaHealth field form records which flow types are present along the stretch: smooth runs, riffles with standing waves, pools, no perceptible flow, or dry areas. A mix of flow types means more habitats. The Catalogue of Measures notes that stagnant water behind low weirs can favour mosquito breeding during droughts.",
+      "source": {
+        "record": "zenodo:20344421",
+        "doi": "10.5281/zenodo.20344421",
+        "file": "Field Sampling protocols OAH_zenodo_final_mjf.pdf",
+        "localFile": "sources/field_protocols_20344421.pdf",
+        "page": 12
+      },
+      "supportingQuote": "NP: no perceptible flow",
+      "alsoSee": [
+        {
+          "source": {
+            "record": "zenodo:20040211",
+            "doi": "10.5281/zenodo.20040211",
+            "file": "OAH_Catalogue of measures.pdf",
+            "localFile": "sources/catalogue_of_measures_20040211.pdf",
+            "page": 49,
+            "printedPage": 47
+          },
+          "quote": "Also, during drought periods, low-head barriers may retain stagnant water, providing favourable conditions for mosquito breeding and thereby posing a potential public health risk (Darre et al., 2025)."
+        }
+      ]
+    },
+    {
+      "key": "bank_materials",
+      "title": "Bank and bed materials (natural vs concrete)",
+      "citizenCheck": true,
+      "explanation": "The field form records what the stream bed and banks are made of, from earth, gravel and stones to gabions and concrete. The Catalogue of Measures lists artificialisation of the channel and banks as a stressor: concrete and other hard materials cut the stream off from its banks and groundwater and leave a sterile habitat.",
+      "source": {
+        "record": "zenodo:20344421",
+        "doi": "10.5281/zenodo.20344421",
+        "file": "Field Sampling protocols OAH_zenodo_final_mjf.pdf",
+        "localFile": "sources/field_protocols_20344421.pdf",
+        "page": 13
+      },
+      "supportingQuote": "CC: concrete or similar",
+      "alsoSee": [
+        {
+          "source": {
+            "record": "zenodo:20040211",
+            "doi": "10.5281/zenodo.20040211",
+            "file": "OAH_Catalogue of measures.pdf",
+            "localFile": "sources/catalogue_of_measures_20040211.pdf",
+            "page": 32,
+            "printedPage": 30
+          },
+          "quote": "Artificialization of the channel and banks."
+        }
+      ]
+    },
+    {
+      "key": "outflow_pipes",
+      "title": "Outflow pipes",
+      "citizenCheck": true,
+      "explanation": "The field form counts pipes discharging rainwater into the stream. Urban runoff from roads and roofs carries hydrocarbons, nutrients, metals and fine sediment through storm drains, and old or overloaded sewer networks can spill untreated sewage during heavy rain. Pipes are therefore places to watch for pollution entering the water.",
+      "source": {
+        "record": "zenodo:20344421",
+        "doi": "10.5281/zenodo.20344421",
+        "file": "Field Sampling protocols OAH_zenodo_final_mjf.pdf",
+        "localFile": "sources/field_protocols_20344421.pdf",
+        "page": 13
+      },
+      "supportingQuote": "Outflows (number of pipes or similar discharging pluvial waters to the stream)",
+      "alsoSee": [
+        {
+          "source": {
+            "record": "zenodo:20040211",
+            "doi": "10.5281/zenodo.20040211",
+            "file": "OAH_Catalogue of measures.pdf",
+            "localFile": "sources/catalogue_of_measures_20040211.pdf",
+            "page": 42,
+            "printedPage": 40
+          },
+          "quote": "Pollutants such as hydrocarbons, nutrients, metals, and fine sediments are rapidly transported to streams through storm drains, producing “first-flush” episodes of severe degradation."
+        }
+      ]
+    },
+    {
+      "key": "barriers",
+      "title": "Barriers (weirs, dams)",
+      "citizenCheck": true,
+      "explanation": "The field form counts weirs and dams that block the stream along its length. Barriers fragment habitat, stop fish and other animals moving, change sediment and nutrient flows and degrade water quality. Low weirs can also hold stagnant water in dry periods, creating mosquito breeding sites, and can be dangerous to people.",
+      "source": {
+        "record": "zenodo:20344421",
+        "doi": "10.5281/zenodo.20344421",
+        "file": "Field Sampling protocols OAH_zenodo_final_mjf.pdf",
+        "localFile": "sources/field_protocols_20344421.pdf",
+        "page": 13
+      },
+      "supportingQuote": "Barriers to longitudinal connectivity (number of weirs/dams)",
+      "alsoSee": [
+        {
+          "source": {
+            "record": "zenodo:20040211",
+            "doi": "10.5281/zenodo.20040211",
+            "file": "OAH_Catalogue of measures.pdf",
+            "localFile": "sources/catalogue_of_measures_20040211.pdf",
+            "page": 49,
+            "printedPage": 47
+          },
+          "quote": "Barriers in streams fragment and degrade habitats, hamper the movement of fish and other aquatic species, alter sediment and nutrient flows and degrade water quality, leading to negative impacts on riverine ecosystems and biodiversity (Addy, 2016)."
+        }
+      ]
+    },
+    {
+      "key": "insectivorous_birds",
+      "title": "Insectivorous birds",
+      "citizenCheck": true,
+      "explanation": "OneAquaHealth counts insect-eating bird species by listening for songs and calls for ten minutes in the early morning. Non-experts can use a bird-sound app such as Merlin. Insectivorous birds help control mosquitoes and other pests, and fewer species where streams are degraded or urbanised signals weaker natural pest control.",
+      "source": {
+        "record": "zenodo:20345207",
+        "doi": "10.5281/zenodo.20345207",
+        "file": "FactSheets_Combined_zenodo_final_mjf.pdf",
+        "localFile": "sources/factsheets_20345207.pdf",
+        "page": 7
+      },
+      "supportingQuote": "using the mobile app Merlin (Cornell Lab Lab of Ornithology, Cornell University) or similar, for those with no experience in ornithology."
+    },
+    {
+      "key": "diatoms",
+      "title": "Diatoms and diatom deformities",
+      "citizenCheck": false,
+      "explanation": "Diatoms are microscopic algae scraped from submerged stones and identified under a microscope. They react quickly to pollution and nutrient enrichment. Pollutants such as heavy metals and pharmaceuticals can deform their silica shells, and OneAquaHealth found these deformities flag pharmaceutical contamination that standard monitoring would miss. Laboratory analysis is required.",
+      "source": {
+        "record": "zenodo:20345207",
+        "doi": "10.5281/zenodo.20345207",
+        "file": "FactSheets_Combined_zenodo_final_mjf.pdf",
+        "localFile": "sources/factsheets_20345207.pdf",
+        "page": 3
+      },
+      "supportingQuote": "Pollutants such as heavy metals, pharmaceuticals and others may cause deformities in the frustules (valves – external silicate walls) – teratologies, which reflect diatom health."
+    },
+    {
+      "key": "macroinvertebrates",
+      "title": "Benthic macroinvertebrates",
+      "citizenCheck": false,
+      "explanation": "Macroinvertebrates are small bottom-dwelling animals such as insect larvae, crustaceans, worms and snails, collected by kick-sampling with a hand net. They move little and differ in pollution tolerance, so their communities reflect water quality and habitat over time. Healthy communities indicate clean water. Animals are sorted and identified under a stereomicroscope in the laboratory.",
+      "source": {
+        "record": "zenodo:20345207",
+        "doi": "10.5281/zenodo.20345207",
+        "file": "FactSheets_Combined_zenodo_final_mjf.pdf",
+        "localFile": "sources/factsheets_20345207.pdf",
+        "page": 4
+      },
+      "supportingQuote": "Healthy macroinvertebrate communities indicate clean water and functioning ecological processes, which are directly linked to human and animal health by supporting safe drinking water sources, fisheries and disease-limiting environments."
+    },
+    {
+      "key": "fish",
+      "title": "Fish",
+      "citizenCheck": false,
+      "explanation": "Fish communities are surveyed by electrofishing along at least 100 metres of stream, which needs specialist equipment. Changes in fish presence, diversity and health reveal water quality and habitat condition. Fish matter for people too: they are food, can accumulate pollutants such as heavy metals, and can carry pathogens. OneAquaHealth found fish diversity declined with urbanisation.",
+      "source": {
+        "record": "zenodo:20345207",
+        "doi": "10.5281/zenodo.20345207",
+        "file": "FactSheets_Combined_zenodo_final_mjf.pdf",
+        "localFile": "sources/factsheets_20345207.pdf",
+        "page": 5
+      },
+      "supportingQuote": "Changes in fish presence, diversity, and health reveal water quality, habitat integrity, and general ecological functioning, providing reliable information for assessing the status of water bodies."
+    },
+    {
+      "key": "amphibians",
+      "title": "Amphibians",
+      "citizenCheck": false,
+      "explanation": "Amphibians breed in water and have permeable skin, so they give early warning of contamination. They also eat mosquitoes. Surveys net and count adults, larvae and eggs and swab animals for disease. All amphibians are protected, so handling them requires a special permit from national authorities. Degraded streams can harbour pathogens that kill amphibians.",
+      "source": {
+        "record": "zenodo:20345207",
+        "doi": "10.5281/zenodo.20345207",
+        "file": "FactSheets_Combined_zenodo_final_mjf.pdf",
+        "localFile": "sources/factsheets_20345207.pdf",
+        "page": 6
+      },
+      "supportingQuote": "Mind that all amphibians are protected and for handling and capturing them in the field, you need special permits from your national authorities."
+    },
+    {
+      "key": "microbial_diversity",
+      "title": "Microbial diversity",
+      "citizenCheck": false,
+      "explanation": "Microbial diversity is the variety of bacteria, fungi and other microbes in water or stream biofilms, measured from environmental DNA in a laboratory. High diversity usually reflects a resilient ecosystem that cycles nutrients and suppresses pathogens. Low diversity can signal pollution, habitat damage or dominance by opportunistic or disease-causing microbes.",
+      "source": {
+        "record": "zenodo:20345207",
+        "doi": "10.5281/zenodo.20345207",
+        "file": "FactSheets_Combined_zenodo_final_mjf.pdf",
+        "localFile": "sources/factsheets_20345207.pdf",
+        "page": 8
+      },
+      "supportingQuote": "Low diversity can indicate environmental stress, pollution, or the dominance of opportunistic or pathogenic microbes, making microbial diversity a useful indicator of ecosystem health and water quality."
+    },
+    {
+      "key": "fecal_coliforms",
+      "title": "Fecal coliforms",
+      "citizenCheck": false,
+      "explanation": "Fecal coliforms are bacteria from human and animal guts. Finding them in stream water means fecal material has entered recently, so harmful pathogens such as E. coli O157, Salmonella or norovirus may be present. They are measured by laboratory culture or DNA tests, and are widely used in water-quality regulations.",
+      "source": {
+        "record": "zenodo:20345207",
+        "doi": "10.5281/zenodo.20345207",
+        "file": "FactSheets_Combined_zenodo_final_mjf.pdf",
+        "localFile": "sources/factsheets_20345207.pdf",
+        "page": 9
+      },
+      "supportingQuote": "This makes them a reliable early warning signal for the potential presence of harmful pathogens such as E. coli O157, Salmonella, or viruses (e.g. norovirus causing gastroenteritis) and parasites associated with gastrointestinal diseases."
+    },
+    {
+      "key": "pathogens",
+      "title": "Pathogens",
+      "citizenCheck": false,
+      "explanation": "This indicator detects disease-causing bacteria, viruses, fungi or protozoa in stream water and biofilms using culture, DNA or metagenomic methods. Pathogens occur naturally at low levels but increase with pollution and wastewater discharges. OneAquaHealth found biofilms in more urbanised streams carried more clinically relevant pathogens. Laboratory analysis is required.",
+      "source": {
+        "record": "zenodo:20345207",
+        "doi": "10.5281/zenodo.20345207",
+        "file": "FactSheets_Combined_zenodo_final_mjf.pdf",
+        "localFile": "sources/factsheets_20345207.pdf",
+        "page": 10
+      },
+      "supportingQuote": "High levels of pathogens in water can indicate contamination from sewage, agricultural runoff, or wildlife, posing risks for drinking water, recreation, and aquaculture."
+    },
+    {
+      "key": "antibiotic_resistance_genes",
+      "title": "Antibiotic resistance genes",
+      "citizenCheck": false,
+      "explanation": "Antibiotic resistance genes show that bacteria able to survive antibiotic treatment are present. They spread through wastewater, agriculture and urban runoff and are detected with DNA methods in a laboratory. Monitoring them helps find where resistance is building up in the environment and anticipate harder-to-treat infections in people and animals.",
+      "source": {
+        "record": "zenodo:20345207",
+        "doi": "10.5281/zenodo.20345207",
+        "file": "FactSheets_Combined_zenodo_final_mjf.pdf",
+        "localFile": "sources/factsheets_20345207.pdf",
+        "page": 11
+      },
+      "supportingQuote": "Because antibiotic resistance affects both human and animal health, monitoring ARGs supports One Health strategies and helps anticipate future public-health risks linked to resistant infections."
+    },
+    {
+      "key": "diptera_adults",
+      "title": "Adult Diptera (mosquitoes, midges, flies)",
+      "citizenCheck": false,
+      "explanation": "Diptera are flies, including mosquitoes, biting midges, sand flies and blackflies, some of which carry viruses and parasites. OneAquaHealth catches them overnight in CO2-baited traps beside the stream and identifies them in a laboratory. Shifts in these communities can signal changing risk of diseases such as West Nile virus or dengue.",
+      "source": {
+        "record": "zenodo:20345207",
+        "doi": "10.5281/zenodo.20345207",
+        "file": "FactSheets_Combined_zenodo_final_mjf.pdf",
+        "localFile": "sources/factsheets_20345207.pdf",
+        "page": 12
+      },
+      "supportingQuote": "Changes in their abundance or distribution can therefore signal shifts in the risk of vector-borne diseases within urban environments."
+    },
+    {
+      "key": "water_chemistry",
+      "title": "Water chemistry (nutrients, pharmaceuticals)",
+      "citizenCheck": false,
+      "explanation": "Water samples are collected and frozen for laboratory analysis of nutrients such as phosphorus, nitrates and ammonia, organic carbon, suspended solids and pharmaceutical compounds. OneAquaHealth detected pharmaceuticals in 91% of monitored sites. These readings need laboratory analysis and complement what citizens can observe on site.",
+      "source": {
+        "record": "zenodo:20344421",
+        "doi": "10.5281/zenodo.20344421",
+        "file": "Field Sampling protocols OAH_zenodo_final_mjf.pdf",
+        "localFile": "sources/field_protocols_20344421.pdf",
+        "page": 4
+      },
+      "supportingQuote": "To obtain water samples for the analysis of physicochemical parameters, including nutrients, organic matter, suspended solids, and pharmaceutical compounds."
+    }
+  ],
+  "unsourcedChecks": [
+    {
+      "key": "foam",
+      "title": "Foam",
+      "note": "Not covered by any fetched OneAquaHealth source (Policy Brief, Factsheets, Field Protocols, Catalogue of Measures). No source text mentions foam. Do not show an OneAquaHealth citation for this check."
+    },
+    {
+      "key": "smell",
+      "title": "Smell / odour",
+      "note": "Not an indicator in the Factsheets or Field Protocols. The Catalogue only mentions odour as a side-effect of poorly maintained swales, retention ponds and natural wastewater treatment plants (PDF pp. 105-107), not as a stream indicator. Do not show an OneAquaHealth indicator citation."
+    },
+    {
+      "key": "dead_fish",
+      "title": "Dead fish",
+      "note": "Not a protocol indicator. The only related source text is the diatom factsheet's mention that harmful algal blooms can lead to 'fish kills' (Factsheets PDF p. 3)."
+    }
+  ],
+  "measures": [
+    {
+      "id": "M01",
+      "section": "4.1.1",
+      "name": "Passive riparian vegetation: allowing natural regeneration.",
+      "category": "riparian vegetation restoration",
+      "oneLine": "Let bankside plants grow back on their own by stopping mowing, grazing and vehicle access, where seed sources and soils are still intact.",
+      "headingPage": 34,
+      "page": 34,
+      "printedPage": 32,
+      "quote": "Typical measures include the cessation of mowing, grazing exclusion, restriction of access by vehicles or heavy machinery, and the removal of pressures that prevent natural succession.",
+      "addresses": [
+        "low riparian vegetation",
+        "high temperature"
+      ]
+    },
+    {
+      "id": "M02",
+      "section": "4.1.2",
+      "name": "Active riparian vegetation restoration: re-establishment riparian forest.",
+      "category": "riparian vegetation restoration",
+      "oneLine": "Replant bankside vegetation with native, locally sourced species where it has been removed or invasive plants block natural regrowth.",
+      "headingPage": 35,
+      "page": 37,
+      "printedPage": 35,
+      "quote": "accelerates the return of core riparian functions (bank stabilisation, shading, filtration, habitat structure).",
+      "addresses": [
+        "low riparian vegetation",
+        "high temperature",
+        "invasive species"
+      ]
+    },
+    {
+      "id": "M03",
+      "section": "4.1.3",
+      "name": "Constrained riparian vegetation corridors (“buffers”)",
+      "category": "riparian vegetation restoration",
+      "oneLine": "Where space is tight, protect at least a narrow vegetated strip along each bank to shade the water and catch pollutants from urban surfaces.",
+      "headingPage": 39,
+      "page": 40,
+      "printedPage": 38,
+      "quote": "Provide shading, contributing to lower water temperatures and improved dissolved oxygen conditions;",
+      "addresses": [
+        "low riparian vegetation",
+        "high temperature",
+        "smell/colour"
+      ]
+    },
+    {
+      "id": "M04",
+      "section": "4.1.4",
+      "name": "Vegetated corridors promoting connectedness",
+      "category": "riparian vegetation restoration",
+      "oneLine": "Link the stream to parks and green spaces in continuous green-blue corridors so people see, value and protect it, backed by clear ecological goals.",
+      "headingPage": 41,
+      "page": 41,
+      "printedPage": 39,
+      "quote": "Reduce pressures associated with abandonment (e.g., dumping, informal occupation, excessive channel modification);",
+      "addresses": [
+        "low riparian vegetation"
+      ]
+    },
+    {
+      "id": "M05",
+      "section": "4.2.1",
+      "name": "In-stream self-purification enhancement",
+      "category": "pollution control",
+      "oneLine": "Add boulders, riffles, woody debris, varied substrate and aquatic plants so the stream oxygenates and cleans itself more effectively.",
+      "headingPage": 43,
+      "page": 43,
+      "printedPage": 41,
+      "quote": "Increases oxygenation and aeration, improving conditions for aquatic life.",
+      "addresses": [
+        "foam",
+        "smell/colour",
+        "scum/algae",
+        "dead fish",
+        "standing water",
+        "low macrophytes"
+      ]
+    },
+    {
+      "id": "M06",
+      "section": "4.2.2",
+      "name": "Sewer system and point-source improvements",
+      "category": "pollution control",
+      "oneLine": "Fix leaking pipes, separate or buffer combined sewers and control industrial and domestic discharges so untreated sewage stops reaching the stream.",
+      "headingPage": 44,
+      "page": 45,
+      "printedPage": 43,
+      "quote": "Reduces untreated discharges of sewage and pollutants during rainfall events.",
+      "addresses": [
+        "foam",
+        "smell/colour",
+        "scum/algae",
+        "dead fish"
+      ]
+    },
+    {
+      "id": "M07",
+      "section": "4.2.3",
+      "name": "Litter, plastic, and hydrocarbon control",
+      "category": "pollution control",
+      "oneLine": "Trap litter, plastics and oil before they reach the water, clean banks regularly, and use signage, clean-ups and fines to stop dumping.",
+      "headingPage": 45,
+      "page": 47,
+      "printedPage": 45,
+      "quote": "Reduces hydrocarbon contamination and oxygen depletion in water.",
+      "addresses": [
+        "smell/colour",
+        "dead fish"
+      ]
+    },
+    {
+      "id": "M08",
+      "section": "4.3.1",
+      "name": "Removing barriers",
+      "category": "structural",
+      "oneLine": "Remove obsolete weirs, dams and culverts so water, sediment and fish move freely again and stagnant pools disappear.",
+      "headingPage": 50,
+      "page": 50,
+      "printedPage": 48,
+      "quote": "Improving water quality and longitudinal connectivity, enhances biodiversity and reduces the availability of breeding sites for mosquitoes and water-borne diseases.",
+      "addresses": [
+        "standing water",
+        "high temperature"
+      ]
+    },
+    {
+      "id": "M09",
+      "section": "4.3.4",
+      "name": "Stream bed re-naturalization",
+      "category": "structural",
+      "oneLine": "Take out concrete from the stream bed and replace it with local natural substrate and vegetation to restore varied flows and habitats.",
+      "headingPage": 55,
+      "page": 55,
+      "printedPage": 53,
+      "quote": "Promotes natural colonization of native fauna and flora.",
+      "addresses": [
+        "low macrophytes",
+        "standing water"
+      ]
+    },
+    {
+      "id": "M10",
+      "section": "4.3.5",
+      "name": "Constructed riffles",
+      "category": "structural",
+      "oneLine": "Place sorted stones and boulders, often with transplanted aquatic plants, to create riffles that vary the flow and add habitat.",
+      "headingPage": 56,
+      "page": 56,
+      "printedPage": 54,
+      "quote": "Constructed riffles involve the placement of stones and boulders that are size-sorted and placed with a gentle dip toward the channel centre, often reinforced with transplanted aquatic vegetation or macrophytes (Figure 11).",
+      "addresses": [
+        "standing water",
+        "low macrophytes"
+      ]
+    },
+    {
+      "id": "M11",
+      "section": "4.3.8",
+      "name": "Elimination of riverbank protection",
+      "category": "structural",
+      "oneLine": "Remove hard bank armouring such as concrete and let banks re-vegetate with native riparian plants and reconnect with the floodplain.",
+      "headingPage": 68,
+      "page": 68,
+      "printedPage": 66,
+      "quote": "Improves water quality through filtration, shading, and organic matter retention.",
+      "addresses": [
+        "low riparian vegetation",
+        "high temperature"
+      ]
+    },
+    {
+      "id": "M12",
+      "section": "4.3.21",
+      "name": "Floodplain reconnection and storage basins",
+      "category": "structural",
+      "oneLine": "Reconnect the stream with its floodplain or former side channels so floods spread out, groundwater recharges and riparian vegetation is supported.",
+      "headingPage": 88,
+      "page": 89,
+      "printedPage": 87,
+      "quote": "Recharges groundwater and supports riparian vegetation.",
+      "addresses": [
+        "low riparian vegetation"
+      ]
+    },
+    {
+      "id": "M13",
+      "section": "4.4.2",
+      "name": "Citizen Science and educational partnerships",
+      "category": "social",
+      "oneLine": "Involve residents, schools and universities in monitoring water quality and biodiversity, building local stewardship of the stream.",
+      "headingPage": 92,
+      "page": 93,
+      "printedPage": 91,
+      "quote": "Enhances data availability and supports adaptive management.",
+      "addresses": [
+        "foam",
+        "smell/colour",
+        "scum/algae",
+        "dead fish",
+        "standing water",
+        "invasive species",
+        "low riparian vegetation",
+        "low macrophytes",
+        "high temperature"
+      ]
+    },
+    {
+      "id": "M14",
+      "section": "4.4.4",
+      "name": "Regulatory and behavioural measures for pollution reduction",
+      "category": "social",
+      "oneLine": "Combine regulation, enforcement and public campaigns so households and businesses stop pouring chemicals, oils, litter and medicines into drains.",
+      "headingPage": 95,
+      "page": 95,
+      "printedPage": 93,
+      "quote": "Reduces illegal or accidental discharges, point-source inflows, and diffuse pollution.",
+      "addresses": [
+        "foam",
+        "smell/colour",
+        "scum/algae",
+        "dead fish"
+      ]
+    },
+    {
+      "id": "M15",
+      "section": "4.5.1",
+      "name": "Control / Removal of invasive species",
+      "category": "complementary",
+      "oneLine": "Remove invasive plants and animals, starting with small infestations, and keep monitoring because re-invasion is common.",
+      "headingPage": 95,
+      "page": 96,
+      "printedPage": 94,
+      "quote": "Early detection and rapid response are therefore critical in determining both the level of effort required and the likelihood of success.",
+      "addresses": [
+        "invasive species"
+      ]
+    },
+    {
+      "id": "M16",
+      "section": "4.6.1",
+      "name": "Rain gardens",
+      "category": "compensatory: hydrological",
+      "oneLine": "Build planted hollows that soak up and filter runoff from roofs and streets before it reaches drains; they must drain well to avoid standing water.",
+      "headingPage": 99,
+      "page": 99,
+      "printedPage": 97,
+      "quote": "Removes nutrients, and hydrocarbons through filtration and biological uptake.",
+      "addresses": [
+        "smell/colour",
+        "scum/algae"
+      ]
+    },
+    {
+      "id": "M17",
+      "section": "4.6.5",
+      "name": "Disconnection of impervious areas",
+      "category": "compensatory: hydrological",
+      "oneLine": "Redirect runoff from roofs and paving into vegetated or permeable ground instead of storm drains, cutting overflows and pollutant loads.",
+      "headingPage": 103,
+      "page": 103,
+      "printedPage": 101,
+      "quote": "Promotes infiltration and evaporation, mitigating flash floods and reducing pollutant loads.",
+      "addresses": [
+        "smell/colour",
+        "foam"
+      ]
+    },
+    {
+      "id": "M18",
+      "section": "4.7.1",
+      "name": "Natural wastewater treatment plants",
+      "category": "compensatory: chemical",
+      "oneLine": "Use constructed wetlands with plants and soil filters to treat wastewater before it can contaminate urban streams (an add-on, not stream restoration).",
+      "headingPage": 107,
+      "page": 107,
+      "printedPage": 105,
+      "quote": "The plants provide surface area for microbial biofilms, facilitate oxygen transfer to the substrate, filter and adsorb pollutants, remove nutrients, and limit algal growth by reducing light penetration.",
+      "addresses": [
+        "scum/algae",
+        "smell/colour",
+        "foam"
+      ]
+    },
+    {
+      "id": "M19",
+      "section": "4.7.2",
+      "name": "Floating treatment wetlands",
+      "category": "compensatory: chemical",
+      "oneLine": "Float planted bioreactor islands in ponds or retention basins so plant roots and microbes break down pollutants in place (an optional add-on).",
+      "headingPage": 109,
+      "page": 109,
+      "printedPage": 107,
+      "quote": "They are not part of the rehabilitation of the river and stream ecosystems but additional (optional) measures to be installed in wetlands or retention basins, that will contribute to prevent the contamination of urban freshwater ecosystems.",
+      "addresses": [
+        "scum/algae",
+        "smell/colour"
+      ]
+    }
+  ],
+  "addressesNote": "The 'addresses' mapping from citizen findings to measures is StreamRecord's editorial judgement based on each measure's stated objectives; the Catalogue does not itself map measures to foam, smell, colour or dead fish.",
+  "findings": [
+    "foam",
+    "smell/colour",
+    "scum/algae",
+    "dead fish",
+    "standing water",
+    "invasive species",
+    "low riparian vegetation",
+    "low macrophytes",
+    "high temperature"
+  ]
+}

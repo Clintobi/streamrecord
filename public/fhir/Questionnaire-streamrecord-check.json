@@ -1,0 +1,297 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "streamrecord-check",
+  "url": "https://streamrecord.vercel.app/fhir/Questionnaire/streamrecord-check",
+  "version": "0.1.0",
+  "name": "StreamRecordCheck",
+  "title": "StreamRecord five-minute stream check",
+  "status": "draft",
+  "experimental": true,
+  "date": "2026-10-04",
+  "publisher": "StreamRecord (hackathon prototype, not affiliated with OneAquaHealth)",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Seven questions a resident can answer from the bank of a stream. Every coded question also accepts Not sure.</div>"
+  },
+  "item": [
+    {
+      "linkId": "foam",
+      "text": "Is there foam on the water?",
+      "required": true,
+      "code": [
+        {
+          "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+          "code": "foam"
+        }
+      ],
+      "type": "choice",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+            "code": "present",
+            "display": "Yes, foam"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+            "code": "absent",
+            "display": "No foam"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+            "code": "asked-unknown",
+            "display": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "colourSmell",
+      "text": "Does the water look or smell unusual?",
+      "required": true,
+      "code": [
+        {
+          "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+          "code": "colourSmell"
+        }
+      ],
+      "type": "choice",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+            "code": "present",
+            "display": "Yes, unusual"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+            "code": "absent",
+            "display": "Looks and smells normal"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+            "code": "asked-unknown",
+            "display": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "riparianVegetation",
+      "text": "How much of the bank is covered by trees and plants?",
+      "required": true,
+      "code": [
+        {
+          "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+          "code": "riparianVegetation"
+        }
+      ],
+      "type": "choice",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+            "code": "0-20-percent",
+            "display": "Almost none (0 to 20%)"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+            "code": "21-40-percent",
+            "display": "A little (21 to 40%)"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+            "code": "41-60-percent",
+            "display": "About half (41 to 60%)"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+            "code": "61-80-percent",
+            "display": "Most (61 to 80%)"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+            "code": "81-100-percent",
+            "display": "Nearly all (81 to 100%)"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+            "code": "asked-unknown",
+            "display": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "macrophytes",
+      "text": "How much of the stream bed has water plants growing in it?",
+      "required": true,
+      "code": [
+        {
+          "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+          "code": "macrophytes"
+        }
+      ],
+      "type": "choice",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+            "code": "0-20-percent",
+            "display": "Almost none (0 to 20%)"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+            "code": "21-40-percent",
+            "display": "A little (21 to 40%)"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+            "code": "41-60-percent",
+            "display": "About half (41 to 60%)"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+            "code": "61-80-percent",
+            "display": "Most (61 to 80%)"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+            "code": "81-100-percent",
+            "display": "Nearly all (81 to 100%)"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+            "code": "asked-unknown",
+            "display": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "invasiveOrganisms",
+      "text": "Do you see plants or animals that don't belong here?",
+      "required": true,
+      "code": [
+        {
+          "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+          "code": "invasiveOrganisms"
+        }
+      ],
+      "type": "choice",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+            "code": "present",
+            "display": "Yes, I think so"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+            "code": "absent",
+            "display": "No"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+            "code": "asked-unknown",
+            "display": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "other",
+      "text": "Do you notice any of these?",
+      "required": true,
+      "code": [
+        {
+          "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+          "code": "otherSigns"
+        }
+      ],
+      "type": "choice",
+      "repeats": true,
+      "answerOption": [
+        {
+          "valueCoding": {
+            "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+            "code": "scum",
+            "display": "Green or blue-green scum"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+            "code": "deadFish",
+            "display": "Dead fish"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+            "code": "standingWater",
+            "display": "Pools of still water by the stream"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+            "code": "none",
+            "display": "None of these"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+            "code": "asked-unknown",
+            "display": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "waterTemperature",
+      "text": "Water temperature, if you have a thermometer",
+      "required": false,
+      "code": [
+        {
+          "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+          "code": "waterTemperature"
+        }
+      ],
+      "type": "decimal"
+    }
+  ]
+}

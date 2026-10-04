@@ -59,7 +59,9 @@ export default function SiteReading({ id }: { id: string }) {
   const age = daysSince(site.risk?.date)
   const st = labStatus(site)
   const F = d.findings as Record<string, any>
-  const measures = (lib.measures || []).filter((m) => m.addresses?.some((a) => findings.includes(a))).slice(0, 3)
+  // rank measures by how many of this site's findings they address (the mapping is our judgement, said on screen)
+  const hits = (m: { addresses: string[] }) => m.addresses.filter((a) => findings.includes(a)).length
+  const measures = (lib.measures || []).filter((m) => hits(m) > 0).sort((a, b) => hits(b) - hits(a)).slice(0, 3)
   const generalMeasures = measures.length ? measures : (lib.measures || []).filter((m) => /pollution|riparian/i.test(`${m.category} ${m.name}`)).slice(0, 2)
   const cat = lib.sources?.catalogue
   const pb = lib.policyBrief
@@ -135,16 +137,19 @@ export default function SiteReading({ id }: { id: string }) {
         {generalMeasures.length === 0 ? <p className="meta">Catalogue of Measures not loaded.</p> : (
           <ul className="reading">
             {generalMeasures.map((m) => (
-              <li key={m.id}><strong>{m.name}.</strong> {m.oneLine} <span className="src">({t('fromOAH')}, Catalogue of Measures, {t('page')} {m.page}{cat ? <>, <a href={cat.url}>source</a></> : null})</span></li>
+              <li key={m.id} style={{ marginBottom: 16 }}><strong>{m.name}.</strong> {m.oneLine}
+                {m.quote && <span className="lab" style={{ display: 'block', marginTop: 4 }}>"{m.quote}"</span>}
+                <span className="src">{t('fromOAH')}, Catalogue of Measures, {t('page')} {m.page}{cat ? <>, <a href={cat.url}>source</a></> : null}</span></li>
             ))}
           </ul>
         )}
+        {generalMeasures.length > 0 && <p className="meta">{measures.length ? 'Which measure fits which sign is our judgement from each measure\'s stated aims; the Catalogue does not make that link itself.' : 'No signs reported here yet, so these are general measures for urban streams.'}</p>}
       </section>
 
       {pb && pb.quotes?.length ? (
         <section className="block" aria-labelledby="why">
           <h2 id="why">{t('whyCity')}</h2>
-          {pb.quotes.slice(0, 2).map((q, i) => (
+          {pb.quotes.slice(0, 3).map((q, i) => (
             <blockquote key={i} className="reading" style={{ margin: '0 0 16px', paddingLeft: 16, borderLeft: '3px solid #0F5C63' }}>
               "{q.text}"
               <p className="src">{t('fromOAH')}, Policy Brief{pb.date ? ` (${pb.date})` : ''}, {t('page')} {q.page}{pb.url ? <>, <a href={pb.url}>source</a></> : null}</p>

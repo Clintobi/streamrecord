@@ -5,7 +5,7 @@
 **What a stream's OneAquaHealth record means for the people, pets and wildlife living next to it, in their own language, and what the city can do about it.**
 
 - Live: https://streamrecord.vercel.app
-- Video: _added at submission_
+- Video (4 min, captions): https://streamrecord.vercel.app/demo.mp4
 - Built for the OneAquaHealth IEEE Global Hackathon 2026. Work on this repository started on 2026-10-04, within the submission window the organisers extended to 4 October (Devpost update "Deadline Extended to October 4"); the commit history is intact.
 
 **Judges, 90 seconds:**

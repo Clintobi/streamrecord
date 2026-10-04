@@ -5,6 +5,7 @@ interface Meta {
   sources: { title: string; publisher: string; url: string; licence: string; retrieved: string; sha256?: string; note?: string }[]
   realVsSynthetic: { item: string; status: string; note: string }[]
   fhir: { igRepo?: string; commit?: string; package?: string; profilesVerified?: string[]; profilesNotUsed?: string[]; localCodes?: { code: string; why: string }[] }
+  datapackage?: { path: string; csv: string; resources: number; validator: string; result: string }
   evidence?: { validate?: { resource: string; server: string; profile?: string; errors: number; warnings: number; at: string }[]; tests?: string; lighthouse?: string; bundleKb?: string; firstReading?: string }
 }
 
@@ -21,6 +22,14 @@ export default function Sources() {
           <div className="tablewrap"><table><thead><tr><th>Source</th><th>Licence</th><th>Retrieved</th></tr></thead><tbody>
             {m.sources.map((s) => <tr key={s.url}><td><a href={s.url}>{s.title}</a><br /><span className="meta">{s.publisher}{s.note ? `. ${s.note}` : ''}</span>{s.sha256 && <><br /><span className="mono meta">sha256 {s.sha256.slice(0, 16)}…</span></>}</td><td>{s.licence}</td><td className="nw num">{s.retrieved}</td></tr>)}
           </tbody></table></div>
+
+          {m.datapackage && (
+            <>
+              <h2>Machine-readable data</h2>
+              <p>Every data file the app uses is described in a <a href={`./${m.datapackage.path}`}>Frictionless Data Package</a> ({m.datapackage.resources} resources), each with its sha256, size, licence, upstream source and retrieval date. All 106 sites are also in one typed table, <a href={`./${m.datapackage.csv}`} download>sites.csv</a>, with full-precision scores from the source.</p>
+              <p className="meta">Checked with {m.datapackage.validator}: {m.datapackage.result}. The validator also found that ENORA publishes sites T21 and T24 with no name; the app shows them by their code and says so.</p>
+            </>
+          )}
 
           <h2>What is real and what is synthetic</h2>
           <div className="tablewrap"><table><thead><tr><th>Item</th><th>Status</th><th>Note</th></tr></thead><tbody>

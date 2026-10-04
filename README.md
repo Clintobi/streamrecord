@@ -22,7 +22,8 @@
 4. Tap **Do a 90-second check here** and answer the seven questions. Choose **Not sure** at least once.
 5. After saving, tap **Show the FHIR record** to see the Bundle the check produced. The site page now shows what you saw, and what it can mean for people, animals and the stream.
 6. Open **Clinician reading (printable)** and print it (A4 print layout).
-7. Open **Sources and data** for the validation table and licences.
+7. Open **Review**, press **Add a sample check to try the review**, and confirm or reject it with a reason. The site page then shows the finding as confirmed, or stops counting it.
+8. Open **Sources and data** for the validation table, licences and the machine-readable data package.
 
 ## 3. What is real and what is synthetic
 
@@ -35,6 +36,8 @@
 | Catalogue of Measures and Policy Brief text | Real | Quoted with page numbers |
 | People / animals / stream explanations | Ours | Drafted by a final-year medical student. Not clinical advice |
 | Translations (PT, IT, NL, NO, FR) | Machine-assisted | Not reviewed by native speakers; marked in the app |
+| Second-look rules and the review queue | Ours | Four rules we wrote (dead fish; scum in water below 10 °C; water above 30 °C; four or more "Not sure"). Not OneAquaHealth rules. The queue runs on this phone |
+| Sample check in the review queue | Synthetic | Added only when you press the sample button; labelled "sample, synthetic" wherever it appears |
 | Sending checks to the OneAquaHealth sandbox | Not integrated | Bundles are built and validated, but the app does not POST them |
 
 ## 4. Sources and licences
@@ -68,6 +71,13 @@ Every quote was checked by script against the single PDF page it cites; see [`co
   - `present`, `absent`
   - `0-20-percent` … `81-100-percent`
 - **"Not sure"** becomes `dataAbsentReason = asked-unknown` (FHIR core) with no value.
+- **Review:** a check is `preliminary` until a reviewer decides.
+  - Confirming sets every Observation to `final`.
+  - Rejecting sets them to `entered-in-error`, sets the QuestionnaireResponse to `entered-in-error`, and stops the check counting in the reading.
+  - Either decision adds a second `Provenance` with:
+    - agent type `verifier`;
+    - activity `UPDATE`;
+    - `reason` coded `v3-ActReason#HQUALIMP` (health quality improvement, confirmed in `v3-PurposeOfUse` on tx.fhir.org), with the reviewer's own words as text.
 - **Units:** temperature uses UCUM `Cel`.
 - **Local codes, and why** (published as a real CodeSystem at https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local):
   - `citizen-science`: we found no standard Observation category for citizen data.
@@ -77,33 +87,38 @@ Every quote was checked by script against the single PDF page it cites; see [`co
 
 ## 6. Evidence
 
-**`$validate`.** Run by [`scripts/validate.ts`](scripts/validate.ts) on a real bundle for site C1 (Coimbra), with synthetic answers chosen to exercise every value type. The bundle is in [`evidence/sample-bundle.json`](evidence/sample-bundle.json) and the raw results are in [`evidence/validate.json`](evidence/validate.json).
+**`$validate`.** Run by [`scripts/validate.ts`](scripts/validate.ts) on a real bundle for site C1 (Coimbra), with synthetic answers chosen to exercise every value type. Whole bundles are validated in three states: as recorded, confirmed by a reviewer and rejected by a reviewer ([`evidence/sample-bundle-reviewed.json`](evidence/sample-bundle-reviewed.json)). The bundle is in [`evidence/sample-bundle.json`](evidence/sample-bundle.json) and the raw results are in [`evidence/validate.json`](evidence/validate.json).
 
 | Resource | Server | Checked against | Errors | Warnings | Checked (UTC) |
 |---|---|---|---|---|---|
-| Location | `hapi.fhir.org/baseR4` | base R4; location-oah rules checked by unit test (IG not on server) | 0 | 0 | 2026-10-04 13:06 |
-| QuestionnaireResponse | `hapi.fhir.org/baseR4` | base R4 | 0 | 1 | 2026-10-04 13:06 |
-| Observation:foam | `hapi.fhir.org/baseR4` | base R4 | 0 | 3 | 2026-10-04 13:06 |
-| Observation:colourSmell | `hapi.fhir.org/baseR4` | base R4 | 0 | 2 | 2026-10-04 13:06 |
-| Observation:riparianVegetation | `hapi.fhir.org/baseR4` | base R4 | 0 | 3 | 2026-10-04 13:06 |
-| Observation:macrophytes | `hapi.fhir.org/baseR4` | base R4 | 0 | 3 | 2026-10-04 13:06 |
-| Observation:invasiveOrganisms | `hapi.fhir.org/baseR4` | base R4 | 0 | 3 | 2026-10-04 13:06 |
-| Observation:otherSigns | `hapi.fhir.org/baseR4` | base R4 | 0 | 3 | 2026-10-04 13:06 |
-| Observation:waterTemperature | `hapi.fhir.org/baseR4` | base R4 | 0 | 2 | 2026-10-04 13:06 |
-| Device | `hapi.fhir.org/baseR4` | base R4 | 0 | 0 | 2026-10-04 13:06 |
-| Provenance | `hapi.fhir.org/baseR4` | base R4 | 0 | 0 | 2026-10-04 13:06 |
-| Location | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4; location-oah rules checked by unit test (IG not on server) | 0 | 0 | 2026-10-04 13:06 |
-| QuestionnaireResponse | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 1 | 2026-10-04 13:06 |
-| Observation:foam | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
-| Observation:colourSmell | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
-| Observation:riparianVegetation | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
-| Observation:macrophytes | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
-| Observation:invasiveOrganisms | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
-| Observation:otherSigns | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
-| Observation:waterTemperature | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
-| Device | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
-| Provenance | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 13:06 |
-| Bundle (transaction, all entries) | `hapi.fhir.org/baseR4` | base R4 | 0 | 20 | 2026-10-04 13:06 |
+| Location | `hapi.fhir.org/baseR4` | base R4; location-oah rules checked by unit test (IG not on server) | 0 | 0 | 2026-10-04 18:14 |
+| QuestionnaireResponse | `hapi.fhir.org/baseR4` | base R4 | 0 | 1 | 2026-10-04 18:14 |
+| Observation:foam | `hapi.fhir.org/baseR4` | base R4 | 0 | 3 | 2026-10-04 18:14 |
+| Observation:colourSmell | `hapi.fhir.org/baseR4` | base R4 | 0 | 2 | 2026-10-04 18:14 |
+| Observation:riparianVegetation | `hapi.fhir.org/baseR4` | base R4 | 0 | 3 | 2026-10-04 18:14 |
+| Observation:macrophytes | `hapi.fhir.org/baseR4` | base R4 | 0 | 3 | 2026-10-04 18:14 |
+| Observation:invasiveOrganisms | `hapi.fhir.org/baseR4` | base R4 | 0 | 3 | 2026-10-04 18:14 |
+| Observation:otherSigns | `hapi.fhir.org/baseR4` | base R4 | 0 | 3 | 2026-10-04 18:14 |
+| Observation:waterTemperature | `hapi.fhir.org/baseR4` | base R4 | 0 | 2 | 2026-10-04 18:14 |
+| Device | `hapi.fhir.org/baseR4` | base R4 | 0 | 0 | 2026-10-04 18:14 |
+| Provenance | `hapi.fhir.org/baseR4` | base R4 | 0 | 0 | 2026-10-04 18:14 |
+| Location | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4; location-oah rules checked by unit test (IG not on server) | 0 | 0 | 2026-10-04 18:14 |
+| QuestionnaireResponse | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 1 | 2026-10-04 18:14 |
+| Observation:foam | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 18:14 |
+| Observation:colourSmell | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 18:14 |
+| Observation:riparianVegetation | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 18:14 |
+| Observation:macrophytes | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 18:14 |
+| Observation:invasiveOrganisms | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 18:14 |
+| Observation:otherSigns | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 18:14 |
+| Observation:waterTemperature | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 18:14 |
+| Device | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 18:14 |
+| Provenance | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 0 | 2026-10-04 18:14 |
+| Bundle (check as recorded, preliminary) | `hapi.fhir.org/baseR4` | base R4 | 0 | 20 | 2026-10-04 18:14 |
+| Bundle (confirmed by a reviewer, final) | `hapi.fhir.org/baseR4` | base R4 | 0 | 20 | 2026-10-04 18:14 |
+| Bundle (rejected by a reviewer, entered-in-error) | `hapi.fhir.org/baseR4` | base R4 | 0 | 20 | 2026-10-04 18:14 |
+| Bundle (check as recorded, preliminary) | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 2 | 2026-10-04 18:14 |
+| Bundle (confirmed by a reviewer, final) | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 2 | 2026-10-04 18:14 |
+| Bundle (rejected by a reviewer, entered-in-error) | `sandbox.hl7europe.eu/oneaquahealth/fhir` | base R4 | 0 | 2 | 2026-10-04 18:14 |
 | Questionnaire (ours) | `hapi.fhir.org/baseR4` | base R4 | 0 | 0 | 2026-10-04 |
 | CodeSystem streamrecord-local | `hapi.fhir.org/baseR4` | base R4 | 0 | 0 | 2026-10-04 |
 
@@ -113,7 +128,7 @@ Neither public server holds the OneAquaHealth IG. To make the base-R4 check poss
 
 | Measure | Result |
 |---|---|
-| Unit tests | 14 passing (vitest): bundle structure, narratives, reference resolution, Not sure → dataAbsentReason, OAH codes, UCUM, preliminary status, conditional create, determinism, finding rules, location-oah rules |
+| Unit tests | 18 passing (vitest): bundle structure, narratives, reference resolution, Not sure → dataAbsentReason, OAH codes, UCUM, status, conditional create, determinism, finding rules, location-oah rules, second-look rules, review statuses and verifier Provenance, unnamed sites |
 | Lighthouse, Site Reading (mobile, production) | Performance 94, Accessibility 100, Best practices 100; LCP 1.6 s, CLS 0 |
 | Lighthouse, Field check | Performance 99, Accessibility 100, Best practices 100; LCP 1.6 s |
 | Lighthouse, Map | Performance 76 (median of three runs, range 64–89: LCP is a third-party basemap tile), Accessibility 97, Best practices 96 |
@@ -121,6 +136,13 @@ Neither public server holds the OneAquaHealth IG. To make the base-R4 check poss
 | Time to the first Site Reading | 1.6 s largest contentful paint for a Site Reading (Lighthouse simulated slow 4G) |
 
 The map loses accessibility points for one reason: markers for neighbouring sites overlap, so they fail Lighthouse's target-spacing check. Every site is also a 48 px row in the list beside the map, which is the "equivalent control" exception in WCAG 2.2 SC 2.5.8. Lighthouse cannot detect that. Raw reports: [`evidence/summary.json`](evidence/summary.json).
+
+**Machine-readable data.**
+- [`public/data/datapackage.json`](public/data/datapackage.json) is a [Frictionless Data Package](https://specs.frictionlessdata.io/data-package/). It describes all 9 data files the app serves, each with its sha256, byte size, licence, upstream source and retrieval date.
+- [`public/data/sites.csv`](public/data/sites.csv) holds all 106 sites in one typed table: full-precision scores from the raw ENORA snapshot, a primary key, and value constraints.
+- `frictionless validate` (v5.19.1) reports every resource valid, including the hashes.
+- On its first run the validator found that ENORA publishes sites **T21** and **T24** with an empty name. The app had been showing a blank heading for them. It now shows them as "Site T21" / "Site T24", says why, and gives their FHIR Location a name, since `location-oah` requires one.
+- `npm run data` rebuilds the library, FHIR definitions, validation evidence, data package and evidence page, in that order.
 
 ## 7. Accessibility statement
 
@@ -141,6 +163,7 @@ Known gaps: the map markers can be reached with a keyboard but have only their s
 - **Citizen checks are unverified.** They stay `preliminary`. A finding says "someone should look"; it never says the water is unsafe.
 - **The health text is not clinical advice.** It was written by a medical student and has not been reviewed by a clinician or veterinarian.
 - **No upload yet.** Checks stay on the phone and are not sent to the OneAquaHealth sandbox. That step is proposed, not integrated.
+- **The review queue is on the same phone.** It demonstrates the workflow and the FHIR it produces. In a real deployment, the reviewer would be at the municipality or the OneAquaHealth team, with sign-in.
 - **10 of the 106 sites have no health-risk value** (C17, C18, G1, G17–G20, T15, T21, T24). For these the app says so instead of guessing.
 
 ## 9. AI-assistance disclosure

@@ -38,15 +38,24 @@ for (const server of servers) {
     console.log(res.status, key, 'errors', errors.length, 'warnings', warnings.length, errors.map((i) => i.diagnostics).join(' | ').slice(0, 300))
   }
 }
-// whole transaction bundle, so internal urn:uuid references are checked too
-{
-  const b = JSON.parse(JSON.stringify(bundle))
-  for (const e of b.entry) delete e.resource.meta
-  const res = await fetch(`${servers[0]}/Bundle/$validate`, { method: 'POST', headers: { 'Content-Type': 'application/fhir+json', Accept: 'application/fhir+json' }, body: JSON.stringify(b) })
-  const issues = (((await res.json().catch(() => ({}))) as any).issue || []) as any[]
-  const errors = issues.filter((i) => i.severity === 'error' || i.severity === 'fatal'), warnings = issues.filter((i) => i.severity === 'warning')
-  rows.push({ resource: 'Bundle (transaction, all entries)', server: servers[0], note: 'base R4', http: res.status, errors: errors.length, warnings: warnings.length, at: new Date().toISOString(),
-    errorText: errors.map((i) => i.diagnostics).slice(0, 5), warningText: [...new Set(warnings.map((i) => String(i.diagnostics).slice(0, 80)))] })
-  console.log(res.status, 'Bundle errors', errors.length, 'warnings', warnings.length)
+// whole transaction bundles, so internal urn:uuid references are checked too: as recorded, then after review
+const reviewAt = '2026-10-04T15:00:00Z'
+const variants: [string, any][] = [
+  ['Bundle (check as recorded, preliminary)', bundle],
+  ['Bundle (confirmed by a reviewer, final)', buildBundle(site, { ...check, status: 'final', review: { decision: 'final', reason: 'Checked against a photo taken on a second visit', reviewer: 'Local reviewer', at: reviewAt } })],
+  ['Bundle (rejected by a reviewer, entered-in-error)', buildBundle(site, { ...check, status: 'entered-in-error', review: { decision: 'entered-in-error', reason: 'Wrong site selected', reviewer: 'Local reviewer', at: reviewAt } })],
+]
+writeFileSync('evidence/sample-bundle-reviewed.json', JSON.stringify(variants[1][1], null, 2))
+for (const server of servers) {
+  for (const [label, vb] of variants) {
+    const b = JSON.parse(JSON.stringify(vb))
+    for (const e of b.entry) delete e.resource.meta
+    const res = await fetch(`${server}/Bundle/$validate`, { method: 'POST', headers: { 'Content-Type': 'application/fhir+json', Accept: 'application/fhir+json' }, body: JSON.stringify(b) })
+    const issues = (((await res.json().catch(() => ({}))) as any).issue || []) as any[]
+    const errors = issues.filter((i) => i.severity === 'error' || i.severity === 'fatal'), warnings = issues.filter((i) => i.severity === 'warning')
+    rows.push({ resource: label, server, note: 'base R4', http: res.status, errors: errors.length, warnings: warnings.length, at: new Date().toISOString(),
+      errorText: errors.map((i) => i.diagnostics).slice(0, 5), warningText: [...new Set(warnings.map((i) => String(i.diagnostics).slice(0, 80)))] })
+    console.log(res.status, label, server.split('/')[2], 'errors', errors.length, 'warnings', warnings.length, errors.map((i) => i.diagnostics).join(' | ').slice(0, 300))
+  }
 }
 writeFileSync('evidence/validate.json', JSON.stringify(rows, null, 2))

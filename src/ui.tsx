@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import { LANGS, useI18n } from './i18n'
 import { Status } from './model'
+import { allChecks } from './store'
 
 export function Shape({ status, size = 14 }: { status: Status; size?: number }) {
   const s = size
@@ -27,6 +28,7 @@ export function Mark({ size = 26 }: { size?: number }) {
 
 export function Layout({ children, route }: { children: ReactNode; route: string }) {
   const { t, lang, setLang, d } = useI18n()
+  const pending = allChecks().filter((c) => c.status === 'preliminary').length
   const onStreams = route === '' || route === 'city' || route === 'site' || route === 'check' || route === 'clinician'
   return (
     <>
@@ -35,6 +37,7 @@ export function Layout({ children, route }: { children: ReactNode; route: string
           <a className="brand" href="#/" aria-label={`StreamRecord, ${t('tagline')}`}><Mark /><b>StreamRecord</b><small>{t('tagline')}</small></a>
           <nav className="main" aria-label="Main">
             <a href="#/" aria-current={onStreams ? 'page' : undefined}>{t('navMap')}</a>
+            <a href="#/review" aria-current={route === 'review' ? 'page' : undefined}>{t('navReview')}{pending > 0 && <span className="count" aria-label={`, ${pending} ${t('st_preliminary').toLowerCase()}`}>{pending}</span>}</a>
             <a href="#/sources" aria-current={route === 'sources' ? 'page' : undefined}>{t('navSources')}</a>
           </nav>
           <div className="lang">

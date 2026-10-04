@@ -8,7 +8,8 @@ export function loadCities(): Promise<CityIndex[]> {
   return cities
 }
 export function loadCity(slug: string): Promise<Site[]> {
-  if (!cache.has(slug)) cache.set(slug, fetch(`./data/sites-${slug}.json`).then((r) => r.json()))
+  // ENORA publishes two Toulouse sites (T21, T24) with an empty name; show the code instead of a blank
+  if (!cache.has(slug)) cache.set(slug, fetch(`./data/sites-${slug}.json`).then((r) => r.json()).then((all: Site[]) => all.map((s) => (s.name?.trim() ? s : { ...s, name: `Site ${s.id}`, unnamed: true }))))
   return cache.get(slug)!
 }
 export async function findSite(id: string): Promise<{ site: Site; city: CityIndex; sites: Site[] } | null> {

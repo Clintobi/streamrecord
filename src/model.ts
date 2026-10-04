@@ -9,6 +9,7 @@ export interface Site {
   country: string
   lat: number
   lon: number
+  unnamed?: boolean // ENORA published no name; `name` holds a fallback
   risk?: { level: RiskLevel; score?: number | null; date?: string | null; label?: string | null; parts?: { scaledPathogenRisk?: number | null; scaledFecalRisk?: number | null; scaledArgRisk?: number | null } } | null
 }
 
@@ -54,12 +55,36 @@ export const QUESTIONS: QuestionDef[] = [
 export type Answer = string | string[] | number | 'unsure' | null
 export type Answers = Record<string, Answer>
 
+export type CheckStatus = 'preliminary' | 'final' | 'entered-in-error'
+
+export interface Review {
+  decision: 'final' | 'entered-in-error'
+  reason: string
+  reviewer: string
+  at: string
+}
+
 export interface Check {
   id: string
   siteId: string
   createdAt: string
   answers: Answers
-  status: 'preliminary'
+  status: CheckStatus
+  review?: Review
+  sample?: boolean // synthetic check added from the review screen so the flow can be tried
+}
+
+// Our own second-look rules (not OneAquaHealth's): reports a person should confirm before they count.
+export const SECOND_LOOK = ['deadFish', 'coldScum', 'hotWater', 'mostlyUnsure'] as const
+export function secondLook(a: Answers): string[] {
+  const out: string[] = []
+  const other = Array.isArray(a.other) ? a.other : []
+  const temp = typeof a.waterTemperature === 'number' ? a.waterTemperature : null
+  if (other.includes('deadFish')) out.push('deadFish')
+  if (other.includes('scum') && temp !== null && temp < 10) out.push('coldScum')
+  if (temp !== null && temp > 30) out.push('hotWater')
+  if (QUESTIONS.filter((q) => q.kind !== 'temperature' && a[q.key] === 'unsure').length >= 4) out.push('mostlyUnsure')
+  return out
 }
 
 export const FINDING_ORDER = ['scum', 'deadFish', 'colourSmell', 'foam', 'standingWater', 'invasiveOrganisms', 'riparianVegetation', 'macrophytes']
@@ -76,10 +101,18 @@ export function findingsFromAnswers(a: Answers): string[] {
   return FINDING_ORDER.filter((f) => out.has(f))
 }
 
+// Rejected checks (entered-in-error) no longer count.
 export function findingsFromChecks(checks: Check[]): string[] {
   const all = new Set<string>()
-  for (const c of checks) for (const f of findingsFromAnswers(c.answers)) all.add(f)
+  for (const c of checks) if (c.status !== 'entered-in-error') for (const f of findingsFromAnswers(c.answers)) all.add(f)
   return FINDING_ORDER.filter((f) => all.has(f))
+}
+
+// Findings at least one confirmed (final) check reported.
+export function confirmedFindings(checks: Check[]): Set<string> {
+  const out = new Set<string>()
+  for (const c of checks) if (c.status === 'final') for (const f of findingsFromAnswers(c.answers)) out.add(f)
+  return out
 }
 
 export type Status = 'ok' | 'look' | 'concern' | 'none'

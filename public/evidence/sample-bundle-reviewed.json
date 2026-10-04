@@ -1,0 +1,691 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:d4f88c11-0802-48d3-acfa-94c22cb98d9c",
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://hl7.eu/fhir/ig/oah/StructureDefinition/location-oah"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Exploratório, Coimbra (OneAquaHealth site C1)</div>"
+        },
+        "identifier": [
+          {
+            "system": "https://api.enora-oah.eu/api/sites",
+            "value": "C1"
+          }
+        ],
+        "status": "active",
+        "name": "Exploratório",
+        "mode": "instance",
+        "address": {
+          "city": "Coimbra",
+          "country": "PT"
+        },
+        "position": {
+          "longitude": -8.42865,
+          "latitude": 40.19787
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Location",
+        "ifNoneExist": "identifier=https://api.enora-oah.eu/api/sites|C1"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:21d92b78-7905-4b52-a8dc-b02a8674e596",
+      "resource": {
+        "resourceType": "QuestionnaireResponse",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">StreamRecord check at site C1, 2026-10-04T12:00:00Z</div>"
+        },
+        "questionnaire": "https://streamrecord.vercel.app/fhir/Questionnaire/streamrecord-check|0.1.0",
+        "status": "completed",
+        "subject": {
+          "reference": "urn:uuid:d4f88c11-0802-48d3-acfa-94c22cb98d9c"
+        },
+        "authored": "2026-10-04T12:00:00Z",
+        "item": [
+          {
+            "linkId": "foam",
+            "answer": [
+              {
+                "valueCoding": {
+                  "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+                  "code": "present"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "colourSmell"
+          },
+          {
+            "linkId": "riparianVegetation",
+            "answer": [
+              {
+                "valueCoding": {
+                  "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+                  "code": "21-40-percent"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "macrophytes",
+            "answer": [
+              {
+                "valueCoding": {
+                  "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+                  "code": "41-60-percent"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "invasiveOrganisms",
+            "answer": [
+              {
+                "valueCoding": {
+                  "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+                  "code": "absent"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "other",
+            "answer": [
+              {
+                "valueCoding": {
+                  "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+                  "code": "scum"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "waterTemperature",
+            "answer": [
+              {
+                "valueQuantity": {
+                  "value": 18.5,
+                  "unit": "°C",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "Cel"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "QuestionnaireResponse"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:bb6e5730-f56b-478e-ae05-10be0c93fd02",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">foam: present (citizen check, confirmed by a reviewer)</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+                "code": "citizen-science",
+                "display": "Citizen science"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "foam"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:d4f88c11-0802-48d3-acfa-94c22cb98d9c"
+        },
+        "effectiveDateTime": "2026-10-04T12:00:00Z",
+        "performer": [
+          {
+            "display": "Anonymous citizen observer (StreamRecord, no account)"
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "urn:uuid:21d92b78-7905-4b52-a8dc-b02a8674e596"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "present"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5c304dac-538a-49ce-afba-946241e0125e",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">colourSmell: not sure (citizen check, confirmed by a reviewer)</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+                "code": "citizen-science",
+                "display": "Citizen science"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+              "code": "colourSmell"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:d4f88c11-0802-48d3-acfa-94c22cb98d9c"
+        },
+        "effectiveDateTime": "2026-10-04T12:00:00Z",
+        "performer": [
+          {
+            "display": "Anonymous citizen observer (StreamRecord, no account)"
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "urn:uuid:21d92b78-7905-4b52-a8dc-b02a8674e596"
+          }
+        ],
+        "dataAbsentReason": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+              "code": "asked-unknown",
+              "display": "Asked But Unknown"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3b47c9d1-e104-4357-aa43-8a8604c3ee58",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">riparianVegetation: 21-40-percent (citizen check, confirmed by a reviewer)</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+                "code": "citizen-science",
+                "display": "Citizen science"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "riparianVegetation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:d4f88c11-0802-48d3-acfa-94c22cb98d9c"
+        },
+        "effectiveDateTime": "2026-10-04T12:00:00Z",
+        "performer": [
+          {
+            "display": "Anonymous citizen observer (StreamRecord, no account)"
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "urn:uuid:21d92b78-7905-4b52-a8dc-b02a8674e596"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "21-40-percent"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:388b093a-f4a8-4610-ac23-cf2a98e4f2ca",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">macrophytes: 41-60-percent (citizen check, confirmed by a reviewer)</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+                "code": "citizen-science",
+                "display": "Citizen science"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "macrophytes"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:d4f88c11-0802-48d3-acfa-94c22cb98d9c"
+        },
+        "effectiveDateTime": "2026-10-04T12:00:00Z",
+        "performer": [
+          {
+            "display": "Anonymous citizen observer (StreamRecord, no account)"
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "urn:uuid:21d92b78-7905-4b52-a8dc-b02a8674e596"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "41-60-percent"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:114ed8f3-e067-4769-a129-ef9a3d316d44",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">invasiveOrganisms: absent (citizen check, confirmed by a reviewer)</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+                "code": "citizen-science",
+                "display": "Citizen science"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "invasiveOrganisms"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:d4f88c11-0802-48d3-acfa-94c22cb98d9c"
+        },
+        "effectiveDateTime": "2026-10-04T12:00:00Z",
+        "performer": [
+          {
+            "display": "Anonymous citizen observer (StreamRecord, no account)"
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "urn:uuid:21d92b78-7905-4b52-a8dc-b02a8674e596"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "absent"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f9e235d1-ee2b-4c73-a7c9-59a22ea0143c",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">other: scum (citizen check, confirmed by a reviewer)</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+                "code": "citizen-science",
+                "display": "Citizen science"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+              "code": "otherSigns"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:d4f88c11-0802-48d3-acfa-94c22cb98d9c"
+        },
+        "effectiveDateTime": "2026-10-04T12:00:00Z",
+        "performer": [
+          {
+            "display": "Anonymous citizen observer (StreamRecord, no account)"
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "urn:uuid:21d92b78-7905-4b52-a8dc-b02a8674e596"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+              "code": "scum"
+            }
+          ],
+          "text": "scum"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7ad8f386-1d34-4958-a7ec-6adef386622e",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">waterTemperature: 18.5 (citizen check, confirmed by a reviewer)</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://streamrecord.vercel.app/fhir/CodeSystem/streamrecord-local",
+                "code": "citizen-science",
+                "display": "Citizen science"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "waterTemperature"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:d4f88c11-0802-48d3-acfa-94c22cb98d9c"
+        },
+        "effectiveDateTime": "2026-10-04T12:00:00Z",
+        "performer": [
+          {
+            "display": "Anonymous citizen observer (StreamRecord, no account)"
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "urn:uuid:21d92b78-7905-4b52-a8dc-b02a8674e596"
+          }
+        ],
+        "valueQuantity": {
+          "value": 18.5,
+          "unit": "°C",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6d58c567-317b-43a5-ac23-a6c290a9d59c",
+      "resource": {
+        "resourceType": "Device",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">StreamRecord citizen check app</div>"
+        },
+        "deviceName": [
+          {
+            "name": "StreamRecord",
+            "type": "user-friendly-name"
+          }
+        ],
+        "version": [
+          {
+            "value": "0.1.0"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Device",
+        "ifNoneExist": "device-name=StreamRecord"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9e8f7a78-7d39-4c0a-a3b6-d672b774af4e",
+      "resource": {
+        "resourceType": "Provenance",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Recorded by an anonymous resident using StreamRecord. Preliminary until reviewed.</div>"
+        },
+        "target": [
+          {
+            "reference": "urn:uuid:21d92b78-7905-4b52-a8dc-b02a8674e596"
+          },
+          {
+            "reference": "urn:uuid:bb6e5730-f56b-478e-ae05-10be0c93fd02"
+          },
+          {
+            "reference": "urn:uuid:5c304dac-538a-49ce-afba-946241e0125e"
+          },
+          {
+            "reference": "urn:uuid:3b47c9d1-e104-4357-aa43-8a8604c3ee58"
+          },
+          {
+            "reference": "urn:uuid:388b093a-f4a8-4610-ac23-cf2a98e4f2ca"
+          },
+          {
+            "reference": "urn:uuid:114ed8f3-e067-4769-a129-ef9a3d316d44"
+          },
+          {
+            "reference": "urn:uuid:f9e235d1-ee2b-4c73-a7c9-59a22ea0143c"
+          },
+          {
+            "reference": "urn:uuid:7ad8f386-1d34-4958-a7ec-6adef386622e"
+          }
+        ],
+        "recorded": "2026-10-04T12:00:00Z",
+        "agent": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                  "code": "author",
+                  "display": "Author"
+                }
+              ]
+            },
+            "who": {
+              "reference": "urn:uuid:6d58c567-317b-43a5-ac23-a6c290a9d59c",
+              "display": "StreamRecord app on behalf of an anonymous resident"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Provenance"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4c59ed6d-1e27-4367-a27e-4e0aea952414",
+      "resource": {
+        "resourceType": "Provenance",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Confirmed by Local reviewer on 2026-10-04T15:00:00Z. Reason: Checked against a photo taken on a second visit</div>"
+        },
+        "target": [
+          {
+            "reference": "urn:uuid:21d92b78-7905-4b52-a8dc-b02a8674e596"
+          },
+          {
+            "reference": "urn:uuid:bb6e5730-f56b-478e-ae05-10be0c93fd02"
+          },
+          {
+            "reference": "urn:uuid:5c304dac-538a-49ce-afba-946241e0125e"
+          },
+          {
+            "reference": "urn:uuid:3b47c9d1-e104-4357-aa43-8a8604c3ee58"
+          },
+          {
+            "reference": "urn:uuid:388b093a-f4a8-4610-ac23-cf2a98e4f2ca"
+          },
+          {
+            "reference": "urn:uuid:114ed8f3-e067-4769-a129-ef9a3d316d44"
+          },
+          {
+            "reference": "urn:uuid:f9e235d1-ee2b-4c73-a7c9-59a22ea0143c"
+          },
+          {
+            "reference": "urn:uuid:7ad8f386-1d34-4958-a7ec-6adef386622e"
+          }
+        ],
+        "recorded": "2026-10-04T15:00:00Z",
+        "activity": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
+              "code": "UPDATE",
+              "display": "revise"
+            }
+          ],
+          "text": "Reviewed and confirmed"
+        },
+        "reason": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+                "code": "HQUALIMP",
+                "display": "health quality improvement"
+              }
+            ],
+            "text": "Checked against a photo taken on a second visit"
+          }
+        ],
+        "agent": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                  "code": "verifier",
+                  "display": "Verifier"
+                }
+              ]
+            },
+            "who": {
+              "display": "Local reviewer"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Provenance"
+      }
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import SiteReading from './screens/SiteReading'
 import FieldCheck from './screens/FieldCheck'
 import ClinicianReading from './screens/ClinicianReading'
 import Sources from './screens/Sources'
+import ReviewQueue from './screens/ReviewQueue'
 
 function useHash() {
   const [h, setH] = useState(location.hash || '#/')
@@ -24,6 +25,7 @@ export default function App() {
   else if (route === 'check' && id) screen = <FieldCheck id={decodeURIComponent(id)} />
   else if (route === 'clinician' && id) screen = <ClinicianReading id={decodeURIComponent(id)} />
   else if (route === 'sources') screen = <Sources />
+  else if (route === 'review') screen = <ReviewQueue />
   else screen = <MapScreen city={route === 'city' ? id : undefined} />
   return <Layout route={route || ''}>{screen}</Layout>
 }

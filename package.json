@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "data": "python3 scripts/build_library.py && vite-node scripts/fhir_defs.ts && vite-node scripts/validate.ts && python3 scripts/build_datapackage.py && python3 scripts/build_meta.py && cp evidence/*.json public/evidence/"
   },
   "dependencies": {
     "@fontsource/atkinson-hyperlegible-next": "^5.3.0",

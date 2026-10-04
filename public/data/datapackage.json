@@ -1,0 +1,472 @@
+{
+ "profile": "data-package",
+ "name": "streamrecord-oneaquahealth-snapshot",
+ "id": "https://streamrecord.vercel.app/data/datapackage.json",
+ "title": "StreamRecord: OneAquaHealth site and health-risk snapshot",
+ "description": "Frozen snapshot of the ENORA OneAquaHealth research sites and lab health-risk scores, plus verified quotes from OneAquaHealth publications, as used by StreamRecord. Not affiliated with OneAquaHealth.",
+ "version": "0.1.0",
+ "created": "2026-10-04T00:00:00Z",
+ "homepage": "https://streamrecord.vercel.app",
+ "keywords": [
+  "OneAquaHealth",
+  "urban streams",
+  "One Health",
+  "health risk",
+  "citizen science",
+  "FHIR"
+ ],
+ "contributors": [
+  {
+   "title": "Clinton Obi",
+   "role": "author"
+  }
+ ],
+ "sources": [
+  {
+   "title": "ENORA OneAquaHealth API (sites/all and resilience-map/health-risks)",
+   "path": "https://api.enora-oah.eu/api/sites/all",
+   "retrieved": "2026-10-04T12:41:58Z",
+   "note": "Joined on sites[].code == healthRisks[].researchSiteCode; raw snapshots and sha256 in data/snapshots/"
+  },
+  {
+   "title": "OneAquaHealth Policy Brief (May 2026)",
+   "path": "https://www.oneaquahealth.eu/app/uploads/2026/05/OneAquaHealth-Policy-Brief.pdf",
+   "retrieved": "2026-10-04"
+  },
+  {
+   "title": "OneAquaHealth Catalogue of Measures (D2.4)",
+   "path": "https://doi.org/10.5281/zenodo.20040211",
+   "retrieved": "2026-10-04"
+  },
+  {
+   "title": "OneAquaHealth Key Indicators Factsheets",
+   "path": "https://doi.org/10.5281/zenodo.20345207",
+   "retrieved": "2026-10-04"
+  },
+  {
+   "title": "OneAquaHealth Field Sampling Protocols",
+   "path": "https://doi.org/10.5281/zenodo.20344421",
+   "retrieved": "2026-10-04"
+  }
+ ],
+ "licenses": [
+  {
+   "name": "MIT",
+   "title": "MIT (StreamRecord derived data and code)",
+   "path": "https://opensource.org/licenses/MIT"
+  },
+  {
+   "name": "CC-BY-4.0",
+   "title": "Creative Commons Attribution 4.0",
+   "path": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "name": "other-at",
+   "title": "No licence stated by ENORA; used for hackathon demonstration with attribution"
+  }
+ ],
+ "resources": [
+  {
+   "name": "sites",
+   "path": "sites.csv",
+   "title": "All 106 research sites with lab health-risk",
+   "description": "106 sites; 96 with a published health-risk score.",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 9596,
+   "hash": "sha256:4a29040fb01c85608eab16d9333895026bb7337f51d06c0daf2c61934f7a8627",
+   "sources": [
+    {
+     "title": "ENORA OneAquaHealth API (sites/all and resilience-map/health-risks)",
+     "path": "https://api.enora-oah.eu/api/sites/all",
+     "retrieved": "2026-10-04T12:41:58Z",
+     "note": "Joined on sites[].code == healthRisks[].researchSiteCode; raw snapshots and sha256 in data/snapshots/"
+    }
+   ],
+   "licenses": [
+    {
+     "name": "other-at",
+     "title": "No licence stated by ENORA; used for hackathon demonstration with attribution"
+    },
+    {
+     "name": "MIT",
+     "title": "MIT (StreamRecord derived data and code)",
+     "path": "https://opensource.org/licenses/MIT"
+    }
+   ],
+   "profile": "tabular-data-resource",
+   "dialect": {
+    "delimiter": ",",
+    "header": true
+   },
+   "schema": {
+    "fields": [
+     {
+      "name": "site_id",
+      "type": "string",
+      "description": "OneAquaHealth research site code (ENORA sites[].code)",
+      "constraints": {
+       "required": true,
+       "unique": true
+      }
+     },
+     {
+      "name": "site_name",
+      "type": "string",
+      "description": "Site name as published by ENORA. Empty for T21 and T24, which ENORA publishes without a name (the app shows them as \"Site T21\" and \"Site T24\")"
+     },
+     {
+      "name": "city",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "Coimbra",
+        "Benevento",
+        "Ghent",
+        "Oslo",
+        "Toulouse"
+       ]
+      }
+     },
+     {
+      "name": "country",
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2, derived from the city (not in the API)",
+      "constraints": {
+       "enum": [
+        "PT",
+        "IT",
+        "BE",
+        "NO",
+        "FR"
+       ]
+      }
+     },
+     {
+      "name": "latitude",
+      "type": "number",
+      "description": "WGS84 latitude",
+      "constraints": {
+       "required": true,
+       "minimum": -90,
+       "maximum": 90
+      }
+     },
+     {
+      "name": "longitude",
+      "type": "number",
+      "description": "WGS84 longitude",
+      "constraints": {
+       "required": true,
+       "minimum": -180,
+       "maximum": 180
+      }
+     },
+     {
+      "name": "health_risk_score",
+      "type": "number",
+      "description": "ENORA healthRiskScore, 0 to 1; mean of the three scaled parts; empty when not published",
+      "constraints": {
+       "minimum": 0,
+       "maximum": 1
+      }
+     },
+     {
+      "name": "scaled_pathogen_risk",
+      "type": "number",
+      "description": "ENORA scaledPathogenRisk, 0 to 1",
+      "constraints": {
+       "minimum": 0,
+       "maximum": 1
+      }
+     },
+     {
+      "name": "scaled_fecal_risk",
+      "type": "number",
+      "description": "ENORA scaledFecalRisk, 0 to 1",
+      "constraints": {
+       "minimum": 0,
+       "maximum": 1
+      }
+     },
+     {
+      "name": "scaled_arg_risk",
+      "type": "number",
+      "description": "ENORA scaledArgRisk (antibiotic-resistance genes), 0 to 1",
+      "constraints": {
+       "minimum": 0,
+       "maximum": 1
+      }
+     },
+     {
+      "name": "sampling_date",
+      "type": "date",
+      "description": "ENORA samplingDate"
+     },
+     {
+      "name": "band_ours",
+      "type": "string",
+      "description": "StreamRecord's own tertile of the 96 scores (cut points 0.2269 and 0.3491); NOT an official OneAquaHealth rating",
+      "constraints": {
+       "enum": [
+        "low",
+        "moderate",
+        "high"
+       ]
+      }
+     }
+    ],
+    "primaryKey": [
+     "site_id"
+    ],
+    "missingValues": [
+     ""
+    ]
+   }
+  },
+  {
+   "name": "sites-coimbra",
+   "path": "sites-coimbra.json",
+   "title": "Sites in Coimbra (app format)",
+   "description": "Same records as sites.csv for one city, as the app loads them.",
+   "format": "json",
+   "mediatype": "application/json",
+   "encoding": "utf-8",
+   "bytes": 4717,
+   "hash": "sha256:d7b4215ad22379ba20f0fed6cdefc23b5dd9d63b3b829a1e449bbbf40cc9b81b",
+   "sources": [
+    {
+     "title": "ENORA OneAquaHealth API (sites/all and resilience-map/health-risks)",
+     "path": "https://api.enora-oah.eu/api/sites/all",
+     "retrieved": "2026-10-04T12:41:58Z",
+     "note": "Joined on sites[].code == healthRisks[].researchSiteCode; raw snapshots and sha256 in data/snapshots/"
+    }
+   ],
+   "licenses": [
+    {
+     "name": "other-at",
+     "title": "No licence stated by ENORA; used for hackathon demonstration with attribution"
+    },
+    {
+     "name": "MIT",
+     "title": "MIT (StreamRecord derived data and code)",
+     "path": "https://opensource.org/licenses/MIT"
+    }
+   ]
+  },
+  {
+   "name": "sites-benevento",
+   "path": "sites-benevento.json",
+   "title": "Sites in Benevento (app format)",
+   "description": "Same records as sites.csv for one city, as the app loads them.",
+   "format": "json",
+   "mediatype": "application/json",
+   "encoding": "utf-8",
+   "bytes": 5114,
+   "hash": "sha256:c557fdef2546bcd37155a9a960c0476e37963f9d8296cd0cfe747462d68941f1",
+   "sources": [
+    {
+     "title": "ENORA OneAquaHealth API (sites/all and resilience-map/health-risks)",
+     "path": "https://api.enora-oah.eu/api/sites/all",
+     "retrieved": "2026-10-04T12:41:58Z",
+     "note": "Joined on sites[].code == healthRisks[].researchSiteCode; raw snapshots and sha256 in data/snapshots/"
+    }
+   ],
+   "licenses": [
+    {
+     "name": "other-at",
+     "title": "No licence stated by ENORA; used for hackathon demonstration with attribution"
+    },
+    {
+     "name": "MIT",
+     "title": "MIT (StreamRecord derived data and code)",
+     "path": "https://opensource.org/licenses/MIT"
+    }
+   ]
+  },
+  {
+   "name": "sites-ghent",
+   "path": "sites-ghent.json",
+   "title": "Sites in Ghent (app format)",
+   "description": "Same records as sites.csv for one city, as the app loads them.",
+   "format": "json",
+   "mediatype": "application/json",
+   "encoding": "utf-8",
+   "bytes": 4807,
+   "hash": "sha256:6865d86e4977ab8867e5802bf018d409ab037953602a2f45bce441a20c598d2b",
+   "sources": [
+    {
+     "title": "ENORA OneAquaHealth API (sites/all and resilience-map/health-risks)",
+     "path": "https://api.enora-oah.eu/api/sites/all",
+     "retrieved": "2026-10-04T12:41:58Z",
+     "note": "Joined on sites[].code == healthRisks[].researchSiteCode; raw snapshots and sha256 in data/snapshots/"
+    }
+   ],
+   "licenses": [
+    {
+     "name": "other-at",
+     "title": "No licence stated by ENORA; used for hackathon demonstration with attribution"
+    },
+    {
+     "name": "MIT",
+     "title": "MIT (StreamRecord derived data and code)",
+     "path": "https://opensource.org/licenses/MIT"
+    }
+   ]
+  },
+  {
+   "name": "sites-oslo",
+   "path": "sites-oslo.json",
+   "title": "Sites in Oslo (app format)",
+   "description": "Same records as sites.csv for one city, as the app loads them.",
+   "format": "json",
+   "mediatype": "application/json",
+   "encoding": "utf-8",
+   "bytes": 5488,
+   "hash": "sha256:9577944d6e0b2cc257b13ecc301d2d415c7a4d404d350f24da7dad5bce9a1986",
+   "sources": [
+    {
+     "title": "ENORA OneAquaHealth API (sites/all and resilience-map/health-risks)",
+     "path": "https://api.enora-oah.eu/api/sites/all",
+     "retrieved": "2026-10-04T12:41:58Z",
+     "note": "Joined on sites[].code == healthRisks[].researchSiteCode; raw snapshots and sha256 in data/snapshots/"
+    }
+   ],
+   "licenses": [
+    {
+     "name": "other-at",
+     "title": "No licence stated by ENORA; used for hackathon demonstration with attribution"
+    },
+    {
+     "name": "MIT",
+     "title": "MIT (StreamRecord derived data and code)",
+     "path": "https://opensource.org/licenses/MIT"
+    }
+   ]
+  },
+  {
+   "name": "sites-toulouse",
+   "path": "sites-toulouse.json",
+   "title": "Sites in Toulouse (app format)",
+   "description": "Same records as sites.csv for one city, as the app loads them.",
+   "format": "json",
+   "mediatype": "application/json",
+   "encoding": "utf-8",
+   "bytes": 5833,
+   "hash": "sha256:299f84cac2a569af9518a3c9a0ec0edce6495d422c5d8a0f61ab2848850f84d3",
+   "sources": [
+    {
+     "title": "ENORA OneAquaHealth API (sites/all and resilience-map/health-risks)",
+     "path": "https://api.enora-oah.eu/api/sites/all",
+     "retrieved": "2026-10-04T12:41:58Z",
+     "note": "Joined on sites[].code == healthRisks[].researchSiteCode; raw snapshots and sha256 in data/snapshots/"
+    }
+   ],
+   "licenses": [
+    {
+     "name": "other-at",
+     "title": "No licence stated by ENORA; used for hackathon demonstration with attribution"
+    },
+    {
+     "name": "MIT",
+     "title": "MIT (StreamRecord derived data and code)",
+     "path": "https://opensource.org/licenses/MIT"
+    }
+   ]
+  },
+  {
+   "name": "bands",
+   "path": "bands.json",
+   "title": "Our tertile cut points",
+   "description": "Thirds of all published health-risk scores. StreamRecord derived, not official.",
+   "format": "json",
+   "mediatype": "application/json",
+   "encoding": "utf-8",
+   "bytes": 86,
+   "hash": "sha256:e9d1f31c91b8c728247171c75c739223f6b04eb8ecb6259ec9c80caff4da717c",
+   "sources": [
+    {
+     "title": "ENORA OneAquaHealth API (sites/all and resilience-map/health-risks)",
+     "path": "https://api.enora-oah.eu/api/sites/all",
+     "retrieved": "2026-10-04T12:41:58Z",
+     "note": "Joined on sites[].code == healthRisks[].researchSiteCode; raw snapshots and sha256 in data/snapshots/"
+    }
+   ],
+   "licenses": [
+    {
+     "name": "MIT",
+     "title": "MIT (StreamRecord derived data and code)",
+     "path": "https://opensource.org/licenses/MIT"
+    }
+   ]
+  },
+  {
+   "name": "cities",
+   "path": "cities.json",
+   "title": "City index",
+   "description": "Cities, map centres, site counts and default language.",
+   "format": "json",
+   "mediatype": "application/json",
+   "encoding": "utf-8",
+   "bytes": 786,
+   "hash": "sha256:2b3341aff8065d7811a54ff52cd8a7da260d41e7f82332cfbc696fd2db21488b",
+   "sources": [
+    {
+     "title": "ENORA OneAquaHealth API (sites/all and resilience-map/health-risks)",
+     "path": "https://api.enora-oah.eu/api/sites/all",
+     "retrieved": "2026-10-04T12:41:58Z",
+     "note": "Joined on sites[].code == healthRisks[].researchSiteCode; raw snapshots and sha256 in data/snapshots/"
+    }
+   ],
+   "licenses": [
+    {
+     "name": "MIT",
+     "title": "MIT (StreamRecord derived data and code)",
+     "path": "https://opensource.org/licenses/MIT"
+    }
+   ]
+  },
+  {
+   "name": "library",
+   "path": "library.json",
+   "title": "OneAquaHealth quotes, measures and indicators",
+   "description": "Verbatim quotes with PDF page numbers, checked by script against the cited page; the mapping of measures to citizen findings is StreamRecord editorial judgement.",
+   "format": "json",
+   "mediatype": "application/json",
+   "encoding": "utf-8",
+   "bytes": 15665,
+   "hash": "sha256:2bbb6073796e2e5d0e4b6298f09ce431ac0c84c71ab30cf5c77ec3a1d0739811",
+   "sources": [
+    {
+     "title": "OneAquaHealth Policy Brief (May 2026)",
+     "path": "https://www.oneaquahealth.eu/app/uploads/2026/05/OneAquaHealth-Policy-Brief.pdf",
+     "retrieved": "2026-10-04"
+    },
+    {
+     "title": "OneAquaHealth Catalogue of Measures (D2.4)",
+     "path": "https://doi.org/10.5281/zenodo.20040211",
+     "retrieved": "2026-10-04"
+    },
+    {
+     "title": "OneAquaHealth Key Indicators Factsheets",
+     "path": "https://doi.org/10.5281/zenodo.20345207",
+     "retrieved": "2026-10-04"
+    },
+    {
+     "title": "OneAquaHealth Field Sampling Protocols",
+     "path": "https://doi.org/10.5281/zenodo.20344421",
+     "retrieved": "2026-10-04"
+    }
+   ],
+   "licenses": [
+    {
+     "name": "CC-BY-4.0",
+     "title": "Creative Commons Attribution 4.0",
+     "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+   ]
+  }
+ ]
+}

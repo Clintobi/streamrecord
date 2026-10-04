@@ -1,0 +1,107 @@
+site_id,site_name,city,country,latitude,longitude,health_risk_score,scaled_pathogen_risk,scaled_fecal_risk,scaled_arg_risk,sampling_date,band_ours
+C14,Antanhol,Coimbra,PT,40.16719,-8.47817,0.2243,0.2241,0.1143,0.3343,2023-06-28,low
+C10,Arregaça,Coimbra,PT,40.19776,-8.41773,0.1851,0.05,0.4146,0.0906,2023-06-27,low
+C11,Bairro São Miguel,Coimbra,PT,40.22752,-8.43757,0.1278,0.0509,0.187,0.1456,2023-06-27,low
+C6,Casa do Sal,Coimbra,PT,40.21942,-8.43772,0.5952,0.7351,0.6664,0.3841,2023-06-29,high
+C13,Condeixa,Coimbra,PT,40.11106,-8.49052,0.2165,0.1499,0.2287,0.2708,2023-06-28,low
+C17,Conraria,Coimbra,PT,40.17422,-8.39363,,,,,,
+C15,Copeira,Coimbra,PT,40.17943,-8.42117,0.3449,0.3791,0.3851,0.2706,2023-06-28,moderate
+C20,Corujeira,Coimbra,PT,40.21085,-8.47667,0.3304,0.2243,0.2044,0.5623,2023-06-06,moderate
+C8,Covões,Coimbra,PT,40.19133,-8.46002,0.4279,0.406,0.4457,0.432,2023-06-28,high
+C4,Eiras,Coimbra,PT,40.25289,-8.43659,0.0748,0.0496,0.1409,0.0339,2023-06-27,low
+C12,Escola Agrária,Coimbra,PT,40.20386,-8.45302,0.5324,0.4217,0.8051,0.3704,2023-06-28,high
+C19,Escravote,Coimbra,PT,40.24812,-8.41159,0.4367,0.3044,0.4625,0.5433,2023-06-06,high
+C2,Estação Cbr-B,Coimbra,PT,40.22483,-8.44135,0.4221,0.507,0.5072,0.2522,2023-06-27,high
+C1,Exploratório,Coimbra,PT,40.19787,-8.42865,0.2199,0.0746,0.2477,0.3374,2023-06-28,low
+C9,Fornos,Coimbra,PT,40.27702,-8.4272,0.1964,0.1265,0.1443,0.3186,2023-06-27,low
+C5,Mina Hospital,Coimbra,PT,40.2186,-8.42733,0.7822,1.0,1.0,0.3465,2023-06-29,high
+C18,Ponte da Espertina,Coimbra,PT,40.25621,-8.45312,,,,,,
+C16,Rio Velho,Coimbra,PT,40.22461,-8.44304,0.3534,0.5063,0.2531,0.3008,2023-06-27,high
+C7,São Romão,Coimbra,PT,40.22243,-8.40165,0.2504,0.1783,0.5702,0.0027,2023-06-29,moderate
+C3,Vale das Flores,Coimbra,PT,40.19307,-8.41945,0.2436,0.2973,0.2051,0.2283,2023-06-27,moderate
+BN1,Capodimonte,Benevento,IT,41.13231,14.80039,0.3091,0.2054,0.2427,0.4792,2023-06-28,moderate
+BN15,Corvo Tressanti,Benevento,IT,41.06921,14.70959,0.3715,0.3487,0.3778,0.3881,2023-06-07,high
+BN2,Cretarossa,Benevento,IT,41.12679,14.80333,0.7266,0.6456,0.5343,1.0,2023-06-28,high
+BN19,Foeniculum,Benevento,IT,41.185791,14.719005,0.2408,0.2572,0.3391,0.1262,2023-07-07,moderate
+BN18,Jenga,Benevento,IT,41.15126,14.70936,0.4021,0.3149,0.4429,0.4485,2023-06-06,high
+BN20,Lenta,Benevento,IT,41.213825,14.68999,0.4207,0.3881,0.5078,0.3661,2023-07-07,high
+BN17,Lossauro,Benevento,IT,41.13221,14.7127,0.3801,0.4909,0.6187,0.0307,2023-07-03,high
+BN10,Malacagna,Benevento,IT,41.14607,14.76353,0.6243,0.762,0.8423,0.2686,2023-06-07,high
+BN7,Margiacca,Benevento,IT,41.14905,14.81407,0.4343,0.4126,0.5393,0.3509,2023-06-28,high
+BN11,Masseria Roseto,Benevento,IT,41.16124,14.75972,0.108,0.0754,0.2158,0.0329,2023-06-06,low
+BN8,Paduli,Benevento,IT,41.15405,14.8345,0.4056,0.3383,0.477,0.4015,2023-07-07,high
+BN6,Pezzapiano,Benevento,IT,41.14775,14.78437,0.342,0.2056,0.4619,0.3583,2023-06-28,moderate
+BN3,Ponticelli,Benevento,IT,41.13348,14.78614,0.3553,0.3554,0.7104,0.0,2023-06-06,high
+BN16,Ranno,Benevento,IT,41.06923,14.70876,0.2203,0.1258,0.4229,0.1122,2023-06-07,low
+BN14,Rocca - Tufara,Benevento,IT,41.06014,14.70843,0.1676,0.1101,0.2119,0.181,2024-08-05,low
+BN4,Serretelle 4,Benevento,IT,41.12414,14.74864,0.3817,0.3065,0.4667,0.3717,2023-07-03,high
+BN5,Serretelle 5,Benevento,IT,41.10429,14.74295,0.2269,0.0758,0.2193,0.3856,2023-07-03,moderate
+BN9,Vallone Cornacchie,Benevento,IT,41.11089,14.8325,0.3491,0.2515,0.4117,0.384,2023-06-06,high
+BN12,Vallone S. Vitale,Benevento,IT,41.13628,14.73193,0.0895,0.0748,0.1445,0.0491,2023-06-06,low
+BN13,Vallone la Ripa,Benevento,IT,41.11727,14.73683,0.234,0.1003,0.3295,0.2723,2023-07-03,moderate
+G17,Gent1 (G1),Ghent,BE,51.02678,3.77389,,,,,,
+G18,Gent2 (G2),Ghent,BE,51.05458,3.68126,,,,,,
+G19,Gent3 (G3),Ghent,BE,51.02843,3.786,,,,,,
+G20,Gent4 (G4),Ghent,BE,51.0939,3.71687,,,,,,
+G15,Melle1 (Ml1),Ghent,BE,50.98975,3.80615,0.2244,0.0513,0.1673,0.4544,2023-05-25,low
+G16,Melle2 (Ml2),Ghent,BE,50.99491,3.80568,0.3117,0.2484,0.2897,0.3971,2023-05-25,moderate
+G13,Merelbeke1 (Mr1),Ghent,BE,50.97958,3.72241,0.2102,0.0752,0.2104,0.345,2023-05-25,low
+G14,Merelbeke2 (Mr2),Ghent,BE,50.99821,3.73925,0.1563,0.0,0.1323,0.3366,2023-05-25,low
+G1,Oosterzele1 (O1),Ghent,BE,50.94744,3.8168,,,,,,
+G2,Zottegem1 (Zo1),Ghent,BE,50.85943,3.79794,0.2861,0.1242,0.2672,0.4669,2023-05-24,moderate
+G3,Zottegem2 (Zo2),Ghent,BE,50.87604,3.75174,0.1971,0.1004,0.3096,0.1812,2023-05-24,low
+G4,Zottegem3 (Zo3),Ghent,BE,50.87507,3.80222,0.2363,0.0503,0.1824,0.4763,2023-05-24,moderate
+G21,Zottegem4 (Zo4),Ghent,BE,50.89162,3.81558,0.2896,0.0499,0.3255,0.4933,2023-05-24,moderate
+G5,Zwalm1 (Zw1),Ghent,BE,50.87539,3.74917,0.2392,0.0496,0.3549,0.313,2023-05-24,moderate
+G6,Zwalm2 (Zw2),Ghent,BE,50.87579,3.75151,0.2201,0.1738,0.3113,0.175,2023-05-24,low
+G7,Zwalm3 (Zw3),Ghent,BE,50.86216,3.76577,0.1936,0.0746,0.2452,0.261,2023-05-24,low
+G8,Zwalm4 (Zw4),Ghent,BE,50.87971,3.73771,0.2161,0.0993,0.2305,0.3183,2023-05-24,low
+G9,Zwalm5 (Zw5),Ghent,BE,50.87366,3.73125,0.3553,0.1492,0.3966,0.5202,2023-05-24,high
+G10,Zwalm6 (Zw6),Ghent,BE,50.88344,3.71431,0.1677,0.0248,0.1193,0.3591,2023-05-24,low
+G22,Zwalm7 (Zw7),Ghent,BE,50.88527,3.692821,0.1858,0.1501,0.2921,0.1152,2023-05-24,low
+G11,Zwalm8 (Zw8),Ghent,BE,50.88437,3.68791,0.2251,0.1253,0.2544,0.2956,2023-05-24,low
+G12,Zwalm9 (Zw9),Ghent,BE,50.88541,3.68606,0.225,0.0995,0.2129,0.3624,2023-05-24,low
+O19,Alna - Grorud,Oslo,NO,59.9525,10.9017,0.2569,0.1739,0.3078,0.289,2023-09-06,moderate
+O16,Alna - Kværnerfossene,Oslo,NO,59.9044,10.7944,0.4085,0.251,0.4781,0.4964,2023-09-06,high
+O17,Alna – Bryn stasjon,Oslo,NO,59.9078,10.8128,0.4198,0.3364,0.4261,0.497,2023-09-06,high
+O18,Alna – v Tveita / plantasjen-,Oslo,NO,59.9219,10.8369,0.329,0.1488,0.4071,0.4311,2023-09-06,moderate
+O10,Frognerelva - VInderen,Oslo,NO,59.9414,10.7097,0.2114,0.0249,0.3387,0.2706,2023-09-06,low
+O9,Gaustadbekken -Forskningsparketn,Oslo,NO,59.9425,10.7181,0.1324,0.0,0.0,0.3972,2023-09-06,low
+O1,Gaustadbekken-Skådalen,Oslo,NO,59.9561,10.7153,0.2579,0.0993,0.2919,0.3826,2023-09-06,moderate
+O3,Gaustadbekken-Slemdalsveien/RH,Oslo,NO,59.9475,10.7111,0.2473,0.1248,0.3136,0.3035,2023-09-06,moderate
+O2,Hoffsbekken,Oslo,NO,59.9514,10.6806,0.2414,0.0495,0.2932,0.3814,2023-09-06,moderate
+O5,Hoffselva - Møllhausen,Oslo,NO,59.9308,10.6769,0.2321,0.0248,0.385,0.2865,2023-09-06,moderate
+O15,Hovinbekken - Hovin,Oslo,NO,59.9206,10.8006,0.2028,0.0495,0.1143,0.4447,2023-09-06,low
+O14,Hovinbekken - Krokliveien,Oslo,NO,59.9392,10.8214,0.2469,0.0249,0.112,0.6038,2023-09-06,moderate
+O8,Ljanselva – Nedre Ljan Nordstrand,Oslo,NO,59.8433,10.7847,0.3041,0.149,0.3018,0.4616,2023-09-06,moderate
+O6,Ljanselva- Skullerud -,Oslo,NO,59.8628,10.8458,0.18,0.0752,0.1625,0.3025,2023-09-06,low
+O7,Ljanselvas mljøpark,Oslo,NO,59.8511,10.8164,0.278,0.0993,0.2728,0.462,2023-09-06,moderate
+O4,Makrellbekken - Dronningfossen,Oslo,NO,59.9308,10.6778,0.2665,0.0248,0.2344,0.5403,2023-09-06,moderate
+O20,Makrellbekken - Njård,Oslo,NO,59.9432,10.6736,0.2978,0.1253,0.3354,0.4327,2023-09-06,moderate
+O12,Makrellbekken – ring3,Oslo,NO,59.9356,10.6736,0.3675,0.0997,0.3184,0.6845,2023-09-06,high
+O11,Mærradalsbekken - Radiumhospital,Oslo,NO,59.9297,10.6594,0.3696,0.1734,0.3317,0.6038,2023-09-06,high
+O13,Mærradalsbekken – Huseby skole,Oslo,NO,59.945,10.6503,0.32,0.1242,0.295,0.5408,2023-09-06,moderate
+T21,,Toulouse,FR,43.59278,1.34767,,,,,,
+T24,,Toulouse,FR,43.59604,1.36671,,,,,,
+T14,Canal agricole (depuis la Saudrune),Toulouse,FR,43.53855,1.42074,0.46,0.2763,0.5787,0.525,2023-05-05,high
+T20,Canal de Moulin,Toulouse,FR,43.5828,1.3493,0.44,0.3798,0.431,0.5091,2023-05-05,high
+T10,Canal de Saint Martory,Toulouse,FR,43.5322,1.32265,0.2348,0.0497,0.0193,0.6355,2023-05-06,moderate
+T15,Fossé Mère (ou Ruisseau Le Négogousses),Toulouse,FR,43.5713,1.38535,,,,,,
+T11,Fossé de Larramet amont,Toulouse,FR,43.52992,1.32597,0.4367,0.4285,0.5475,0.334,2023-05-06,high
+T16,Fossé de Larramet aval,Toulouse,FR,43.57895,1.35929,0.2146,0.0248,0.3325,0.2866,2023-05-05,low
+T12,Fossé de Larramet médian,Toulouse,FR,43.54003,1.34077,0.2646,0.0495,0.0918,0.6525,2023-05-06,moderate
+T17,Fossé de pluvial avant rejet dans fossé de Larramet,Toulouse,FR,43.5786,1.35861,0.5282,0.2525,0.9979,0.3341,2023-05-05,high
+T4,Hers,Toulouse,FR,43.56499,1.49464,0.256,0.1242,0.5135,0.1303,2023-05-05,moderate
+T6,Marcaissonne amont,Toulouse,FR,43.56755,1.51974,0.3573,0.1502,0.5056,0.4162,2023-05-05,high
+T5,Marcaissonne aval,Toulouse,FR,43.5678,1.50937,0.426,0.154,0.8464,0.2778,2023-05-05,high
+T18,Ousseau,Toulouse,FR,43.57882,1.35262,0.3372,0.2995,0.3628,0.3494,2023-05-05,moderate
+T3,Ruisseau de Bonneval amont,Toulouse,FR,43.52756,1.47439,0.3922,0.3248,0.3904,0.4614,2023-05-05,high
+T2,Ruisseau de Bonneval aval,Toulouse,FR,43.53219,1.46332,0.2132,0.0997,0.126,0.414,2023-05-05,low
+T25,Ruisseau de l’Armurié,Toulouse,FR,43.64862,1.51501,0.3463,0.1266,0.4027,0.5096,2023-05-05,moderate
+T22,Ruisseau de l’Armurié,Toulouse,FR,43.59608,1.36657,0.3556,0.1988,0.3252,0.5428,2023-05-05,high
+T8,Ruisseau du Grand Port de Mer,Toulouse,FR,43.58553,1.52861,0.1554,0.025,0.1995,0.2415,2023-05-05,low
+T1,Ruisseau du Palays,Toulouse,FR,43.55267,1.49147,0.4039,0.4012,0.532,0.2785,2023-05-05,high
+T9,Ruisseau du Roussimort amont,Toulouse,FR,43.52152,1.34273,0.1283,0.025,0.1039,0.2561,2023-05-06,low
+T13,Ruisseau du Roussimort aval,Toulouse,FR,43.5353,1.37785,0.3443,0.1243,0.3044,0.6042,2023-05-05,moderate
+T7,Saune,Toulouse,FR,43.57873,1.53609,0.1687,0.0758,0.2074,0.2231,2023-05-05,low
+T19,Touch,Toulouse,FR,43.58253,1.35047,0.1453,0.0248,0.1091,0.3021,2023-05-05,low

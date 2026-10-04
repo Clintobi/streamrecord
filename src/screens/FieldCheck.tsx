@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { findSite, Library, loadLibrary } from '../data'
 import { buildBundle } from '../fhir'
 import { useI18n } from '../i18n'
-import { Answers, Check, QUESTIONS, Site } from '../model'
+import { Answers, Check, QUESTIONS, secondLook, Site } from '../model'
 import { saveCheck } from '../store'
 import { Skeleton } from '../ui'
 
@@ -46,7 +46,8 @@ export default function FieldCheck({ id }: { id: string }) {
     return (
       <div className="wrap">
         <div className="notice" role="status"><h1><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="13" fill="var(--stream)" /><path d="M8 14.5l4 4 8-9" fill="none" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" /></svg>{t('savedTitle')}</h1><p>{t('savedBody')}</p>
-          {!navigator.onLine && <p><strong>{t('offline')}</strong></p>}</div>
+          {!navigator.onLine && <p><strong>{t('offline')}</strong></p>}
+          {secondLook(saved.answers).length > 0 && (<><p><strong>{t('savedFlagged')}</strong></p><ul>{secondLook(saved.answers).map((f) => <li key={f}>{t(`flag_${f}` as any)}</li>)}</ul></>)}</div>
         <div className="actions">
           <a className="btn" href={`#/site/${encodeURIComponent(site.id)}`}>{t('seeReading')}</a>
           <button className="btn secondary" aria-expanded={showFhir} onClick={() => setShowFhir((v) => !v)}>{t('showFhir')}</button>

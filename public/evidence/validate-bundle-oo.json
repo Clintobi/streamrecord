@@ -1,0 +1,448 @@
+{
+  "resourceType": "OperationOutcome",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[1].resource/*QuestionnaireResponse/null*/, Line[1] Col[1308]]</td><td>The questionnaire 'https://streamrecord.app/fhir/Questionnaire/streamrecord-check|0.1.0' could not be resolved, so no validation can be performed against the base questionnaire</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[2].resource/*Observation/null*/.category[0], Line[1] Col[4113]]</td><td>CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#citizen-science'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[2].resource/*Observation/null*/.code, Line[1] Col[4321]]</td><td>CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#foam'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[2].resource/*Observation/null*/.value.ofType(CodeableConcept), Line[1] Col[4951]]</td><td>CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#present'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[3].resource/*Observation/null*/.category[0], Line[1] Col[5663]]</td><td>CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#citizen-science'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[3].resource/*Observation/null*/.code, Line[1] Col[5878]]</td><td>CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#colourSmell'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[4].resource/*Observation/null*/.category[0], Line[1] Col[7276]]</td><td>CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#citizen-science'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[4].resource/*Observation/null*/.code, Line[1] Col[7498]]</td><td>CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#riparianVegetation'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[4].resource/*Observation/null*/.value.ofType(CodeableConcept), Line[1] Col[8134]]</td><td>CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#21-40-percent'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[5].resource/*Observation/null*/.category[0], Line[1] Col[8851]]</td><td>CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#citizen-science'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[5].resource/*Observation/null*/.code, Line[1] Col[9066]]</td><td>CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#macrophytes'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[5].resource/*Observation/null*/.value.ofType(CodeableConcept), Line[1] Col[9702]]</td><td>CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#41-60-percent'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[6].resource/*Observation/null*/.category[0], Line[1] Col[10418]]</td><td>CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#citizen-science'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[6].resource/*Observation/null*/.code, Line[1] Col[10639]]</td><td>CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#invasiveOrganisms'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[6].resource/*Observation/null*/.value.ofType(CodeableConcept), Line[1] Col[11268]]</td><td>CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#absent'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[7].resource/*Observation/null*/.category[0], Line[1] Col[11970]]</td><td>CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#citizen-science'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[7].resource/*Observation/null*/.code, Line[1] Col[12184]]</td><td>CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#otherSigns'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[7].resource/*Observation/null*/.value.ofType(CodeableConcept), Line[1] Col[12836]]</td><td>CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#scum'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[8].resource/*Observation/null*/.category[0], Line[1] Col[13549]]</td><td>CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#citizen-science'</td></tr><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Bundle.entry[8].resource/*Observation/null*/.code, Line[1] Col[13769]]</td><td>CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#waterTemperature'</td></tr></table></div>"
+  },
+  "issue": [ {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 1308
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Questionnaire_QR_Q_NotFound"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Questionnaire_QR_Q_NotFound"
+      } ]
+    },
+    "diagnostics": "The questionnaire 'https://streamrecord.app/fhir/Questionnaire/streamrecord-check|0.1.0' could not be resolved, so no validation can be performed against the base questionnaire",
+    "location": [ "Bundle.entry[1].resource/*QuestionnaireResponse/null*/", "Line[1] Col[1308]" ],
+    "expression": [ "Bundle.entry[1].resource/*QuestionnaireResponse/null*/" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 4113
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
+    "location": [ "Bundle.entry[2].resource/*Observation/null*/.category[0]", "Line[1] Col[4113]" ],
+    "expression": [ "Bundle.entry[2].resource/*Observation/null*/.category[0]" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 4321
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#foam'",
+    "location": [ "Bundle.entry[2].resource/*Observation/null*/.code", "Line[1] Col[4321]" ],
+    "expression": [ "Bundle.entry[2].resource/*Observation/null*/.code" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 4951
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#present'",
+    "location": [ "Bundle.entry[2].resource/*Observation/null*/.value.ofType(CodeableConcept)", "Line[1] Col[4951]" ],
+    "expression": [ "Bundle.entry[2].resource/*Observation/null*/.value.ofType(CodeableConcept)" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 5663
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
+    "location": [ "Bundle.entry[3].resource/*Observation/null*/.category[0]", "Line[1] Col[5663]" ],
+    "expression": [ "Bundle.entry[3].resource/*Observation/null*/.category[0]" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 5878
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#colourSmell'",
+    "location": [ "Bundle.entry[3].resource/*Observation/null*/.code", "Line[1] Col[5878]" ],
+    "expression": [ "Bundle.entry[3].resource/*Observation/null*/.code" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 7276
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
+    "location": [ "Bundle.entry[4].resource/*Observation/null*/.category[0]", "Line[1] Col[7276]" ],
+    "expression": [ "Bundle.entry[4].resource/*Observation/null*/.category[0]" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 7498
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#riparianVegetation'",
+    "location": [ "Bundle.entry[4].resource/*Observation/null*/.code", "Line[1] Col[7498]" ],
+    "expression": [ "Bundle.entry[4].resource/*Observation/null*/.code" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 8134
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#21-40-percent'",
+    "location": [ "Bundle.entry[4].resource/*Observation/null*/.value.ofType(CodeableConcept)", "Line[1] Col[8134]" ],
+    "expression": [ "Bundle.entry[4].resource/*Observation/null*/.value.ofType(CodeableConcept)" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 8851
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
+    "location": [ "Bundle.entry[5].resource/*Observation/null*/.category[0]", "Line[1] Col[8851]" ],
+    "expression": [ "Bundle.entry[5].resource/*Observation/null*/.category[0]" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 9066
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#macrophytes'",
+    "location": [ "Bundle.entry[5].resource/*Observation/null*/.code", "Line[1] Col[9066]" ],
+    "expression": [ "Bundle.entry[5].resource/*Observation/null*/.code" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 9702
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#41-60-percent'",
+    "location": [ "Bundle.entry[5].resource/*Observation/null*/.value.ofType(CodeableConcept)", "Line[1] Col[9702]" ],
+    "expression": [ "Bundle.entry[5].resource/*Observation/null*/.value.ofType(CodeableConcept)" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 10418
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
+    "location": [ "Bundle.entry[6].resource/*Observation/null*/.category[0]", "Line[1] Col[10418]" ],
+    "expression": [ "Bundle.entry[6].resource/*Observation/null*/.category[0]" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 10639
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#invasiveOrganisms'",
+    "location": [ "Bundle.entry[6].resource/*Observation/null*/.code", "Line[1] Col[10639]" ],
+    "expression": [ "Bundle.entry[6].resource/*Observation/null*/.code" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 11268
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#absent'",
+    "location": [ "Bundle.entry[6].resource/*Observation/null*/.value.ofType(CodeableConcept)", "Line[1] Col[11268]" ],
+    "expression": [ "Bundle.entry[6].resource/*Observation/null*/.value.ofType(CodeableConcept)" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 11970
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
+    "location": [ "Bundle.entry[7].resource/*Observation/null*/.category[0]", "Line[1] Col[11970]" ],
+    "expression": [ "Bundle.entry[7].resource/*Observation/null*/.category[0]" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 12184
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#otherSigns'",
+    "location": [ "Bundle.entry[7].resource/*Observation/null*/.code", "Line[1] Col[12184]" ],
+    "expression": [ "Bundle.entry[7].resource/*Observation/null*/.code" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 12836
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#scum'",
+    "location": [ "Bundle.entry[7].resource/*Observation/null*/.value.ofType(CodeableConcept)", "Line[1] Col[12836]" ],
+    "expression": [ "Bundle.entry[7].resource/*Observation/null*/.value.ofType(CodeableConcept)" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 13549
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: https://streamrecord.app/fhir/CodeSystem/streamrecord-local for 'https://streamrecord.app/fhir/CodeSystem/streamrecord-local#citizen-science'",
+    "location": [ "Bundle.entry[8].resource/*Observation/null*/.category[0]", "Line[1] Col[13549]" ],
+    "expression": [ "Bundle.entry[8].resource/*Observation/null*/.category[0]" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger": 1
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger": 13769
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString": "Terminology_PassThrough_TX_Message"
+    } ],
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/java-core-messageId",
+        "code": "Terminology_PassThrough_TX_Message"
+      } ]
+    },
+    "diagnostics": "CodeSystem is unknown and can't be validated: http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu for 'http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu#waterTemperature'",
+    "location": [ "Bundle.entry[8].resource/*Observation/null*/.code", "Line[1] Col[13769]" ],
+    "expression": [ "Bundle.entry[8].resource/*Observation/null*/.code" ]
+  } ]
+}

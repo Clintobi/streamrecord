@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Bands, findSite, Library, loadBands, loadLibrary } from '../data'
 import { LANGS, useI18n } from '../i18n'
-import { CityIndex, daysSince, findingsFromChecks, labStatus, longDate, Site } from '../model'
+import { CityIndex, confirmedFindings, daysSince, findingsFromChecks, labStatus, longDate, secondLook, Site } from '../model'
 import { checksFor } from '../store'
 import { Shape, Skeleton, StatusLine } from '../ui'
 
@@ -102,6 +102,8 @@ export default function SiteReading({ id }: { id: string }) {
   const { site, city, sites } = data
   const checks = checksFor(site.id)
   const findings = findingsFromChecks(checks)
+  const confirmed = confirmedFindings(checks)
+  const flags = [...new Set(checks.filter((c) => c.status === 'preliminary').flatMap((c) => secondLook(c.answers)))]
   const F = d.findings as Record<string, any>
   // rank measures by how many of this site's findings they address (the mapping is our judgement, said on screen)
   const hits = (m: { addresses: string[] }) => m.addresses.filter((a) => findings.includes(a)).length
@@ -127,6 +129,7 @@ export default function SiteReading({ id }: { id: string }) {
             <header className="sitehead">
               <p className="eyebrow">{t('siteEyebrow', { city: city.name, id: site.id })}</p>
               <h1>{site.name}</h1>
+              {site.unnamed && <p className="meta">{t('unnamedNote')}</p>}
             </header>
             <Record site={site} sites={sites} city={city} bands={bands} />
             <div className="actions noprint">
@@ -146,8 +149,15 @@ export default function SiteReading({ id }: { id: string }) {
                 <p className="meta">{t('checksN', { n: checks.length })}</p>
                 {findings.length === 0 ? <p className="reading">{t('b3Nothing')}</p> : (
                   <ul className="findings">
-                    {findings.map((f) => <li key={f}><Shape status="look" /><span>{F[f]?.label}</span><span className="tag">{t('preliminary')}</span></li>)}
+                    {findings.map((f) => <li key={f}><Shape status={confirmed.has(f) ? 'concern' : 'look'} /><span>{F[f]?.label}</span><span className={`tag${confirmed.has(f) ? ' strong' : ''}`}>{confirmed.has(f) ? t('confirmedTag') : t('preliminary')}</span></li>)}
                   </ul>
+                )}
+                {flags.length > 0 && (
+                  <div className="secondlook" role="note">
+                    <p className="status look"><Shape status="look" />{t('secondLookSite')}</p>
+                    <ul>{flags.map((f) => <li key={f}>{t(`flag_${f}` as any)}</li>)}</ul>
+                    <a href="#/review">{t('openQueue')}</a>
+                  </div>
                 )}
               </>
             )}

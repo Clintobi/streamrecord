@@ -15,6 +15,8 @@ export const CATEGORY = { system: LOCAL_CS, code: 'citizen-science', display: 'C
 
 type R = Record<string, any>
 
+const STATUS_WORD: Record<Check['status'], string> = { preliminary: 'preliminary', final: 'confirmed by a reviewer', 'entered-in-error': 'rejected by a reviewer' }
+
 const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]!))
 const narrative = (text: string) => ({ status: 'generated', div: `<div xmlns="http://www.w3.org/1999/xhtml">${esc(text)}</div>` })
 
@@ -52,7 +54,7 @@ export function buildBundle(site: Site, check: Check): R {
     text: narrative(`${site.name}, ${site.city} (OneAquaHealth site ${site.id})`),
     identifier: [{ system: SITE_ID_SYSTEM, value: site.id }],
     status: 'active',
-    name: site.name,
+    name: site.name?.trim() || `Site ${site.id}`, // location-oah requires a name
     mode: 'instance',
     address: { city: site.city, country: site.country },
     position: { longitude: site.lon, latitude: site.lat },
@@ -66,7 +68,8 @@ export function buildBundle(site: Site, check: Check): R {
     resourceType: 'QuestionnaireResponse',
     text: narrative(`StreamRecord check at site ${site.id}, ${check.createdAt}`),
     questionnaire: QUESTIONNAIRE,
-    status: 'completed',
+    // a rejected check marks its form response entered-in-error too
+    status: check.status === 'entered-in-error' ? 'entered-in-error' : 'completed',
     subject: { reference: `urn:uuid:${locId}` },
     authored: check.createdAt,
     item: answered.map((q) => {
@@ -88,8 +91,9 @@ export function buildBundle(site: Site, check: Check): R {
     const a = check.answers[q.key]
     const obs: R = {
       resourceType: 'Observation',
-      text: narrative(`${q.key}: ${a === 'unsure' ? 'not sure' : Array.isArray(a) ? a.join(', ') : String(a)} (citizen check, preliminary)`),
-      status: 'preliminary',
+      text: narrative(`${q.key}: ${a === 'unsure' ? 'not sure' : Array.isArray(a) ? a.join(', ') : String(a)} (citizen check, ${STATUS_WORD[check.status]})`),
+      // preliminary until a reviewer confirms (final) or rejects (entered-in-error)
+      status: check.status,
       category: [{ coding: [CATEGORY] }],
       code: { coding: [{ system: q.code.system, code: q.code.code }] },
       subject: { reference: `urn:uuid:${locId}` },
@@ -122,6 +126,25 @@ export function buildBundle(site: Site, check: Check): R {
     }],
   }
   entries.push({ fullUrl: `urn:uuid:${uuid('prov' + check.id)}`, resource: prov, request: { method: 'POST', url: 'Provenance' } })
+
+  // the review decision, its reviewer and the reason are kept in a second Provenance
+  if (check.review) {
+    const r = check.review
+    const review: R = {
+      resourceType: 'Provenance',
+      text: narrative(`${r.decision === 'final' ? 'Confirmed' : 'Rejected as entered in error'} by ${r.reviewer} on ${r.at}. Reason: ${r.reason}`),
+      target: [{ reference: `urn:uuid:${qrId}` }, ...obsIds.map((i) => ({ reference: `urn:uuid:${i}` }))],
+      recorded: r.at,
+      activity: { coding: [{ system: 'http://terminology.hl7.org/CodeSystem/v3-DataOperation', code: 'UPDATE', display: 'revise' }], text: r.decision === 'final' ? 'Reviewed and confirmed' : 'Reviewed and rejected' },
+      // HQUALIMP checked against v3-PurposeOfUse on tx.fhir.org; the reviewer's own words go in text
+      reason: [{ coding: [{ system: 'http://terminology.hl7.org/CodeSystem/v3-ActReason', code: 'HQUALIMP', display: 'health quality improvement' }], text: r.reason }],
+      agent: [{
+        type: { coding: [{ system: 'http://terminology.hl7.org/CodeSystem/provenance-participant-type', code: 'verifier', display: 'Verifier' }] },
+        who: { display: r.reviewer },
+      }],
+    }
+    entries.push({ fullUrl: `urn:uuid:${uuid('review' + check.id)}`, resource: review, request: { method: 'POST', url: 'Provenance' } })
+  }
 
   return { resourceType: 'Bundle', type: 'transaction', entry: entries }
 }

@@ -1,5 +1,5 @@
 {
- "tests": "14 passing (vitest): bundle structure, narratives, reference resolution, Not sure → dataAbsentReason, OAH codes, UCUM, preliminary status, conditional create, determinism, finding rules, location-oah rules",
+ "tests": "18 passing (vitest): bundle structure, narratives, references, Not sure → dataAbsentReason, OAH codes, UCUM, status, conditional create, determinism, finding rules, location-oah rules, second-look rules, review statuses and verifier Provenance, unnamed sites",
  "lighthouse": "Site Reading 94/100/100; Field check 99/100/100; Map 76 (median of 3 runs: 64–89, third-party basemap tiles)/97/96 (performance/accessibility/best practices, Lighthouse mobile, production URL, 2026-10-04)",
  "bundleKb": "64 KB gzipped JavaScript for the first view (197 KB raw); the map library (44 KB gzipped) and each translation (~6 KB) load separately",
  "firstReading": "1.6 s largest contentful paint for a Site Reading (Lighthouse simulated slow 4G)",

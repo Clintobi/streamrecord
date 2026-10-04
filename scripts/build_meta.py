@@ -52,6 +52,8 @@ real = [
     {'item': 'Catalogue of Measures and Policy Brief text', 'status': 'Real', 'note': 'Quoted with page numbers from the OneAquaHealth documents'},
     {'item': 'People / animals / stream explanations', 'status': 'Ours', 'note': 'Drafted by a final-year medical student. Not clinical advice'},
     {'item': 'Translations (PT, IT, NL, NO, FR)', 'status': 'Machine-assisted', 'note': 'Not reviewed by native speakers; marked in the app'},
+    {'item': 'Second-look rules and the review queue', 'status': 'Ours', 'note': 'Four rules we wrote (dead fish, scum below 10 °C, water above 30 °C, four or more Not sure). Not OneAquaHealth rules. The queue runs on this phone'},
+    {'item': 'Sample check in the review queue', 'status': 'Synthetic', 'note': 'Added only when you press the sample button; labelled "sample, synthetic" everywhere it appears'},
     {'item': 'Sending checks to the OneAquaHealth sandbox', 'status': 'Not integrated', 'note': 'Bundles are built and validated, but the app does not POST them'},
 ]
 
@@ -74,6 +76,8 @@ meta = {
             {'code': 'scum, deadFish, standingWater, none', 'why': 'Not in the OAH temporary CodeSystem at this commit'},
         ],
     },
+    'datapackage': {'path': 'data/datapackage.json', 'csv': 'data/sites.csv', 'resources': len(json.load(open(P('public/data/datapackage.json')))['resources']),
+                    'validator': 'frictionless 5.19.1', 'result': 'all resources valid, including sha256 hashes, byte counts and the sites.csv table schema'},
     'evidence': {'validate': validate, 'tests': ev.get('tests'), 'lighthouse': ev.get('lighthouse'), 'bundleKb': ev.get('bundleKb'), 'firstReading': ev.get('firstReading')},
 }
 os.makedirs(P('public/data'), exist_ok=True)

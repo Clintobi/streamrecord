@@ -14,3 +14,4 @@ export function checksFor(siteId: string): Check[] {
 }
 export function saveCheck(c: Check) { const all = read(); all.push(c); write(all) }
 export function allChecks(): Check[] { return read() }
+export function updateCheck(c: Check) { write(read().map((x) => (x.id === c.id ? c : x))) }
